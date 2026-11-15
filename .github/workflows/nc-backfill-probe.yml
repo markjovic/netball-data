@@ -1,0 +1,81 @@
+name: nc-backfill-probe
+
+# Maps backfill feasibility for the 9U competition across seasons: finds every 9U
+# competition under the org (all years) and reports whether each is HIDDEN or OPEN.
+# Open seasons are trivially backfillable from round/matches. Read-only; commits nothing.
+
+on:
+  workflow_dispatch:
+    inputs:
+      org_key:
+        description: 'organisationKey (uuid)'
+        required: true
+        default: 'ab63c5b3-fd1a-41a6-a1a2-326989b20247'
+      years:
+        description: 'yearRefIds to check (8=2026,7=2025,6=2024,5=2023,4=2022,3=2021)'
+        required: true
+        default: '8,7,6,5,4,3'
+      name_re:
+        description: 'Competition-name filter (regex, case-insensitive)'
+        required: true
+        default: '9\s*&?\s*u'
+      boot_key:
+        description: 'A competition uniqueKey to open for the token'
+        required: true
+        default: '8819433a-2375-4c6a-9039-4658036b083d'
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Show preinstalled Node
+        run: |
+          set -euo pipefail
+          node --version
+
+      - name: Install Playwright and Chromium
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/pw"
+          cd "$RUNNER_TEMP/pw"
+          npm init -y > /dev/null
+          npm install --no-audit --no-fund playwright@1.48.2
+          npx playwright install --with-deps chromium
+
+      - name: Probe backfill feasibility
+        env:
+          ORG_KEY: ${{ inputs.org_key }}
+          YEARS: ${{ inputs.years }}
+          NAME_RE: ${{ inputs.name_re }}
+          BOOT_KEY: ${{ inputs.boot_key }}
+          OUT_DIR: ${{ github.workspace }}/backfill-out
+        run: |
+          set -euo pipefail
+          cp scripts/nc-backfill-probe.mjs "$RUNNER_TEMP/pw/"
+          node "$RUNNER_TEMP/pw/nc-backfill-probe.mjs"
+
+      - name: Upload probe output
+        id: upload
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nc-backfill-probe-${{ github.run_id }}
+          path: backfill-out/
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Put artifact download link in the summary
+        if: always()
+        run: |
+          {
+            echo ""
+            echo "## ⬇ Download the full artifact"
+            echo "[nc-backfill-probe-${{ github.run_id }}.zip](${{ steps.upload.outputs.artifact-url }})"
+          } >> "$GITHUB_STEP_SUMMARY"
