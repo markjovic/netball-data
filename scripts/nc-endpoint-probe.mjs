@@ -235,18 +235,34 @@ async function main() {
       verdict.push(`Hidden rounds return NO matches in any of the ${variants.length} round/matches variants. The server strips matches from hidden rounds; dropping/altering ignoreStatuses does not help.`);
     }
 
-    let matchId = MATCH_ID_IN || (discovered.size ? [...discovered][0] : '');
-    let visibleOnly = false;
+    // Pick a match to test the score/period endpoints on. Priority:
+    //   1. a discovered hidden match   (tests hide-bypass directly)
+    //   2. the supplied MATCH_ID
+    //   3. a PLAYED visible match (matchStatus ENDED, or a non-zero score) - so periodScores
+    //      is tested on a game that actually happened, not an upcoming 0-0 fixture
+    //   4. any visible match (last resort; shape only)
+    let matchId = (discovered.size ? [...discovered][0] : '') || MATCH_ID_IN;
+    let pick = discovered.size ? 'discovered-hidden' : (MATCH_ID_IN ? 'supplied' : '');
     if (!matchId) {
+      let anyId = '', playedId = '';
       for (const { json } of results) {
-        if (json && Array.isArray(json.rounds)) {
-          for (const r of json.rounds) for (const m of (r.matches || [])) if (m.id !== undefined) { matchId = m.id; break; }
-          if (matchId) break;
+        if (!json || !Array.isArray(json.rounds)) continue;
+        for (const r of json.rounds) for (const m of (r.matches || [])) {
+          if (m.id === undefined) continue;
+          if (!anyId) anyId = m.id;
+          const played = m.matchStatus === 'ENDED' || (m.team1Score || 0) !== 0 || (m.team2Score || 0) !== 0;
+          if (played && !playedId) playedId = m.id;
         }
+        if (playedId) break;
       }
-      if (matchId) { visibleOnly = true; verdict.push(`No hidden match id available; testing score/period endpoints on a VISIBLE match (${matchId}) to learn their shape only.`); }
+      matchId = playedId || anyId;
+      pick = playedId ? 'played-visible' : (anyId ? 'visible-upcoming(shape only)' : '');
+    }
+    const visibleOnly = pick === 'visible-upcoming(shape only)';
+    if (matchId) {
+      verdict.push(`Testing score/period endpoints on ${pick} match ${matchId}.`);
     } else {
-      verdict.push(`Testing score/period endpoints on ${MATCH_ID_IN ? 'supplied' : 'discovered-hidden'} match ${matchId}.`);
+      verdict.push('No match id available to test score/period endpoints.');
     }
 
     if (matchId) {
