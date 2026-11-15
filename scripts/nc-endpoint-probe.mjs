@@ -39,6 +39,10 @@ const ORG_KEY = (process.env.ORG_KEY || 'ab63c5b3-fd1a-41a6-a1a2-326989b20247').
 const YEAR_ID = (process.env.YEAR_ID || '8').trim();
 const TEAM_ID = (process.env.TEAM_ID || '228160').trim();
 const MATCH_ID_IN = (process.env.MATCH_ID || '').trim();
+const SCAN = (process.env.SCAN || '1').trim();            // '0' disables the id-range scan
+const SCAN_SPAN = parseInt(process.env.SCAN_SPAN || '500', 10);  // ids to try below the anchor
+const SCAN_MAX = parseInt(process.env.SCAN_MAX || '550', 10);    // hard cap on scan calls
+const SCAN_DELAY = parseInt(process.env.SCAN_DELAY || '120', 10); // ms between scan calls
 const OUT = process.env.OUT_DIR || 'endpoint-out';
 const SUMMARY_FILE = process.env.GITHUB_STEP_SUMMARY || '';
 
@@ -286,6 +290,71 @@ async function main() {
       else verdict.push(`periodScores returned no usable data for match ${matchId} (see table).`);
     } else {
       verdict.push('No match id available at all; could not test score/period endpoints.');
+    }
+
+    // ---- V2 + history: bounded match-id scan ----------------------------------------
+    // The hide only strips matches from the round LIST. Match ids are assigned in one
+    // batch when the season draw is generated, so this comp's hidden (played) games sit
+    // in a tight id range near its visible (upcoming) games. Anchor on the visible ids,
+    // scan nearby ids, call gameSummary on each, and keep the ones whose
+    // competitionName matches THIS comp and that have ENDED. That both tests whether a
+    // hidden game is readable by id (V2) and recovers the hidden rounds.
+    if (SCAN !== '0' && SCAN_SPAN > 0) {
+      const visibleIds = [];
+      for (const { json } of results) {
+        if (json && Array.isArray(json.rounds)) for (const r of json.rounds) for (const m of (r.matches || [])) if (typeof m.id === 'number') visibleIds.push(m.id);
+      }
+      // competition name to filter on: from any gameSummary we already fetched
+      let compName = '';
+      const gs = results.find((r) => /gameSummary/.test(r.row.label) && r.json && r.json.matchData);
+      if (gs) compName = gs.json.matchData.competitionName || '';
+      if (!visibleIds.length) {
+        verdict.push('SCAN skipped: no visible match ids to anchor on.');
+      } else if (!compName) {
+        verdict.push('SCAN skipped: could not determine competitionName to filter by.');
+      } else {
+        const anchorLo = Math.min(...visibleIds);
+        const anchorHi = Math.max(...visibleIds);
+        const visset = new Set(visibleIds);
+        // candidates: downward from the low anchor (older rounds), plus a little above.
+        const cand = [];
+        for (let i = 1; i <= SCAN_SPAN; i++) cand.push(anchorLo - i);
+        for (let i = 1; i <= Math.min(40, SCAN_SPAN); i++) cand.push(anchorHi + i);
+        const recovered = [];
+        let scanned = 0, blocked = 0, otherComp = 0, consecMiss = 0;
+        for (const id of cand) {
+          if (visset.has(id) || id <= 0) continue;
+          if (scanned >= SCAN_MAX) break;
+          scanned++;
+          const r = await page.evaluate(async (u) => {
+            try { const res = await fetch(u, { headers: { accept: 'application/json', authorization: localStorage.getItem('token') || '' } }); return { s: res.status, b: await res.text() }; } catch (e) { return { err: String((e && e.message) || e) }; }
+          }, `${LIVE}/matches/public/gameSummary?matchId=${id}&competitionUniqueKey=${COMP_KEY}`);
+          if (r.err || (r.s && r.s >= 500) || r.s === 429 || r.s === 403) { blocked++; consecMiss++; if (consecMiss >= 60) { verdict.push(`SCAN stopped early after ${consecMiss} consecutive blocked/error responses (rate limit or range exhausted).`); break; } await page.waitForTimeout(SCAN_DELAY); continue; }
+          let j = null; try { j = JSON.parse(r.b); } catch { /* non-json */ }
+          const mdName = j && j.matchData && j.matchData.competitionName;
+          const status = j && j.matchData && j.matchData.matchStatus;
+          if (mdName === compName) {
+            consecMiss = 0;
+            if (status === 'ENDED') recovered.push({ id, status, t1: j.matchData.team1Score, t2: j.matchData.team2Score, start: j.matchData.startTime, team1: j.teamData && j.teamData.team1 && j.teamData.team1.name, team2: j.teamData && j.teamData.team2 && j.teamData.team2.name });
+          } else { otherComp++; consecMiss++; }
+          await page.waitForTimeout(SCAN_DELAY);
+        }
+        await fs.writeFile(path.join(OUT, 'recovered.json'), JSON.stringify(recovered, null, 1));
+        verdict.push(`SCAN: ${scanned} ids tried around ${anchorLo}..${anchorHi}; ${otherComp} belonged to other comps; ${blocked} blocked/err; **${recovered.length} HIDDEN ENDED matches recovered for "${compName}"**.`);
+        // Prove per-quarter is recoverable post-hide: periodScores on the first recovered id.
+        if (recovered.length) {
+          const rid = recovered[0].id;
+          const { json: pj, row: prow } = await hitInPage(page, `recovered periodScores (match ${rid})`, `${LIVE}/matches/periodScores?matchId=${rid}`);
+          prow._note = 'period shape: ' + periodShape(pj);
+          const okPeriods = pj && Array.isArray(pj) && pj.length > 0;
+          verdict.push(okPeriods
+            ? `V2 CONFIRMED: hidden match ${rid} returns ${pj.length} periods by id — hidden rounds ARE fully recoverable by match id (final score ${recovered[0].t1}-${recovered[0].t2}).`
+            : `V2 PARTIAL: hidden match ${rid} gameSummary readable (score ${recovered[0].t1}-${recovered[0].t2}) but periodScores empty — check table.`);
+          verdict.push(`Recovered sample: ${recovered.slice(0, 5).map((x) => `${x.id} ${x.team1} ${x.t1}-${x.t2} ${x.team2}`).join(' | ')}`);
+        } else {
+          verdict.push('V2 NOT CONFIRMED by scan: no hidden ENDED match for this comp found in the scanned id range. Widen SCAN_SPAN, or fall back to Friday live capture.');
+        }
+      }
     }
 
     await writeSummary(verdict, tokenLen);
