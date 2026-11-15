@@ -1,0 +1,65 @@
+name: nc-surface-probe
+
+# Step 1 of the netball project: record every API call Netball Connect's public
+# pages make. Output is an artifact (calls.json, response bodies, page HTML and
+# screenshots) plus a table in the run summary. Read-only; commits nothing.
+
+on:
+  workflow_dispatch:
+    inputs:
+      fixture_url:
+        description: 'Public livescoreSeasonFixture URL'
+        required: true
+        default: 'https://registration.netballconnect.com/livescoreSeasonFixture?organisationKey=ab63c5b3-fd1a-41a6-a1a2-326989b20247&competitionUniqueKey=3023e0a7-dbcf-4f0f-a7ce-350e61da84d6&yearId=8&divisionId=All'
+      match_url:
+        description: 'Optional matchSummary URL (blank = follow first matchSummary link on the fixture page)'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # No actions/setup-node on purpose: in the basketball project setup-node changed
+      # the runner's outbound fingerprint and produced 403s on every request
+      # (REPO_MANIFEST 6.3 / 7.2). The runner image's preinstalled Node is used instead.
+      - name: Show preinstalled Node
+        run: |
+          set -euo pipefail
+          node --version
+          npm --version
+
+      - name: Install Playwright and Chromium
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/pw"
+          cd "$RUNNER_TEMP/pw"
+          npm init -y > /dev/null
+          npm install --no-audit --no-fund playwright@1.48.2
+          npx playwright install --with-deps chromium
+
+      - name: Probe Netball Connect
+        env:
+          FIXTURE_URL: ${{ inputs.fixture_url }}
+          MATCH_URL: ${{ inputs.match_url }}
+          OUT_DIR: ${{ github.workspace }}/probe-out
+        run: |
+          set -euo pipefail
+          cp scripts/nc-surface-probe.mjs "$RUNNER_TEMP/pw/"
+          node "$RUNNER_TEMP/pw/nc-surface-probe.mjs"
+
+      - name: Upload probe output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nc-surface-probe-${{ github.run_id }}
+          path: probe-out/
+          if-no-files-found: error
+          retention-days: 30
