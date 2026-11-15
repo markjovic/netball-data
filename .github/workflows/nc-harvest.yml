@@ -1,26 +1,31 @@
 name: nc-harvest
 
-# Harvest a 9U competition's full results (incl per-quarter) by expanding each division's
-# id block from round/matches seeds, plus an optional coarse scan for finished comps.
-# Output: harvest-out/matches-<compId>.json (+ run summary). Read-only; commits nothing.
+# Harvest 9U competition results (incl per-quarter) by expanding each division's id block
+# from round/matches seeds, plus an optional coarse scan for finished/hidden comps.
+# Set comp_names (comma list) to collect several competitions from one scan pass.
+# Output: harvest-out/matches-<compId>.json per comp (+ run summary). Read-only; commits nothing.
 
 on:
   workflow_dispatch:
     inputs:
       comp_id:
-        description: 'Numeric competition id'
+        description: 'Primary numeric competition id (seeds round/matches)'
         required: true
         default: '5232'
       comp_key:
-        description: 'competitionUniqueKey (uuid)'
+        description: 'competitionUniqueKey (uuid) used as the gameSummary key'
         required: true
         default: '8819433a-2375-4c6a-9039-4658036b083d'
       comp_name:
-        description: 'Exact competitionName to match (from gameSummary)'
+        description: 'Primary exact competitionName to match'
         required: true
         default: 'MENA - Club Competition SPRING FRI 9 & U NETSETGO'
+      comp_names:
+        description: 'Optional comma-separated list of competitionNames to collect in one scan (blank = just comp_name)'
+        required: false
+        default: ''
       scan_lo:
-        description: 'Optional coarse-scan low id (finished comps with no round/matches seeds)'
+        description: 'Optional coarse-scan low id (finished/hidden comps with no round/matches seeds)'
         required: false
         default: '0'
       scan_hi:
@@ -28,13 +33,25 @@ on:
         required: false
         default: '0'
       coarse_step:
-        description: 'Coarse scan step'
+        description: 'Coarse scan step (lower = denser/slower)'
         required: false
-        default: '12'
+        default: '8'
+      conc:
+        description: 'Concurrent requests per batch (lower = politer)'
+        required: false
+        default: '8'
+      batch_delay:
+        description: 'Milliseconds to pause between batches (higher = politer)'
+        required: false
+        default: '120'
+      survey:
+        description: 'SURVEY mode: just locate every comp in scan_lo..scan_hi (no harvest). true/false'
+        required: false
+        default: 'false'
       max_calls:
         description: 'Safety cap on API calls'
         required: false
-        default: '6000'
+        default: '60000'
 
 permissions:
   contents: read
@@ -66,9 +83,13 @@ jobs:
           COMP_ID: ${{ inputs.comp_id }}
           COMP_KEY: ${{ inputs.comp_key }}
           COMP_NAME: ${{ inputs.comp_name }}
+          COMP_NAMES: ${{ inputs.comp_names }}
           SCAN_LO: ${{ inputs.scan_lo }}
           SCAN_HI: ${{ inputs.scan_hi }}
           COARSE_STEP: ${{ inputs.coarse_step }}
+          CONC: ${{ inputs.conc }}
+          BATCH_DELAY: ${{ inputs.batch_delay }}
+          SURVEY: ${{ inputs.survey }}
           MAX_CALLS: ${{ inputs.max_calls }}
           OUT_DIR: ${{ github.workspace }}/harvest-out
         run: |
@@ -91,6 +112,6 @@ jobs:
         run: |
           {
             echo ""
-            echo "## ⬇ Download the harvest"
+            echo "## Download the harvest"
             echo "[nc-harvest-${{ inputs.comp_id }}-${{ github.run_id }}.zip](${{ steps.upload.outputs.artifact-url }})"
           } >> "$GITHUB_STEP_SUMMARY"
