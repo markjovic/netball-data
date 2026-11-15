@@ -42,6 +42,7 @@ const failed = [];       // requestfailed events
 const hosts = new Map(); // host -> {count, types:Set}
 let seq = 0;
 const pending = new Set(); // response handlers still running
+const notes = [];          // non-fatal problems, always printed in the summary
 
 function redact(name, value) {
   if (!SECRET_HEADER.test(name)) return value;
@@ -160,27 +161,86 @@ async function drain() {
 
 async function loadAndSettle(page, url, label) {
   const resp = await page.goto(url, { waitUntil: 'networkidle', timeout: 60000 });
+  const status = resp ? resp.status() : null;
   // SPAs often fire a second wave after first paint.
   await page.waitForTimeout(6000);
   await drain();
   const html = await page.content();
   await fs.writeFile(path.join(OUT, `${label}.html`), html);
-  await page.screenshot({ path: path.join(OUT, `${label}.png`), fullPage: true });
-  return resp ? resp.status() : null;
+  // Screenshot is evidence only. Viewport-only (a full-page shot of the fixture page,
+  // ~185 images, timed out on run 1) and never fatal - but a failure is always reported.
+  try {
+    await page.screenshot({ path: path.join(OUT, `${label}.png`), timeout: 15000 });
+  } catch (e) {
+    notes.push(`${label} screenshot failed (non-fatal): ${String(e && e.message || e).split('\n')[0]}`);
+  }
+  return status;
 }
 
-function mdEscape(s) { return String(s).replace(/\|/g, '\\|'); }
+// Fixture-page links are click handlers, not <a href> (run 1). Build a matchSummary URL
+// from the captured round/matches body instead, preferring a finished match.
+async function deriveMatchUrl() {
+  const rm = calls.filter((c) => c.page === 'fixture' && c.path.endsWith('/livescores/round/matches') && c.class === 'ok');
+  if (!rm.length) return { url: '', why: 'no ok /livescores/round/matches response to derive a match from' };
+  let data;
+  try { data = JSON.parse(await fs.readFile(path.join(OUT, rm[0].bodyFile), 'utf8')); } catch (e) { return { url: '', why: 'round/matches body did not parse: ' + String(e && e.message || e) }; }
+  const matches = [];
+  for (const r of (data && data.rounds) || []) for (const m of r.matches || []) matches.push(m);
+  if (!matches.length) return { url: '', why: 'round/matches held 0 matches' };
+  const ended = matches.filter((m) => m.matchStatus === 'ENDED' || m.matchEnded === true);
+  const m = ended.length ? ended[ended.length - 1] : matches[0];
+  const competitionId = (m.competition && m.competition.id) || m.competitionId;
+  if (m.id === undefined || competitionId === undefined) return { url: '', why: `chosen match has no id or competition id (keys: ${Object.keys(m).join(',')})` };
+  const fx = new URL(FIXTURE_URL);
+  const u = new URL('/matchSummary', fx.origin);
+  u.searchParams.set('matchId', String(m.id));
+  u.searchParams.set('competitionId', String(competitionId));
+  const key = fx.searchParams.get('competitionUniqueKey');
+  if (key) u.searchParams.set('competitionUniqueKey', key);
+  return { url: u.toString(), why: `derived from round/matches: match ${m.id}, status ${m.matchStatus}, ${ended.length} of ${matches.length} matches ended` };
+}
+
+// Which competitions publish stats? Read from the captured competitions/list body.
+async function competitionFlags() {
+  const cl = calls.find((c) => c.path.endsWith('/livescores/competitions/list') && c.class === 'ok');
+  if (!cl) return ['- competitions/list: **not captured**'];
+  let list;
+  try { list = JSON.parse(await fs.readFile(path.join(OUT, cl.bodyFile), 'utf8')); } catch (e) { return ['- competitions/list: **body did not parse** ' + String(e && e.message || e)]; }
+  if (!Array.isArray(list)) return ['- competitions/list: **not an array** - see ' + cl.bodyFile];
+  const flags = ['isPublicStats', 'enhancedStatistics', 'positionTracking', 'recordGoalAttempts', 'lineupSelectionEnabled'];
+  const out = [`- competitions in list: ${list.length}`];
+  for (const f of flags) {
+    const vals = {};
+    for (const c of list) { const v = JSON.stringify(c[f]); vals[v] = (vals[v] || 0) + 1; }
+    out.push(`- ${f}: ${Object.entries(vals).map(([v, n]) => `${v}=${n}`).join(', ')}`);
+  }
+  const key = new URL(FIXTURE_URL).searchParams.get('competitionUniqueKey');
+  const mine = list.find((c) => Object.values(c).some((v) => v === key));
+  if (mine) {
+    out.push(`- this competition: id ${mine.id}, "${mine.longName || mine.name || ''}", ` + flags.map((f) => `${f}=${JSON.stringify(mine[f])}`).join(', '));
+  } else {
+    out.push('- this competition: **not found in list by competitionUniqueKey**');
+  }
+  return out;
+}
+
+function mdEscape(s) { return String(s).replace(/\|/g, '\\|').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
 
 async function writeSummary(result) {
   const lines = [];
   lines.push(`# Netball Connect surface probe`);
   lines.push('');
   lines.push(`- Fixture page: ${result.fixtureStatus === null ? 'NO RESPONSE' : 'HTTP ' + result.fixtureStatus}`);
-  lines.push(`- Match page: ${result.matchProbed ? 'HTTP ' + result.matchStatus + ' (' + result.matchUrlSource + ')' : '**NOT PROBED - ' + result.matchReason + '**'}`);
+  lines.push(`- Match page: ${result.matchProbed ? 'HTTP ' + result.matchStatus + ' (' + result.matchUrlSource + ')' : '**NOT PROBED - ' + mdEscape(result.matchReason) + '**'}`);
   lines.push(`- API calls captured: ${calls.length} (fixture ${calls.filter((c) => c.page === 'fixture').length}, match ${calls.filter((c) => c.page === 'match').length})`);
   lines.push(`- GraphQL calls: ${calls.filter((c) => c.graphql).length}`);
   lines.push(`- Failed requests: ${failed.length}`);
-  lines.push(`- Exit code: ${result.exitCode} (${result.exitReason})`);
+  lines.push(`- Exit code: ${result.exitCode} (${mdEscape(result.exitReason)})`);
+  for (const n of notes) lines.push(`- NOTE: ${mdEscape(n)}`);
+  lines.push('');
+  lines.push('## Competition flags (from competitions/list)');
+  lines.push('');
+  for (const l of await competitionFlags()) lines.push(l);
   lines.push('');
   lines.push('## All hosts contacted');
   lines.push('');
@@ -243,9 +303,14 @@ async function main() {
         await fs.writeFile(path.join(OUT, 'matchSummary-links.txt'), links.join('\n'));
         if (links.length) { matchUrl = links[0]; result.matchUrlSource = `first of ${links.length} matchSummary links on fixture page`; }
       }
+      let deriveWhy = '';
+      if (!matchUrl) {
+        const d = await deriveMatchUrl();
+        if (d.url) { matchUrl = d.url; result.matchUrlSource = d.why; } else { deriveWhy = d.why; }
+      }
       if (!matchUrl) {
         result.exitCode = 2;
-        result.matchReason = 'no MATCH_URL given and no <a href*="matchSummary"> on the fixture page (links may be click handlers)';
+        result.matchReason = 'no MATCH_URL given, no matchSummary link on the page, and could not derive one: ' + deriveWhy;
         result.exitReason = 'match page not probed';
       } else {
         const matchPage = await context.newPage();
