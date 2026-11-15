@@ -48,6 +48,18 @@ on:
         description: 'SURVEY mode: just locate every comp in scan_lo..scan_hi (no harvest). true/false'
         required: false
         default: 'false'
+      probe_ids:
+        description: 'PROBE mode: comma-separated match ids to diagnose (blank = normal run)'
+        required: false
+        default: ''
+      keys:
+        description: 'PROBE mode: comma-separated competitionUniqueKeys to test each id against'
+        required: false
+        default: ''
+      raw_urls:
+        description: 'RAW mode: ;;-separated endpoint URLs (relative to the squadi api host) to dump raw'
+        required: false
+        default: ''
       max_calls:
         description: 'Safety cap on API calls'
         required: false
@@ -90,6 +102,9 @@ jobs:
           CONC: ${{ inputs.conc }}
           BATCH_DELAY: ${{ inputs.batch_delay }}
           SURVEY: ${{ inputs.survey }}
+          PROBE_IDS: ${{ inputs.probe_ids }}
+          KEYS: ${{ inputs.keys }}
+          RAW_URLS: ${{ inputs.raw_urls }}
           MAX_CALLS: ${{ inputs.max_calls }}
           OUT_DIR: ${{ github.workspace }}/harvest-out
         run: |
