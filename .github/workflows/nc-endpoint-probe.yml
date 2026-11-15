@@ -1,9 +1,9 @@
 name: nc-endpoint-probe
 
 # Tests whether HIDDEN rounds' matches and per-quarter scores can be read from the
-# Netball Connect API. Extracts the site's public static auth token at run time,
-# then tries round/matches variants and the per-match score/period endpoints.
-# Read-only; commits nothing. Output is an artifact + a table in the run summary.
+# Netball Connect API. Loads the fixture page in real Chromium (the API WAF blocks
+# non-browser clients) and issues the API calls from inside the page. Read-only;
+# commits nothing. Output is an artifact + a table in the run summary.
 
 on:
   workflow_dispatch:
@@ -16,6 +16,14 @@ on:
         description: 'competitionUniqueKey (uuid)'
         required: true
         default: '8819433a-2375-4c6a-9039-4658036b083d'
+      org_key:
+        description: 'organisationKey (uuid)'
+        required: true
+        default: 'ab63c5b3-fd1a-41a6-a1a2-326989b20247'
+      year_id:
+        description: 'yearId'
+        required: true
+        default: '8'
       team_id:
         description: 'A numeric team id in the competition (for team-scoped test)'
         required: false
@@ -42,16 +50,28 @@ jobs:
           set -euo pipefail
           node --version
 
+      - name: Install Playwright and Chromium
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/pw"
+          cd "$RUNNER_TEMP/pw"
+          npm init -y > /dev/null
+          npm install --no-audit --no-fund playwright@1.48.2
+          npx playwright install --with-deps chromium
+
       - name: Probe endpoints
         env:
           COMP_ID: ${{ inputs.comp_id }}
           COMP_KEY: ${{ inputs.comp_key }}
+          ORG_KEY: ${{ inputs.org_key }}
+          YEAR_ID: ${{ inputs.year_id }}
           TEAM_ID: ${{ inputs.team_id }}
           MATCH_ID: ${{ inputs.match_id }}
           OUT_DIR: ${{ github.workspace }}/endpoint-out
         run: |
           set -euo pipefail
-          node scripts/nc-endpoint-probe.mjs
+          cp scripts/nc-endpoint-probe.mjs "$RUNNER_TEMP/pw/"
+          node "$RUNNER_TEMP/pw/nc-endpoint-probe.mjs"
 
       - name: Upload probe output
         if: always()
