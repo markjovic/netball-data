@@ -1,0 +1,63 @@
+name: nc-endpoint-probe
+
+# Tests whether HIDDEN rounds' matches and per-quarter scores can be read from the
+# Netball Connect API. Extracts the site's public static auth token at run time,
+# then tries round/matches variants and the per-match score/period endpoints.
+# Read-only; commits nothing. Output is an artifact + a table in the run summary.
+
+on:
+  workflow_dispatch:
+    inputs:
+      comp_id:
+        description: 'Numeric competition id (e.g. 5232 = 9U NetSetGo)'
+        required: true
+        default: '5232'
+      comp_key:
+        description: 'competitionUniqueKey (uuid)'
+        required: true
+        default: '8819433a-2375-4c6a-9039-4658036b083d'
+      team_id:
+        description: 'A numeric team id in the competition (for team-scoped test)'
+        required: false
+        default: '228160'
+      match_id:
+        description: 'Optional known match id to test score/period endpoints directly'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # No actions/setup-node on purpose (PlayHQ REPO_MANIFEST 6.3 / 7.2 fingerprint lesson).
+      - name: Show preinstalled Node
+        run: |
+          set -euo pipefail
+          node --version
+
+      - name: Probe endpoints
+        env:
+          COMP_ID: ${{ inputs.comp_id }}
+          COMP_KEY: ${{ inputs.comp_key }}
+          TEAM_ID: ${{ inputs.team_id }}
+          MATCH_ID: ${{ inputs.match_id }}
+          OUT_DIR: ${{ github.workspace }}/endpoint-out
+        run: |
+          set -euo pipefail
+          node scripts/nc-endpoint-probe.mjs
+
+      - name: Upload probe output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nc-endpoint-probe-${{ github.run_id }}
+          path: endpoint-out/
+          if-no-files-found: error
+          retention-days: 30
