@@ -96,6 +96,12 @@ async function main() {
       for (let id = seed + 1; id < seed + MAX_CALLS; id++) { if (capped) break; const ok = await probe(id, divHint); miss = ok ? 0 : miss + 1; if (miss >= GAP) break; await sleep(DELAY_MS); }
     };
 
+    // flush partial results so a long/timed-out run never loses data
+    const flush = async () => {
+      const arr = [...matches.values()].sort((a, b) => a.id - b.id);
+      await fs.writeFile(path.join(OUT, `matches-${COMP_ID}.json`), JSON.stringify({ compId: COMP_ID, compKey: COMP_KEY, compName: COMP_NAME, harvestedAt: new Date().toISOString(), count: arr.length, matches: arr }, null, 1));
+    };
+
     // 1. seeds from round/matches (division-tagged)
     const seeds = []; // {id, division}
     const rm = await api(`${LIVE}/round/matches?competitionId=${COMP_ID}&divisionId=&teamIds=&ignoreStatuses=[1]`);
@@ -105,18 +111,22 @@ async function main() {
     notes.push(`round/matches seeds: ${seeds.length}`);
 
     // expand each seed (dedup blocks via visited)
-    for (const s of seeds) { if (capped) break; if (!visited.has(s.id)) await expand(s.id, s.division); }
+    for (const s of seeds) { if (capped) break; if (!visited.has(s.id)) { await expand(s.id, s.division); await flush(); } }
 
-    // 2. optional coarse scan for finished comps (no/not-enough seeds)
+    // 2. optional coarse scan — finds earlier-season blocks that seeds don't point to,
+    //    and finished comps that have no seeds at all. Flushes periodically.
     if (SCAN_LO && SCAN_HI && SCAN_HI > SCAN_LO) {
       notes.push(`coarse scan ${SCAN_LO}..${SCAN_HI} step ${COARSE_STEP}`);
+      let since = 0;
       for (let id = SCAN_LO; id <= SCAN_HI && !capped; id += COARSE_STEP) {
         if (visited.has(id)) continue;
         const hit = await probe(id, null);
-        if (hit) await expand(id, null);   // found a block, harvest it fully
+        if (hit) { await expand(id, null); await flush(); }   // found a block, harvest it fully
+        if (++since >= 200) { since = 0; await flush(); }
         await sleep(DELAY_MS);
       }
     }
+    await flush();
 
     if (capped) notes.push(`**stopped at MAX_CALLS=${MAX_CALLS}** — resume with a higher cap or narrower range`);
     const out = [...matches.values()].sort((a, b) => a.id - b.id);
