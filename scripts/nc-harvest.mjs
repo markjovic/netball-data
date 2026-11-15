@@ -51,6 +51,10 @@ let calls = 0;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const slug = (s) => (s || 'unknown').replace(/[^a-z0-9]+/gi, '-').replace(/^-+|-+$/g, '').slice(0, 60).toLowerCase();
 const log = (m) => console.log(`[${new Date().toISOString().slice(11, 19)}] ${m}`);
+// schema confirm: keys + raw matchData of the first recorded hit (so we verify field names, not guess)
+let schemaSample = null;
+const firstVal = (o, keys) => { for (const k of keys) { const v = o && o[k]; if (v != null && v !== '' && typeof v !== 'object') return v; } return ''; };
+const objVal = (o, keys, prop) => { for (const k of keys) { const v = o && o[k]; if (v && typeof v === 'object' && v[prop] != null) return v[prop]; } return ''; };
 
 async function main() {
   await fs.mkdir(OUT, { recursive: true });
@@ -123,8 +127,14 @@ async function main() {
     const recordIfComp = (id, body) => {
       let j = null; try { j = JSON.parse(body); } catch { return false; }
       const md = j && j.matchData; if (!md || !NAME_SET.has(md.competitionName)) return false;
+      if (!schemaSample) schemaSample = { fromMatchId: id, matchDataKeys: Object.keys(md), teamDataKeys: Object.keys(j.teamData || {}), sampleMatchData: md };
       const td = j.teamData || {};
+      // division (= grade/pool) and round — probe likely field names defensively; verify via _schema.json
+      const divisionId = firstVal(md, ['divisionId', 'competitionDivisionId', 'divisionGradeId']) || objVal(md, ['division', 'competitionDivision', 'grade'], 'id');
+      const division = firstVal(md, ['divisionName', 'competitionDivisionName', 'gradeName']) || objVal(md, ['division', 'competitionDivision', 'grade'], 'name') || (typeof md.division === 'string' ? md.division : '');
+      const round = firstVal(md, ['roundName', 'roundNumber', 'round', 'matchRound']) || objVal(md, ['round'], 'name') || objVal(md, ['round'], 'roundNumber');
       found.set(id, { id, compId: md.competitionId != null ? String(md.competitionId) : '', compName: md.competitionName,
+        divisionId: divisionId !== '' ? String(divisionId) : '', division: division || '', round: round !== '' ? String(round) : '',
         startTime: md.startTime, status: md.matchStatus, venue: md.venueName, court: md.venueCourtName,
         team1: td.team1 && td.team1.name, team1Id: td.team1 && td.team1.id, team2: td.team2 && td.team2.name, team2Id: td.team2 && td.team2.id,
         t1: md.team1Score, t2: md.team2Score });
@@ -174,11 +184,27 @@ async function main() {
       }
     };
 
-    // Phase 1a: seeds from round/matches (primary comp) + expand
+    // Phase 1a: seeds from round/matches (primary comp) + expand. Also harvest the division (grade)
+    // map and per-round team->division from the visible rounds (fallback for grade/regrade analysis).
     const rm = (await batchGet([{ id: 0, url: `${LIVE}/round/matches?competitionId=${COMP_ID}&divisionId=&teamIds=&ignoreStatuses=[1]` }]))[0];
     const seedIds = [];
-    try { const j = JSON.parse(rm.body); if (j && Array.isArray(j.rounds)) for (const r of j.rounds) for (const m of (r.matches || [])) if (typeof m.id === 'number') seedIds.push(m.id); } catch {}
-    notes.push(`round/matches seeds: ${seedIds.length}`);
+    const divisionsFromRounds = {}; // divisionId -> name
+    const roundDivisionTeams = [];  // {round, divisionId, division, matchId, team1Id, team2Id}
+    try {
+      const j = JSON.parse(rm.body);
+      if (j && Array.isArray(j.rounds)) for (const r of j.rounds) {
+        const rName = r.name != null ? String(r.name) : (r.roundNumber != null ? String(r.roundNumber) : '');
+        for (const m of (r.matches || [])) {
+          if (typeof m.id === 'number') seedIds.push(m.id);
+          const dId = firstVal(m, ['divisionId', 'competitionDivisionId']) || objVal(m, ['division'], 'id');
+          const dName = firstVal(m, ['divisionName']) || objVal(m, ['division'], 'name') || (typeof m.division === 'string' ? m.division : '');
+          if (dId !== '' && dName) divisionsFromRounds[String(dId)] = dName;
+          roundDivisionTeams.push({ round: rName, divisionId: dId !== '' ? String(dId) : '', division: dName || '',
+            matchId: m.id, team1Id: m.team1 && m.team1.id, team2Id: m.team2 && m.team2.id });
+        }
+      }
+    } catch {}
+    notes.push(`round/matches seeds: ${seedIds.length}; divisions in visible rounds: ${Object.keys(divisionsFromRounds).length}`);
     log(`phase 1a: ${seedIds.length} seed ids from round/matches`);
     if (seedIds.length) { await probeMany(seedIds); await expandAround(seedIds); await flush('ids'); log(`phase 1a done: ${found.size} matches so far`); }
 
@@ -213,20 +239,28 @@ async function main() {
     for (const r of found.values()) if (!r.periods) r.periods = [];
     await flush('complete');
 
+    // reference outputs: schema confirm + visible-round division map (grade / regrade analysis)
+    if (schemaSample) await fs.writeFile(path.join(OUT, '_schema.json'), JSON.stringify(schemaSample, null, 1));
+    await fs.writeFile(path.join(OUT, `_divisions-${COMP_ID}.json`), JSON.stringify({ compId: COMP_ID, divisionsFromRounds, roundDivisionTeams }, null, 1));
+
     // summary: per-comp breakdown
     const lines = [`# Harvest — ${COMP_NAMES.length} competition(s)`, '', `- total matches ${found.size}; api calls ${calls}${capped ? ' **(CAPPED)**' : ''}`, ''];
     for (const [key, arr] of groups()) {
       arr.sort((a, b) => a.id - b.id);
       const scored = arr.filter((m) => (m.t1 || 0) || (m.t2 || 0));
       const withQ = arr.filter((m) => m.periods.length);
+      const withDiv = arr.filter((m) => m.division);
       const dates = [...new Set(arr.map((m) => (m.startTime || '').slice(0, 10)).filter(Boolean))].sort();
+      const divs = [...new Set(arr.map((m) => m.division).filter(Boolean))].sort();
       const blocks = [];
       for (const m of arr) { const last = blocks[blocks.length - 1]; if (last && m.id - last.hi <= GAP) last.hi = m.id; else blocks.push({ lo: m.id, hi: m.id }); }
       lines.push(`## ${arr[0].compName} (matches-${key}.json)`,
-        `- matches ${arr.length} (scored ${scored.length}, byes/0-0 ${arr.length - scored.length}); per-quarter ${withQ.length}`,
+        `- matches ${arr.length} (scored ${scored.length}, byes/0-0 ${arr.length - scored.length}); per-quarter ${withQ.length}; with division/grade ${withDiv.length}`,
+        `- divisions/grades seen (${divs.length}): ${divs.join(' | ') || '—'}`,
         `- game dates (${dates.length}): ${dates.join(', ') || '—'}`,
         `- id blocks ${blocks.length}: ${blocks.map((b) => b.lo === b.hi ? `${b.lo}` : `${b.lo}-${b.hi}`).join(', ')}`, '');
     }
+    lines.push(`- gameSummary matchData keys: ${schemaSample ? schemaSample.matchDataKeys.join(', ') : '(none recorded)'}`);
     lines.push(`- notes: ${notes.join('; ')}`);
     await writeSummary(lines);
   } finally {
