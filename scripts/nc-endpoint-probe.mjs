@@ -153,6 +153,21 @@ async function writeSummary(verdict, tokenLen) {
   for (const { row } of results) {
     L.push(`| ${row.id} | ${md(row.label)} | ${row.status === null ? '-' : row.status} | ${row.class} | ${row.bytes} | ${md(row.err || row.parseErr || row._note || '')} |`);
   }
+  // Inline the decisive bodies so the run summary is self-sufficient (no need to open the zip).
+  const inline = results.filter(({ row }) => !row._rs); // _rs marks round/matches variants; inline only the match/score/period chain
+  if (inline.length) {
+    L.push('');
+    L.push('## response bodies (match/score/period endpoints)');
+    for (const { row, json } of inline) {
+      const body = json !== null && json !== undefined ? JSON.stringify(json, null, 1) : '';
+      const shown = body ? (body.length > 2000 ? body.slice(0, 2000) + '\n…(truncated; full body in artifact ' + row.file + ')' : body) : '(empty or non-JSON; see artifact ' + row.file + ')';
+      L.push('');
+      L.push(`### ${row.id} ${md(row.label)} — HTTP ${row.status === null ? 'ERR' : row.status} (${row.class})`);
+      L.push('```json');
+      L.push(shown);
+      L.push('```');
+    }
+  }
   const out = L.join('\n') + '\n';
   await fs.writeFile(path.join(OUT, 'SUMMARY.md'), out);
   if (SUMMARY_FILE) await fs.appendFile(SUMMARY_FILE, out);
