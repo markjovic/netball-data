@@ -46,6 +46,11 @@ const SUMMARY_FILE = process.env.GITHUB_STEP_SUMMARY || '';
 // SURVEY mode: coarse-scan [SCAN_LO..SCAN_HI] with NO name filter, tally every competition seen
 // (id range + date range) so finished/hidden comps can be located. No expand, no periodScores.
 const SURVEY = /^(1|true|yes|on)$/i.test((process.env.SURVEY || '').trim());
+// PROBE mode: diagnostic gameSummary scoping test. PROBE_IDS = comma match ids; KEYS = comma comp keys.
+const PROBE_IDS = (process.env.PROBE_IDS || '').split(',').map((s) => s.trim()).filter(Boolean);
+const KEYS = (process.env.KEYS || '').split(',').map((s) => s.trim()).filter(Boolean);
+// RAW mode: dump raw bodies of arbitrary endpoints (;;-separated) for structure inspection.
+const RAW_URLS = (process.env.RAW_URLS || '').split(';;').map((s) => s.trim()).filter(Boolean);
 
 let calls = 0;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -89,6 +94,48 @@ async function main() {
       if (BATCH_DELAY > 0) await sleep(BATCH_DELAY);
       return res;
     };
+
+    // RAW: diagnostic. Fetch each URL in RAW_URLS (;;-separated; relative paths resolve against the
+    // squadi api host) and dump raw bodies to raw.json. For inspecting endpoint structure/fields.
+    if (RAW_URLS.length) {
+      log(`RAW dump of ${RAW_URLS.length} url(s)`);
+      const out = [];
+      for (const u of RAW_URLS) {
+        const url = /^https?:\/\//i.test(u) ? u : `https://api-netball.squadi.com${u.startsWith('/') ? '' : '/'}${u}`;
+        const r = (await batchGet([{ id: 0, url }]))[0];
+        out.push({ url, status: r.status, length: (r.body || '').length, body: (r.body || '').slice(0, 80000) });
+        log(`[${r.status}] len ${(r.body || '').length} — ${url}`);
+      }
+      await fs.writeFile(path.join(OUT, 'raw.json'), JSON.stringify(out, null, 1));
+      await writeSummary(['# Raw endpoint dump', '', ...out.map((o) => `- [${o.status}] len ${o.length} — ${o.url}`)]);
+      await browser.close();
+      process.exit(0);
+    }
+
+    // PROBE: diagnostic. For each PROBE_IDS x each KEYS, fetch gameSummary and report status +
+    // competitionName; also keyless periodScores length. Answers: is gameSummary scoped to the key?
+    if (PROBE_IDS.length) {
+      const keys = KEYS.length ? KEYS : [COMP_KEY];
+      log(`PROBE ${PROBE_IDS.length} id(s) x ${keys.length} key(s)`);
+      const rows = [];
+      for (const id of PROBE_IDS) {
+        for (const k of keys) {
+          const r = (await batchGet([{ id, url: `${LIVE}/matches/public/gameSummary?matchId=${id}&competitionUniqueKey=${k}` }]))[0];
+          let name = '', keysSeen = ''; try { const j = JSON.parse(r.body); const md = j && j.matchData; if (md) { name = md.competitionName || ''; keysSeen = Object.keys(md).join(' '); } } catch {}
+          rows.push({ id, key: k.slice(0, 8), status: r.status, name, keysSeen });
+        }
+        const ps = (await batchGet([{ id, url: `${LIVE}/matches/periodScores?matchId=${id}` }]))[0];
+        let plen = 'err'; try { const a = JSON.parse(ps.body); plen = Array.isArray(a) ? String(a.length) : 'non-array'; } catch {}
+        rows.push({ id, key: '(periodScores, no key)', status: ps.status, name: `periods=${plen}`, keysSeen: '' });
+      }
+      await fs.writeFile(path.join(OUT, 'probe.json'), JSON.stringify(rows, null, 1));
+      const lines = ['# Probe — gameSummary key scoping', '', `| matchId | key | status | competitionName / periods |`, `|---|---|---|---|`,
+        ...rows.map((r) => `| ${r.id} | ${r.key} | ${r.status} | ${(r.name || '').replace(/\|/g, '/')} |`), '',
+        `matchData keys (first non-empty): ${(rows.find((r) => r.keysSeen) || {}).keysSeen || '(none)'}`];
+      await writeSummary(lines);
+      await browser.close();
+      process.exit(0);
+    }
 
     // SURVEY: locate every competition in a range (no name filter, no expand, no periodScores)
     if (SURVEY) {
@@ -171,10 +218,11 @@ async function main() {
       for (const id of [...new Set(seedIds)]) { if (capped) break; await expandDir(id, -1); await expandDir(id, 1); }
     };
 
-    // group found records by competition and write one file per comp
+    // group found records by competition and write one file per comp. gameSummary has no
+    // competitionId and the key scopes the scan to one comp, so fall back to COMP_ID (not a slug).
     const groups = () => {
       const g = new Map();
-      for (const r of found.values()) { const key = r.compId || slug(r.compName); if (!g.has(key)) g.set(key, []); g.get(key).push(r); }
+      for (const r of found.values()) { const key = r.compId || COMP_ID || slug(r.compName); if (!g.has(key)) g.set(key, []); g.get(key).push(r); }
       return g;
     };
     const flush = async (phase) => {
