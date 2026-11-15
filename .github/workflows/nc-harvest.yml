@@ -1,0 +1,96 @@
+name: nc-harvest
+
+# Harvest a 9U competition's full results (incl per-quarter) by expanding each division's
+# id block from round/matches seeds, plus an optional coarse scan for finished comps.
+# Output: harvest-out/matches-<compId>.json (+ run summary). Read-only; commits nothing.
+
+on:
+  workflow_dispatch:
+    inputs:
+      comp_id:
+        description: 'Numeric competition id'
+        required: true
+        default: '5232'
+      comp_key:
+        description: 'competitionUniqueKey (uuid)'
+        required: true
+        default: '8819433a-2375-4c6a-9039-4658036b083d'
+      comp_name:
+        description: 'Exact competitionName to match (from gameSummary)'
+        required: true
+        default: 'MENA - Club Competition SPRING FRI 9 & U NETSETGO'
+      scan_lo:
+        description: 'Optional coarse-scan low id (finished comps with no round/matches seeds)'
+        required: false
+        default: '0'
+      scan_hi:
+        description: 'Optional coarse-scan high id'
+        required: false
+        default: '0'
+      coarse_step:
+        description: 'Coarse scan step'
+        required: false
+        default: '12'
+      max_calls:
+        description: 'Safety cap on API calls'
+        required: false
+        default: '6000'
+
+permissions:
+  contents: read
+
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Show preinstalled Node
+        run: |
+          set -euo pipefail
+          node --version
+
+      - name: Install Playwright and Chromium
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/pw"
+          cd "$RUNNER_TEMP/pw"
+          npm init -y > /dev/null
+          npm install --no-audit --no-fund playwright@1.48.2
+          npx playwright install --with-deps chromium
+
+      - name: Harvest
+        env:
+          COMP_ID: ${{ inputs.comp_id }}
+          COMP_KEY: ${{ inputs.comp_key }}
+          COMP_NAME: ${{ inputs.comp_name }}
+          SCAN_LO: ${{ inputs.scan_lo }}
+          SCAN_HI: ${{ inputs.scan_hi }}
+          COARSE_STEP: ${{ inputs.coarse_step }}
+          MAX_CALLS: ${{ inputs.max_calls }}
+          OUT_DIR: ${{ github.workspace }}/harvest-out
+        run: |
+          set -euo pipefail
+          cp scripts/nc-harvest.mjs "$RUNNER_TEMP/pw/"
+          node "$RUNNER_TEMP/pw/nc-harvest.mjs"
+
+      - name: Upload harvest
+        id: upload
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nc-harvest-${{ inputs.comp_id }}-${{ github.run_id }}
+          path: harvest-out/
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Put artifact download link in the summary
+        if: always()
+        run: |
+          {
+            echo ""
+            echo "## ⬇ Download the harvest"
+            echo "[nc-harvest-${{ inputs.comp_id }}-${{ github.run_id }}.zip](${{ steps.upload.outputs.artifact-url }})"
+          } >> "$GITHUB_STEP_SUMMARY"
