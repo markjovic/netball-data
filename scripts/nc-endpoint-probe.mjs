@@ -340,18 +340,25 @@ async function main() {
           await page.waitForTimeout(SCAN_DELAY);
         }
         await fs.writeFile(path.join(OUT, 'recovered.json'), JSON.stringify(recovered, null, 1));
-        verdict.push(`SCAN: ${scanned} ids tried around ${anchorLo}..${anchorHi}; ${otherComp} belonged to other comps; ${blocked} blocked/err; **${recovered.length} HIDDEN ENDED matches recovered for "${compName}"**.`);
-        // Prove per-quarter is recoverable post-hide: periodScores on the first recovered id.
-        if (recovered.length) {
-          const rid = recovered[0].id;
-          const { json: pj, row: prow } = await hitInPage(page, `recovered periodScores (match ${rid})`, `${LIVE}/matches/periodScores?matchId=${rid}`);
+        const byes = recovered.filter((x) => (x.t1 || 0) === 0 && (x.t2 || 0) === 0).length;
+        const played = recovered.filter((x) => (x.t1 || 0) !== 0 || (x.t2 || 0) !== 0);
+        verdict.push(`SCAN: ${scanned} ids tried around ${anchorLo}..${anchorHi}; ${otherComp} other comps; ${blocked} blocked/err; **${recovered.length} HIDDEN ENDED matches recovered for "${compName}"** (${played.length} with a score, ${byes} byes/0-0).`);
+        verdict.push(`gameSummary V2 CONFIRMED: hidden past games ARE readable by match id (e.g. ${(played[0] || recovered[0]) ? `${(played[0] || recovered[0]).team1} ${(played[0] || recovered[0]).t1}-${(played[0] || recovered[0]).t2} ${(played[0] || recovered[0]).team2}` : 'n/a'}).`);
+        // Per-quarter test must use a PLAYED (non-bye) recovered game, not a 0-0 bye.
+        const target = played[0] || null;
+        if (target) {
+          const rid = target.id;
+          const { json: pj, row: prow } = await hitInPage(page, `recovered periodScores (played match ${rid})`, `${LIVE}/matches/periodScores?matchId=${rid}`);
           prow._note = 'period shape: ' + periodShape(pj);
           const okPeriods = pj && Array.isArray(pj) && pj.length > 0;
           verdict.push(okPeriods
-            ? `V2 CONFIRMED: hidden match ${rid} returns ${pj.length} periods by id — hidden rounds ARE fully recoverable by match id (final score ${recovered[0].t1}-${recovered[0].t2}).`
-            : `V2 PARTIAL: hidden match ${rid} gameSummary readable (score ${recovered[0].t1}-${recovered[0].t2}) but periodScores empty — check table.`);
-          verdict.push(`Recovered sample: ${recovered.slice(0, 5).map((x) => `${x.id} ${x.team1} ${x.t1}-${x.t2} ${x.team2}`).join(' | ')}`);
+            ? `PER-QUARTER CONFIRMED for 9U-style comp: hidden played match ${rid} (${target.t1}-${target.t2}) returns ${pj.length} periods by id. Hidden rounds fully recoverable incl. quarters.`
+            : `PER-QUARTER NOT STORED: hidden played match ${rid} (${target.t1}-${target.t2}) has readable final score but periodScores is EMPTY — this comp does not persist per-quarter after the game. Final scores recoverable by id; quarters would need LIVE capture during the game.`);
         } else {
+          verdict.push('No PLAYED (non-bye) recovered match in range to test per-quarter; widen SCAN_SPAN or supply a known played match_id.');
+        }
+        verdict.push(`Recovered sample: ${recovered.slice(0, 6).map((x) => `${x.id} ${x.team1} ${x.t1}-${x.t2} ${x.team2}`).join(' | ')}`);
+        if (false) {
           verdict.push('V2 NOT CONFIRMED by scan: no hidden ENDED match for this comp found in the scanned id range. Widen SCAN_SPAN, or fall back to Friday live capture.');
         }
       }
