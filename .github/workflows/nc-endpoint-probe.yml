@@ -74,6 +74,7 @@ jobs:
           node "$RUNNER_TEMP/pw/nc-endpoint-probe.mjs"
 
       - name: Upload probe output
+        id: upload
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -81,3 +82,12 @@ jobs:
           path: endpoint-out/
           if-no-files-found: error
           retention-days: 30
+
+      - name: Put artifact download link in the summary
+        if: always()
+        run: |
+          {
+            echo ""
+            echo "## ⬇ Download the full artifact"
+            echo "[nc-endpoint-probe-${{ github.run_id }}.zip](${{ steps.upload.outputs.artifact-url }})"
+          } >> "$GITHUB_STEP_SUMMARY"
