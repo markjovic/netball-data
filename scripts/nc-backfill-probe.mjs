@@ -1,22 +1,23 @@
-// nc-backfill-probe.mjs  (Playwright edition)
-// Backfill feasibility map for the 9U competition across seasons.
+// nc-backfill-probe.mjs  (Playwright edition) — TARGET-COMP deep check
+// For each target 9U competition (current + two previous), determine exactly how its
+// scores can be backfilled. All API calls run INSIDE the loaded site page (WAF needs a
+// real browser; token from localStorage; no credentials).
 //
-// Hiding is a PER-COMPETITION setting (11U comp 5224 was fully open; 9U comp 5232 hides).
-// So past-season 9U comps may be OPEN — in which case round/matches returns every match id
-// and backfill is trivial (then periodScores per id). This probe finds every 9U competition
-// under the org across years and reports, for each, whether it is hidden or open.
+// Per target it checks:
+//   - competitions/list lookup (name, uniqueKey, status)
+//   - round/matches by NUMERIC id and by uniqueKey (resolves the "0 rounds" case; saves
+//     raw bodies; reports rounds/allRoundsHidden/hidden/visible/scored)
+//   - teams/enduser/list (is the comp real? team count)
+//   - DRAWS endpoint POST /competition/api/draws?userId= with body
+//     {competitionUniqueKey:<key>, yearRefId, sourceSystem:"User"}  ← correct field name
+//     (earlier run proved the token is accepted; it only complained the key field was missing).
+//     If this returns the draw it is the MASTER KEY that unlocks every hidden season.
+//   - ladder per SINGLE division (the endpoint rejects multi-division) — standings availability
+// Then a per-comp verdict + recommended backfill route.
 //
-// All API calls run INSIDE the loaded site page (the API WAF blocks non-browser clients;
-// in-page fetch carries the browser fingerprint + the app's localStorage token; no credentials).
-//
-// Env:
-//   ORG_KEY   organisationKey uuid  (default ab63c5b3-fd1a-41a6-a1a2-326989b20247)
-//   YEARS     comma yearRefIds      (default 8,7,6,5,4,3  = 2026..2021)
-//   NAME_RE   comp-name filter      (default "9\\s*&?\\s*u")  case-insensitive
-//   BOOT_KEY  a comp uniqueKey to open for the token (default the 9U 2026 Spring comp)
-//   OUT_DIR   output dir            (default backfill-out)
-//
-// Exit 0 ran / 1 page or token failed / 3 crash.
+// Env: ORG_KEY (default ab63c5b3-…), TARGETS (compId:yearRefId list; default 5232:8,4596:8,4057:7),
+//      BOOT_KEY (default 9U 2026 Spring key), OUT_DIR (default backfill-out).
+// Exit 0 ran / 1 boot/token failed / 3 crash.
 
 import { chromium } from 'playwright';
 import fs from 'node:fs/promises';
@@ -24,9 +25,10 @@ import path from 'node:path';
 
 const SITE = 'https://registration.netballconnect.com';
 const LIVE = 'https://api-netball.squadi.com/livescores';
+const COMPETITION = 'https://api-netball.squadi.com/competition';
 const ORG_KEY = (process.env.ORG_KEY || 'ab63c5b3-fd1a-41a6-a1a2-326989b20247').trim();
-const YEARS = (process.env.YEARS || '8,7,6,5,4,3').split(',').map((s) => s.trim()).filter(Boolean);
-const NAME_RE = new RegExp(process.env.NAME_RE || '9\\s*&?\\s*u', 'i');
+const TARGETS = (process.env.TARGETS || '5232:8,4596:8,4057:7').split(',').map((s) => s.trim()).filter(Boolean)
+  .map((s) => { const [id, year] = s.split(':'); return { id: id.trim(), year: (year || '8').trim() }; });
 const BOOT_KEY = (process.env.BOOT_KEY || '8819433a-2375-4c6a-9039-4658036b083d').trim();
 const OUT = process.env.OUT_DIR || 'backfill-out';
 const SUMMARY_FILE = process.env.GITHUB_STEP_SUMMARY || '';
@@ -34,131 +36,144 @@ const YEAR_NAME = { '2': '2019', '1': '2020', '3': '2021', '4': '2022', '5': '20
 
 function md(s) { return String(s).replace(/\|/g, '\\|').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
 
-async function getJson(page, url) {
+async function apiGet(page, url) {
   const r = await page.evaluate(async (u) => {
-    try { const res = await fetch(u, { headers: { accept: 'application/json', authorization: localStorage.getItem('token') || '' } }); const b = await res.text(); return { s: res.status, b }; } catch (e) { return { err: String((e && e.message) || e) }; }
+    try { const res = await fetch(u, { headers: { accept: 'application/json', authorization: localStorage.getItem('token') || '' } }); return { s: res.status, b: await res.text() }; } catch (e) { return { err: String((e && e.message) || e) }; }
   }, url);
-  if (r.err) return { status: null, json: null, err: r.err, text: '' };
-  let json = null; try { json = JSON.parse(r.b); } catch { /* non-json */ }
+  if (r.err) return { status: null, json: null, text: '', err: r.err };
+  let json = null; try { json = JSON.parse(r.b); } catch { /* */ }
   return { status: r.s, json, text: r.b, err: '' };
 }
-
-function roundsStat(json) {
+async function apiPost(page, url, bodyObj) {
+  const r = await page.evaluate(async (args) => {
+    const [u, body] = args;
+    try { const res = await fetch(u, { method: 'POST', headers: { accept: 'application/json', 'content-type': 'application/json', authorization: localStorage.getItem('token') || '' }, body: JSON.stringify(body) }); return { s: res.status, b: await res.text() }; } catch (e) { return { err: String((e && e.message) || e) }; }
+  }, [url, bodyObj]);
+  if (r.err) return { status: null, json: null, text: '', err: r.err };
+  let json = null; try { json = JSON.parse(r.b); } catch { /* */ }
+  return { status: r.s, json, text: r.b, err: '' };
+}
+function rstat(json) {
   if (!json || !Array.isArray(json.rounds)) return null;
   let hidden = 0, matches = 0, scored = 0;
   for (const r of json.rounds) { if (r.isHidden === true) hidden++; for (const m of (r.matches || [])) { matches++; if ((m.team1Score || 0) !== 0 || (m.team2Score || 0) !== 0) scored++; } }
-  return { rounds: json.rounds.length, hidden, matches, scored };
+  return { allRoundsHidden: json.allRoundsHidden, rounds: json.rounds.length, hidden, matches, scored };
+}
+// count matches anywhere in an arbitrary draws payload (rounds[].matches[], or a flat matches[])
+function countDrawMatches(j) {
+  let n = 0, ids = [];
+  const walk = (o) => {
+    if (!o || typeof o !== 'object') return;
+    if (Array.isArray(o)) { o.forEach(walk); return; }
+    if (o.matchId !== undefined || (o.id !== undefined && (o.team1Score !== undefined || o.team1 !== undefined || o.roundId !== undefined))) { n++; if (ids.length < 5) ids.push(o.matchId ?? o.id); }
+    for (const k of Object.keys(o)) walk(o[k]);
+  };
+  walk(j);
+  return { n, ids };
 }
 
 async function main() {
   await fs.mkdir(OUT, { recursive: true });
-  const lines = [];
+  const L = [];
   const browser = await chromium.launch();
   try {
     const ctx = await browser.newContext({ viewport: { width: 1400, height: 1000 } });
     const page = await ctx.newPage();
     const bootUrl = `${SITE}/livescoreSeasonFixture?yearId=8&organisationKey=${ORG_KEY}&competitionUniqueKey=${BOOT_KEY}&divisionId=All`;
     let loadStatus = null;
-    try { const r = await page.goto(bootUrl, { waitUntil: 'networkidle', timeout: 60000 }); loadStatus = r ? r.status() : null; } catch (e) {
-      lines.push(`**FAILED: boot page load: ${md(String((e && e.message) || e))}**`); await finish(lines); process.exit(1);
-    }
+    try { const r = await page.goto(bootUrl, { waitUntil: 'networkidle', timeout: 60000 }); loadStatus = r ? r.status() : null; } catch (e) { L.push(`**FAILED boot: ${md(String((e && e.message) || e))}**`); await finish(L); process.exit(1); }
     await page.waitForTimeout(6000);
     const tokenLen = await page.evaluate(() => (localStorage.getItem('token') || '').length);
-    if (!tokenLen) { lines.push(`**FAILED: no token after boot (HTTP ${loadStatus})**`); await finish(lines); process.exit(1); }
-    lines.push(`Boot OK (HTTP ${loadStatus}); token len ${tokenLen}. Org ${ORG_KEY}. Filter /${NAME_RE.source}/i.`);
-    lines.push('');
+    if (!tokenLen) { L.push(`**FAILED: no token (HTTP ${loadStatus})**`); await finish(L); process.exit(1); }
+    L.push(`Boot OK (HTTP ${loadStatus}); token len ${tokenLen}. Targets: ${TARGETS.map((t) => t.id + '/' + (YEAR_NAME[t.year] || t.year)).join(', ')}.`);
 
-    // 1. find matching comps across years
-    const comps = [];
-    for (const y of YEARS) {
-      const { json, status } = await getJson(page, `${LIVE}/competitions/list?organisationUniqueKey=${ORG_KEY}&yearRefId=${y}`);
-      if (!Array.isArray(json)) { lines.push(`- year ${YEAR_NAME[y] || y}: competitions/list HTTP ${status}, not an array`); continue; }
-      const hits = json.filter((c) => NAME_RE.test(c.name || c.longName || ''));
-      lines.push(`- year ${YEAR_NAME[y] || y} (yearRefId ${y}): ${json.length} comps, ${hits.length} match the 9U filter`);
-      for (const c of hits) comps.push({ id: c.id, key: c.uniqueKey, name: c.name || c.longName, year: y, status: c.statusRefId, org: c.organisationId });
+    const listCache = {};
+    async function compList(year) {
+      if (!listCache[year]) { const { json } = await apiGet(page, `${LIVE}/competitions/list?organisationUniqueKey=${ORG_KEY}&yearRefId=${year}`); listCache[year] = Array.isArray(json) ? json : []; }
+      return listCache[year];
     }
-    await fs.writeFile(path.join(OUT, 'comps.json'), JSON.stringify(comps, null, 1));
 
-    // 2. per comp: hidden vs open
-    const rows = [];
-    for (const c of comps) {
-      const { json, status } = await getJson(page, `${LIVE}/round/matches?competitionId=${c.id}&divisionId=&teamIds=&ignoreStatuses=[1]`);
-      const rs = roundsStat(json);
-      let verdict;
-      if (!rs) verdict = `no rounds (HTTP ${status})`;
-      else if (rs.hidden === 0 && rs.scored > 0) verdict = 'OPEN — fully backfillable (round/matches has all scores)';
-      else if (rs.hidden === 0 && rs.matches > 0) verdict = 'OPEN but unplayed/no scores yet';
-      else if (rs.hidden > 0 && rs.scored > 0) verdict = 'PARTLY OPEN — some rounds visible with scores';
-      else verdict = 'HIDDEN — matches stripped; needs id recovery';
-      rows.push({ ...c, ...(rs || {}), verdict });
+    const report = [];
+    for (const t of TARGETS) {
+      const list = await compList(t.year);
+      const c = list.find((x) => String(x.id) === String(t.id));
+      const key = c ? c.uniqueKey : '';
+      const name = c ? (c.name || c.longName) : '(not found in list)';
+      const entry = { id: t.id, year: t.year, key, name, status: c && c.statusRefId };
+
+      const rmNum = await apiGet(page, `${LIVE}/round/matches?competitionId=${t.id}&divisionId=&teamIds=&ignoreStatuses=[1]`);
+      await fs.writeFile(path.join(OUT, `rm-${t.id}-numeric.json`), rmNum.text || rmNum.err || '');
+      entry.rmNumeric = rstat(rmNum.json) || { note: `HTTP ${rmNum.status} noRounds` };
+
+      if (key) { const r = await apiGet(page, `${LIVE}/round/matches?competitionId=${key}&divisionId=&teamIds=&ignoreStatuses=[1]`); await fs.writeFile(path.join(OUT, `rm-${t.id}-bykey.json`), r.text || r.err || ''); entry.rmByKey = rstat(r.json) || { note: `HTTP ${r.status} noRounds` }; }
+
+      if (key) { const r = await apiGet(page, `${LIVE}/teams/enduser/list?competitionId=${key}&organisationId=${ORG_KEY}`); entry.teams = Array.isArray(r.json) ? r.json.length : `HTTP ${r.status}`; }
+
+      // DRAWS — correct field name competitionUniqueKey
+      if (key) {
+        entry.draws = [];
+        entry.drawsMatches = 0;
+        for (const uid of ['', '0']) {
+          const r = await apiPost(page, `${COMPETITION}/api/draws?userId=${uid}`, { competitionUniqueKey: key, yearRefId: Number(t.year), sourceSystem: 'User' });
+          await fs.writeFile(path.join(OUT, `draws-${t.id}-uid${uid || 'blank'}.json`), (r.text || r.err || '').slice(0, 200000));
+          let shape = r.err ? 'ERR' : `HTTP ${r.status}`;
+          if (!r.err && r.json) {
+            const j = r.json;
+            if (j && j.errorCode !== undefined) shape += ` err:${j.message}`;
+            else { const cm = countDrawMatches(j); shape += Array.isArray(j) ? ` array len ${j.length}` : ` keys:${Object.keys(j).slice(0, 6).join(',')}`; shape += ` matches~${cm.n}`; entry.drawsMatches = Math.max(entry.drawsMatches, cm.n); if (cm.ids.length) entry.drawsSampleIds = cm.ids; }
+          }
+          entry.draws.push(`uid"${uid}":${shape}`);
+        }
+      }
+
+      // ladder per single division
+      if (key) {
+        const { json: dvs } = await apiGet(page, `${LIVE}/division?competitionKey=${key}`);
+        entry.divisions = Array.isArray(dvs) ? dvs.length : 0;
+        let ladderRows = 0, ladderOk = 0;
+        for (const d of (Array.isArray(dvs) ? dvs.slice(0, 3) : [])) {
+          const r = await apiGet(page, `${LIVE}/teams/ladder/v2?divisionIds=${d.id}&competitionKey=${key}&filteredOutCompStatuses=`);
+          if (r.status === 200 && Array.isArray(r.json)) { ladderOk++; ladderRows += r.json.length; if (!entry.ladderSample && r.json[0]) { entry.ladderSample = Object.keys(r.json[0]).slice(0, 10).join(','); await fs.writeFile(path.join(OUT, `ladder-${t.id}.json`), JSON.stringify(r.json, null, 1).slice(0, 8000)); } }
+          await page.waitForTimeout(120);
+        }
+        entry.ladder = `${ladderOk}/${Math.min(entry.divisions, 3)} divs ok, ${ladderRows} rows total`;
+      }
+
+      const rn = entry.rmNumeric, rk = entry.rmByKey;
+      const best = (rn && rn.rounds) ? rn : ((rk && rk.rounds) ? rk : null);
+      if (entry.drawsMatches > 0) entry.verdict = `DRAWS WORKS — full draw via draws endpoint (~${entry.drawsMatches} matches). Backfillable in full.`;
+      else if (best && best.hidden === 0 && best.scored > 0) entry.verdict = 'OPEN — round/matches has all scores + periodScores.';
+      else if (best && best.hidden > 0 && best.matches > 0) entry.verdict = 'PARTLY visible — some rounds readable; rest need id recovery.';
+      else if (best && best.matches === 0 && best.rounds > 0) entry.verdict = 'HIDDEN, has round shells + visible-round anchors for id recovery.';
+      else entry.verdict = 'FULLY HIDDEN — no rounds, no anchors; needs draws or ladder-only.';
+      report.push(entry);
       await page.waitForTimeout(150);
     }
-    await fs.writeFile(path.join(OUT, 'seasons.json'), JSON.stringify(rows, null, 1));
+    await fs.writeFile(path.join(OUT, 'targets.json'), JSON.stringify(report, null, 1));
 
-    lines.push('');
-    lines.push('## 9U competitions by season — backfill feasibility');
-    lines.push('');
-    lines.push('| year | comp id | name | rounds | hidden | visible matches | scored | verdict |');
-    lines.push('|---|---|---|---|---|---|---|---|');
-    for (const r of rows) lines.push(`| ${YEAR_NAME[r.year] || r.year} | ${r.id} | ${md((r.name || '').slice(0, 44))} | ${r.rounds ?? '-'} | ${r.hidden ?? '-'} | ${r.matches ?? '-'} | ${r.scored ?? '-'} | ${md(r.verdict)} |`);
-    lines.push('');
-    const open = rows.filter((r) => /^OPEN — full/.test(r.verdict));
-    const hidden = rows.filter((r) => /^HIDDEN/.test(r.verdict));
-    lines.push(`**Summary: ${open.length} season(s) fully OPEN (trivial backfill), ${hidden.length} HIDDEN (need id recovery), ${rows.length - open.length - hidden.length} partial/other.**`);
-
-    const hc = rows.find((r) => /^HIDDEN/.test(r.verdict));
-    lines.push('');
-    lines.push('## Can a hidden season be unlocked wholesale?');
-
-    // 3a. the admin DRAWS endpoint (POST /competition/api/draws?userId=) — if it accepts the
-    // public token it returns the full draw incl hidden match ids = master key for backfill.
-    if (hc) {
-      for (const uid of ['', '0']) {
-        const res = await page.evaluate(async (args) => {
-          const [base, key, year, uid] = args;
-          try {
-            const r = await fetch(`${base}/api/draws?userId=${uid}`, {
-              method: 'POST',
-              headers: { accept: 'application/json', 'content-type': 'application/json', authorization: localStorage.getItem('token') || '' },
-              body: JSON.stringify({ competitionId: key, yearRefId: year, sourceSystem: 'User' }),
-            });
-            const b = await r.text();
-            return { s: r.status, b: b.slice(0, 1500) };
-          } catch (e) { return { err: String((e && e.message) || e) }; }
-        }, ['https://api-netball.squadi.com/competition', hc.key, hc.year, uid]);
-        let shape = res.err ? `ERR ${res.err}` : `HTTP ${res.s}`;
-        if (!res.err && res.b) { let j = null; try { j = JSON.parse(res.b); } catch { /* */ } if (j) shape += ` keys: ${Array.isArray(j) ? 'array len ' + j.length : Object.keys(j).slice(0, 10).join(',')}`; else shape += ` (non-json: ${res.b.slice(0, 60).replace(/\n/g, ' ')})`; }
-        await fs.writeFile(path.join(OUT, `draws-userId-${uid || 'blank'}.txt`), res.err || res.b);
-        lines.push(`- draws POST (hidden comp ${hc.id}, userId="${uid}"): ${md(shape)}`);
-      }
-      lines.push('  (If these are 401/403/empty, the draws endpoint is admin-gated and cannot unlock hidden seasons with the public token.)');
+    L.push('');
+    L.push('## Target 9U comps — backfill route');
+    L.push('');
+    L.push('| comp | year | name | rm(num) | rm(key) | teams | divs | draws | ladder | verdict |');
+    L.push('|---|---|---|---|---|---|---|---|---|---|');
+    for (const e of report) {
+      const fmt = (r) => r ? (r.note ? r.note : `${r.rounds}r/${r.hidden}h/${r.matches}m/${r.scored}s`) : '-';
+      L.push(`| ${e.id} | ${YEAR_NAME[e.year] || e.year} | ${md((e.name || '').slice(0, 26))} | ${fmt(e.rmNumeric)} | ${fmt(e.rmByKey)} | ${e.teams ?? '-'} | ${e.divisions ?? '-'} | ${md((e.draws || []).join(' '))} | ${md(e.ladder || '-')} | ${md(e.verdict)} |`);
     }
-
-    // 3b. public ladder (team standings) — needs real divisionIds; use the hidden comp's divisions.
-    if (hc) {
-      const { json: dvs } = await getJson(page, `${LIVE}/division?competitionKey=${hc.key}`);
-      const divIds = Array.isArray(dvs) ? dvs.map((d) => d.id).filter(Boolean).slice(0, 20).join(',') : '';
-      const { json, status } = await getJson(page, `${LIVE}/teams/ladder/v2?divisionIds=${divIds}&competitionKey=${hc.key}&filteredOutCompStatuses=`);
-      const n = Array.isArray(json) ? json.length : (json && typeof json === 'object' ? Object.keys(json).length : 0);
-      await fs.writeFile(path.join(OUT, 'ladder-sample.json'), (JSON.stringify(json, null, 1) || '').slice(0, 4000));
-      lines.push(`- ladder (hidden comp ${hc.id}, ${divIds ? divIds.split(',').length + ' divisions' : 'no divisions found'}): HTTP ${status}, ${n} rows ${status === 200 && n ? '— standings ARE public (team totals, not per-match)' : '— not usable'}.`);
-    }
+    L.push('');
+    L.push('draws cell: `err:...` = rejected; `matches~N` = it RETURNED a draw with N matches (master key works). ladder gives team standings only (no per-quarter).');
   } finally {
     await browser.close();
   }
-  await finish(lines);
+  await finish(L);
   process.exit(0);
 
-  async function finish(L) {
-    const out = '# Netball Connect backfill feasibility (9U across seasons)\n\n' + L.join('\n') + '\n';
+  async function finish(lines) {
+    const out = '# Netball Connect backfill — target 9U comps (current + 2 previous)\n\n' + lines.join('\n') + '\n';
     await fs.writeFile(path.join(OUT, 'SUMMARY.md'), out);
     if (SUMMARY_FILE) await fs.appendFile(SUMMARY_FILE, out);
     console.log(out);
   }
 }
 
-main().catch(async (e) => {
-  console.error('UNEXPECTED ERROR:', (e && e.stack) || e);
-  try { await fs.writeFile(path.join(OUT, 'crash.txt'), String((e && e.stack) || e)); } catch { /* reported */ }
-  process.exit(3);
-});
+main().catch(async (e) => { console.error('UNEXPECTED ERROR:', (e && e.stack) || e); try { await fs.writeFile(path.join(OUT, 'crash.txt'), String((e && e.stack) || e)); } catch { /* */ } process.exit(3); });
