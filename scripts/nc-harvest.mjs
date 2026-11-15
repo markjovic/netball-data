@@ -1,26 +1,21 @@
-// nc-harvest.mjs  (Playwright) — harvest a 9U competition's full results incl per-quarter.
+// nc-harvest.mjs (Playwright) — harvest a 9U competition's full results incl per-quarter.
+// Concurrent, two-phase. All calls run inside a Chromium page (WAF gate); token from
+// localStorage; no credentials. gameSummary needs a non-empty competitionUniqueKey but
+// returns each match's real competition regardless, so we filter by competitionName.
 //
-// Structure learned 2026-11-15: each DIVISION's whole season is one tight, near-consecutive
-// block of match ids (gaps <=5), including hidden past rounds. A competition = a few such
-// blocks. So we don't scan the whole id space — we get SEED ids and expand each block.
+// WHY A SCAN: a comp's matches sit in several id blocks (created per weekly batch), scattered
+// across the national id space. round/matches only seeds the recent/visible rounds, so earlier
+// rounds are found by a coarse scan over [SCAN_LO..SCAN_HI], then each hit is expanded to grab
+// its whole block. Fetches run CONC at a time so a wide scan completes inside the job timeout.
 //
-// Seeds come from:
-//   1. round/matches (the current comp still lists upcoming matches — one+ per division), and
-//   2. an optional COARSE scan over a bracket [SCAN_LO..SCAN_HI] step COARSE_STEP, for
-//      FINISHED comps that return no rounds (no visible seeds).
-// Each seed is expanded outward (walk +/- until GAP consecutive non-comp ids), collecting
-// gameSummary + periodScores for every match whose competitionName matches. A global visited
-// set means overlapping seeds don't re-probe. Division label is inherited from a seed's
-// round/matches division when known.
+// Phase 1: collect match ids belonging to the comp (round/matches seeds + expand, + coarse scan).
+// Phase 2: fetch periodScores for every collected id.
+// Flushes matches-<id>.json periodically so a timeout never loses data.
 //
-// All calls run inside a Chromium page (WAF gate), token from localStorage, no credentials.
-//
-// Env:
-//   COMP_ID (numeric), COMP_KEY (uuid), COMP_NAME (exact competitionName to match),
-//   ORG_KEY (default ab63c5b3-…), BOOT_KEY (default 5232 key),
-//   SCAN_LO, SCAN_HI, COARSE_STEP (default 12)  — optional coarse seed search for finished comps
-//   GAP (default 80), MAX_CALLS (default 6000), DELAY_MS (default 30), OUT_DIR (default harvest-out)
-// Exit 0 ran / 1 boot/token failed / 3 crash.
+// Env: COMP_ID, COMP_KEY, COMP_NAME, ORG_KEY, BOOT_KEY,
+//   SCAN_LO, SCAN_HI, COARSE_STEP (default 6), CONC (default 10), GAP (default 60),
+//   MAX_CALLS (default 60000), OUT_DIR.
+// Exit 0 ran / 1 boot/token / 3 crash.
 
 import { chromium } from 'playwright';
 import fs from 'node:fs/promises';
@@ -35,113 +30,131 @@ const COMP_NAME = (process.env.COMP_NAME || 'MENA - Club Competition SPRING FRI 
 const BOOT_KEY = (process.env.BOOT_KEY || COMP_KEY).trim();
 const SCAN_LO = parseInt(process.env.SCAN_LO || '0', 10);
 const SCAN_HI = parseInt(process.env.SCAN_HI || '0', 10);
-const COARSE_STEP = parseInt(process.env.COARSE_STEP || '12', 10);
-const GAP = parseInt(process.env.GAP || '80', 10);
-const MAX_CALLS = parseInt(process.env.MAX_CALLS || '6000', 10);
-const DELAY_MS = parseInt(process.env.DELAY_MS || '30', 10);
+const COARSE_STEP = parseInt(process.env.COARSE_STEP || '6', 10);
+const CONC = parseInt(process.env.CONC || '10', 10);
+const GAP = parseInt(process.env.GAP || '60', 10);
+const MAX_CALLS = parseInt(process.env.MAX_CALLS || '60000', 10);
 const OUT = process.env.OUT_DIR || 'harvest-out';
 const SUMMARY_FILE = process.env.GITHUB_STEP_SUMMARY || '';
 
 let calls = 0;
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function main() {
   await fs.mkdir(OUT, { recursive: true });
   const notes = [];
   const browser = await chromium.launch();
-  const matches = new Map();   // id -> record
-  const visited = new Set();   // ids probed
+  const found = new Map();
+  const visited = new Set();
   let capped = false;
   try {
     const ctx = await browser.newContext({ viewport: { width: 1200, height: 900 } });
     const page = await ctx.newPage();
     let loadStatus = null;
-    try { const r = await page.goto(`${SITE}/livescoreSeasonFixture?yearId=8&organisationKey=${ORG_KEY}&competitionUniqueKey=${BOOT_KEY}&divisionId=All`, { waitUntil: 'networkidle', timeout: 60000 }); loadStatus = r ? r.status() : null; } catch (e) { await fail(`boot load failed: ${e.message || e}`); }
+    try { const r = await page.goto(`${SITE}/livescoreSeasonFixture?yearId=8&organisationKey=${ORG_KEY}&competitionUniqueKey=${BOOT_KEY}&divisionId=All`, { waitUntil: 'networkidle', timeout: 60000 }); loadStatus = r ? r.status() : null; } catch (e) { return fail(browser, `boot load failed: ${e.message || e}`); }
     await page.waitForTimeout(6000);
     const tokenLen = await page.evaluate(() => (localStorage.getItem('token') || '').length);
-    if (!tokenLen) await fail(`no token after boot (HTTP ${loadStatus})`);
+    if (!tokenLen) return fail(browser, `no token after boot (HTTP ${loadStatus})`);
 
-    const api = async (url) => {
-      const r = await page.evaluate(async (u) => { try { const res = await fetch(u, { headers: { accept: 'application/json', authorization: localStorage.getItem('token') || '' } }); return { s: res.status, b: await res.text() }; } catch (e) { return { err: String((e && e.message) || e) }; } }, url);
-      if (r.err) return { status: null, json: null };
-      let j = null; try { j = JSON.parse(r.b); } catch {}
-      return { status: r.s, json: j };
+    const batchGet = async (urls) => {
+      calls += urls.length;
+      return page.evaluate(async (list) => {
+        const tok = localStorage.getItem('token') || '';
+        return Promise.all(list.map(async (u) => {
+          try { const r = await fetch(u.url, { headers: { accept: 'application/json', authorization: tok } }); return { id: u.id, status: r.status, body: await r.text() }; }
+          catch (e) { return { id: u.id, status: 0, body: '' }; }
+        }));
+      }, urls);
     };
 
-    // probe one id: if it's our comp, record it (+periods). returns true if matched.
-    const probe = async (id, divHint) => {
-      if (visited.has(id)) return matches.has(id);
-      visited.add(id);
-      if (calls >= MAX_CALLS) { capped = true; return false; }
-      calls++;
-      const gs = await api(`${LIVE}/matches/public/gameSummary?matchId=${id}&competitionUniqueKey=${COMP_KEY}`);
-      const md = gs.json && gs.json.matchData;
-      if (!md || md.competitionName !== COMP_NAME) return false;
-      let periods = [];
-      if (calls < MAX_CALLS) { calls++; const ps = await api(`${LIVE}/matches/periodScores?matchId=${id}`); if (Array.isArray(ps.json)) periods = ps.json.map((p) => ({ q: p.period, t1: p.team1Score, t2: p.team2Score })); }
-      const td = gs.json.teamData || {};
-      matches.set(id, { id, startTime: md.startTime, status: md.matchStatus, venue: md.venueName, court: md.venueCourtName,
-        division: divHint || null,
+    const recordIfComp = (id, body) => {
+      let j = null; try { j = JSON.parse(body); } catch { return false; }
+      const md = j && j.matchData; if (!md || md.competitionName !== COMP_NAME) return false;
+      const td = j.teamData || {};
+      found.set(id, { id, startTime: md.startTime, status: md.matchStatus, venue: md.venueName, court: md.venueCourtName,
         team1: td.team1 && td.team1.name, team1Id: td.team1 && td.team1.id, team2: td.team2 && td.team2.name, team2Id: td.team2 && td.team2.id,
-        t1: md.team1Score, t2: md.team2Score, periods });
+        t1: md.team1Score, t2: md.team2Score });
       return true;
     };
 
-    // expand a block around a seed
-    const expand = async (seed, divHint) => {
-      await probe(seed, divHint);
-      let miss = 0;
-      for (let id = seed - 1; id > seed - MAX_CALLS; id--) { if (capped) break; const ok = await probe(id, divHint); miss = ok ? 0 : miss + 1; if (miss >= GAP) break; await sleep(DELAY_MS); }
-      miss = 0;
-      for (let id = seed + 1; id < seed + MAX_CALLS; id++) { if (capped) break; const ok = await probe(id, divHint); miss = ok ? 0 : miss + 1; if (miss >= GAP) break; await sleep(DELAY_MS); }
+    const probeMany = async (ids) => {
+      const todo = ids.filter((id) => !visited.has(id) && id > 0);
+      const hits = [];
+      for (let i = 0; i < todo.length && !capped; i += CONC) {
+        if (calls >= MAX_CALLS) { capped = true; break; }
+        const chunk = todo.slice(i, i + CONC);
+        chunk.forEach((id) => visited.add(id));
+        const res = await batchGet(chunk.map((id) => ({ id, url: `${LIVE}/matches/public/gameSummary?matchId=${id}&competitionUniqueKey=${COMP_KEY}` })));
+        for (const r of res) if (r.status === 200 && recordIfComp(r.id, r.body)) hits.push(r.id);
+      }
+      return hits;
     };
 
-    // flush partial results so a long/timed-out run never loses data
+    // walk one direction from an id in CONC-sized batches; stop after GAP consecutive misses
+    const expandDir = async (fromId, dir) => {
+      let miss = 0, cur = fromId;
+      while (miss < GAP && !capped) {
+        const batch = [];
+        for (let k = 1; k <= CONC; k++) { const id = cur + dir * k; if (id > 0) batch.push(id); }
+        if (!batch.length) break;
+        const before = found.size;
+        await probeMany(batch);
+        cur += dir * CONC;
+        if (found.size > before) miss = 0; else miss += CONC;
+      }
+    };
+    const expandAround = async (seedIds) => {
+      for (const id of [...new Set(seedIds)]) { if (capped) break; await expandDir(id, -1); await expandDir(id, 1); }
+    };
+
     const flush = async () => {
-      const arr = [...matches.values()].sort((a, b) => a.id - b.id);
-      await fs.writeFile(path.join(OUT, `matches-${COMP_ID}.json`), JSON.stringify({ compId: COMP_ID, compKey: COMP_KEY, compName: COMP_NAME, harvestedAt: new Date().toISOString(), count: arr.length, matches: arr }, null, 1));
+      const arr = [...found.values()].sort((a, b) => a.id - b.id);
+      await fs.writeFile(path.join(OUT, `matches-${COMP_ID}.json`), JSON.stringify({ compId: COMP_ID, compKey: COMP_KEY, compName: COMP_NAME, harvestedAt: new Date().toISOString(), count: arr.length, phase: 'ids', matches: arr }, null, 1));
     };
 
-    // 1. seeds from round/matches (division-tagged)
-    const seeds = []; // {id, division}
-    const rm = await api(`${LIVE}/round/matches?competitionId=${COMP_ID}&divisionId=&teamIds=&ignoreStatuses=[1]`);
-    if (rm.json && Array.isArray(rm.json.rounds)) {
-      for (const r of rm.json.rounds) { const dn = r.division && (r.division.name || r.division.divisionName); for (const m of (r.matches || [])) if (typeof m.id === 'number') seeds.push({ id: m.id, division: dn || null }); }
-    }
-    notes.push(`round/matches seeds: ${seeds.length}`);
+    // Phase 1a: seeds from round/matches + expand
+    const rm = (await batchGet([{ id: 0, url: `${LIVE}/round/matches?competitionId=${COMP_ID}&divisionId=&teamIds=&ignoreStatuses=[1]` }]))[0];
+    const seedIds = [];
+    try { const j = JSON.parse(rm.body); if (j && Array.isArray(j.rounds)) for (const r of j.rounds) for (const m of (r.matches || [])) if (typeof m.id === 'number') seedIds.push(m.id); } catch {}
+    notes.push(`round/matches seeds: ${seedIds.length}`);
+    if (seedIds.length) { await probeMany(seedIds); await expandAround(seedIds); await flush(); }
 
-    // expand each seed (dedup blocks via visited)
-    for (const s of seeds) { if (capped) break; if (!visited.has(s.id)) { await expand(s.id, s.division); await flush(); } }
-
-    // 2. optional coarse scan — finds earlier-season blocks that seeds don't point to,
-    //    and finished comps that have no seeds at all. Flushes periodically.
+    // Phase 1b: coarse scan
     if (SCAN_LO && SCAN_HI && SCAN_HI > SCAN_LO) {
-      notes.push(`coarse scan ${SCAN_LO}..${SCAN_HI} step ${COARSE_STEP}`);
-      let since = 0;
-      for (let id = SCAN_LO; id <= SCAN_HI && !capped; id += COARSE_STEP) {
-        if (visited.has(id)) continue;
-        const hit = await probe(id, null);
-        if (hit) { await expand(id, null); await flush(); }   // found a block, harvest it fully
-        if (++since >= 200) { since = 0; await flush(); }
-        await sleep(DELAY_MS);
+      notes.push(`coarse scan ${SCAN_LO}..${SCAN_HI} step ${COARSE_STEP} conc ${CONC}`);
+      const sample = [];
+      for (let id = SCAN_LO; id <= SCAN_HI; id += COARSE_STEP) sample.push(id);
+      for (let i = 0; i < sample.length && !capped; i += 600) {
+        const hits = await probeMany(sample.slice(i, i + 600));
+        if (hits.length) await expandAround(hits);
+        await flush();
       }
     }
-    await flush();
+    if (capped) notes.push(`**MAX_CALLS ${MAX_CALLS} hit** — narrow range / raise cap to resume`);
 
-    if (capped) notes.push(`**stopped at MAX_CALLS=${MAX_CALLS}** — resume with a higher cap or narrower range`);
-    const out = [...matches.values()].sort((a, b) => a.id - b.id);
-    await fs.writeFile(path.join(OUT, `matches-${COMP_ID}.json`), JSON.stringify({ compId: COMP_ID, compKey: COMP_KEY, compName: COMP_NAME, harvestedAt: new Date().toISOString(), count: out.length, matches: out }, null, 1));
+    // Phase 2: periodScores for all found ids
+    const ids = [...found.keys()];
+    for (let i = 0; i < ids.length && !capped; i += CONC) {
+      if (calls >= MAX_CALLS) { capped = true; break; }
+      const chunk = ids.slice(i, i + CONC);
+      const res = await batchGet(chunk.map((id) => ({ id, url: `${LIVE}/matches/periodScores?matchId=${id}` })));
+      for (const r of res) { if (r.status !== 200) continue; let ps = null; try { ps = JSON.parse(r.body); } catch {} if (Array.isArray(ps)) found.get(r.id).periods = ps.map((p) => ({ q: p.period, t1: p.team1Score, t2: p.team2Score })); }
+    }
+
+    const out = [...found.values()].sort((a, b) => a.id - b.id);
+    out.forEach((m) => { if (!m.periods) m.periods = []; });
+    await fs.writeFile(path.join(OUT, `matches-${COMP_ID}.json`), JSON.stringify({ compId: COMP_ID, compKey: COMP_KEY, compName: COMP_NAME, harvestedAt: new Date().toISOString(), count: out.length, phase: 'complete', matches: out }, null, 1));
 
     const scored = out.filter((m) => (m.t1 || 0) || (m.t2 || 0));
-    const withQ = out.filter((m) => m.periods && m.periods.length);
+    const withQ = out.filter((m) => m.periods.length);
+    const dates = [...new Set(out.map((m) => (m.startTime || '').slice(0, 10)).filter(Boolean))].sort();
     const blocks = [];
     for (const m of out) { const last = blocks[blocks.length - 1]; if (last && m.id - last.hi <= GAP) last.hi = m.id; else blocks.push({ lo: m.id, hi: m.id }); }
     await writeSummary([
       `# Harvest ${COMP_ID} — ${COMP_NAME}`, '',
-      `- matches: ${out.length} (scored ${scored.length}, byes/0-0 ${out.length - scored.length})`,
-      `- with per-quarter: ${withQ.length}`,
-      `- api calls: ${calls}${capped ? ' (CAPPED)' : ''}`,
-      `- id blocks (divisions): ${blocks.length} → ${blocks.map((b) => b.lo === b.hi ? b.lo : `${b.lo}-${b.hi}`).join(', ')}`,
+      `- matches ${out.length} (scored ${scored.length}, byes/0-0 ${out.length - scored.length}); with per-quarter ${withQ.length}`,
+      `- api calls ${calls}${capped ? ' (CAPPED)' : ''}`,
+      `- game dates (${dates.length}): ${dates.join(', ')}`,
+      `- id blocks ${blocks.length}: ${blocks.map((b) => b.lo === b.hi ? `${b.lo}` : `${b.lo}-${b.hi}`).join(', ')}`,
       `- notes: ${notes.join('; ')}`,
     ]);
   } finally {
@@ -150,7 +163,7 @@ async function main() {
   process.exit(0);
 
   async function writeSummary(lines) { const o = lines.join('\n') + '\n'; await fs.writeFile(path.join(OUT, 'SUMMARY.md'), o); if (SUMMARY_FILE) await fs.appendFile(SUMMARY_FILE, o); console.log(o); }
-  async function fail(msg) { await writeSummary([`# Harvest ${COMP_ID}`, '', `**FAILED: ${msg}**`]); await browser.close(); process.exit(1); }
 }
+async function fail(browser, msg) { const o = `# Harvest ${COMP_ID}\n\n**FAILED: ${msg}**\n`; await fs.writeFile(path.join(OUT, 'SUMMARY.md'), o); if (SUMMARY_FILE) await fs.appendFile(SUMMARY_FILE, o); console.log(o); await browser.close(); process.exit(1); }
 
 main().catch(async (e) => { console.error('UNEXPECTED', (e && e.stack) || e); try { await fs.writeFile(path.join(OUT, 'crash.txt'), String((e && e.stack) || e)); } catch {} process.exit(3); });
