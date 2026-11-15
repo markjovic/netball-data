@@ -106,14 +106,42 @@ async function main() {
     const hidden = rows.filter((r) => /^HIDDEN/.test(r.verdict));
     lines.push(`**Summary: ${open.length} season(s) fully OPEN (trivial backfill), ${hidden.length} HIDDEN (need id recovery), ${rows.length - open.length - hidden.length} partial/other.**`);
 
-    // 3. bonus: is the public ladder available for a hidden comp? (team standings from hidden results)
     const hc = rows.find((r) => /^HIDDEN/.test(r.verdict));
+    lines.push('');
+    lines.push('## Can a hidden season be unlocked wholesale?');
+
+    // 3a. the admin DRAWS endpoint (POST /competition/api/draws?userId=) — if it accepts the
+    // public token it returns the full draw incl hidden match ids = master key for backfill.
     if (hc) {
-      const { json, status } = await getJson(page, `${LIVE}/teams/ladder/v2?divisionIds=&competitionKey=${hc.key}&filteredOutCompStatuses=`);
+      for (const uid of ['', '0']) {
+        const res = await page.evaluate(async (args) => {
+          const [base, key, year, uid] = args;
+          try {
+            const r = await fetch(`${base}/api/draws?userId=${uid}`, {
+              method: 'POST',
+              headers: { accept: 'application/json', 'content-type': 'application/json', authorization: localStorage.getItem('token') || '' },
+              body: JSON.stringify({ competitionId: key, yearRefId: year, sourceSystem: 'User' }),
+            });
+            const b = await r.text();
+            return { s: r.status, b: b.slice(0, 1500) };
+          } catch (e) { return { err: String((e && e.message) || e) }; }
+        }, ['https://api-netball.squadi.com/competition', hc.key, hc.year, uid]);
+        let shape = res.err ? `ERR ${res.err}` : `HTTP ${res.s}`;
+        if (!res.err && res.b) { let j = null; try { j = JSON.parse(res.b); } catch { /* */ } if (j) shape += ` keys: ${Array.isArray(j) ? 'array len ' + j.length : Object.keys(j).slice(0, 10).join(',')}`; else shape += ` (non-json: ${res.b.slice(0, 60).replace(/\n/g, ' ')})`; }
+        await fs.writeFile(path.join(OUT, `draws-userId-${uid || 'blank'}.txt`), res.err || res.b);
+        lines.push(`- draws POST (hidden comp ${hc.id}, userId="${uid}"): ${md(shape)}`);
+      }
+      lines.push('  (If these are 401/403/empty, the draws endpoint is admin-gated and cannot unlock hidden seasons with the public token.)');
+    }
+
+    // 3b. public ladder (team standings) — needs real divisionIds; use the hidden comp's divisions.
+    if (hc) {
+      const { json: dvs } = await getJson(page, `${LIVE}/division?competitionKey=${hc.key}`);
+      const divIds = Array.isArray(dvs) ? dvs.map((d) => d.id).filter(Boolean).slice(0, 20).join(',') : '';
+      const { json, status } = await getJson(page, `${LIVE}/teams/ladder/v2?divisionIds=${divIds}&competitionKey=${hc.key}&filteredOutCompStatuses=`);
       const n = Array.isArray(json) ? json.length : (json && typeof json === 'object' ? Object.keys(json).length : 0);
-      await fs.writeFile(path.join(OUT, 'ladder-sample.json'), JSON.stringify(json, null, 1).slice(0, 4000));
-      lines.push('');
-      lines.push(`Ladder test on hidden comp ${hc.id} (${YEAR_NAME[hc.year] || hc.year}): HTTP ${status}, ${n} entries — ${n ? 'public ladder available (team standings derived from hidden results)' : 'no ladder data'}.`);
+      await fs.writeFile(path.join(OUT, 'ladder-sample.json'), (JSON.stringify(json, null, 1) || '').slice(0, 4000));
+      lines.push(`- ladder (hidden comp ${hc.id}, ${divIds ? divIds.split(',').length + ' divisions' : 'no divisions found'}): HTTP ${status}, ${n} rows ${status === 200 && n ? '— standings ARE public (team totals, not per-match)' : '— not usable'}.`);
     }
   } finally {
     await browser.close();
