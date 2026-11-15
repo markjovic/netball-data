@@ -113,8 +113,9 @@ async function main() {
       if (key) {
         entry.draws = [];
         entry.drawsMatches = 0;
+        const orgId = c && c.organisationId;
         for (const uid of ['', '0']) {
-          const r = await apiPost(page, `${COMPETITION}/api/draws?userId=${uid}`, { competitionUniqueKey: key, yearRefId: Number(t.year), sourceSystem: 'User' });
+          const r = await apiPost(page, `${COMPETITION}/api/draws?userId=${uid}`, { competitionUniqueKey: key, organisationId: orgId, yearRefId: Number(t.year), sourceSystem: 'User' });
           await fs.writeFile(path.join(OUT, `draws-${t.id}-uid${uid || 'blank'}.json`), (r.text || r.err || '').slice(0, 200000));
           let shape = r.err ? 'ERR' : `HTTP ${r.status}`;
           if (!r.err && r.json) {
