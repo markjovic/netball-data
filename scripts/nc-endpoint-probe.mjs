@@ -66,9 +66,11 @@ async function hitInPage(page, label, url) {
   try {
     res = await page.evaluate(async (u) => {
       try {
+        // No credentials: the API sends access-control-allow-origin but NOT
+        // access-control-allow-credentials, so credentials:'include' makes the browser
+        // reject the response ("Failed to fetch"). The app calls without credentials.
         const r = await fetch(u, {
           headers: { accept: 'application/json', authorization: localStorage.getItem('token') || '' },
-          credentials: 'include',
         });
         const body = await r.text();
         return { status: r.status, ctype: r.headers.get('content-type') || '', body };
