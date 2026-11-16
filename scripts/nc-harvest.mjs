@@ -43,6 +43,8 @@ const GAP = parseInt(process.env.GAP || '60', 10);
 const MAX_CALLS = parseInt(process.env.MAX_CALLS || '60000', 10);
 const OUT = process.env.OUT_DIR || 'harvest-out';
 const SUMMARY_FILE = process.env.GITHUB_STEP_SUMMARY || '';
+const FETCH_TIMEOUT = parseInt(process.env.FETCH_TIMEOUT || '20000', 10); // abort a single stalled fetch (ms)
+const BATCH_TIMEOUT = parseInt(process.env.BATCH_TIMEOUT || '60000', 10); // hard cap per batch so a hung page can never stall the run (ms)
 // SURVEY mode: coarse-scan [SCAN_LO..SCAN_HI] with NO name filter, tally every competition seen
 // (id range + date range) so finished/hidden comps can be located. No expand, no periodScores.
 const SURVEY = /^(1|true|yes|on)$/i.test((process.env.SURVEY || '').trim());
@@ -93,15 +95,25 @@ async function main() {
     if (!tokenLen) return fail(browser, `no token after boot (HTTP ${loadStatus})`);
     log(`booted, token ok (HTTP ${loadStatus})`);
 
+    // Each fetch is aborted after FETCH_TIMEOUT so one stalled request can't wedge the batch; the whole
+    // batch is additionally raced against BATCH_TIMEOUT, so even a dead/hung page returns (as status 0s)
+    // instead of blocking forever — the earlier bug that let a hang sit idle until the job timeout.
     const batchGet = async (urls) => {
       calls += urls.length;
-      const res = await page.evaluate(async (list) => {
+      const evalP = page.evaluate(async ({ list, ft }) => {
         const tok = localStorage.getItem('token') || '';
         return Promise.all(list.map(async (u) => {
-          try { const r = await fetch(u.url, { headers: { accept: 'application/json', authorization: tok } }); return { id: u.id, status: r.status, body: await r.text() }; }
-          catch (e) { return { id: u.id, status: 0, body: '' }; }
+          const ctrl = new AbortController();
+          const to = setTimeout(() => ctrl.abort(), ft);
+          try { const r = await fetch(u.url, { headers: { accept: 'application/json', authorization: tok }, signal: ctrl.signal }); const body = await r.text(); clearTimeout(to); return { id: u.id, status: r.status, body }; }
+          catch (e) { clearTimeout(to); return { id: u.id, status: 0, body: '' }; }
         }));
-      }, urls);
+      }, { list: urls, ft: FETCH_TIMEOUT }).catch(() => null);
+      let res;
+      try {
+        res = await Promise.race([evalP, new Promise((resolve) => setTimeout(() => resolve(null), BATCH_TIMEOUT))]);
+      } catch (e) { res = null; }
+      if (!Array.isArray(res)) res = urls.map((u) => ({ id: u.id, status: 0, body: '' }));
       if (BATCH_DELAY > 0) await sleep(BATCH_DELAY);
       return res;
     };
