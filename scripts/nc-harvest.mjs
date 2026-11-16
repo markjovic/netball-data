@@ -55,8 +55,13 @@ const RAW_URLS = (process.env.RAW_URLS || '').split(';;').map((s) => s.trim()).f
 // players, bucket by team. COMP_FILTER = optional comma comp-ids to keep (e.g. the 9U comps).
 const USER_LO = parseInt(process.env.USER_LO || '0', 10);
 const USER_HI = parseInt(process.env.USER_HI || '0', 10);
+const USER_CENTER = parseInt(process.env.USER_CENTER || '0', 10);
+const USER_RADIUS = parseInt(process.env.USER_RADIUS || '0', 10);
 const SPORT_REF = parseInt(process.env.SPORT_REF || '1', 10);
 const COMP_FILTER = new Set((process.env.COMP_FILTER || '').split(',').map((s) => s.trim()).filter(Boolean));
+const RUN_BUDGET_MIN = parseInt(process.env.RUN_BUDGET_MIN || '0', 10); // wall-clock stop (0 = off)
+const BACKOFF_MIN = parseInt(process.env.BACKOFF_MIN || '10', 10);      // WAF pause, lengthens per break
+const TEST_ID = parseInt(process.env.TEST_ID || '15890707', 10);        // known-good id for recovery test
 
 let calls = 0;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -118,20 +123,47 @@ async function main() {
       process.exit(0);
     }
 
-    // USER_SCAN: scan userId range on the public summaryScoringByUser endpoint. For each id, if the
-    // CAREER response is a non-empty array, keep the per-comp rows (optionally filtered to COMP_FILTER)
-    // and bucket userIds by teamId. Names are null for 9U; isHidden carried through when present.
-    if (USER_LO && USER_HI && USER_HI >= USER_LO) {
-      log(`USER_SCAN ${USER_LO}..${USER_HI} sport ${SPORT_REF}${COMP_FILTER.size ? ` filter comps ${[...COMP_FILTER].join(',')}` : ''}`);
+    // USER_SCAN: scan userIds on the public summaryScoringByUser endpoint, keep netball players,
+    // bucket by team. Order: outward from USER_CENTER (±USER_RADIUS) so the densest/known region is
+    // covered first; else linear USER_LO..USER_HI. Unattended-safe: wall-clock RUN_BUDGET_MIN stop,
+    // flush every 10 batches, and WAF backoff — on a mostly-403/0/503 batch, flush + pause
+    // BACKOFF_MIN*attempt minutes (capped 30), run one known-good test, retry the slice on recovery,
+    // give up after 6 breaks. Names are null for 9U; isHidden carried through when present.
+    if ((USER_CENTER > 0 && USER_RADIUS > 0) || (USER_LO && USER_HI && USER_HI >= USER_LO)) {
+      const order = [];
+      if (USER_CENTER > 0 && USER_RADIUS > 0) { order.push(USER_CENTER); for (let d = 1; d <= USER_RADIUS; d++) { if (USER_CENTER + d > 0) order.push(USER_CENTER + d); if (USER_CENTER - d > 0) order.push(USER_CENTER - d); } }
+      else { for (let id = USER_LO; id <= USER_HI; id++) order.push(id); }
+      const LABEL = USER_CENTER > 0 ? `center ${USER_CENTER} +/-${USER_RADIUS}` : `${USER_LO}..${USER_HI}`;
+      log(`USER_SCAN ${LABEL} sport ${SPORT_REF}${COMP_FILTER.size ? ` filter ${[...COMP_FILTER].join(',')}` : ''} budget ${RUN_BUDGET_MIN || 'inf'}m backoff ${BACKOFF_MIN}m — ${order.length} ids`);
       const players = [];
-      const rosters = new Map(); // teamId -> {teamId, teamName, competitionId, competitionName, divisionName, userIds:Set}
-      const total = USER_HI - USER_LO + 1;
-      const CHUNK = 400;
-      let done = 0;
-      for (let base = USER_LO; base <= USER_HI && calls < MAX_CALLS; base += CHUNK) {
-        const ids = [];
-        for (let id = base; id < base + CHUNK && id <= USER_HI; id++) ids.push(id);
-        const res = await batchGet(ids.map((id) => ({ id, url: `${LIVE}/stats/v2/summaryScoringByUser?userId=${id}&playerId=&aggregate=CAREER&sportRefId=${SPORT_REF}` })));
+      const rosters = new Map(); // teamId -> {..., userIds:Set}
+      const total = order.length, CHUNK = 400, t0 = Date.now();
+      const budgetMs = RUN_BUDGET_MIN > 0 ? RUN_BUDGET_MIN * 60000 : 0;
+      let done = 0, batchNo = 0, stop = false, stopReason = '';
+      const buildRosterOut = () => [...rosters.values()].map((r) => ({ teamId: r.teamId, teamName: r.teamName, competitionId: r.competitionId, competitionName: r.competitionName, divisionName: r.divisionName, players: r.userIds.size, userIds: [...r.userIds] })).sort((a, b) => b.players - a.players);
+      const writeUsers = async () => { await fs.writeFile(path.join(OUT, 'users-scan.json'), JSON.stringify({ label: LABEL, center: USER_CENTER || null, radius: USER_RADIUS || null, lo: USER_LO || null, hi: USER_HI || null, scanned: done, found: players.length, teams: rosters.size, calls, elapsedMin: Math.round((Date.now() - t0) / 60000), players, rosters: buildRosterOut() }, null, 1)); };
+      const testUrl = `${LIVE}/stats/v2/summaryScoringByUser?userId=${TEST_ID}&playerId=&aggregate=CAREER&sportRefId=${SPORT_REF}`;
+      const recover = async () => {
+        for (let attempt = 1; attempt <= 6; attempt++) {
+          const mins = Math.min(BACKOFF_MIN * attempt, 30);
+          log(`WAF block suspected — flush + pause ${mins}m (break ${attempt}/6) @ ${calls} calls`);
+          await writeUsers();
+          await sleep(mins * 60000);
+          if (budgetMs && Date.now() - t0 > budgetMs) return false;
+          const t = (await batchGet([{ id: TEST_ID, url: testUrl }]))[0];
+          let ok = false; try { const a = JSON.parse(t.body); ok = t.status === 200 && Array.isArray(a) && a.length > 0; } catch {}
+          if (ok) { log(`recovered after ${attempt} break(s)`); return true; }
+          log(`still blocked (test status ${t.status})`);
+        }
+        return false;
+      };
+      let i = 0;
+      while (i < order.length && calls < MAX_CALLS && !stop) {
+        if (budgetMs && Date.now() - t0 > budgetMs) { stopReason = `run budget ${RUN_BUDGET_MIN}m`; log(stopReason + ' reached'); break; }
+        const slice = order.slice(i, i + CHUNK);
+        const res = await batchGet(slice.map((id) => ({ id, url: `${LIVE}/stats/v2/summaryScoringByUser?userId=${id}&playerId=&aggregate=CAREER&sportRefId=${SPORT_REF}` })));
+        const blocked = res.filter((r) => r.status === 403 || r.status === 0 || r.status === 503).length;
+        if (blocked > res.length * 0.5) { if (await recover()) continue; stop = true; stopReason = 'WAF unrecovered'; break; }
         for (const r of res) {
           if (r.status !== 200) continue;
           let arr = null; try { arr = JSON.parse(r.body); } catch { continue; }
@@ -148,29 +180,25 @@ async function main() {
           }
           if (!comps.length) continue;
           players.push({ userId: r.id, isHidden, firstName, lastName, comps });
-          for (const c of comps) {
-            if (c.teamId == null) continue;
-            const k = String(c.teamId);
-            let ro = rosters.get(k);
-            if (!ro) { ro = { teamId: c.teamId, teamName: c.teamName, competitionId: c.competitionId, competitionName: c.competitionName, divisionName: c.divisionName, userIds: new Set() }; rosters.set(k, ro); }
-            ro.userIds.add(r.id);
-          }
+          for (const c of comps) { if (c.teamId == null) continue; const k = String(c.teamId); let ro = rosters.get(k); if (!ro) { ro = { teamId: c.teamId, teamName: c.teamName, competitionId: c.competitionId, competitionName: c.competitionName, divisionName: c.divisionName, userIds: new Set() }; rosters.set(k, ro); } ro.userIds.add(r.id); }
         }
-        done += ids.length;
-        log(`userscan ${done}/${total} (${Math.round(done / total * 100)}%) — ${players.length} players, ${rosters.size} teams, ${calls} calls`);
+        i += CHUNK; done += slice.length;
+        if (++batchNo % 10 === 0) await writeUsers();
+        if (batchNo % 5 === 0) log(`userscan ${done}/${total} (${Math.round(done / total * 100)}%, ${Math.round((Date.now() - t0) / 60000)}m) — ${players.length} players, ${rosters.size} teams, ${calls} calls`);
       }
-      const rosterOut = [...rosters.values()].map((r) => ({ teamId: r.teamId, teamName: r.teamName, competitionId: r.competitionId, competitionName: r.competitionName, divisionName: r.divisionName, players: r.userIds.size, userIds: [...r.userIds] })).sort((a, b) => b.players - a.players);
-      await fs.writeFile(path.join(OUT, `users-${USER_LO}-${USER_HI}.json`), JSON.stringify({ range: [USER_LO, USER_HI], scanned: done, found: players.length, teams: rosters.size, calls, players, rosters: rosterOut }, null, 1));
+      if (calls >= MAX_CALLS && !stopReason) stopReason = 'MAX_CALLS';
+      await writeUsers();
+      const rosterOut = buildRosterOut();
       const byComp = {};
       for (const p of players) for (const c of p.comps) byComp[c.competitionName] = (byComp[c.competitionName] || 0) + 1;
-      const lines = [`# User scan ${USER_LO}..${USER_HI} (sport ${SPORT_REF})`, '',
-        `- scanned ${done} ids in ${calls} calls${calls >= MAX_CALLS ? ' **(MAX_CALLS hit)**' : ''}`,
+      const lines = [`# User scan ${LABEL} (sport ${SPORT_REF})`, '',
+        `- scanned ${done} ids in ${calls} calls over ${Math.round((Date.now() - t0) / 60000)} min${stopReason ? ` **(stopped: ${stopReason})**` : ''}`,
         `- netball players found: ${players.length} (hit rate ${(players.length / Math.max(1, done) * 100).toFixed(2)}%)`,
         `- distinct teams: ${rosters.size}`, '',
         '## players per competition', '', '| competition | player-rows |', '|---|---|',
         ...Object.entries(byComp).sort((a, b) => b[1] - a[1]).map(([n, c]) => `| ${(n || '(none)').replace(/\|/g, '/')} | ${c} |`), '',
         '## biggest team buckets', '', '| teamId | team | comp | players |', '|---|---|---|---|',
-        ...rosterOut.slice(0, 30).map((r) => `| ${r.teamId} | ${(r.teamName || '').replace(/\|/g, '/')} | ${r.competitionId} | ${r.players} |`)];
+        ...rosterOut.slice(0, 40).map((r) => `| ${r.teamId} | ${(r.teamName || '').replace(/\|/g, '/')} | ${r.competitionId} | ${r.players} |`)];
       await writeSummary(lines);
       await browser.close();
       process.exit(0);
