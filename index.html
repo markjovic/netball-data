@@ -216,6 +216,10 @@ function renderFlow(d){
   const fill=c?c+'33':(b.net==='HIGH'?'rgba(0,245,212,.16)':'rgba(154,154,154,.16)');const st=c||(b.net==='HIGH'?'#00f5d4':'#888');
   nds+=`<rect x="${b.x}" y="${b.y}" width="${NW}" height="${b.h}" rx="5" fill="${fill}" stroke="${st}" stroke-width="1.2" data-nd="${b.id}" style="cursor:pointer"/><text x="${b.x+NW/2}" y="${b.y+b.h/2+3.5}" text-anchor="middle" font-size="10" font-weight="700" fill="#fff" style="pointer-events:none">${esc(b.label)}</text>`;});
  let hdr='';cols.forEach((c,ci)=>hdr+=`<text x="${colX(ci)+NW/2}" y="18" text-anchor="middle" font-size="11" font-weight="700" fill="#9a9a9a">${esc(c.period)}</text>`);
+ let labels='';
+ if(hi){hi.forEach(t=>{let ci=-1;for(let k=nc-1;k>=0;k--){if(teamY[k]&&teamY[k][t]!=null){ci=k;break;}}if(ci<0)return;
+   const y=teamY[ci][t],last=ci===nc-1,lx=last?colX(ci)-6:colX(ci)+NW+6,anc=last?'end':'start';
+   labels+=`<text x="${lx}" y="${y+3}" text-anchor="${anc}" font-size="10" fill="#fff" style="paint-order:stroke;stroke:#121212;stroke-width:3;pointer-events:none">${dn(t)}</text>`;});}
  const clubs=[...new Set(Object.keys(d.teams).map(club))].sort();
  let opts=`<option value="">Highlight…</option>`;
  clubs.forEach(c=>{opts+=`<option value="club:${esc(c)}"${state.flowHi==='club:'+c?' selected':''}>${esc(c)}</option>`;
@@ -224,7 +228,7 @@ function renderFlow(d){
  const hiArr=hi?[...hi].sort():[];
  const cap=hiArr.length?`<div class="flowcap">${hiArr.length>1?`<span class="tiny muted">${hiArr.length} teams</span>`:''}${hiArr.map(n=>`<span class="fc" data-team="${esc(n)}">${dn(n)}</span>`).join('')}<button class="fcx" id="fcx">clear ✕</button></div>`:'';
  main.innerHTML=`<div class="note">Where every team moved across the grading periods. Each line is a team, coloured by its ${d.ongoing?'current':'final'} grade; boxes are the pools each period (strongest pool at top; full-net above lowered), and within a box teams sit in that pool's ladder order — 1st at the top. <b>Tap a line to trace a team, or tap a box to highlight everyone in it;</b> names appear below (tap a name for its page).</div><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">${picker}</div>${cap}<div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:8px"><svg width="${W}" height="${H}" style="min-width:${W}px;display:block"></svg></div>`;
- const svg=main.querySelector('svg');svg.innerHTML=base+top+hit+nds+hdr;
+ const svg=main.querySelector('svg');svg.innerHTML=base+top+hit+nds+hdr+labels;
  svg.onclick=e=>{const t=e.target.closest('[data-tm]'),n=e.target.closest('[data-nd]');
   if(t){state.flowHi='team:'+t.getAttribute('data-tm');renderFlow(d);}
   else if(n){state.flowHi=(state.flowHi==='node:'+n.getAttribute('data-nd'))?'':'node:'+n.getAttribute('data-nd');renderFlow(d);}};
