@@ -1,0 +1,58 @@
+name: nc-logos
+
+# Collect each team's logo (as an embedded badge) + dominant brand colour from Netball Connect.
+# Output: logos-out/logos-<compId>.json. Read-only; commits nothing.
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  logos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Node version
+        run: node --version
+
+      - name: Install Playwright, Chromium and sharp
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/pw"
+          cd "$RUNNER_TEMP/pw"
+          npm init -y > /dev/null
+          npm install --no-audit --no-fund playwright@1.48.2 sharp
+          npx playwright install --with-deps chromium
+
+      - name: Collect logos
+        env:
+          OUT_DIR: ${{ github.workspace }}/logos-out
+        run: |
+          set -euo pipefail
+          cp scripts/nc-logos.mjs "$RUNNER_TEMP/pw/"
+          cd "$RUNNER_TEMP/pw"
+          node nc-logos.mjs
+
+      - name: Upload logos
+        id: upload
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nc-logos-${{ github.run_id }}
+          path: logos-out/
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Download link in summary
+        if: always()
+        run: |
+          {
+            echo ""
+            echo "## Download the logos"
+            echo "[nc-logos-${{ github.run_id }}.zip](${{ steps.upload.outputs.artifact-url }})"
+          } >> "$GITHUB_STEP_SUMMARY"
