@@ -22,7 +22,8 @@ main{padding:14px 16px calc(30px + env(safe-area-inset-bottom))}
 .muted{color:var(--text2)}.tiny{font-size:.68rem}
 .card{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:14px}
 .card h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.04em;color:var(--text2);padding:11px 14px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}
-table{width:100%;border-collapse:collapse;font-size:.83rem;table-layout:fixed}
+table{width:100%;border-collapse:collapse;font-size:.83rem}
+th:not(.al),td:not(.al){width:1%;white-space:nowrap}
 th{font-size:.62rem;text-transform:uppercase;letter-spacing:.03em;color:var(--text3);font-weight:600;text-align:right;padding:7px 6px}
 th.al,td.al{text-align:left}
 td.al{white-space:normal;line-height:1.2}
@@ -128,12 +129,12 @@ function renderLadder(d){
  <div class="seg"><button data-net="HIGH" class="${state.net==='HIGH'?'on':''}">Full-height nets</button><button data-net="LOW" class="${state.net==='LOW'?'on':''}">Lowered nets</button></div>
  <div class="note"><b>Strength ladder — ${state.net==='HIGH'?'full-height':'lowered'} nets only.</b> Teams are ranked by an opponent-adjusted rating from games played at this net height (so scores are like-for-like), beating strong teams counts more than padding weak ones, and close teams break on head-to-head then common opponents. A team that played at both heights appears on both ladders.</div>
  <div class="card"><h3>${state.net==='HIGH'?'Full-height':'Lowered'} net ladder · ${esc(d.label)}</h3>
- <table><thead><tr><th class="rank">#</th><th class="al">Team</th><th>Rtg</th><th>P</th><th>W-L</th><th>GD</th></tr></thead>
- <tbody>${L.map(r=>`<tr class="clk" data-team="${esc(r.team)}"><td class="rank">${r.rank}</td><td class="al"><span class="tn">${bdg(r.team,20)}<span>${dn(r.team)}${arrows(r)}</span></span></td><td class="rating">${r.rating.toFixed(2)}</td><td>${r.P}</td><td class="rec">${r.W}-${r.L}${r.D?'-'+r.D:''}</td><td class="gd ${r.GD>=0?'pos':'neg'}">${r.GD>0?'+':''}${r.GD}</td></tr>`).join('')}</tbody></table></div>`;
+ <table><thead><tr><th class="rank">#</th><th class="al">Team</th><th>Rtg</th><th>P</th><th>W-L-D</th><th>GD</th></tr></thead>
+ <tbody>${L.map(r=>`<tr class="clk" data-team="${esc(r.team)}"><td class="rank">${r.rank}</td><td class="al"><span class="tn">${bdg(r.team,20)}<span>${dn(r.team)}${arrows(r)}</span></span></td><td class="rating">${r.rating.toFixed(2)}</td><td>${r.P}</td><td class="rec">${r.W}-${r.L}-${r.D}</td><td class="gd ${r.GD>=0?'pos':'neg'}">${r.GD>0?'+':''}${r.GD}</td></tr>`).join('')}</tbody></table></div>`;
  document.querySelectorAll('.seg button').forEach(b=>b.onclick=()=>{state.net=b.dataset.net;render();});
  bindTeam();
 }
-function ladderTable(rows){return `<table><thead><tr><th class="rank">#</th><th class="al">Team</th><th>P</th><th>W</th><th>L</th><th>PF</th><th>PA</th></tr></thead><tbody>${rows.map((r,i)=>`<tr class="clk" data-team="${esc(r.team)}"><td class="rank">${i+1}</td><td class="al"><span class="tn">${bdg(r.team,20)}${dn(r.team)}</span></td><td>${r.P}</td><td class="cw">${r.W}</td><td class="cl">${r.L}</td><td>${r.PF}</td><td>${r.PA}</td></tr>`).join('')}</tbody></table>`;}
+function ladderTable(rows){return `<table><thead><tr><th class="rank">#</th><th class="al">Team</th><th>P</th><th>W-L-D</th><th>GD</th></tr></thead><tbody>${rows.map((r,i)=>{const gd=r.PF-r.PA;return `<tr class="clk" data-team="${esc(r.team)}"><td class="rank">${i+1}</td><td class="al"><span class="tn">${bdg(r.team,20)}${dn(r.team)}</span></td><td>${r.P}</td><td class="rec">${r.W}-${r.L}-${r.D}</td><td class="gd ${gd>=0?'pos':'neg'}">${gd>0?'+':''}${gd}</td></tr>`;}).join('')}</tbody></table>`;}
 function renderGrades(d){
  let h=`<div class="note">${d.ongoing?'Current':'Final'} grades, strongest first. ${d.colourNamed?'Names are the competition colours.':'Finished season — grades labelled by strength.'} Each shows its net height. Tap to expand.</div>`;
  d.gradesView.forEach((g,i)=>{h+=`<div class="card"><h3 class="gh${i===0?' open':''}">${gchip(g.label)} ${netchip(g.net)}<span class="arw">▸</span></h3><div class="gb${i===0?' open':''}">${ladderTable(g.ladder)}</div></div>`;});
