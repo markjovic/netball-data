@@ -188,7 +188,9 @@ function flowHiSet(d){
 }
 function renderFlow(d){
  const F=d.flow,cols=F.columns,nc=cols.length;
- const ROWH=16,NW=52,NODEGAP=18,COLGAP=210,PADX=18,TOP=44,W=PADX*2+NW+(nc-1)*COLGAP;
+ const ROWH=16,NW=52,NODEGAP=18,PADX=18,TOP=44;
+ const avail=Math.max(300,(main.clientWidth||620)-32),minGap=120;
+ const W=Math.max(avail,PADX*2+NW+(nc-1)*minGap),COLGAP=(W-PADX*2-NW)/(nc-1);
  const gr={};d.gradesView.forEach((g,i)=>gr[g.label]=i);
  const colX=ci=>PADX+ci*COLGAP;const teamY={},box={};let maxB=0;
  cols.forEach((c,ci)=>{let y=TOP;teamY[ci]={};c.nodes.forEach(nd=>{
@@ -226,5 +228,6 @@ function bindTeam(){document.querySelectorAll('[data-team]').forEach(el=>el.oncl
 function go(p){Object.assign(state,p);if(p.view||p.season)state.team=null;if(p.team)state.q='';render();window.scrollTo(0,0);}
 $('#season').onchange=e=>{state.season=e.target.value;state.team=null;setSub();render();};
 $('#search').oninput=e=>{state.q=e.target.value.trim();state.team=null;render();};
+window.addEventListener('resize',()=>{if(state.view==='flow'&&!state.team&&!state.q)renderFlow(DATA[state.season]);});
 seasonSel();setSub();render();
 </script></body></html>
