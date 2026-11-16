@@ -45,9 +45,9 @@ on:
         required: false
         default: '120'
       survey:
-        description: 'SURVEY mode: just locate every comp in scan_lo..scan_hi (no harvest). true/false'
-        required: false
-        default: 'false'
+        description: 'SURVEY mode: just locate every comp in scan_lo..scan_hi (no harvest)'
+        type: boolean
+        default: false
       probe_ids:
         description: 'PROBE mode: comma-separated match ids to diagnose (blank = normal run)'
         required: false
