@@ -61,11 +61,19 @@ on:
         required: false
         default: ''
       user_lo:
-        description: 'USER_SCAN mode: low userId to scan (summaryScoringByUser). Blank/0 = off'
+        description: 'USER_SCAN linear low userId (blank/0 = off; use center+radius instead for outward scan)'
         required: false
         default: '0'
       user_hi:
-        description: 'USER_SCAN mode: high userId to scan'
+        description: 'USER_SCAN linear high userId'
+        required: false
+        default: '0'
+      user_center:
+        description: 'USER_SCAN outward-scan centre userId (covers densest region first)'
+        required: false
+        default: '0'
+      user_radius:
+        description: 'USER_SCAN outward-scan radius (+/- around centre)'
         required: false
         default: '0'
       sport_ref:
@@ -76,6 +84,14 @@ on:
         description: 'USER_SCAN: optional comma competition ids to keep (e.g. 4057,4596,5232)'
         required: false
         default: ''
+      run_budget_min:
+        description: 'USER_SCAN wall-clock stop in minutes (0 = off). Script writes final output then exits.'
+        required: false
+        default: '0'
+      backoff_min:
+        description: 'USER_SCAN WAF pause (minutes); lengthens each break, capped 30'
+        required: false
+        default: '10'
       max_calls:
         description: 'Safety cap on API calls'
         required: false
@@ -87,7 +103,7 @@ permissions:
 jobs:
   harvest:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 350
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -123,8 +139,12 @@ jobs:
           RAW_URLS: ${{ inputs.raw_urls }}
           USER_LO: ${{ inputs.user_lo }}
           USER_HI: ${{ inputs.user_hi }}
+          USER_CENTER: ${{ inputs.user_center }}
+          USER_RADIUS: ${{ inputs.user_radius }}
           SPORT_REF: ${{ inputs.sport_ref }}
           COMP_FILTER: ${{ inputs.comp_filter }}
+          RUN_BUDGET_MIN: ${{ inputs.run_budget_min }}
+          BACKOFF_MIN: ${{ inputs.backoff_min }}
           MAX_CALLS: ${{ inputs.max_calls }}
           OUT_DIR: ${{ github.workspace }}/harvest-out
         run: |
