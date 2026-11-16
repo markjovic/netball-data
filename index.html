@@ -62,6 +62,10 @@ tr.clk{cursor:pointer}tr.clk:hover td{background:var(--elevated)}
 .gsc{font-variant-numeric:tabular-nums;font-weight:600}
 .qbreak{padding:2px 14px 10px 50px;display:none;gap:6px;flex-wrap:wrap}.qbreak.show{display:flex}
 .q{background:var(--elevated);border:1px solid var(--border);border-radius:6px;padding:3px 8px;font-size:.7rem;font-variant-numeric:tabular-nums}
+.flowcap{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:8px 0}
+.fc{background:var(--elevated);border:1px solid var(--border);border-radius:6px;padding:3px 9px;font-size:.73rem;cursor:pointer}
+.fc:hover{background:var(--accent-dim);color:var(--accent)}
+.fcx{font-size:.68rem;color:var(--text3);cursor:pointer;margin-left:4px}
 .note{font-size:.72rem;color:var(--text2);background:var(--accent-dim);border:1px solid var(--border);border-radius:10px;padding:10px 12px;margin-bottom:14px}
 .empty{color:var(--text3);text-align:center;padding:28px;font-size:.85rem}
 .gh{cursor:pointer;user-select:none}.gh .arw{margin-left:auto;color:var(--text3);transition:.15s}.gh.open .arw{transform:rotate(90deg)}
@@ -184,6 +188,7 @@ function flowHiSet(d){
  const[k,v]=[state.flowHi.slice(0,state.flowHi.indexOf(':')),state.flowHi.slice(state.flowHi.indexOf(':')+1)];
  if(k==='team')return new Set([v]);
  if(k==='club')return new Set(Object.keys(d.teams).filter(n=>club(n)===v));
+ if(k==='node'){const nd=d.flow.columns.flatMap(c=>c.nodes).find(x=>x.id===v);return nd?new Set(nd.teams):null;}
  return null;
 }
 function renderFlow(d){
@@ -195,35 +200,39 @@ function renderFlow(d){
  const colX=ci=>PADX+ci*COLGAP;const teamY={},box={};let maxB=0;
  cols.forEach((c,ci)=>{let y=TOP;teamY[ci]={};c.nodes.forEach(nd=>{
    const ts=nd.teams; // ordered by that period's pool ladder (best at top)
-   const h=Math.max(ROWH,ts.length*ROWH);box[nd.id]={x:colX(ci),y,h,label:nd.label,net:nd.net};
+   const h=Math.max(ROWH,ts.length*ROWH);box[nd.id]={id:nd.id,x:colX(ci),y,h,label:nd.label,net:nd.net};
    ts.forEach((t,k)=>teamY[ci][t]=y+k*ROWH+ROWH/2);y+=h+NODEGAP;});maxB=Math.max(maxB,y);});
  const H=maxB+6;const hi=flowHiSet(d);
- let base='',top='';
+ let base='',top='',hit='';
  F.paths.forEach(p=>{const col=COLHEX[p.grade]||'#8a8a8a';const on=!hi||hi.has(p.team);
-  let seg='';
   for(let ci=0;ci<nc-1;ci++){const a=p.nodes[ci],b=p.nodes[ci+1];if(!a||!b)continue;
    const y1=teamY[ci][p.team],y2=teamY[ci+1][p.team];if(y1==null||y2==null)continue;
-   const x1=box[a].x+NW,x2=box[b].x,mx=(x1+x2)/2;
-   seg+=`<path d="M${x1} ${y1} C ${mx} ${y1}, ${mx} ${y2}, ${x2} ${y2}" fill="none" stroke="${col}" stroke-width="${on&&hi?4:2.5}" stroke-opacity="${on?(hi?0.95:0.5):0.07}"><title>${esc(dn(p.team))} — ${esc(p.grade)}</title></path>`;}
-  if(on&&hi)top+=seg;else base+=seg;});
+   const x1=box[a].x+NW,x2=box[b].x,mx=(x1+x2)/2;const dd=`M${x1} ${y1} C ${mx} ${y1}, ${mx} ${y2}, ${x2} ${y2}`;
+   const seg=`<path d="${dd}" fill="none" stroke="${col}" stroke-width="${on&&hi?4:2.5}" stroke-opacity="${on?(hi?0.95:0.5):0.07}"><title>${esc(dn(p.team))} — ${esc(p.grade)}</title></path>`;
+   if(on&&hi)top+=seg;else base+=seg;
+   hit+=`<path d="${dd}" fill="none" stroke="#000" stroke-opacity="0" stroke-width="12" data-tm="${esc(p.team)}" style="cursor:pointer"/>`;
+  }});
  let nds='';Object.values(box).forEach(b=>{const c=COLHEX[b.label];
   const fill=c?c+'33':(b.net==='HIGH'?'rgba(0,245,212,.16)':'rgba(154,154,154,.16)');const st=c||(b.net==='HIGH'?'#00f5d4':'#888');
-  nds+=`<rect x="${b.x}" y="${b.y}" width="${NW}" height="${b.h}" rx="5" fill="${fill}" stroke="${st}" stroke-width="1.2"/><text x="${b.x+NW/2}" y="${b.y+b.h/2+3.5}" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">${esc(b.label)}</text>`;});
+  nds+=`<rect x="${b.x}" y="${b.y}" width="${NW}" height="${b.h}" rx="5" fill="${fill}" stroke="${st}" stroke-width="1.2" data-nd="${b.id}" style="cursor:pointer"/><text x="${b.x+NW/2}" y="${b.y+b.h/2+3.5}" text-anchor="middle" font-size="10" font-weight="700" fill="#fff" style="pointer-events:none">${esc(b.label)}</text>`;});
  let hdr='';cols.forEach((c,ci)=>hdr+=`<text x="${colX(ci)+NW/2}" y="18" text-anchor="middle" font-size="11" font-weight="700" fill="#9a9a9a">${esc(c.period)}</text>`);
- const leg=d.gradesView.map(g=>`<span style="display:inline-flex;align-items:center;gap:5px;margin:0 10px 6px 0"><span style="width:14px;height:3px;background:${COLHEX[g.label]||'#8a8a8a'};display:inline-block;border-radius:2px"></span><span class="tiny">${esc(g.label)}</span></span>`).join('');
  const clubs=[...new Set(Object.keys(d.teams).map(club))].sort();
  let opts=`<option value="">Highlight…</option>`;
- clubs.forEach(c=>{
-   opts+=`<option value="club:${esc(c)}"${state.flowHi==='club:'+c?' selected':''}>${esc(c)}</option>`;
-   Object.keys(d.teams).filter(n=>club(n)===c).sort().forEach(n=>{
-     opts+=`<option value="team:${esc(n)}"${state.flowHi==='team:'+n?' selected':''}>\u00a0\u00a0\u00a0${dn(n)}</option>`;
-   });
- });
- const picker=`<select id="flowhi" style="margin-bottom:10px">${opts}</select>`;
- main.innerHTML=`<div class="note">Where every team moved across the grading periods. Each line is a team (hover for its name), coloured by its ${d.ongoing?'current':'final'} grade; boxes are the pools each period (strongest pool at top; full-net above lowered), and <b>within a box teams sit in that pool's ladder order — 1st at the top</b>. Pick a team or club below to trace it.</div>${picker}<div style="display:flex;flex-wrap:wrap">${leg}</div><div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:6px"><svg width="${W}" height="${H}" style="min-width:${W}px;display:block"></svg></div>`;
- main.querySelector('svg').innerHTML=base+top+nds+hdr;
- $('#flowhi').onchange=e=>{state.flowHi=e.target.value;renderFlow(d);window.scrollTo(0,0);};
+ clubs.forEach(c=>{opts+=`<option value="club:${esc(c)}"${state.flowHi==='club:'+c?' selected':''}>${esc(c)}</option>`;
+   Object.keys(d.teams).filter(n=>club(n)===c).sort().forEach(n=>{opts+=`<option value="team:${esc(n)}"${state.flowHi==='team:'+n?' selected':''}>\u00a0\u00a0\u00a0${dn(n)}</option>`;});});
+ const picker=`<select id="flowhi">${opts}</select>`;
+ const hiArr=hi?[...hi].sort():[];
+ const cap=hiArr.length?`<div class="flowcap">${hiArr.length>1?`<span class="tiny muted">${hiArr.length} teams</span>`:''}${hiArr.map(n=>`<span class="fc" data-team="${esc(n)}">${dn(n)}</span>`).join('')}<button class="fcx" id="fcx">clear ✕</button></div>`:'';
+ main.innerHTML=`<div class="note">Where every team moved across the grading periods. Each line is a team, coloured by its ${d.ongoing?'current':'final'} grade; boxes are the pools each period (strongest pool at top; full-net above lowered), and within a box teams sit in that pool's ladder order — 1st at the top. <b>Tap a line to trace a team, or tap a box to highlight everyone in it;</b> names appear below (tap a name for its page).</div><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">${picker}</div>${cap}<div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:8px"><svg width="${W}" height="${H}" style="min-width:${W}px;display:block"></svg></div>`;
+ const svg=main.querySelector('svg');svg.innerHTML=base+top+hit+nds+hdr;
+ svg.onclick=e=>{const t=e.target.closest('[data-tm]'),n=e.target.closest('[data-nd]');
+  if(t){state.flowHi='team:'+t.getAttribute('data-tm');renderFlow(d);}
+  else if(n){state.flowHi=(state.flowHi==='node:'+n.getAttribute('data-nd'))?'':'node:'+n.getAttribute('data-nd');renderFlow(d);}};
+ $('#flowhi').onchange=e=>{state.flowHi=e.target.value;renderFlow(d);};
+ document.querySelectorAll('.fc').forEach(el=>el.onclick=()=>go({team:el.dataset.team}));
+ const xb=$('#fcx');if(xb)xb.onclick=()=>{state.flowHi='';renderFlow(d);};
 }
+
 function bindTeam(){document.querySelectorAll('[data-team]').forEach(el=>el.onclick=()=>go({team:el.dataset.team}));}
 function go(p){Object.assign(state,p);if(p.view||p.season)state.team=null;if(p.team)state.q='';render();window.scrollTo(0,0);}
 $('#season').onchange=e=>{state.season=e.target.value;state.team=null;setSub();render();};
