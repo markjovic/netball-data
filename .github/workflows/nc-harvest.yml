@@ -60,6 +60,22 @@ on:
         description: 'RAW mode: ;;-separated endpoint URLs (relative to the squadi api host) to dump raw'
         required: false
         default: ''
+      user_lo:
+        description: 'USER_SCAN mode: low userId to scan (summaryScoringByUser). Blank/0 = off'
+        required: false
+        default: '0'
+      user_hi:
+        description: 'USER_SCAN mode: high userId to scan'
+        required: false
+        default: '0'
+      sport_ref:
+        description: 'USER_SCAN sportRefId (1 = netball)'
+        required: false
+        default: '1'
+      comp_filter:
+        description: 'USER_SCAN: optional comma competition ids to keep (e.g. 4057,4596,5232)'
+        required: false
+        default: ''
       max_calls:
         description: 'Safety cap on API calls'
         required: false
@@ -105,6 +121,10 @@ jobs:
           PROBE_IDS: ${{ inputs.probe_ids }}
           KEYS: ${{ inputs.keys }}
           RAW_URLS: ${{ inputs.raw_urls }}
+          USER_LO: ${{ inputs.user_lo }}
+          USER_HI: ${{ inputs.user_hi }}
+          SPORT_REF: ${{ inputs.sport_ref }}
+          COMP_FILTER: ${{ inputs.comp_filter }}
           MAX_CALLS: ${{ inputs.max_calls }}
           OUT_DIR: ${{ github.workspace }}/harvest-out
         run: |
