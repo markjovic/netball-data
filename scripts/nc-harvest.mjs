@@ -71,6 +71,10 @@ const TEST_ID = parseInt(process.env.TEST_ID || '15890707', 10);        // known
 // Names are never stored in this mode. Failed fetches are retried; if any still fail, only
 // users-careers_PARTIAL.json is written so a failed collection never looks like a complete one.
 const USER_IDS_SRC = (process.env.USER_IDS_FILE || process.env.USER_IDS || '').trim();
+// FULL_HISTORY (USER_SCAN): every kept player's FULL netball history is stored (all comps), names never.
+// With COMP_FILTER, the filter decides WHO is kept; without it, EVERY netball player in the range is kept. Failed ids are tracked + retried like USER_IDS mode; output
+// users-history.json only when complete, else users-history_PARTIAL.json.
+const FULL_HISTORY = /^(1|true|yes|on)$/i.test((process.env.FULL_HISTORY || '').trim());
 
 let calls = 0;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -112,6 +116,9 @@ async function main() {
     }
     log(`USER_IDS: ${EXPLICIT.ids.length} distinct userIds from ${EXPLICIT.src}`);
   }
+  const FULL = FULL_HISTORY && !EXPLICIT;
+  const KEEP_ALL = FULL && !COMP_FILTER.size;   // full_history with no comp_filter: keep every netball player found
+  const TRACK = !!EXPLICIT || FULL;   // track + retry failed ids, no names stored
   const notes = [];
   log(`mode: ${SURVEY ? 'SURVEY (locate comps, no harvest)' : 'HARVEST'}`);
   log(`config: primary comp ${COMP_ID} "${COMP_NAME}"`);
@@ -194,8 +201,10 @@ async function main() {
       const failedIds = new Set(), emptyIds = new Set();
       let rowSchema = null;
       // explicit mode flushes to the _PARTIAL name; the clean name is written only after a complete run.
-      let outName = EXPLICIT ? 'users-careers_PARTIAL.json' : 'users-scan.json';
-      const writeUsers = async () => { await fs.writeFile(path.join(OUT, outName), JSON.stringify({ label: LABEL, center: USER_CENTER || null, radius: USER_RADIUS || null, lo: USER_LO || null, hi: USER_HI || null, scanned: done, found: players.length, teams: rosters.size, calls, elapsedMin: Math.round((Date.now() - t0) / 60000), ...(EXPLICIT ? { requested: order.length, failedIds: [...failedIds], emptyIds: [...emptyIds], rowSchema } : {}), players, rosters: buildRosterOut() }, null, 1)); };
+      let outName = EXPLICIT ? 'users-careers_PARTIAL.json' : (FULL ? 'users-history_PARTIAL.json' : 'users-scan.json');
+      let emptyCount = 0;
+      const seenIds = new Set();
+      const writeUsers = async () => { await fs.writeFile(path.join(OUT, outName), JSON.stringify({ label: LABEL, center: USER_CENTER || null, radius: USER_RADIUS || null, lo: USER_LO || null, hi: USER_HI || null, scanned: done, found: players.length, teams: rosters.size, calls, elapsedMin: Math.round((Date.now() - t0) / 60000), ...(EXPLICIT ? { requested: order.length, failedIds: [...failedIds], emptyIds: [...emptyIds], rowSchema } : {}), ...(FULL ? { fullHistory: true, compFilter: [...COMP_FILTER], failedIds: [...failedIds], rowSchema } : {}), players, rosters: buildRosterOut() }, null, FULL ? 0 : 1)); };
       const testUrl = `${LIVE}/stats/v2/summaryScoringByUser?userId=${TEST_ID}&playerId=&aggregate=CAREER&sportRefId=${SPORT_REF}`;
       const recover = async () => {
         for (let attempt = 1; attempt <= 6; attempt++) {
@@ -220,11 +229,11 @@ async function main() {
         if (blocked > res.length * 0.5) { if (await recover()) continue; stop = true; stopReason = 'WAF unrecovered'; break; }
         absorb(res);
         i += CHUNK; done += slice.length;
-        if (++batchNo % 10 === 0) await writeUsers();
+        if (++batchNo % (FULL ? 50 : 10) === 0) await writeUsers();
         if (batchNo % 5 === 0) log(`userscan ${done}/${total} (${Math.round(done / total * 100)}%, ${Math.round((Date.now() - t0) / 60000)}m) — ${players.length} players, ${rosters.size} teams, ${calls} calls`);
       }
       // explicit mode: retry failures (up to 3 passes, small slices, with a pause between passes)
-      for (let pass = 1; EXPLICIT && !stop && failedIds.size && pass <= 3; pass++) {
+      for (let pass = 1; TRACK && !stop && failedIds.size && pass <= 3; pass++) {
         const retry = [...failedIds];
         log(`retry pass ${pass}: ${retry.length} failed id(s)`);
         await sleep(pass * 20000);
@@ -234,36 +243,42 @@ async function main() {
           absorb(await batchGet(sl.map((id) => ({ id, url: `${LIVE}/stats/v2/summaryScoringByUser?userId=${id}&playerId=&aggregate=CAREER&sportRefId=${SPORT_REF}` }))));
         }
       }
-      if (EXPLICIT && (i < order.length || stop)) for (const id of order.slice(i)) failedIds.add(id); // never-fetched ids count as failed
+      if (TRACK && (i < order.length || stop)) for (const id of order.slice(i)) failedIds.add(id); // never-fetched ids count as failed
       function absorb(res) {
         for (const r of res) {
-          if (r.status !== 200) { if (EXPLICIT) failedIds.add(r.id); continue; }
-          let arr = null; try { arr = JSON.parse(r.body); } catch { if (EXPLICIT) failedIds.add(r.id); continue; }
-          if (!Array.isArray(arr)) { if (EXPLICIT) failedIds.add(r.id); continue; }
-          if (!arr.length) { if (EXPLICIT) emptyIds.add(r.id); continue; }
-          if (EXPLICIT && !rowSchema) { const s0 = arr.find((x) => String(x.competitionId) !== '-1') || arr[0]; rowSchema = Object.keys(s0 || {}); }
+          if (r.status !== 200) { if (TRACK) failedIds.add(r.id); continue; }
+          let arr = null; try { arr = JSON.parse(r.body); } catch { if (TRACK) failedIds.add(r.id); continue; }
+          if (!Array.isArray(arr)) { if (TRACK) failedIds.add(r.id); continue; }
+          if (!arr.length) { if (EXPLICIT) emptyIds.add(r.id); else emptyCount++; continue; }
+          const keepAll = FULL && (KEEP_ALL || arr.some((x) => COMP_FILTER.has(String(x.competitionId))));
+          if (FULL && !keepAll) continue;
+          if (TRACK && !rowSchema) { const s0 = arr.find((x) => String(x.competitionId) !== '-1') || arr[0]; rowSchema = Object.keys(s0 || {}); }
           const comps = [];
           let isHidden = null, firstName = null, lastName = null;
           for (const row of arr) {
             if (String(row.competitionId) === '-1') continue; // skip the Career total row
-            if (COMP_FILTER.size && !COMP_FILTER.has(String(row.competitionId))) continue;
-            comps.push({ competitionId: String(row.competitionId), competitionName: row.competitionName || '', teamId: row.teamId, teamName: row.teamName || '', divisionId: row.divisionId, divisionName: row.divisionName || '', games: row.games, ...(EXPLICIT ? { isHidden: row.isHidden != null ? row.isHidden : null } : {}) });
+            if (COMP_FILTER.size && !keepAll && !COMP_FILTER.has(String(row.competitionId))) continue;
+            comps.push({ competitionId: String(row.competitionId), competitionName: row.competitionName || '', teamId: row.teamId, teamName: row.teamName || '', divisionId: row.divisionId, divisionName: row.divisionName || '', games: row.games, ...(TRACK ? { isHidden: row.isHidden != null ? row.isHidden : null } : {}) });
             if (row.isHidden != null) isHidden = isHidden === true ? true : row.isHidden; // hidden on ANY row = hidden
-            if (!EXPLICIT && row.firstName) firstName = row.firstName; // names never stored in USER_IDS mode
-            if (!EXPLICIT && row.lastName) lastName = row.lastName;
+            if (!TRACK && row.firstName) firstName = row.firstName; // names never stored in USER_IDS / full-history modes
+            if (!TRACK && row.lastName) lastName = row.lastName;
           }
           if (!comps.length) { if (EXPLICIT) emptyIds.add(r.id); continue; }
-          const prev = players.findIndex((p) => p.userId === r.id); // a retried id must not duplicate
-          if (prev >= 0) players.splice(prev, 1);
-          players.push(EXPLICIT ? { userId: r.id, isHidden, comps } : { userId: r.id, isHidden, firstName, lastName, comps });
-          for (const c of comps) { if (c.teamId == null) continue; const k = String(c.teamId); let ro = rosters.get(k); if (!ro) { ro = { teamId: c.teamId, teamName: c.teamName, competitionId: c.competitionId, competitionName: c.competitionName, divisionName: c.divisionName, userIds: new Set() }; rosters.set(k, ro); } ro.userIds.add(r.id); }
+          if (seenIds.has(r.id)) { const prev = players.findIndex((p) => p.userId === r.id); if (prev >= 0) players.splice(prev, 1); } // a retried id must not duplicate
+          seenIds.add(r.id);
+          players.push(TRACK ? { userId: r.id, isHidden, comps } : { userId: r.id, isHidden, firstName, lastName, comps });
+          for (const c of comps) { if (c.teamId == null) continue; if (FULL && !COMP_FILTER.has(c.competitionId)) continue; /* rosters: filtered comps only */ const k = String(c.teamId); let ro = rosters.get(k); if (!ro) { ro = { teamId: c.teamId, teamName: c.teamName, competitionId: c.competitionId, competitionName: c.competitionName, divisionName: c.divisionName, userIds: new Set() }; rosters.set(k, ro); } ro.userIds.add(r.id); }
         }
       }
       if (calls >= MAX_CALLS && !stopReason) stopReason = 'MAX_CALLS';
       await writeUsers();
       // explicit mode: zero players with rows is never a success (wrong ids / wrong list), so it stays PARTIAL and exits 1.
-      const complete = !EXPLICIT || (!failedIds.size && !stopReason && players.length > 0 && players.length + emptyIds.size === order.length);
+      const complete = FULL ? (!failedIds.size && !stopReason && players.length > 0)
+        : (!EXPLICIT || (!failedIds.size && !stopReason && players.length > 0 && players.length + emptyIds.size === order.length));
       if (EXPLICIT && complete) { outName = 'users-careers.json'; await writeUsers(); await fs.rm(path.join(OUT, 'users-careers_PARTIAL.json'), { force: true }); }
+      if (FULL && complete) { outName = 'users-history.json'; await writeUsers(); await fs.rm(path.join(OUT, 'users-history_PARTIAL.json'), { force: true }); }
+      const byFilterComp = {};
+      if (FULL) for (const p of players) for (const c of p.comps) if (COMP_FILTER.has(c.competitionId)) byFilterComp[c.competitionId + ' ' + c.competitionName] = (byFilterComp[c.competitionId + ' ' + c.competitionName] || 0) + 1;
       const rosterOut = buildRosterOut();
       const byComp = {};
       for (const p of players) for (const c of p.comps) byComp[c.competitionName] = (byComp[c.competitionName] || 0) + 1;
@@ -271,11 +286,15 @@ async function main() {
         ...(EXPLICIT ? [complete ? `- **COMPLETE** — all ${order.length} ids fetched → users-careers.json` : (players.length === 0 && !failedIds.size ? `- **FAILED** — no id returned any netball rows (wrong id list?) → users-careers_PARTIAL.json only` : `- **PARTIAL** — ${failedIds.size} id(s) failed/unfetched → users-careers_PARTIAL.json only (re-run)`),
           `- with rows: ${players.length}; returned empty: ${emptyIds.size}; failed: ${failedIds.size}`,
           `- row fields: ${rowSchema ? rowSchema.join(', ') : '(none)'}`, ''] : []),
+        ...(FULL ? [complete ? `- **COMPLETE** — no failed ids → users-history.json (${(await fs.stat(path.join(OUT, 'users-history.json'))).size} bytes; full history for ${KEEP_ALL ? 'EVERY netball player in range' : 'players in ' + [...COMP_FILTER].join(',')})` : `- **PARTIAL** — ${failedIds.size} id(s) failed/unfetched${stopReason ? `, stopped: ${stopReason}` : ''} → users-history_PARTIAL.json only (re-run)`,
+          `- empty ids: ${emptyCount}; failed: ${failedIds.size}`, '', '## players per filter competition', '', '| competition | players |', '|---|---|',
+          ...(KEEP_ALL ? ['| (no comp_filter: every player kept) | ' + players.length + ' |'] : []), ...Object.entries(byFilterComp).sort().map(([n, c]) => `| ${n.replace(/\|/g, '/')} | ${c} |`), ''] : []),
         `- scanned ${done} ids in ${calls} calls over ${Math.round((Date.now() - t0) / 60000)} min${stopReason ? ` **(stopped: ${stopReason})**` : ''}`,
         `- netball players found: ${players.length} (hit rate ${(players.length / Math.max(1, done) * 100).toFixed(2)}%)`,
         `- distinct teams: ${rosters.size}`, '',
         '## players per competition', '', '| competition | player-rows |', '|---|---|',
-        ...Object.entries(byComp).sort((a, b) => b[1] - a[1]).map(([n, c]) => `| ${(n || '(none)').replace(/\|/g, '/')} | ${c} |`), '',
+        ...Object.entries(byComp).sort((a, b) => b[1] - a[1]).filter(([n], k) => k < 40 || /MENA/i.test(n)).map(([n, c]) => `| ${(n || '(none)').replace(/\|/g, '/')} | ${c} |`),
+        ...(Object.keys(byComp).length > 40 ? [`| (${Object.keys(byComp).length} competitions in total; top 40 + all MENA shown) | |`] : []), '',
         '## biggest team buckets', '', '| teamId | team | comp | players |', '|---|---|---|---|',
         ...rosterOut.slice(0, 40).map((r) => `| ${r.teamId} | ${(r.teamName || '').replace(/\|/g, '/')} | ${r.competitionId} | ${r.players} |`)];
       await writeSummary(lines);
