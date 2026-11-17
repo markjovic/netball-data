@@ -80,6 +80,10 @@ on:
         description: 'USER_SCAN sportRefId (1 = netball)'
         required: false
         default: '1'
+      user_ids:
+        description: 'USER_IDS mode (exact userId list, full career, no names): run:<runId> of the USER_SCAN run (uses its users-scan.json), a repo .json path, or comma ids. Blank = off'
+        required: false
+        default: ''
       comp_filter:
         description: 'USER_SCAN: optional comma competition ids to keep (e.g. 4057,4596,5232)'
         required: false
@@ -99,6 +103,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
 
 jobs:
   harvest:
@@ -122,6 +127,23 @@ jobs:
           npm install --no-audit --no-fund playwright@1.48.2
           npx playwright install --with-deps chromium
 
+      - name: Fetch userId list from an earlier run (user_ids = run:<id>)
+        if: startsWith(inputs.user_ids, 'run:')
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SRC: ${{ inputs.user_ids }}
+        run: |
+          set -euo pipefail
+          RID="${SRC#run:}"
+          RID="$(printf '%s' "$RID" | tr -d '[:space:]')"
+          case "$RID" in ''|*[!0-9]*) echo "::error::user_ids run id is not numeric: $SRC"; exit 1;; esac
+          mkdir -p "$RUNNER_TEMP/ids-in"
+          gh run download "$RID" -R "$GITHUB_REPOSITORY" -D "$RUNNER_TEMP/ids-in"
+          F="$(find "$RUNNER_TEMP/ids-in" -name users-scan.json | head -n1)"
+          if [ -z "$F" ]; then echo "::error::no users-scan.json in the artifacts of run $RID"; exit 1; fi
+          echo "USER_IDS_FILE=$F" >> "$GITHUB_ENV"
+          echo "using $F ($(wc -c < "$F") bytes)"
+
       - name: Harvest
         env:
           COMP_ID: ${{ inputs.comp_id }}
@@ -142,6 +164,7 @@ jobs:
           USER_CENTER: ${{ inputs.user_center }}
           USER_RADIUS: ${{ inputs.user_radius }}
           SPORT_REF: ${{ inputs.sport_ref }}
+          USER_IDS: ${{ inputs.user_ids }}
           COMP_FILTER: ${{ inputs.comp_filter }}
           RUN_BUDGET_MIN: ${{ inputs.run_budget_min }}
           BACKOFF_MIN: ${{ inputs.backoff_min }}
