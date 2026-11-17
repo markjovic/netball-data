@@ -84,6 +84,10 @@ on:
         description: 'USER_IDS mode (exact userId list, full career, no names): run:<runId> of the USER_SCAN run (uses its users-scan.json), a repo .json path, or comma ids. Blank = off'
         required: false
         default: ''
+      full_history:
+        description: 'USER_SCAN: store FULL netball history (all comps, no names) -> users-history.json. comp_filter blank = keep EVERY netball player in range; set = keep players in those comps'
+        type: boolean
+        default: false
       comp_filter:
         description: 'USER_SCAN: optional comma competition ids to keep (e.g. 4057,4596,5232)'
         required: false
@@ -169,6 +173,7 @@ jobs:
           SPORT_REF: ${{ inputs.sport_ref }}
           USER_IDS: ${{ inputs.user_ids }}
           COMP_FILTER: ${{ inputs.comp_filter }}
+          FULL_HISTORY: ${{ inputs.full_history }}
           RUN_BUDGET_MIN: ${{ inputs.run_budget_min }}
           BACKOFF_MIN: ${{ inputs.backoff_min }}
           MAX_CALLS: ${{ inputs.max_calls }}
