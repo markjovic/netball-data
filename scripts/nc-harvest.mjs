@@ -95,6 +95,9 @@ async function loadUserIds() {
     ids = USER_IDS_SRC.split(/[\s,;]+/);
   }
   ids = [...new Set(ids.map((x) => parseInt(String(x), 10)).filter((n) => Number.isFinite(n) && n > 0))];
+  // Squadi userIds are ~8 digits; a 10+ digit number is a GitHub run id typed without the run: prefix.
+  const runLike = ids.filter((n) => n >= 1e9);
+  if (runLike.length) throw new Error(`${runLike.join(',')} looks like a GitHub run id, not a userId — enter it as run:${runLike[0]}`);
   return { ids, src };
 }
 
@@ -258,13 +261,14 @@ async function main() {
       }
       if (calls >= MAX_CALLS && !stopReason) stopReason = 'MAX_CALLS';
       await writeUsers();
-      const complete = !EXPLICIT || (!failedIds.size && !stopReason && players.length + emptyIds.size === order.length);
+      // explicit mode: zero players with rows is never a success (wrong ids / wrong list), so it stays PARTIAL and exits 1.
+      const complete = !EXPLICIT || (!failedIds.size && !stopReason && players.length > 0 && players.length + emptyIds.size === order.length);
       if (EXPLICIT && complete) { outName = 'users-careers.json'; await writeUsers(); await fs.rm(path.join(OUT, 'users-careers_PARTIAL.json'), { force: true }); }
       const rosterOut = buildRosterOut();
       const byComp = {};
       for (const p of players) for (const c of p.comps) byComp[c.competitionName] = (byComp[c.competitionName] || 0) + 1;
       const lines = [`# User ${EXPLICIT ? 'careers' : 'scan'} ${LABEL} (sport ${SPORT_REF})`, '',
-        ...(EXPLICIT ? [complete ? `- **COMPLETE** — all ${order.length} ids fetched → users-careers.json` : `- **PARTIAL** — ${failedIds.size} id(s) failed/unfetched → users-careers_PARTIAL.json only (re-run)`,
+        ...(EXPLICIT ? [complete ? `- **COMPLETE** — all ${order.length} ids fetched → users-careers.json` : (players.length === 0 && !failedIds.size ? `- **FAILED** — no id returned any netball rows (wrong id list?) → users-careers_PARTIAL.json only` : `- **PARTIAL** — ${failedIds.size} id(s) failed/unfetched → users-careers_PARTIAL.json only (re-run)`),
           `- with rows: ${players.length}; returned empty: ${emptyIds.size}; failed: ${failedIds.size}`,
           `- row fields: ${rowSchema ? rowSchema.join(', ') : '(none)'}`, ''] : []),
         `- scanned ${done} ids in ${calls} calls over ${Math.round((Date.now() - t0) / 60000)} min${stopReason ? ` **(stopped: ${stopReason})**` : ''}`,
@@ -276,7 +280,7 @@ async function main() {
         ...rosterOut.slice(0, 40).map((r) => `| ${r.teamId} | ${(r.teamName || '').replace(/\|/g, '/')} | ${r.competitionId} | ${r.players} |`)];
       await writeSummary(lines);
       await browser.close();
-      process.exit(0);
+      process.exit(complete ? 0 : 1);
     }
 
     // PROBE: diagnostic. For each PROBE_IDS x each KEYS, fetch gameSummary and report status +
