@@ -64,6 +64,13 @@ const COMP_FILTER = new Set((process.env.COMP_FILTER || '').split(',').map((s) =
 const RUN_BUDGET_MIN = parseInt(process.env.RUN_BUDGET_MIN || '0', 10); // wall-clock stop (0 = off)
 const BACKOFF_MIN = parseInt(process.env.BACKOFF_MIN || '10', 10);      // WAF pause, lengthens per break
 const TEST_ID = parseInt(process.env.TEST_ID || '15890707', 10);        // known-good id for recovery test
+// USER_IDS mode (variant of USER_SCAN): fetch an EXACT list of userIds instead of a range. Source:
+// USER_IDS_FILE (set by the workflow after downloading a previous run's artifact) else USER_IDS =
+// a path to a .json file (users-scan.json shape players[].userId, or a plain array) or comma ids.
+// Output users-careers.json = each user's FULL comp history (no comp filter unless COMP_FILTER set).
+// Names are never stored in this mode. Failed fetches are retried; if any still fail, only
+// users-careers_PARTIAL.json is written so a failed collection never looks like a complete one.
+const USER_IDS_SRC = (process.env.USER_IDS_FILE || process.env.USER_IDS || '').trim();
 
 let calls = 0;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -74,8 +81,34 @@ let schemaSample = null;
 const firstVal = (o, keys) => { for (const k of keys) { const v = o && o[k]; if (v != null && v !== '' && typeof v !== 'object') return v; } return ''; };
 const objVal = (o, keys, prop) => { for (const k of keys) { const v = o && o[k]; if (v && typeof v === 'object' && v[prop] != null) return v[prop]; } return ''; };
 
+async function loadUserIds() {
+  if (!USER_IDS_SRC) return null;
+  let ids = [], src;
+  if (/\.json$/i.test(USER_IDS_SRC)) {
+    src = `file ${USER_IDS_SRC}`;
+    const j = JSON.parse((await fs.readFile(USER_IDS_SRC, 'utf8')).replace(/^\uFEFF/, ''));
+    const arr = Array.isArray(j) ? j : (j && Array.isArray(j.players) ? j.players : null);
+    if (!arr) throw new Error(`USER_IDS file has no players[] or top-level array: ${USER_IDS_SRC}`);
+    ids = arr.map((x) => (x && typeof x === 'object' ? x.userId : x));
+  } else {
+    src = 'inline list';
+    ids = USER_IDS_SRC.split(/[\s,;]+/);
+  }
+  ids = [...new Set(ids.map((x) => parseInt(String(x), 10)).filter((n) => Number.isFinite(n) && n > 0))];
+  return { ids, src };
+}
+
 async function main() {
   await fs.mkdir(OUT, { recursive: true });
+  let EXPLICIT = null;
+  if (USER_IDS_SRC) {
+    try { EXPLICIT = await loadUserIds(); } catch (e) { EXPLICIT = { ids: [], src: USER_IDS_SRC, err: e.message || String(e) }; }
+    if (!EXPLICIT.ids.length) {
+      const o = `# User ids\n\n**FAILED: no usable userIds from ${EXPLICIT.src}${EXPLICIT.err ? ` (${EXPLICIT.err})` : ''}**\n`;
+      await fs.writeFile(path.join(OUT, 'SUMMARY.md'), o); if (SUMMARY_FILE) await fs.appendFile(SUMMARY_FILE, o); console.log(o); process.exit(1);
+    }
+    log(`USER_IDS: ${EXPLICIT.ids.length} distinct userIds from ${EXPLICIT.src}`);
+  }
   const notes = [];
   log(`mode: ${SURVEY ? 'SURVEY (locate comps, no harvest)' : 'HARVEST'}`);
   log(`config: primary comp ${COMP_ID} "${COMP_NAME}"`);
@@ -141,11 +174,12 @@ async function main() {
     // flush every 10 batches, and WAF backoff — on a mostly-403/0/503 batch, flush + pause
     // BACKOFF_MIN*attempt minutes (capped 30), run one known-good test, retry the slice on recovery,
     // give up after 6 breaks. Names are null for 9U; isHidden carried through when present.
-    if ((USER_CENTER > 0 && USER_RADIUS > 0) || (USER_LO && USER_HI && USER_HI >= USER_LO)) {
+    if (EXPLICIT || (USER_CENTER > 0 && USER_RADIUS > 0) || (USER_LO && USER_HI && USER_HI >= USER_LO)) {
       const order = [];
-      if (USER_CENTER > 0 && USER_RADIUS > 0) { order.push(USER_CENTER); for (let d = 1; d <= USER_RADIUS; d++) { if (USER_CENTER + d > 0) order.push(USER_CENTER + d); if (USER_CENTER - d > 0) order.push(USER_CENTER - d); } }
+      if (EXPLICIT) { order.push(...EXPLICIT.ids); }
+      else if (USER_CENTER > 0 && USER_RADIUS > 0) { order.push(USER_CENTER); for (let d = 1; d <= USER_RADIUS; d++) { if (USER_CENTER + d > 0) order.push(USER_CENTER + d); if (USER_CENTER - d > 0) order.push(USER_CENTER - d); } }
       else { for (let id = USER_LO; id <= USER_HI; id++) order.push(id); }
-      const LABEL = USER_CENTER > 0 ? `center ${USER_CENTER} +/-${USER_RADIUS}` : `${USER_LO}..${USER_HI}`;
+      const LABEL = EXPLICIT ? `explicit ${EXPLICIT.ids.length} ids (${EXPLICIT.src})` : (USER_CENTER > 0 ? `center ${USER_CENTER} +/-${USER_RADIUS}` : `${USER_LO}..${USER_HI}`);
       log(`USER_SCAN ${LABEL} sport ${SPORT_REF}${COMP_FILTER.size ? ` filter ${[...COMP_FILTER].join(',')}` : ''} budget ${RUN_BUDGET_MIN || 'inf'}m backoff ${BACKOFF_MIN}m — ${order.length} ids`);
       const players = [];
       const rosters = new Map(); // teamId -> {..., userIds:Set}
@@ -153,7 +187,12 @@ async function main() {
       const budgetMs = RUN_BUDGET_MIN > 0 ? RUN_BUDGET_MIN * 60000 : 0;
       let done = 0, batchNo = 0, stop = false, stopReason = '';
       const buildRosterOut = () => [...rosters.values()].map((r) => ({ teamId: r.teamId, teamName: r.teamName, competitionId: r.competitionId, competitionName: r.competitionName, divisionName: r.divisionName, players: r.userIds.size, userIds: [...r.userIds] })).sort((a, b) => b.players - a.players);
-      const writeUsers = async () => { await fs.writeFile(path.join(OUT, 'users-scan.json'), JSON.stringify({ label: LABEL, center: USER_CENTER || null, radius: USER_RADIUS || null, lo: USER_LO || null, hi: USER_HI || null, scanned: done, found: players.length, teams: rosters.size, calls, elapsedMin: Math.round((Date.now() - t0) / 60000), players, rosters: buildRosterOut() }, null, 1)); };
+      // explicit mode: failedIds = non-200/unparseable (retried at the end); emptyIds = 200 but no rows.
+      const failedIds = new Set(), emptyIds = new Set();
+      let rowSchema = null;
+      // explicit mode flushes to the _PARTIAL name; the clean name is written only after a complete run.
+      let outName = EXPLICIT ? 'users-careers_PARTIAL.json' : 'users-scan.json';
+      const writeUsers = async () => { await fs.writeFile(path.join(OUT, outName), JSON.stringify({ label: LABEL, center: USER_CENTER || null, radius: USER_RADIUS || null, lo: USER_LO || null, hi: USER_HI || null, scanned: done, found: players.length, teams: rosters.size, calls, elapsedMin: Math.round((Date.now() - t0) / 60000), ...(EXPLICIT ? { requested: order.length, failedIds: [...failedIds], emptyIds: [...emptyIds], rowSchema } : {}), players, rosters: buildRosterOut() }, null, 1)); };
       const testUrl = `${LIVE}/stats/v2/summaryScoringByUser?userId=${TEST_ID}&playerId=&aggregate=CAREER&sportRefId=${SPORT_REF}`;
       const recover = async () => {
         for (let attempt = 1; attempt <= 6; attempt++) {
@@ -176,34 +215,58 @@ async function main() {
         const res = await batchGet(slice.map((id) => ({ id, url: `${LIVE}/stats/v2/summaryScoringByUser?userId=${id}&playerId=&aggregate=CAREER&sportRefId=${SPORT_REF}` })));
         const blocked = res.filter((r) => r.status === 403 || r.status === 0 || r.status === 503).length;
         if (blocked > res.length * 0.5) { if (await recover()) continue; stop = true; stopReason = 'WAF unrecovered'; break; }
+        absorb(res);
+        i += CHUNK; done += slice.length;
+        if (++batchNo % 10 === 0) await writeUsers();
+        if (batchNo % 5 === 0) log(`userscan ${done}/${total} (${Math.round(done / total * 100)}%, ${Math.round((Date.now() - t0) / 60000)}m) — ${players.length} players, ${rosters.size} teams, ${calls} calls`);
+      }
+      // explicit mode: retry failures (up to 3 passes, small slices, with a pause between passes)
+      for (let pass = 1; EXPLICIT && !stop && failedIds.size && pass <= 3; pass++) {
+        const retry = [...failedIds];
+        log(`retry pass ${pass}: ${retry.length} failed id(s)`);
+        await sleep(pass * 20000);
+        for (let k = 0; k < retry.length; k += 50) {
+          const sl = retry.slice(k, k + 50);
+          sl.forEach((id) => failedIds.delete(id));
+          absorb(await batchGet(sl.map((id) => ({ id, url: `${LIVE}/stats/v2/summaryScoringByUser?userId=${id}&playerId=&aggregate=CAREER&sportRefId=${SPORT_REF}` }))));
+        }
+      }
+      if (EXPLICIT && (i < order.length || stop)) for (const id of order.slice(i)) failedIds.add(id); // never-fetched ids count as failed
+      function absorb(res) {
         for (const r of res) {
-          if (r.status !== 200) continue;
-          let arr = null; try { arr = JSON.parse(r.body); } catch { continue; }
-          if (!Array.isArray(arr) || !arr.length) continue;
+          if (r.status !== 200) { if (EXPLICIT) failedIds.add(r.id); continue; }
+          let arr = null; try { arr = JSON.parse(r.body); } catch { if (EXPLICIT) failedIds.add(r.id); continue; }
+          if (!Array.isArray(arr)) { if (EXPLICIT) failedIds.add(r.id); continue; }
+          if (!arr.length) { if (EXPLICIT) emptyIds.add(r.id); continue; }
+          if (EXPLICIT && !rowSchema) { const s0 = arr.find((x) => String(x.competitionId) !== '-1') || arr[0]; rowSchema = Object.keys(s0 || {}); }
           const comps = [];
           let isHidden = null, firstName = null, lastName = null;
           for (const row of arr) {
             if (String(row.competitionId) === '-1') continue; // skip the Career total row
             if (COMP_FILTER.size && !COMP_FILTER.has(String(row.competitionId))) continue;
-            comps.push({ competitionId: String(row.competitionId), competitionName: row.competitionName || '', teamId: row.teamId, teamName: row.teamName || '', divisionId: row.divisionId, divisionName: row.divisionName || '', games: row.games });
-            if (row.isHidden != null) isHidden = row.isHidden;
-            if (row.firstName) firstName = row.firstName;
-            if (row.lastName) lastName = row.lastName;
+            comps.push({ competitionId: String(row.competitionId), competitionName: row.competitionName || '', teamId: row.teamId, teamName: row.teamName || '', divisionId: row.divisionId, divisionName: row.divisionName || '', games: row.games, ...(EXPLICIT ? { isHidden: row.isHidden != null ? row.isHidden : null } : {}) });
+            if (row.isHidden != null) isHidden = isHidden === true ? true : row.isHidden; // hidden on ANY row = hidden
+            if (!EXPLICIT && row.firstName) firstName = row.firstName; // names never stored in USER_IDS mode
+            if (!EXPLICIT && row.lastName) lastName = row.lastName;
           }
-          if (!comps.length) continue;
-          players.push({ userId: r.id, isHidden, firstName, lastName, comps });
+          if (!comps.length) { if (EXPLICIT) emptyIds.add(r.id); continue; }
+          const prev = players.findIndex((p) => p.userId === r.id); // a retried id must not duplicate
+          if (prev >= 0) players.splice(prev, 1);
+          players.push(EXPLICIT ? { userId: r.id, isHidden, comps } : { userId: r.id, isHidden, firstName, lastName, comps });
           for (const c of comps) { if (c.teamId == null) continue; const k = String(c.teamId); let ro = rosters.get(k); if (!ro) { ro = { teamId: c.teamId, teamName: c.teamName, competitionId: c.competitionId, competitionName: c.competitionName, divisionName: c.divisionName, userIds: new Set() }; rosters.set(k, ro); } ro.userIds.add(r.id); }
         }
-        i += CHUNK; done += slice.length;
-        if (++batchNo % 10 === 0) await writeUsers();
-        if (batchNo % 5 === 0) log(`userscan ${done}/${total} (${Math.round(done / total * 100)}%, ${Math.round((Date.now() - t0) / 60000)}m) — ${players.length} players, ${rosters.size} teams, ${calls} calls`);
       }
       if (calls >= MAX_CALLS && !stopReason) stopReason = 'MAX_CALLS';
       await writeUsers();
+      const complete = !EXPLICIT || (!failedIds.size && !stopReason && players.length + emptyIds.size === order.length);
+      if (EXPLICIT && complete) { outName = 'users-careers.json'; await writeUsers(); await fs.rm(path.join(OUT, 'users-careers_PARTIAL.json'), { force: true }); }
       const rosterOut = buildRosterOut();
       const byComp = {};
       for (const p of players) for (const c of p.comps) byComp[c.competitionName] = (byComp[c.competitionName] || 0) + 1;
-      const lines = [`# User scan ${LABEL} (sport ${SPORT_REF})`, '',
+      const lines = [`# User ${EXPLICIT ? 'careers' : 'scan'} ${LABEL} (sport ${SPORT_REF})`, '',
+        ...(EXPLICIT ? [complete ? `- **COMPLETE** — all ${order.length} ids fetched → users-careers.json` : `- **PARTIAL** — ${failedIds.size} id(s) failed/unfetched → users-careers_PARTIAL.json only (re-run)`,
+          `- with rows: ${players.length}; returned empty: ${emptyIds.size}; failed: ${failedIds.size}`,
+          `- row fields: ${rowSchema ? rowSchema.join(', ') : '(none)'}`, ''] : []),
         `- scanned ${done} ids in ${calls} calls over ${Math.round((Date.now() - t0) / 60000)} min${stopReason ? ` **(stopped: ${stopReason})**` : ''}`,
         `- netball players found: ${players.length} (hit rate ${(players.length / Math.max(1, done) * 100).toFixed(2)}%)`,
         `- distinct teams: ${rosters.size}`, '',
