@@ -1,0 +1,7145 @@
+{
+ "compId": "4596",
+ "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+ "harvestedAt": "2026-11-16T00:32:07.895Z",
+ "count": 186,
+ "phase": "complete",
+ "matches": [
+  {
+   "id": 2558159,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-06T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Holy Spirit 9U Diamonds",
+   "team1Id": 192668,
+   "team2": "Ringwood North 9U Blue",
+   "team2Id": 192669,
+   "t1": 0,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2558160,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-06T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Trinity 9U Lilac",
+   "team1Id": 192670,
+   "team2": "Heathmont United 9U Hearts",
+   "team2Id": 192671,
+   "t1": 5,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 5,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 5,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2558161,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-06T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Holy Spirit 9U Hearts",
+   "team1Id": 192672,
+   "team2": "St James 9U Blue",
+   "team2Id": 192673,
+   "t1": 6,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 5,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 5,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 6,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2558163,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-06T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Heathmont United 9U Blaze",
+   "team1Id": 192676,
+   "team2": "Ringwood North 9U Orange",
+   "team2Id": 192677,
+   "t1": 1,
+   "t2": 5,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 5
+    }
+   ]
+  },
+  {
+   "id": 2558164,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-06T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "East Ringwood 9U Blue",
+   "team1Id": 192678,
+   "team2": "Holy Spirit 9U Stars",
+   "team2Id": 192679,
+   "t1": 4,
+   "t2": 17,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 3
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 8
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 12
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 17
+    }
+   ]
+  },
+  {
+   "id": 2558165,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-06T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Park Orchards 9U Storm",
+   "team1Id": 192680,
+   "team2": "Nunawading 9U Diamonds",
+   "team2Id": 192681,
+   "t1": 3,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2558166,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-06T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "HFNC Jets 9U Yellow",
+   "team1Id": 192682,
+   "team2": "Southwood 9U Purple",
+   "team2Id": 192683,
+   "t1": 0,
+   "t2": 13,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 4
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 11
+    },
+    {
+     "q": 4,
+     "t1": 0,
+     "t2": 13
+    }
+   ]
+  },
+  {
+   "id": 2558167,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-06T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Trinity 9U Black",
+   "team1Id": 192684,
+   "team2": "Holy Spirit 9U Suns",
+   "team2Id": 192685,
+   "t1": 0,
+   "t2": 19,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 5
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 10
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 13
+    },
+    {
+     "q": 4,
+     "t1": 0,
+     "t2": 19
+    }
+   ]
+  },
+  {
+   "id": 2558168,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-06T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Ringwood North 9U White",
+   "team1Id": 192686,
+   "team2": "Park Orchards 9U Thunder",
+   "team2Id": 192687,
+   "t1": 3,
+   "t2": 1,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 1
+    }
+   ]
+  },
+  {
+   "id": 2558169,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-06T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "HFNC Jets 9U Gold",
+   "team1Id": 192688,
+   "team2": "Our Ladys 9U Gold",
+   "team2Id": 192689,
+   "t1": 11,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 7,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 11,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2558171,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-06T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "Park Orchards 9U Lightning ",
+   "team1Id": 192691,
+   "team2": "Heathmont United 9U Lightning",
+   "team2Id": 192692,
+   "t1": 10,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 10,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2558172,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-06T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "East Ringwood 9U Black",
+   "team1Id": 192693,
+   "team2": "HFNC Jets 9U Blue",
+   "team2Id": 192694,
+   "t1": 2,
+   "t2": 15,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 5
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 8
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 13
+    },
+    {
+     "q": 4,
+     "t1": 2,
+     "t2": 15
+    }
+   ]
+  },
+  {
+   "id": 2558173,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-13T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Heathmont United 9U Hearts",
+   "team1Id": 192671,
+   "team2": "St James 9U Blue",
+   "team2Id": 192673,
+   "t1": 5,
+   "t2": 6,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 4
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 5,
+     "t2": 6
+    }
+   ]
+  },
+  {
+   "id": 2558174,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-13T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "Ringwood North 9U Blue",
+   "team1Id": 192669,
+   "team2": "Holy Spirit 9U Hearts",
+   "team2Id": 192672,
+   "t1": 3,
+   "t2": 9,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 3
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 6
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 9
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 9
+    }
+   ]
+  },
+  {
+   "id": 2558175,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-13T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Trinity 9U Lilac",
+   "team1Id": 192670,
+   "team2": "Holy Spirit 9U Diamonds",
+   "team2Id": 192668,
+   "t1": 0,
+   "t2": 8,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 0,
+     "t2": 8
+    }
+   ]
+  },
+  {
+   "id": 2558178,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-13T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "HFNC Jets 9U Yellow",
+   "team1Id": 192682,
+   "team2": "Park Orchards 9U Storm",
+   "team2Id": 192680,
+   "t1": 4,
+   "t2": 13,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 3
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 7
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 13
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 13
+    }
+   ]
+  },
+  {
+   "id": 2558179,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-13T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Holy Spirit 9U Suns",
+   "team1Id": 192685,
+   "team2": "Holy Spirit 9U Stars",
+   "team2Id": 192679,
+   "t1": 12,
+   "t2": 5,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 4,
+     "t2": 3
+    },
+    {
+     "q": 2,
+     "t1": 7,
+     "t2": 4
+    },
+    {
+     "q": 3,
+     "t1": 9,
+     "t2": 4
+    },
+    {
+     "q": 4,
+     "t1": 12,
+     "t2": 5
+    }
+   ]
+  },
+  {
+   "id": 2558180,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-13T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Nunawading 9U Diamonds",
+   "team1Id": 192681,
+   "team2": "Trinity 9U Black",
+   "team2Id": 192684,
+   "t1": 17,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 4,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 11,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 14,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 17,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2558181,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-13T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Southwood 9U Purple",
+   "team1Id": 192683,
+   "team2": "East Ringwood 9U Blue",
+   "team2Id": 192678,
+   "t1": 4,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 4,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2558183,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-13T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "Heathmont United 9U Lightning",
+   "team1Id": 192692,
+   "team2": "HFNC Jets 9U Blue",
+   "team2Id": 192694,
+   "t1": 1,
+   "t2": 4,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 4
+    }
+   ]
+  },
+  {
+   "id": 2558184,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-13T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Park Orchards 9U Lightning ",
+   "team1Id": 192691,
+   "team2": "HFNC Jets 9U Gold",
+   "team2Id": 192688,
+   "t1": 2,
+   "t2": 11,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 6
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 8
+    },
+    {
+     "q": 4,
+     "t1": 2,
+     "t2": 11
+    }
+   ]
+  },
+  {
+   "id": 2558186,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-13T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Our Ladys 9U Gold",
+   "team1Id": 192689,
+   "team2": "East Ringwood 9U Black",
+   "team2Id": 192693,
+   "t1": 10,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 7,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 10,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2558187,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-20T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Holy Spirit 9U Diamonds",
+   "team1Id": 192668,
+   "team2": "Holy Spirit 9U Hearts",
+   "team2Id": 192672,
+   "t1": 1,
+   "t2": 6,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 3
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 6
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 6
+    }
+   ]
+  },
+  {
+   "id": 2558188,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-20T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "St James 9U Blue",
+   "team1Id": 192673,
+   "team2": "Trinity 9U Lilac",
+   "team2Id": 192670,
+   "t1": 2,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 2,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2558189,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-20T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Heathmont United 9U Hearts",
+   "team1Id": 192671,
+   "team2": "Ringwood North 9U Blue",
+   "team2Id": 192669,
+   "t1": 3,
+   "t2": 8,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 7
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 8
+    }
+   ]
+  },
+  {
+   "id": 2558192,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-20T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Holy Spirit 9U Suns",
+   "team1Id": 192685,
+   "team2": "Southwood 9U Purple",
+   "team2Id": 192683,
+   "t1": 8,
+   "t2": 1,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 5,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 5,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 8,
+     "t2": 1
+    }
+   ]
+  },
+  {
+   "id": 2558193,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-20T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "East Ringwood 9U Blue",
+   "team1Id": 192678,
+   "team2": "HFNC Jets 9U Yellow",
+   "team2Id": 192682,
+   "t1": 1,
+   "t2": 8,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 8
+    }
+   ]
+  },
+  {
+   "id": 2558194,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-20T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Park Orchards 9U Storm",
+   "team1Id": 192680,
+   "team2": "Trinity 9U Black",
+   "team2Id": 192684,
+   "t1": 12,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 7,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 10,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 12,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2558195,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-20T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Holy Spirit 9U Stars",
+   "team1Id": 192679,
+   "team2": "Nunawading 9U Diamonds",
+   "team2Id": 192681,
+   "t1": 6,
+   "t2": 1,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 6,
+     "t2": 1
+    }
+   ]
+  },
+  {
+   "id": 2558197,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-20T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "HFNC Jets 9U Blue",
+   "team1Id": 192694,
+   "team2": "Park Orchards 9U Lightning ",
+   "team2Id": 192691,
+   "t1": 1,
+   "t2": 10,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 3
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 7
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 8
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 10
+    }
+   ]
+  },
+  {
+   "id": 2558199,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-20T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "HFNC Jets 9U Gold",
+   "team1Id": 192688,
+   "team2": "East Ringwood 9U Black",
+   "team2Id": 192693,
+   "t1": 16,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 8,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 14,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 14,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 16,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2558200,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-20T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Heathmont United 9U Lightning",
+   "team1Id": 192692,
+   "team2": "Our Ladys 9U Gold",
+   "team2Id": 192689,
+   "t1": 3,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2558201,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-27T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Trinity 9U Lilac",
+   "team1Id": 192670,
+   "team2": "Ringwood North 9U Blue",
+   "team2Id": 192669,
+   "t1": 4,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2558202,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-27T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "St James 9U Blue",
+   "team1Id": 192673,
+   "team2": "Holy Spirit 9U Diamonds",
+   "team2Id": 192668,
+   "t1": 7,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 7,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2558203,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-27T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "Holy Spirit 9U Hearts",
+   "team1Id": 192672,
+   "team2": "Heathmont United 9U Hearts",
+   "team2Id": 192671,
+   "t1": 6,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 5,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 5,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 6,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2558206,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-27T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Trinity 9U Black",
+   "team1Id": 192684,
+   "team2": "Holy Spirit 9U Stars",
+   "team2Id": 192679,
+   "t1": 0,
+   "t2": 13,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 0,
+     "t2": 13
+    }
+   ]
+  },
+  {
+   "id": 2558207,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-27T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Nunawading 9U Diamonds",
+   "team1Id": 192681,
+   "team2": "Southwood 9U Purple",
+   "team2Id": 192683,
+   "t1": 3,
+   "t2": 4,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 4
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 4
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 4
+    }
+   ]
+  },
+  {
+   "id": 2558208,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-27T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "HFNC Jets 9U Yellow",
+   "team1Id": 192682,
+   "team2": "Holy Spirit 9U Suns",
+   "team2Id": 192685,
+   "t1": 1,
+   "t2": 16,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 4
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 7
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 10
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 16
+    }
+   ]
+  },
+  {
+   "id": 2558209,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-27T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "East Ringwood 9U Blue",
+   "team1Id": 192678,
+   "team2": "Park Orchards 9U Storm",
+   "team2Id": 192680,
+   "t1": 6,
+   "t2": 7,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 4
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 7
+    },
+    {
+     "q": 4,
+     "t1": 6,
+     "t2": 7
+    }
+   ]
+  },
+  {
+   "id": 2558211,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-27T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "HFNC Jets 9U Blue",
+   "team1Id": 192694,
+   "team2": "HFNC Jets 9U Gold",
+   "team2Id": 192688,
+   "t1": 2,
+   "t2": 24,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 4
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 11
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 19
+    },
+    {
+     "q": 4,
+     "t1": 2,
+     "t2": 24
+    }
+   ]
+  },
+  {
+   "id": 2558213,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-27T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Park Orchards 9U Lightning ",
+   "team1Id": 192691,
+   "team2": "Our Ladys 9U Gold",
+   "team2Id": 192689,
+   "t1": 3,
+   "t2": 1,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 1
+    }
+   ]
+  },
+  {
+   "id": 2558214,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-27T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "East Ringwood 9U Black",
+   "team1Id": 192693,
+   "team2": "Heathmont United 9U Lightning",
+   "team2Id": 192692,
+   "t1": 2,
+   "t2": 9,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 9
+    },
+    {
+     "q": 4,
+     "t1": 2,
+     "t2": 9
+    }
+   ]
+  },
+  {
+   "id": 2558215,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-13T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Trinity 9U Lilac",
+   "team1Id": 192670,
+   "team2": "Holy Spirit 9U Hearts",
+   "team2Id": 192672,
+   "t1": 5,
+   "t2": 8,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 4
+    },
+    {
+     "q": 3,
+     "t1": 5,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 5,
+     "t2": 8
+    }
+   ]
+  },
+  {
+   "id": 2558216,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-13T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Holy Spirit 9U Diamonds",
+   "team1Id": 192668,
+   "team2": "Heathmont United 9U Hearts",
+   "team2Id": 192671,
+   "t1": 3,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2558217,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-13T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Ringwood North 9U Blue",
+   "team1Id": 192669,
+   "team2": "St James 9U Blue",
+   "team2Id": 192673,
+   "t1": 6,
+   "t2": 4,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 4
+    },
+    {
+     "q": 4,
+     "t1": 6,
+     "t2": 4
+    }
+   ]
+  },
+  {
+   "id": 2558220,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-13T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Nunawading 9U Diamonds",
+   "team1Id": 192681,
+   "team2": "HFNC Jets 9U Yellow",
+   "team2Id": 192682,
+   "t1": 4,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2558221,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-13T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Southwood 9U Purple",
+   "team1Id": 192683,
+   "team2": "Trinity 9U Black",
+   "team2Id": 192684,
+   "t1": 22,
+   "t2": 1,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 6,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 12,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 16,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 22,
+     "t2": 1
+    }
+   ]
+  },
+  {
+   "id": 2558222,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-13T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Park Orchards 9U Storm",
+   "team1Id": 192680,
+   "team2": "Holy Spirit 9U Stars",
+   "team2Id": 192679,
+   "t1": 3,
+   "t2": 9,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 3
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 4
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 6
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 9
+    }
+   ]
+  },
+  {
+   "id": 2558223,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-13T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Holy Spirit 9U Suns",
+   "team1Id": 192685,
+   "team2": "East Ringwood 9U Blue",
+   "team2Id": 192678,
+   "t1": 4,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2558225,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-13T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "HFNC Jets 9U Gold",
+   "team1Id": 192688,
+   "team2": "Heathmont United 9U Lightning",
+   "team2Id": 192692,
+   "t1": 21,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 6,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 12,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 17,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 21,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2558227,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-13T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "Park Orchards 9U Lightning ",
+   "team1Id": 192691,
+   "team2": "East Ringwood 9U Black",
+   "team2Id": 192693,
+   "t1": 8,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 5,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 6,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 8,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2558228,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-13T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Our Ladys 9U Gold",
+   "team1Id": 192689,
+   "team2": "HFNC Jets 9U Blue",
+   "team2Id": 192694,
+   "t1": 9,
+   "t2": 1,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 5,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 9,
+     "t2": 1
+    }
+   ]
+  },
+  {
+   "id": 2565697,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-06T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Heathmont United 9U Thunder",
+   "team1Id": 192690,
+   "team2": "Ringwood North U9 Pink",
+   "team2Id": 193616,
+   "t1": 14,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 6,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 13,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 14,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 14,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2565698,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-06T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "St James 9U White",
+   "team1Id": 192675,
+   "team2": "Trinity 9U White",
+   "team2Id": 192674,
+   "t1": 3,
+   "t2": 11,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 3
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 4
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 9
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 11
+    }
+   ]
+  },
+  {
+   "id": 2565699,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-13T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Park Orchards 9U Thunder",
+   "team1Id": 192687,
+   "team2": "Trinity 9U White",
+   "team2Id": 192674,
+   "t1": 2,
+   "t2": 14,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 6
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 8
+    },
+    {
+     "q": 4,
+     "t1": 2,
+     "t2": 14
+    }
+   ]
+  },
+  {
+   "id": 2565700,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-13T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Heathmont United 9U Blaze",
+   "team1Id": 192676,
+   "team2": "Heathmont United 9U Thunder",
+   "team2Id": 192690,
+   "t1": 4,
+   "t2": 9,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 3
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 6
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 7
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 9
+    }
+   ]
+  },
+  {
+   "id": 2565701,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-13T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Ringwood North U9 Pink",
+   "team1Id": 193616,
+   "team2": "Ringwood North 9U White",
+   "team2Id": 192686,
+   "t1": 2,
+   "t2": 10,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 5
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 7
+    },
+    {
+     "q": 4,
+     "t1": 2,
+     "t2": 10
+    }
+   ]
+  },
+  {
+   "id": 2565702,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-13T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Ringwood North 9U Orange",
+   "team1Id": 192677,
+   "team2": "St James 9U White",
+   "team2Id": 192675,
+   "t1": 3,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2565703,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-20T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "St James 9U White",
+   "team1Id": 192675,
+   "team2": "Heathmont United 9U Blaze",
+   "team2Id": 192676,
+   "t1": 0,
+   "t2": 19,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 8
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 11
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 15
+    },
+    {
+     "q": 4,
+     "t1": 0,
+     "t2": 19
+    }
+   ]
+  },
+  {
+   "id": 2565704,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-20T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Park Orchards 9U Thunder",
+   "team1Id": 192687,
+   "team2": "Ringwood North 9U Orange",
+   "team2Id": 192677,
+   "t1": 2,
+   "t2": 6,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 4
+    },
+    {
+     "q": 4,
+     "t1": 2,
+     "t2": 6
+    }
+   ]
+  },
+  {
+   "id": 2565705,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-20T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Heathmont United 9U Thunder",
+   "team1Id": 192690,
+   "team2": "Ringwood North 9U White",
+   "team2Id": 192686,
+   "t1": 5,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 5,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2565706,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-20T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Trinity 9U White",
+   "team1Id": 192674,
+   "team2": "Ringwood North U9 Pink",
+   "team2Id": 193616,
+   "t1": 21,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 5,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 8,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 15,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 21,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2565707,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-27T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Ringwood North U9 Pink",
+   "team1Id": 193616,
+   "team2": "Ringwood North 9U Orange",
+   "team2Id": 192677,
+   "t1": 1,
+   "t2": 6,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 6
+    }
+   ]
+  },
+  {
+   "id": 2565708,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-27T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "St James 9U White",
+   "team1Id": 192675,
+   "team2": "Heathmont United 9U Thunder",
+   "team2Id": 192690,
+   "t1": 0,
+   "t2": 12,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 8
+    },
+    {
+     "q": 4,
+     "t1": 0,
+     "t2": 12
+    }
+   ]
+  },
+  {
+   "id": 2565709,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-27T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Heathmont United 9U Blaze",
+   "team1Id": 192676,
+   "team2": "Park Orchards 9U Thunder",
+   "team2Id": 192687,
+   "t1": 8,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 5,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 8,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2565710,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-02-27T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Ringwood North 9U White",
+   "team1Id": 192686,
+   "team2": "Trinity 9U White",
+   "team2Id": 192674,
+   "t1": 2,
+   "t2": 8,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 4
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 2,
+     "t2": 8
+    }
+   ]
+  },
+  {
+   "id": 2565711,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-13T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Ringwood North 9U Orange",
+   "team1Id": 192677,
+   "team2": "Ringwood North 9U White",
+   "team2Id": 192686,
+   "t1": 8,
+   "t2": 4,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 5,
+     "t2": 4
+    },
+    {
+     "q": 4,
+     "t1": 8,
+     "t2": 4
+    }
+   ]
+  },
+  {
+   "id": 2565712,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-13T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Ringwood North U9 Pink",
+   "team1Id": 193616,
+   "team2": "Heathmont United 9U Blaze",
+   "team2Id": 192676,
+   "t1": 3,
+   "t2": 13,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 3
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 6
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 7
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 13
+    }
+   ]
+  },
+  {
+   "id": 2565713,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-13T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Heathmont United 9U Thunder",
+   "team1Id": 192690,
+   "team2": "Trinity 9U White",
+   "team2Id": 192674,
+   "t1": 19,
+   "t2": 5,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 5,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 7,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 13,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 19,
+     "t2": 5
+    }
+   ]
+  },
+  {
+   "id": 2565714,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-13T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Park Orchards 9U Thunder",
+   "team1Id": 192687,
+   "team2": "St James 9U White",
+   "team2Id": 192675,
+   "t1": 7,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 7,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2655152,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-20T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Ringwood North 9U Blue",
+   "team1Id": 192669,
+   "team2": "Holy Spirit 9U Diamonds",
+   "team2Id": 192668,
+   "t1": 9,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 6,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 7,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 9,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2655153,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-20T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "St James 9U Blue",
+   "team1Id": 192673,
+   "team2": "Holy Spirit 9U Hearts",
+   "team2Id": 192672,
+   "t1": 1,
+   "t2": 6,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 3
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 5
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 6
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 6
+    }
+   ]
+  },
+  {
+   "id": 2655154,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-20T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "HFNC Jets 9U Gold",
+   "team1Id": 192688,
+   "team2": "Trinity 9U Lilac",
+   "team2Id": 192670,
+   "t1": 17,
+   "t2": 6,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 5,
+     "t2": 4
+    },
+    {
+     "q": 2,
+     "t1": 11,
+     "t2": 5
+    },
+    {
+     "q": 3,
+     "t1": 14,
+     "t2": 6
+    },
+    {
+     "q": 4,
+     "t1": 17,
+     "t2": 6
+    }
+   ]
+  },
+  {
+   "id": 2655155,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-20T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "East Ringwood 9U Black",
+   "team1Id": 192693,
+   "team2": "Holy Spirit 9U Suns",
+   "team2Id": 192685,
+   "t1": 0,
+   "t2": 10,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 0,
+     "t2": 10
+    }
+   ]
+  },
+  {
+   "id": 2655156,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-20T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Trinity 9U White",
+   "team1Id": 192674,
+   "team2": "Heathmont United 9U Blaze",
+   "team2Id": 192676,
+   "t1": 3,
+   "t2": 7,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 3
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 4
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 7
+    }
+   ]
+  },
+  {
+   "id": 2655157,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-20T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Ringwood North 9U Orange",
+   "team1Id": 192677,
+   "team2": "Southwood 9U Purple",
+   "team2Id": 192683,
+   "t1": 5,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 5,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2655158,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-20T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Holy Spirit 9U Stars",
+   "team1Id": 192679,
+   "team2": "Ringwood North 9U White",
+   "team2Id": 192686,
+   "t1": 0,
+   "t2": 9,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 7
+    },
+    {
+     "q": 4,
+     "t1": 0,
+     "t2": 9
+    }
+   ]
+  },
+  {
+   "id": 2655159,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-20T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "HFNC Jets 9U Blue",
+   "team1Id": 192694,
+   "team2": "Park Orchards 9U Lightning ",
+   "team2Id": 192691,
+   "t1": 1,
+   "t2": 15,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 6
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 10
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 14
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 15
+    }
+   ]
+  },
+  {
+   "id": 2655161,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-20T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "St James 9U White",
+   "team1Id": 192675,
+   "team2": "Ringwood North U9 Pink",
+   "team2Id": 193616,
+   "t1": 1,
+   "t2": 13,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 5
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 8
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 13
+    }
+   ]
+  },
+  {
+   "id": 2655162,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-20T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "East Ringwood 9U Blue",
+   "team1Id": 192678,
+   "team2": "Mullum 9U Red",
+   "team2Id": 202409,
+   "t1": 7,
+   "t2": 12,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 4,
+     "t2": 3
+    },
+    {
+     "q": 2,
+     "t1": 5,
+     "t2": 5
+    },
+    {
+     "q": 3,
+     "t1": 7,
+     "t2": 8
+    },
+    {
+     "q": 4,
+     "t1": 7,
+     "t2": 12
+    }
+   ]
+  },
+  {
+   "id": 2655163,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-20T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "HFNC Jets 9U Yellow",
+   "team1Id": 192682,
+   "team2": "Nunawading 9U Diamonds",
+   "team2Id": 192681,
+   "t1": 0,
+   "t2": 6,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 3
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 0,
+     "t2": 6
+    }
+   ]
+  },
+  {
+   "id": 2655164,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-20T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 5",
+   "team1": "Trinity 9U Black",
+   "team1Id": 192684,
+   "team2": "Bye",
+   "team2Id": 1,
+   "t1": 0,
+   "t2": 0,
+   "periods": []
+  },
+  {
+   "id": 2655165,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-20T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "Our Ladys 9U Gold",
+   "team1Id": 192689,
+   "team2": "Heathmont United 9U Hearts",
+   "team2Id": 192671,
+   "t1": 1,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2655167,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-27T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "St James 9U Blue",
+   "team1Id": 192673,
+   "team2": "HFNC Jets 9U Gold",
+   "team2Id": 192688,
+   "t1": 2,
+   "t2": 16,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 7
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 13
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 14
+    },
+    {
+     "q": 4,
+     "t1": 2,
+     "t2": 16
+    }
+   ]
+  },
+  {
+   "id": 2655168,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-27T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Holy Spirit 9U Hearts",
+   "team1Id": 192672,
+   "team2": "Ringwood North 9U Blue",
+   "team2Id": 192669,
+   "t1": 6,
+   "t2": 9,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 4
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 7
+    },
+    {
+     "q": 4,
+     "t1": 6,
+     "t2": 9
+    }
+   ]
+  },
+  {
+   "id": 2655169,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-27T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Holy Spirit 9U Diamonds",
+   "team1Id": 192668,
+   "team2": "Trinity 9U Lilac",
+   "team2Id": 192670,
+   "t1": 5,
+   "t2": 4,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 5,
+     "t2": 4
+    }
+   ]
+  },
+  {
+   "id": 2655170,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-27T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Heathmont United 9U Blaze",
+   "team1Id": 192676,
+   "team2": "Ringwood North 9U Orange",
+   "team2Id": 192677,
+   "t1": 10,
+   "t2": 4,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 7,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 9,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 10,
+     "t2": 4
+    }
+   ]
+  },
+  {
+   "id": 2655171,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-27T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Ringwood North 9U White",
+   "team1Id": 192686,
+   "team2": "East Ringwood 9U Black",
+   "team2Id": 192693,
+   "t1": 6,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 5,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 6,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2655172,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-27T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Nunawading 9U Diamonds",
+   "team1Id": 192681,
+   "team2": "East Ringwood 9U Blue",
+   "team2Id": 192678,
+   "t1": 13,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 4,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 8,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 13,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 13,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2655173,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-27T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Holy Spirit 9U Suns",
+   "team1Id": 192685,
+   "team2": "Southwood 9U Purple",
+   "team2Id": 192683,
+   "t1": 6,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 6,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2655174,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-27T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Park Orchards 9U Lightning ",
+   "team1Id": 192691,
+   "team2": "Our Ladys 9U Gold",
+   "team2Id": 192689,
+   "t1": 2,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 2,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2655175,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-27T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Trinity 9U White",
+   "team1Id": 192674,
+   "team2": "Holy Spirit 9U Stars",
+   "team2Id": 192679,
+   "t1": 4,
+   "t2": 1,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 1
+    }
+   ]
+  },
+  {
+   "id": 2655176,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-27T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Park Orchards 9U Storm",
+   "team1Id": 192680,
+   "team2": "Ringwood North U9 Pink",
+   "team2Id": 193616,
+   "t1": 8,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 5,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 7,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 8,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2655177,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-27T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "HFNC Jets 9U Yellow",
+   "team1Id": 192682,
+   "team2": "Trinity 9U Black",
+   "team2Id": 192684,
+   "t1": 11,
+   "t2": 1,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 4,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 6,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 9,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 11,
+     "t2": 1
+    }
+   ]
+  },
+  {
+   "id": 2655179,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-27T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 5",
+   "team1": "Bye",
+   "team1Id": 1,
+   "team2": "St James 9U White",
+   "team2Id": 192675,
+   "t1": 0,
+   "t2": 0,
+   "periods": []
+  },
+  {
+   "id": 2655180,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-27T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "HFNC Jets 9U Blue",
+   "team1Id": 192694,
+   "team2": "Heathmont United 9U Lightning",
+   "team2Id": 192692,
+   "t1": 7,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 6,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 7,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2655182,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-01T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Ringwood North 9U Blue",
+   "team1Id": 192669,
+   "team2": "HFNC Jets 9U Gold",
+   "team2Id": 192688,
+   "t1": 1,
+   "t2": 16,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 7
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 11
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 15
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 16
+    }
+   ]
+  },
+  {
+   "id": 2655183,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-01T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Trinity 9U Lilac",
+   "team1Id": 192670,
+   "team2": "St James 9U Blue",
+   "team2Id": 192673,
+   "t1": 5,
+   "t2": 6,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 5,
+     "t2": 6
+    }
+   ]
+  },
+  {
+   "id": 2655184,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-01T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Holy Spirit 9U Hearts",
+   "team1Id": 192672,
+   "team2": "Holy Spirit 9U Diamonds",
+   "team2Id": 192668,
+   "t1": 8,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 5,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 5,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 7,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 8,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2655185,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-01T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Ringwood North 9U Orange",
+   "team1Id": 192677,
+   "team2": "Holy Spirit 9U Stars",
+   "team2Id": 192679,
+   "t1": 7,
+   "t2": 4,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 6,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 6,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 7,
+     "t2": 4
+    }
+   ]
+  },
+  {
+   "id": 2655186,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-01T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Southwood 9U Purple",
+   "team1Id": 192683,
+   "team2": "Heathmont United 9U Blaze",
+   "team2Id": 192676,
+   "t1": 8,
+   "t2": 9,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 7
+    },
+    {
+     "q": 2,
+     "t1": 7,
+     "t2": 8
+    },
+    {
+     "q": 3,
+     "t1": 8,
+     "t2": 9
+    },
+    {
+     "q": 4,
+     "t1": 8,
+     "t2": 9
+    }
+   ]
+  },
+  {
+   "id": 2655187,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-01T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "St James 9U White",
+   "team1Id": 192675,
+   "team2": "HFNC Jets 9U Yellow",
+   "team2Id": 192682,
+   "t1": 9,
+   "t2": 5,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 5,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 5,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 9,
+     "t2": 5
+    }
+   ]
+  },
+  {
+   "id": 2655188,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-01T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "East Ringwood 9U Black",
+   "team1Id": 192693,
+   "team2": "Trinity 9U White",
+   "team2Id": 192674,
+   "t1": 7,
+   "t2": 7,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 5,
+     "t2": 4
+    },
+    {
+     "q": 4,
+     "t1": 7,
+     "t2": 7
+    }
+   ]
+  },
+  {
+   "id": 2655190,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-01T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Ringwood North 9U White",
+   "team1Id": 192686,
+   "team2": "Holy Spirit 9U Suns",
+   "team2Id": 192685,
+   "t1": 6,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 6,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 6,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 6,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2655192,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-01T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Mullum 9U Red",
+   "team1Id": 202409,
+   "team2": "Park Orchards 9U Storm",
+   "team2Id": 192680,
+   "t1": 7,
+   "t2": 8,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 4
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 6
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 8
+    },
+    {
+     "q": 4,
+     "t1": 7,
+     "t2": 8
+    }
+   ]
+  },
+  {
+   "id": 2655193,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-01T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "East Ringwood 9U Blue",
+   "team1Id": 192678,
+   "team2": "Trinity 9U Black",
+   "team2Id": 192684,
+   "t1": 10,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 8,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 10,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2655194,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-01T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 5",
+   "team1": "Ringwood North U9 Pink",
+   "team1Id": 193616,
+   "team2": "Bye",
+   "team2Id": 1,
+   "t1": 0,
+   "t2": 0,
+   "periods": []
+  },
+  {
+   "id": 2655195,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-01T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "Our Ladys 9U Gold",
+   "team1Id": 192689,
+   "team2": "Heathmont United 9U Lightning",
+   "team2Id": 192692,
+   "t1": 8,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 4,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 8,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 8,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 8,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2655196,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-01T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "Park Orchards 9U Lightning ",
+   "team1Id": 192691,
+   "team2": "Heathmont United 9U Hearts",
+   "team2Id": 192671,
+   "t1": 4,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2655197,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-08T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Holy Spirit 9U Diamonds",
+   "team1Id": 192668,
+   "team2": "St James 9U Blue",
+   "team2Id": 192673,
+   "t1": 5,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 5,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 5,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 5,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2655198,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-08T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "HFNC Jets 9U Gold",
+   "team1Id": 192688,
+   "team2": "Holy Spirit 9U Hearts",
+   "team2Id": 192672,
+   "t1": 11,
+   "t2": 7,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 5,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 8,
+     "t2": 4
+    },
+    {
+     "q": 4,
+     "t1": 11,
+     "t2": 7
+    }
+   ]
+  },
+  {
+   "id": 2655199,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-08T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Ringwood North 9U Blue",
+   "team1Id": 192669,
+   "team2": "Trinity 9U Lilac",
+   "team2Id": 192670,
+   "t1": 3,
+   "t2": 7,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 4
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 7
+    }
+   ]
+  },
+  {
+   "id": 2655200,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-08T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Trinity 9U White",
+   "team1Id": 192674,
+   "team2": "Ringwood North 9U White",
+   "team2Id": 192686,
+   "t1": 6,
+   "t2": 8,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 4,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 5
+    },
+    {
+     "q": 3,
+     "t1": 6,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 6,
+     "t2": 8
+    }
+   ]
+  },
+  {
+   "id": 2655201,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-08T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Holy Spirit 9U Stars",
+   "team1Id": 192679,
+   "team2": "Southwood 9U Purple",
+   "team2Id": 192683,
+   "t1": 3,
+   "t2": 1,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 1
+    }
+   ]
+  },
+  {
+   "id": 2655203,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-08T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Holy Spirit 9U Suns",
+   "team1Id": 192685,
+   "team2": "Heathmont United 9U Blaze",
+   "team2Id": 192676,
+   "t1": 7,
+   "t2": 6,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 6,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 7,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 7,
+     "t2": 6
+    }
+   ]
+  },
+  {
+   "id": 2655204,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-08T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Heathmont United 9U Lightning",
+   "team1Id": 192692,
+   "team2": "Park Orchards 9U Lightning ",
+   "team2Id": 192691,
+   "t1": 5,
+   "t2": 9,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 5
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 8
+    },
+    {
+     "q": 4,
+     "t1": 5,
+     "t2": 9
+    }
+   ]
+  },
+  {
+   "id": 2655205,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-08T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Ringwood North 9U Orange",
+   "team1Id": 192677,
+   "team2": "East Ringwood 9U Black",
+   "team2Id": 192693,
+   "t1": 5,
+   "t2": 4,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 5,
+     "t2": 4
+    }
+   ]
+  },
+  {
+   "id": 2655206,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-08T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "East Ringwood 9U Blue",
+   "team1Id": 192678,
+   "team2": "St James 9U White",
+   "team2Id": 192675,
+   "t1": 4,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2655207,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-08T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Nunawading 9U Diamonds",
+   "team1Id": 192681,
+   "team2": "Mullum 9U Red",
+   "team2Id": 202409,
+   "t1": 3,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2655208,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-08T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "HFNC Jets 9U Yellow",
+   "team1Id": 192682,
+   "team2": "Ringwood North U9 Pink",
+   "team2Id": 193616,
+   "t1": 0,
+   "t2": 7,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 4
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 4
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 7
+    },
+    {
+     "q": 4,
+     "t1": 0,
+     "t2": 7
+    }
+   ]
+  },
+  {
+   "id": 2655209,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-08T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 5",
+   "team1": "Park Orchards 9U Storm",
+   "team1Id": 192680,
+   "team2": "Bye",
+   "team2Id": 1,
+   "t1": 0,
+   "t2": 0,
+   "periods": []
+  },
+  {
+   "id": 2655210,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-08T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "Heathmont United 9U Hearts",
+   "team1Id": 192671,
+   "team2": "HFNC Jets 9U Blue",
+   "team2Id": 192694,
+   "t1": 3,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2655212,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-15T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Holy Spirit 9U Hearts",
+   "team1Id": 192672,
+   "team2": "Trinity 9U Lilac",
+   "team2Id": 192670,
+   "t1": 8,
+   "t2": 1,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 5,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 8,
+     "t2": 1
+    }
+   ]
+  },
+  {
+   "id": 2655213,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-15T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "HFNC Jets 9U Gold",
+   "team1Id": 192688,
+   "team2": "Holy Spirit 9U Diamonds",
+   "team2Id": 192668,
+   "t1": 12,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 6,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 8,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 12,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2655214,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-15T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "St James 9U Blue",
+   "team1Id": 192673,
+   "team2": "Ringwood North 9U Blue",
+   "team2Id": 192669,
+   "t1": 2,
+   "t2": 5,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 4
+    },
+    {
+     "q": 4,
+     "t1": 2,
+     "t2": 5
+    }
+   ]
+  },
+  {
+   "id": 2655215,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-15T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Southwood 9U Purple",
+   "team1Id": 192683,
+   "team2": "East Ringwood 9U Black",
+   "team2Id": 192693,
+   "t1": 2,
+   "t2": 1,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 2,
+     "t2": 1
+    }
+   ]
+  },
+  {
+   "id": 2655216,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-15T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Ringwood North 9U White",
+   "team1Id": 192686,
+   "team2": "Ringwood North 9U Orange",
+   "team2Id": 192677,
+   "t1": 4,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2655217,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-15T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Nunawading 9U Diamonds",
+   "team1Id": 192681,
+   "team2": "Park Orchards 9U Storm",
+   "team2Id": 192680,
+   "t1": 1,
+   "t2": 6,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 6
+    }
+   ]
+  },
+  {
+   "id": 2655218,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-15T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Trinity 9U White",
+   "team1Id": 192674,
+   "team2": "Holy Spirit 9U Suns",
+   "team2Id": 192685,
+   "t1": 8,
+   "t2": 9,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 3
+    },
+    {
+     "q": 2,
+     "t1": 5,
+     "t2": 4
+    },
+    {
+     "q": 3,
+     "t1": 5,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 8,
+     "t2": 9
+    }
+   ]
+  },
+  {
+   "id": 2655219,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-15T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Heathmont United 9U Lightning",
+   "team1Id": 192692,
+   "team2": "Heathmont United 9U Hearts",
+   "team2Id": 192671,
+   "t1": 8,
+   "t2": 14,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 5
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 8,
+     "t2": 14
+    }
+   ]
+  },
+  {
+   "id": 2655220,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-15T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Heathmont United 9U Blaze",
+   "team1Id": 192676,
+   "team2": "Holy Spirit 9U Stars",
+   "team2Id": 192679,
+   "t1": 6,
+   "t2": 9,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 5
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 5
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 7
+    },
+    {
+     "q": 4,
+     "t1": 6,
+     "t2": 9
+    }
+   ]
+  },
+  {
+   "id": 2655221,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-15T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Mullum 9U Red",
+   "team1Id": 202409,
+   "team2": "Trinity 9U Black",
+   "team2Id": 192684,
+   "t1": 11,
+   "t2": 1,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 6,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 9,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 11,
+     "t2": 1
+    }
+   ]
+  },
+  {
+   "id": 2655222,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-15T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Ringwood North U9 Pink",
+   "team1Id": 193616,
+   "team2": "East Ringwood 9U Blue",
+   "team2Id": 192678,
+   "t1": 6,
+   "t2": 10,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 6,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 6,
+     "t2": 10
+    }
+   ]
+  },
+  {
+   "id": 2655224,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-15T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 5",
+   "team1": "Bye",
+   "team1Id": 1,
+   "team2": "HFNC Jets 9U Yellow",
+   "team2Id": 192682,
+   "t1": 0,
+   "t2": 0,
+   "periods": []
+  },
+  {
+   "id": 2655226,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-15T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "HFNC Jets 9U Blue",
+   "team1Id": 192694,
+   "team2": "Our Ladys 9U Gold",
+   "team2Id": 192689,
+   "t1": 6,
+   "t2": 5,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 6,
+     "t2": 4
+    },
+    {
+     "q": 4,
+     "t1": 6,
+     "t2": 5
+    }
+   ]
+  },
+  {
+   "id": 2655273,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-20T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Park Orchards 9U Thunder",
+   "team1Id": 192687,
+   "team2": "Park Orchards 9U Storm",
+   "team2Id": 192680,
+   "t1": 6,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 5,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 5,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 6,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2655274,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-20T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "Heathmont United 9U Lightning",
+   "team1Id": 192692,
+   "team2": "Heathmont United 9U Thunder",
+   "team2Id": 192690,
+   "t1": 4,
+   "t2": 7,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 5
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 7
+    }
+   ]
+  },
+  {
+   "id": 2655275,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-27T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Mullum 9U Red",
+   "team1Id": 202409,
+   "team2": "Park Orchards 9U Thunder",
+   "team2Id": 192687,
+   "t1": 0,
+   "t2": 7,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 6
+    },
+    {
+     "q": 4,
+     "t1": 0,
+     "t2": 7
+    }
+   ]
+  },
+  {
+   "id": 2655276,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-03-27T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "Heathmont United 9U Hearts",
+   "team1Id": 192671,
+   "team2": "Heathmont United 9U Thunder",
+   "team2Id": 192690,
+   "t1": 5,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 5,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2655277,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-01T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Heathmont United 9U Thunder",
+   "team1Id": 192690,
+   "team2": "HFNC Jets 9U Blue",
+   "team2Id": 192694,
+   "t1": 10,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 10,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2655278,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-01T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Park Orchards 9U Thunder",
+   "team1Id": 192687,
+   "team2": "Nunawading 9U Diamonds",
+   "team2Id": 192681,
+   "t1": 3,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2655279,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-08T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Trinity 9U Black",
+   "team1Id": 192684,
+   "team2": "Park Orchards 9U Thunder",
+   "team2Id": 192687,
+   "t1": 1,
+   "t2": 10,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 5
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 6
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 6
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 10
+    }
+   ]
+  },
+  {
+   "id": 2655280,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-08T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "Our Ladys 9U Gold",
+   "team1Id": 192689,
+   "team2": "Heathmont United 9U Thunder",
+   "team2Id": 192690,
+   "t1": 6,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 4,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 5,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 6,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 6,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2655281,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-15T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Park Orchards 9U Thunder",
+   "team1Id": 192687,
+   "team2": "St James 9U White",
+   "team2Id": 192675,
+   "t1": 1,
+   "t2": 8,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 4
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 5
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 7
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 8
+    }
+   ]
+  },
+  {
+   "id": 2655282,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-15T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "Park Orchards 9U Lightning ",
+   "team1Id": 192691,
+   "team2": "Heathmont United 9U Thunder",
+   "team2Id": 192690,
+   "t1": 8,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 7,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 8,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2751449,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-22T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Holy Spirit 9U Hearts",
+   "team1Id": 192672,
+   "team2": "St James 9U Blue",
+   "team2Id": 192673,
+   "t1": 6,
+   "t2": 5,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 6,
+     "t2": 5
+    }
+   ]
+  },
+  {
+   "id": 2751450,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-22T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "Park Orchards 9U Lightning ",
+   "team1Id": 192691,
+   "team2": "Ringwood North 9U Blue",
+   "team2Id": 192669,
+   "t1": 8,
+   "t2": 8,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 3
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 6
+    },
+    {
+     "q": 4,
+     "t1": 8,
+     "t2": 8
+    }
+   ]
+  },
+  {
+   "id": 2751451,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-22T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Heathmont United 9U Thunder",
+   "team1Id": 192690,
+   "team2": "HFNC Jets 9U Gold",
+   "team2Id": 192688,
+   "t1": 2,
+   "t2": 15,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 7
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 12
+    },
+    {
+     "q": 4,
+     "t1": 2,
+     "t2": 15
+    }
+   ]
+  },
+  {
+   "id": 2751452,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-22T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Park Orchards 9U Storm",
+   "team1Id": 192680,
+   "team2": "Heathmont United 9U Blaze",
+   "team2Id": 192676,
+   "t1": 1,
+   "t2": 9,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 3
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 7
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 8
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 9
+    }
+   ]
+  },
+  {
+   "id": 2751453,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-22T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "HFNC Jets 9U Blue",
+   "team1Id": 192694,
+   "team2": "Holy Spirit 9U Stars",
+   "team2Id": 192679,
+   "t1": 6,
+   "t2": 5,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 5
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 6,
+     "t2": 5
+    }
+   ]
+  },
+  {
+   "id": 2751454,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-22T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Park Orchards 9U Thunder",
+   "team1Id": 192687,
+   "team2": "Ringwood North U9 Pink",
+   "team2Id": 193616,
+   "t1": 2,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 2,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2751455,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-22T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Heathmont United 9U Hearts",
+   "team1Id": 192671,
+   "team2": "Trinity 9U White",
+   "team2Id": 192674,
+   "t1": 17,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 9,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 12,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 17,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2751456,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-22T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Ringwood North 9U Orange",
+   "team1Id": 192677,
+   "team2": "Our Ladys 9U Gold",
+   "team2Id": 192689,
+   "t1": 1,
+   "t2": 10,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 8
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 10
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 10
+    }
+   ]
+  },
+  {
+   "id": 2751457,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-22T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Southwood 9U Purple",
+   "team1Id": 192683,
+   "team2": "Heathmont United 9U Lightning",
+   "team2Id": 192692,
+   "t1": 1,
+   "t2": 7,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 7
+    }
+   ]
+  },
+  {
+   "id": 2751458,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-22T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "East Ringwood 9U Black",
+   "team1Id": 192693,
+   "team2": "HFNC Jets 9U Yellow",
+   "team2Id": 192682,
+   "t1": 4,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2751459,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-22T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "St James 9U White",
+   "team1Id": 192675,
+   "team2": "Mullum 9U Red",
+   "team2Id": 202409,
+   "t1": 2,
+   "t2": 6,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 4
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 4
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 4
+    },
+    {
+     "q": 4,
+     "t1": 2,
+     "t2": 6
+    }
+   ]
+  },
+  {
+   "id": 2751460,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-22T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Trinity 9U Black",
+   "team1Id": 192684,
+   "team2": "Nunawading 9U Diamonds",
+   "team2Id": 192681,
+   "t1": 0,
+   "t2": 20,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 6
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 12
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 14
+    },
+    {
+     "q": 4,
+     "t1": 0,
+     "t2": 20
+    }
+   ]
+  },
+  {
+   "id": 2751461,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-22T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 5",
+   "team1": "East Ringwood 9U Blue",
+   "team1Id": 192678,
+   "team2": "Bye",
+   "team2Id": 1,
+   "t1": 0,
+   "t2": 0,
+   "periods": []
+  },
+  {
+   "id": 2751462,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-22T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "Holy Spirit 9U Diamonds",
+   "team1Id": 192668,
+   "team2": "Holy Spirit 9U Suns",
+   "team2Id": 192685,
+   "t1": 14,
+   "t2": 1,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 4,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 7,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 10,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 14,
+     "t2": 1
+    }
+   ]
+  },
+  {
+   "id": 2751463,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-22T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Trinity 9U Lilac",
+   "team1Id": 192670,
+   "team2": "Ringwood North 9U White",
+   "team2Id": 192686,
+   "t1": 14,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 5,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 10,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 14,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2751465,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-29T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "HFNC Jets 9U Gold",
+   "team1Id": 192688,
+   "team2": "St James 9U Blue",
+   "team2Id": 192673,
+   "t1": 13,
+   "t2": 5,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 6,
+     "t2": 4
+    },
+    {
+     "q": 3,
+     "t1": 9,
+     "t2": 4
+    },
+    {
+     "q": 4,
+     "t1": 13,
+     "t2": 5
+    }
+   ]
+  },
+  {
+   "id": 2751466,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-29T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "Ringwood North 9U Blue",
+   "team1Id": 192669,
+   "team2": "Holy Spirit 9U Hearts",
+   "team2Id": 192672,
+   "t1": 3,
+   "t2": 8,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 4
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 6
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 8
+    }
+   ]
+  },
+  {
+   "id": 2751468,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-29T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Trinity 9U White",
+   "team1Id": 192674,
+   "team2": "Southwood 9U Purple",
+   "team2Id": 192683,
+   "t1": 8,
+   "t2": 4,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 6,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 7,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 8,
+     "t2": 4
+    }
+   ]
+  },
+  {
+   "id": 2751469,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-29T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Mullum 9U Red",
+   "team1Id": 202409,
+   "team2": "Ringwood North U9 Pink",
+   "team2Id": 193616,
+   "t1": 4,
+   "t2": 5,
+   "periods": []
+  },
+  {
+   "id": 2751470,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-29T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Holy Spirit 9U Stars",
+   "team1Id": 192679,
+   "team2": "Park Orchards 9U Storm",
+   "team2Id": 192680,
+   "t1": 6,
+   "t2": 1,
+   "periods": []
+  },
+  {
+   "id": 2751471,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-29T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Ringwood North 9U White",
+   "team1Id": 192686,
+   "team2": "Holy Spirit 9U Suns",
+   "team2Id": 192685,
+   "t1": 1,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2751472,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-29T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Heathmont United 9U Blaze",
+   "team1Id": 192676,
+   "team2": "Heathmont United 9U Lightning",
+   "team2Id": 192692,
+   "t1": 5,
+   "t2": 8,
+   "periods": []
+  },
+  {
+   "id": 2751473,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-29T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Nunawading 9U Diamonds",
+   "team1Id": 192681,
+   "team2": "St James 9U White",
+   "team2Id": 192675,
+   "t1": 5,
+   "t2": 2,
+   "periods": []
+  },
+  {
+   "id": 2751474,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-29T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "HFNC Jets 9U Yellow",
+   "team1Id": 192682,
+   "team2": "East Ringwood 9U Blue",
+   "team2Id": 192678,
+   "t1": 1,
+   "t2": 2,
+   "periods": []
+  },
+  {
+   "id": 2751475,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-29T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Trinity 9U Black",
+   "team1Id": 192684,
+   "team2": "East Ringwood 9U Black",
+   "team2Id": 192693,
+   "t1": 0,
+   "t2": 9,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 5
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 7
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 7
+    },
+    {
+     "q": 4,
+     "t1": 0,
+     "t2": 9
+    }
+   ]
+  },
+  {
+   "id": 2751476,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-29T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 5",
+   "team1": "Bye",
+   "team1Id": 1,
+   "team2": "Park Orchards 9U Thunder",
+   "team2Id": 192687,
+   "t1": 0,
+   "t2": 0,
+   "periods": []
+  },
+  {
+   "id": 2751477,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-29T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "Trinity 9U Lilac",
+   "team1Id": 192670,
+   "team2": "Ringwood North 9U Orange",
+   "team2Id": 192677,
+   "t1": 6,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 6,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 6,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2751478,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-05-29T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Our Ladys 9U Gold",
+   "team1Id": 192689,
+   "team2": "Holy Spirit 9U Diamonds",
+   "team2Id": 192668,
+   "t1": 6,
+   "t2": 3,
+   "periods": []
+  },
+  {
+   "id": 2751479,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-06-12T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "HFNC Jets 9U Gold",
+   "team1Id": 192688,
+   "team2": "Ringwood North 9U Blue",
+   "team2Id": 192669,
+   "t1": 9,
+   "t2": 5,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 4,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 6,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 9,
+     "t2": 5
+    }
+   ]
+  },
+  {
+   "id": 2751481,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-06-12T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Park Orchards 9U Lightning ",
+   "team1Id": 192691,
+   "team2": "Holy Spirit 9U Hearts",
+   "team2Id": 192672,
+   "t1": 3,
+   "t2": 13,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 8
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 13
+    }
+   ]
+  },
+  {
+   "id": 2751483,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-06-12T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "HFNC Jets 9U Blue",
+   "team1Id": 192694,
+   "team2": "Park Orchards 9U Storm",
+   "team2Id": 192680,
+   "t1": 4,
+   "t2": 4,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 4
+    }
+   ]
+  },
+  {
+   "id": 2751484,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-06-12T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "East Ringwood 9U Black",
+   "team1Id": 192693,
+   "team2": "East Ringwood 9U Blue",
+   "team2Id": 192678,
+   "t1": 14,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 5,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 11,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 13,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 14,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2751485,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-06-12T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Heathmont United 9U Lightning",
+   "team1Id": 192692,
+   "team2": "Holy Spirit 9U Stars",
+   "team2Id": 192679,
+   "t1": 15,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 6,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 7,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 12,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 15,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2751486,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-06-12T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Holy Spirit 9U Suns",
+   "team1Id": 192685,
+   "team2": "Trinity 9U Lilac",
+   "team2Id": 192670,
+   "t1": 0,
+   "t2": 12,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 5
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 11
+    },
+    {
+     "q": 4,
+     "t1": 0,
+     "t2": 12
+    }
+   ]
+  },
+  {
+   "id": 2751487,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-06-12T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Heathmont United 9U Blaze",
+   "team1Id": 192676,
+   "team2": "Trinity 9U White",
+   "team2Id": 192674,
+   "t1": 7,
+   "t2": 5,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 6,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 7,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 7,
+     "t2": 5
+    }
+   ]
+  },
+  {
+   "id": 2751488,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-06-12T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Ringwood North U9 Pink",
+   "team1Id": 193616,
+   "team2": "Nunawading 9U Diamonds",
+   "team2Id": 192681,
+   "t1": 7,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 4,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 5,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 6,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 7,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2751489,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-06-12T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Park Orchards 9U Thunder",
+   "team1Id": 192687,
+   "team2": "HFNC Jets 9U Yellow",
+   "team2Id": 192682,
+   "t1": 4,
+   "t2": 4,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 4
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 4
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 4
+    }
+   ]
+  },
+  {
+   "id": 2751490,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-06-12T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "St James 9U White",
+   "team1Id": 192675,
+   "team2": "Trinity 9U Black",
+   "team2Id": 192684,
+   "t1": 13,
+   "t2": 1,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 8,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 13,
+     "t2": 1
+    }
+   ]
+  },
+  {
+   "id": 2751491,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-06-12T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 5",
+   "team1": "Mullum 9U Red",
+   "team1Id": 202409,
+   "team2": "Bye",
+   "team2Id": 1,
+   "t1": 0,
+   "t2": 0,
+   "periods": []
+  },
+  {
+   "id": 2751492,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-06-12T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Ringwood North 9U White",
+   "team1Id": 192686,
+   "team2": "Our Ladys 9U Gold",
+   "team2Id": 192689,
+   "t1": 1,
+   "t2": 11,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 4
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 7
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 9
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 11
+    }
+   ]
+  },
+  {
+   "id": 2751493,
+   "compId": "",
+   "compName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2026-06-12T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "Ringwood North 9U Orange",
+   "team1Id": 192677,
+   "team2": "Holy Spirit 9U Diamonds",
+   "team2Id": 192668,
+   "t1": 1,
+   "t2": 9,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 6
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 9
+    }
+   ]
+  }
+ ]
+}

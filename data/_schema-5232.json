@@ -1,0 +1,33 @@
+{
+ "fromMatchId": 2915621,
+ "matchDataKeys": [
+  "team1Score",
+  "team2Score",
+  "hasPenalty",
+  "team1PenaltyScore",
+  "team2PenaltyScore",
+  "startTime",
+  "competitionName",
+  "venueName",
+  "venueCourtName",
+  "matchStatus",
+  "substitutionEnabled"
+ ],
+ "teamDataKeys": [
+  "team1",
+  "team2"
+ ],
+ "sampleMatchData": {
+  "team1Score": 0,
+  "team2Score": 0,
+  "hasPenalty": false,
+  "team1PenaltyScore": null,
+  "team2PenaltyScore": null,
+  "startTime": "2026-11-20T05:25:00.000Z",
+  "competitionName": "MENA - Club Competition SPRING FRI 9 & U NETSETGO",
+  "venueName": "Maroondah Nets",
+  "venueCourtName": "Court 3",
+  "matchStatus": null,
+  "substitutionEnabled": false
+ }
+}

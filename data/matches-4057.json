@@ -1,0 +1,10246 @@
+{
+ "compId": "4057",
+ "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+ "harvestedAt": "2026-11-16T00:25:56.370Z",
+ "count": 275,
+ "phase": "complete",
+ "matches": [
+  {
+   "id": 2404608,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-07-25T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "Holy Spirit 9U Diamonds",
+   "team1Id": 170601,
+   "team2": "Trinity 9U Lilac",
+   "team2Id": 170607,
+   "t1": 7,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 5,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 7,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 7,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2404609,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-07-25T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "East Ringwood 9U Blue",
+   "team1Id": 170611,
+   "team2": "Ringwood North 9U Blue",
+   "team2Id": 170596,
+   "t1": 7,
+   "t2": 8,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 4
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 6
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 6
+    },
+    {
+     "q": 4,
+     "t1": 7,
+     "t2": 8
+    }
+   ]
+  },
+  {
+   "id": 2404610,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-07-25T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Our Lady's 9U GREEN",
+   "team1Id": 170625,
+   "team2": "Southwood 9U Gold",
+   "team2Id": 170595,
+   "t1": 7,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 7,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 7,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 7,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2404611,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-07-25T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Park Orchards 9U Thunder",
+   "team1Id": 170616,
+   "team2": "Ringwood North 9U White",
+   "team2Id": 170597,
+   "t1": 5,
+   "t2": 6,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 4
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 4
+    },
+    {
+     "q": 4,
+     "t1": 5,
+     "t2": 6
+    }
+   ]
+  },
+  {
+   "id": 2404612,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-07-25T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Holy Spirit 9U Stars",
+   "team1Id": 170621,
+   "team2": "HFNC Jets 9U Yellow",
+   "team2Id": 170613,
+   "t1": 0,
+   "t2": 16,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 4
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 5
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 9
+    },
+    {
+     "q": 4,
+     "t1": 0,
+     "t2": 16
+    }
+   ]
+  },
+  {
+   "id": 2404613,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-07-25T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Nunawading 9U Pearls",
+   "team1Id": 170614,
+   "team2": "Holy Spirit 9U Comets",
+   "team2Id": 170622,
+   "t1": 26,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 9,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 15,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 19,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 26,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2404614,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-07-25T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Park Orchards U9 Storm",
+   "team1Id": 170626,
+   "team2": "St James 9U Purple",
+   "team2Id": 170617,
+   "t1": 1,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2404615,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-07-25T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Ringwood North 9U Orange",
+   "team1Id": 170623,
+   "team2": "Ringwood North 9U Pink",
+   "team2Id": 170624,
+   "t1": 16,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 6,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 12,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 15,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 16,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2404616,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-07-25T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Park Orchards 9U Lightning",
+   "team1Id": 170615,
+   "team2": "Our Ladys 9U Gold",
+   "team2Id": 170599,
+   "t1": 5,
+   "t2": 4,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 5,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 5,
+     "t2": 4
+    }
+   ]
+  },
+  {
+   "id": 2404617,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-07-25T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Heathmont United 9U Stars",
+   "team1Id": 170604,
+   "team2": "Heathmont United 9U Rockets",
+   "team2Id": 170598,
+   "t1": 3,
+   "t2": 23,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 9
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 19
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 21
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 23
+    }
+   ]
+  },
+  {
+   "id": 2404618,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-07-25T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "BLNC 9U Red",
+   "team1Id": 170606,
+   "team2": "HFNC Jets 9U Blue",
+   "team2Id": 170612,
+   "t1": 14,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 5,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 10,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 14,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2404619,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-07-25T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Heathmont United 9U Lightning",
+   "team1Id": 170618,
+   "team2": "Trinity 9U Black",
+   "team2Id": 170620,
+   "t1": 4,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2404620,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-07-25T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Holy Spirit 9U Hearts",
+   "team1Id": 170602,
+   "team2": "Holy Spirit 9U Suns",
+   "team2Id": 170603,
+   "t1": 5,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 5,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 5,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 5,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2404621,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-07-25T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 5",
+   "team1": "Nunawading U/9 Diamonds",
+   "team1Id": 170628,
+   "team2": "Bye",
+   "team2Id": 1,
+   "t1": 0,
+   "t2": 0,
+   "periods": []
+  },
+  {
+   "id": 2404622,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-07-25T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "East Ringwood 9U Black",
+   "team1Id": 170610,
+   "team2": "Southwood 9U Purple",
+   "team2Id": 170594,
+   "t1": 1,
+   "t2": 12,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 3
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 5
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 7
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 12
+    }
+   ]
+  },
+  {
+   "id": 2404623,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-07-25T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "Heathmont United 9U Thunder",
+   "team1Id": 170605,
+   "team2": "Trinity 9U White",
+   "team2Id": 170608,
+   "t1": 0,
+   "t2": 0,
+   "periods": []
+  },
+  {
+   "id": 2404624,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-07-25T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 6",
+   "team1": "St James 9U Red",
+   "team1Id": 170600,
+   "team2": "Heathmont United 9U Storm",
+   "team2Id": 170619,
+   "t1": 9,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 6,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 6,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 9,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2404625,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-07-25T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "HFNC Jets 9U White",
+   "team1Id": 170627,
+   "team2": "Heathmont United 9U Hearts",
+   "team2Id": 170609,
+   "t1": 0,
+   "t2": 1,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 0,
+     "t2": 1
+    }
+   ]
+  },
+  {
+   "id": 2404626,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-01T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Our Ladys 9U Gold",
+   "team1Id": 170599,
+   "team2": "HFNC Jets 9U Blue",
+   "team2Id": 170612,
+   "t1": 3,
+   "t2": 6,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 6
+    }
+   ]
+  },
+  {
+   "id": 2404627,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-01T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "East Ringwood 9U Black",
+   "team1Id": 170610,
+   "team2": "Heathmont United 9U Stars",
+   "team2Id": 170604,
+   "t1": 5,
+   "t2": 5,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 5,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 5,
+     "t2": 5
+    }
+   ]
+  },
+  {
+   "id": 2404628,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-01T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "Trinity 9U Lilac",
+   "team1Id": 170607,
+   "team2": "BLNC 9U Red",
+   "team2Id": 170606,
+   "t1": 0,
+   "t2": 0,
+   "periods": []
+  },
+  {
+   "id": 2404629,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-01T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Southwood 9U Purple",
+   "team1Id": 170594,
+   "team2": "Ringwood North 9U Blue",
+   "team2Id": 170596,
+   "t1": 10,
+   "t2": 8,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 6,
+     "t2": 4
+    },
+    {
+     "q": 4,
+     "t1": 10,
+     "t2": 8
+    }
+   ]
+  },
+  {
+   "id": 2404630,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-01T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "Park Orchards 9U Lightning",
+   "team1Id": 170615,
+   "team2": "Holy Spirit 9U Diamonds",
+   "team2Id": 170601,
+   "t1": 1,
+   "t2": 10,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 3
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 5
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 8
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 10
+    }
+   ]
+  },
+  {
+   "id": 2404631,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-01T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Ringwood North 9U White",
+   "team1Id": 170597,
+   "team2": "HFNC Jets 9U Yellow",
+   "team2Id": 170613,
+   "t1": 5,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 5,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2404632,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-01T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Nunawading U/9 Diamonds",
+   "team1Id": 170628,
+   "team2": "Our Lady's 9U GREEN",
+   "team2Id": 170625,
+   "t1": 0,
+   "t2": 25,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 4
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 11
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 18
+    },
+    {
+     "q": 4,
+     "t1": 0,
+     "t2": 25
+    }
+   ]
+  },
+  {
+   "id": 2404633,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-01T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Southwood 9U Gold",
+   "team1Id": 170595,
+   "team2": "Park Orchards 9U Thunder",
+   "team2Id": 170616,
+   "t1": 4,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2404634,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-01T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "St James 9U Purple",
+   "team1Id": 170617,
+   "team2": "Ringwood North 9U Pink",
+   "team2Id": 170624,
+   "t1": 0,
+   "t2": 5,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 3
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 4
+    },
+    {
+     "q": 4,
+     "t1": 0,
+     "t2": 5
+    }
+   ]
+  },
+  {
+   "id": 2404635,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-01T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Holy Spirit 9U Suns",
+   "team1Id": 170603,
+   "team2": "HFNC Jets 9U White",
+   "team2Id": 170627,
+   "t1": 5,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 5,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 5,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 5,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2404636,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-01T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Heathmont United 9U Lightning",
+   "team1Id": 170618,
+   "team2": "Nunawading 9U Pearls",
+   "team2Id": 170614,
+   "t1": 0,
+   "t2": 20,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 5
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 11
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 15
+    },
+    {
+     "q": 4,
+     "t1": 0,
+     "t2": 20
+    }
+   ]
+  },
+  {
+   "id": 2404637,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-01T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Holy Spirit 9U Comets",
+   "team1Id": 170622,
+   "team2": "Park Orchards U9 Storm",
+   "team2Id": 170626,
+   "t1": 8,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 5,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 8,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2404638,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-01T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Trinity 9U Black",
+   "team1Id": 170620,
+   "team2": "Ringwood North 9U Orange",
+   "team2Id": 170623,
+   "t1": 0,
+   "t2": 10,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 7
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 8
+    },
+    {
+     "q": 4,
+     "t1": 0,
+     "t2": 10
+    }
+   ]
+  },
+  {
+   "id": 2404639,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-01T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 5",
+   "team1": "Bye",
+   "team1Id": 1,
+   "team2": "Holy Spirit 9U Stars",
+   "team2Id": 170621,
+   "t1": 0,
+   "t2": 0,
+   "periods": []
+  },
+  {
+   "id": 2404640,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-01T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "Heathmont United 9U Rockets",
+   "team1Id": 170598,
+   "team2": "East Ringwood 9U Blue",
+   "team2Id": 170611,
+   "t1": 15,
+   "t2": 10,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 6,
+     "t2": 4
+    },
+    {
+     "q": 2,
+     "t1": 8,
+     "t2": 6
+    },
+    {
+     "q": 3,
+     "t1": 12,
+     "t2": 7
+    },
+    {
+     "q": 4,
+     "t1": 15,
+     "t2": 10
+    }
+   ]
+  },
+  {
+   "id": 2404641,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-01T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "Heathmont United 9U Storm",
+   "team1Id": 170619,
+   "team2": "Heathmont United 9U Thunder",
+   "team2Id": 170605,
+   "t1": 3,
+   "t2": 4,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 4
+    }
+   ]
+  },
+  {
+   "id": 2404642,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-01T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 6",
+   "team1": "Heathmont United 9U Hearts",
+   "team1Id": 170609,
+   "team2": "Trinity 9U White",
+   "team2Id": 170608,
+   "t1": 3,
+   "t2": 6,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 6
+    }
+   ]
+  },
+  {
+   "id": 2404643,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-01T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "St James 9U Red",
+   "team1Id": 170600,
+   "team2": "Holy Spirit 9U Hearts",
+   "team2Id": 170602,
+   "t1": 1,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2404644,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-08T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Holy Spirit 9U Diamonds",
+   "team1Id": 170601,
+   "team2": "BLNC 9U Red",
+   "team2Id": 170606,
+   "t1": 3,
+   "t2": 7,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 6
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 7
+    }
+   ]
+  },
+  {
+   "id": 2404645,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-08T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Southwood 9U Purple",
+   "team1Id": 170594,
+   "team2": "Heathmont United 9U Rockets",
+   "team2Id": 170598,
+   "t1": 9,
+   "t2": 21,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 8
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 12
+    },
+    {
+     "q": 3,
+     "t1": 8,
+     "t2": 17
+    },
+    {
+     "q": 4,
+     "t1": 9,
+     "t2": 21
+    }
+   ]
+  },
+  {
+   "id": 2404646,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-08T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "HFNC Jets 9U Blue",
+   "team1Id": 170612,
+   "team2": "Park Orchards 9U Lightning",
+   "team2Id": 170615,
+   "t1": 7,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 6,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 7,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2404647,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-08T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "Ringwood North 9U Blue",
+   "team1Id": 170596,
+   "team2": "East Ringwood 9U Black",
+   "team2Id": 170610,
+   "t1": 10,
+   "t2": 1,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 6,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 9,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 10,
+     "t2": 1
+    }
+   ]
+  },
+  {
+   "id": 2404648,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-08T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "Our Ladys 9U Gold",
+   "team1Id": 170599,
+   "team2": "Trinity 9U Lilac",
+   "team2Id": 170607,
+   "t1": 5,
+   "t2": 10,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 5,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 5,
+     "t2": 6
+    },
+    {
+     "q": 4,
+     "t1": 5,
+     "t2": 10
+    }
+   ]
+  },
+  {
+   "id": 2404649,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-08T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Holy Spirit 9U Stars",
+   "team1Id": 170621,
+   "team2": "Nunawading U/9 Diamonds",
+   "team2Id": 170628,
+   "t1": 1,
+   "t2": 5,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 5
+    }
+   ]
+  },
+  {
+   "id": 2404650,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-08T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "HFNC Jets 9U Yellow",
+   "team1Id": 170613,
+   "team2": "Southwood 9U Gold",
+   "team2Id": 170595,
+   "t1": 3,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2404651,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-08T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Our Lady's 9U GREEN",
+   "team1Id": 170625,
+   "team2": "Park Orchards 9U Thunder",
+   "team2Id": 170616,
+   "t1": 12,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 8,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 12,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 12,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2404652,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-08T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Ringwood North 9U Orange",
+   "team1Id": 170623,
+   "team2": "Heathmont United 9U Lightning",
+   "team2Id": 170618,
+   "t1": 2,
+   "t2": 4,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 4
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 4
+    },
+    {
+     "q": 4,
+     "t1": 2,
+     "t2": 4
+    }
+   ]
+  },
+  {
+   "id": 2404653,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-08T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Ringwood North 9U Pink",
+   "team1Id": 170624,
+   "team2": "Holy Spirit 9U Comets",
+   "team2Id": 170622,
+   "t1": 0,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 0,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2404654,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-08T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Nunawading 9U Pearls",
+   "team1Id": 170614,
+   "team2": "Park Orchards U9 Storm",
+   "team2Id": 170626,
+   "t1": 13,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 6,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 13,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2404655,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-08T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Holy Spirit 9U Hearts",
+   "team1Id": 170602,
+   "team2": "HFNC Jets 9U White",
+   "team2Id": 170627,
+   "t1": 4,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2404656,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-08T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "St James 9U Purple",
+   "team1Id": 170617,
+   "team2": "Trinity 9U Black",
+   "team2Id": 170620,
+   "t1": 1,
+   "t2": 8,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 8
+    }
+   ]
+  },
+  {
+   "id": 2404657,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-08T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 5",
+   "team1": "Ringwood North 9U White",
+   "team1Id": 170597,
+   "team2": "Bye",
+   "team2Id": 1,
+   "t1": 0,
+   "t2": 0,
+   "periods": []
+  },
+  {
+   "id": 2404658,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-08T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "Heathmont United 9U Stars",
+   "team1Id": 170604,
+   "team2": "East Ringwood 9U Blue",
+   "team2Id": 170611,
+   "t1": 8,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 8,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 8,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 8,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2404659,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-08T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "Trinity 9U White",
+   "team1Id": 170608,
+   "team2": "Holy Spirit 9U Suns",
+   "team2Id": 170603,
+   "t1": 5,
+   "t2": 10,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 4
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 8
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 8
+    },
+    {
+     "q": 4,
+     "t1": 5,
+     "t2": 10
+    }
+   ]
+  },
+  {
+   "id": 2404660,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-08T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 6",
+   "team1": "Heathmont United 9U Thunder",
+   "team1Id": 170605,
+   "team2": "St James 9U Red",
+   "team2Id": 170600,
+   "t1": 0,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 0,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2404661,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-08T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Heathmont United 9U Hearts",
+   "team1Id": 170609,
+   "team2": "Heathmont United 9U Storm",
+   "team2Id": 170619,
+   "t1": 6,
+   "t2": 1,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 6,
+     "t2": 1
+    }
+   ]
+  },
+  {
+   "id": 2404662,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-15T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Park Orchards 9U Lightning",
+   "team1Id": 170615,
+   "team2": "Trinity 9U Lilac",
+   "team2Id": 170607,
+   "t1": 6,
+   "t2": 8,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 3
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 5,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 6,
+     "t2": 8
+    }
+   ]
+  },
+  {
+   "id": 2404663,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-15T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "East Ringwood 9U Blue",
+   "team1Id": 170611,
+   "team2": "Southwood 9U Purple",
+   "team2Id": 170594,
+   "t1": 7,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 7,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2404664,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-15T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "BLNC 9U Red",
+   "team1Id": 170606,
+   "team2": "Our Ladys 9U Gold",
+   "team2Id": 170599,
+   "t1": 6,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 6,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2404665,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-15T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 5",
+   "team1": "HFNC Jets 9U Blue",
+   "team1Id": 170612,
+   "team2": "Holy Spirit 9U Diamonds",
+   "team2Id": 170601,
+   "t1": 0,
+   "t2": 10,
+   "periods": []
+  },
+  {
+   "id": 2404666,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-15T08:18:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Ringwood North 9U Blue",
+   "team1Id": 170596,
+   "team2": "Heathmont United 9U Stars",
+   "team2Id": 170604,
+   "t1": 3,
+   "t2": 10,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 8
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 10
+    }
+   ]
+  },
+  {
+   "id": 2404667,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-15T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Park Orchards 9U Thunder",
+   "team1Id": 170616,
+   "team2": "HFNC Jets 9U Yellow",
+   "team2Id": 170613,
+   "t1": 6,
+   "t2": 1,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 4,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 6,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 6,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 6,
+     "t2": 1
+    }
+   ]
+  },
+  {
+   "id": 2404668,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-15T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Holy Spirit 9U Stars",
+   "team1Id": 170621,
+   "team2": "Our Lady's 9U GREEN",
+   "team2Id": 170625,
+   "t1": 0,
+   "t2": 13,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 4
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 6
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 13
+    },
+    {
+     "q": 4,
+     "t1": 0,
+     "t2": 13
+    }
+   ]
+  },
+  {
+   "id": 2404669,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-15T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Nunawading U/9 Diamonds",
+   "team1Id": 170628,
+   "team2": "Ringwood North 9U White",
+   "team2Id": 170597,
+   "t1": 5,
+   "t2": 5,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 4
+    },
+    {
+     "q": 4,
+     "t1": 5,
+     "t2": 5
+    }
+   ]
+  },
+  {
+   "id": 2404670,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-15T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Holy Spirit 9U Comets",
+   "team1Id": 170622,
+   "team2": "Trinity 9U Black",
+   "team2Id": 170620,
+   "t1": 4,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2404671,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-15T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Ringwood North 9U Orange",
+   "team1Id": 170623,
+   "team2": "Nunawading 9U Pearls",
+   "team2Id": 170614,
+   "t1": 1,
+   "t2": 16,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 6
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 10
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 13
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 16
+    }
+   ]
+  },
+  {
+   "id": 2404672,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-15T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Park Orchards U9 Storm",
+   "team1Id": 170626,
+   "team2": "Ringwood North 9U Pink",
+   "team2Id": 170624,
+   "t1": 3,
+   "t2": 7,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 6
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 7
+    }
+   ]
+  },
+  {
+   "id": 2404673,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-15T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Heathmont United 9U Lightning",
+   "team1Id": 170618,
+   "team2": "St James 9U Purple",
+   "team2Id": 170617,
+   "t1": 10,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 8,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 10,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2404674,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-15T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "St James 9U Red",
+   "team1Id": 170600,
+   "team2": "Heathmont United 9U Hearts",
+   "team2Id": 170609,
+   "t1": 2,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2404675,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-15T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 5",
+   "team1": "Southwood 9U Gold",
+   "team1Id": 170595,
+   "team2": "Bye",
+   "team2Id": 1,
+   "t1": 0,
+   "t2": 0,
+   "periods": []
+  },
+  {
+   "id": 2404676,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-15T07:33:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "East Ringwood 9U Black",
+   "team1Id": 170610,
+   "team2": "Heathmont United 9U Rockets",
+   "team2Id": 170598,
+   "t1": 0,
+   "t2": 13,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 5
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 13
+    }
+   ]
+  },
+  {
+   "id": 2404677,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-15T08:18:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Heathmont United 9U Thunder",
+   "team1Id": 170605,
+   "team2": "Holy Spirit 9U Hearts",
+   "team2Id": 170602,
+   "t1": 0,
+   "t2": 6,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 6
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 6
+    }
+   ]
+  },
+  {
+   "id": 2404678,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-15T07:33:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Holy Spirit 9U Suns",
+   "team1Id": 170603,
+   "team2": "Heathmont United 9U Storm",
+   "team2Id": 170619,
+   "t1": 5,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 5,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2404679,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-15T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 5",
+   "team1": "HFNC Jets 9U White",
+   "team1Id": 170627,
+   "team2": "Trinity 9U White",
+   "team2Id": 170608,
+   "t1": 0,
+   "t2": 10,
+   "periods": []
+  },
+  {
+   "id": 2404680,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-22T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "Park Orchards 9U Lightning",
+   "team1Id": 170615,
+   "team2": "BLNC 9U Red",
+   "team2Id": 170606,
+   "t1": 1,
+   "t2": 5,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 5
+    }
+   ]
+  },
+  {
+   "id": 2404681,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-22T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "Heathmont United 9U Rockets",
+   "team1Id": 170598,
+   "team2": "Ringwood North 9U Blue",
+   "team2Id": 170596,
+   "t1": 19,
+   "t2": 7,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 8,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 13,
+     "t2": 5
+    },
+    {
+     "q": 3,
+     "t1": 16,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 19,
+     "t2": 7
+    }
+   ]
+  },
+  {
+   "id": 2404682,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-22T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Holy Spirit 9U Diamonds",
+   "team1Id": 170601,
+   "team2": "Our Ladys 9U Gold",
+   "team2Id": 170599,
+   "t1": 15,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 7,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 11,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 14,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 15,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2404683,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-22T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Heathmont United 9U Stars",
+   "team1Id": 170604,
+   "team2": "Southwood 9U Purple",
+   "team2Id": 170594,
+   "t1": 13,
+   "t2": 5,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 8,
+     "t2": 4
+    },
+    {
+     "q": 3,
+     "t1": 11,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 13,
+     "t2": 5
+    }
+   ]
+  },
+  {
+   "id": 2404684,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-22T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Trinity 9U Lilac",
+   "team1Id": 170607,
+   "team2": "HFNC Jets 9U Blue",
+   "team2Id": 170612,
+   "t1": 5,
+   "t2": 1,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 5,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 5,
+     "t2": 1
+    }
+   ]
+  },
+  {
+   "id": 2404685,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-22T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Southwood 9U Gold",
+   "team1Id": 170595,
+   "team2": "Nunawading U/9 Diamonds",
+   "team2Id": 170628,
+   "t1": 4,
+   "t2": 7,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 4,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 6
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 6
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 7
+    }
+   ]
+  },
+  {
+   "id": 2404686,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-22T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Ringwood North 9U White",
+   "team1Id": 170597,
+   "team2": "Holy Spirit 9U Stars",
+   "team2Id": 170621,
+   "t1": 3,
+   "t2": 1,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 1
+    }
+   ]
+  },
+  {
+   "id": 2404687,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-22T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Our Lady's 9U GREEN",
+   "team1Id": 170625,
+   "team2": "HFNC Jets 9U Yellow",
+   "team2Id": 170613,
+   "t1": 14,
+   "t2": 1,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 6,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 11,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 12,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 14,
+     "t2": 1
+    }
+   ]
+  },
+  {
+   "id": 2404688,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-22T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Trinity 9U Black",
+   "team1Id": 170620,
+   "team2": "Park Orchards U9 Storm",
+   "team2Id": 170626,
+   "t1": 7,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 5,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 6,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 7,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2404689,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-22T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Holy Spirit 9U Hearts",
+   "team1Id": 170602,
+   "team2": "Trinity 9U White",
+   "team2Id": 170608,
+   "t1": 6,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 6,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2404690,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-22T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Holy Spirit 9U Comets",
+   "team1Id": 170622,
+   "team2": "Heathmont United 9U Lightning",
+   "team2Id": 170618,
+   "t1": 6,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 5,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 6,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2404691,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-22T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Nunawading 9U Pearls",
+   "team1Id": 170614,
+   "team2": "Ringwood North 9U Pink",
+   "team2Id": 170624,
+   "t1": 13,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 10,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 11,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 13,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2404692,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-22T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "St James 9U Purple",
+   "team1Id": 170617,
+   "team2": "Ringwood North 9U Orange",
+   "team2Id": 170623,
+   "t1": 1,
+   "t2": 10,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 3
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 8
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 9
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 10
+    }
+   ]
+  },
+  {
+   "id": 2404693,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-22T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 5",
+   "team1": "Bye",
+   "team1Id": 1,
+   "team2": "Park Orchards 9U Thunder",
+   "team2Id": 170616,
+   "t1": 0,
+   "t2": 0,
+   "periods": []
+  },
+  {
+   "id": 2404694,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-22T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "East Ringwood 9U Black",
+   "team1Id": 170610,
+   "team2": "East Ringwood 9U Blue",
+   "team2Id": 170611,
+   "t1": 1,
+   "t2": 10,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 4
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 10
+    }
+   ]
+  },
+  {
+   "id": 2404695,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-22T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "Heathmont United 9U Hearts",
+   "team1Id": 170609,
+   "team2": "Heathmont United 9U Thunder",
+   "team2Id": 170605,
+   "t1": 7,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 7,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2404696,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-22T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 6",
+   "team1": "Heathmont United 9U Storm",
+   "team1Id": 170619,
+   "team2": "HFNC Jets 9U White",
+   "team2Id": 170627,
+   "t1": 0,
+   "t2": 1,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 0,
+     "t2": 1
+    }
+   ]
+  },
+  {
+   "id": 2404697,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-22T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Holy Spirit 9U Suns",
+   "team1Id": 170603,
+   "team2": "St James 9U Red",
+   "team2Id": 170600,
+   "t1": 3,
+   "t2": 1,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 1
+    }
+   ]
+  },
+  {
+   "id": 2467146,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-29T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Trinity 9U Lilac",
+   "team1Id": 170607,
+   "team2": "East Ringwood 9U Black",
+   "team2Id": 170610,
+   "t1": 6,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 6,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 6,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 6,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2467147,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-29T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "Southwood 9U Purple",
+   "team1Id": 170594,
+   "team2": "Holy Spirit 9U Diamonds",
+   "team2Id": 170601,
+   "t1": 3,
+   "t2": 5,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 4
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 5
+    }
+   ]
+  },
+  {
+   "id": 2467148,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-29T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "Holy Spirit 9U Hearts",
+   "team1Id": 170602,
+   "team2": "Park Orchards 9U Lightning",
+   "team2Id": 170615,
+   "t1": 4,
+   "t2": 5,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 5
+    }
+   ]
+  },
+  {
+   "id": 2467149,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-29T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "HFNC Jets 9U Blue",
+   "team1Id": 170612,
+   "team2": "BLNC 9U Red",
+   "team2Id": 170606,
+   "t1": 5,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 5,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2467150,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-29T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "Ringwood North 9U Blue",
+   "team1Id": 170596,
+   "team2": "East Ringwood 9U Blue",
+   "team2Id": 170611,
+   "t1": 6,
+   "t2": 7,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 6,
+     "t2": 7
+    }
+   ]
+  },
+  {
+   "id": 2467151,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-29T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Nunawading 9U Pearls",
+   "team1Id": 170614,
+   "team2": "HFNC Jets 9U Yellow",
+   "team2Id": 170613,
+   "t1": 17,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 7,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 12,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 16,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 17,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2467152,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-29T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Park Orchards 9U Thunder",
+   "team1Id": 170616,
+   "team2": "Nunawading U/9 Diamonds",
+   "team2Id": 170628,
+   "t1": 5,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 5,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2467153,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-29T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Southwood 9U Gold",
+   "team1Id": 170595,
+   "team2": "Ringwood North 9U White",
+   "team2Id": 170597,
+   "t1": 2,
+   "t2": 8,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 4
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 6
+    },
+    {
+     "q": 4,
+     "t1": 2,
+     "t2": 8
+    }
+   ]
+  },
+  {
+   "id": 2467154,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-29T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "St James 9U Purple",
+   "team1Id": 170617,
+   "team2": "Holy Spirit 9U Stars",
+   "team2Id": 170621,
+   "t1": 1,
+   "t2": 5,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 5
+    }
+   ]
+  },
+  {
+   "id": 2467155,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-29T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Park Orchards U9 Storm",
+   "team1Id": 170626,
+   "team2": "Heathmont United 9U Lightning",
+   "team2Id": 170618,
+   "t1": 0,
+   "t2": 6,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 4
+    },
+    {
+     "q": 4,
+     "t1": 0,
+     "t2": 6
+    }
+   ]
+  },
+  {
+   "id": 2467156,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-29T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Ringwood North 9U Pink",
+   "team1Id": 170624,
+   "team2": "Trinity 9U Black",
+   "team2Id": 170620,
+   "t1": 2,
+   "t2": 4,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 4
+    },
+    {
+     "q": 4,
+     "t1": 2,
+     "t2": 4
+    }
+   ]
+  },
+  {
+   "id": 2467157,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-29T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Ringwood North 9U Orange",
+   "team1Id": 170623,
+   "team2": "Holy Spirit 9U Comets",
+   "team2Id": 170622,
+   "t1": 7,
+   "t2": 1,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 7,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 7,
+     "t2": 1
+    }
+   ]
+  },
+  {
+   "id": 2467158,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-29T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Heathmont United 9U Thunder",
+   "team1Id": 170605,
+   "team2": "Holy Spirit 9U Suns",
+   "team2Id": 170603,
+   "t1": 1,
+   "t2": 10,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 5
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 9
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 10
+    }
+   ]
+  },
+  {
+   "id": 2467159,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-29T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 5",
+   "team1": "Heathmont United 9U Storm",
+   "team1Id": 170619,
+   "team2": "Bye",
+   "team2Id": 1,
+   "t1": 0,
+   "t2": 0,
+   "periods": []
+  },
+  {
+   "id": 2467160,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-29T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Heathmont United 9U Rockets",
+   "team1Id": 170598,
+   "team2": "Heathmont United 9U Stars",
+   "team2Id": 170604,
+   "t1": 16,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 6,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 9,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 10,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 16,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2467161,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-29T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "HFNC Jets 9U White",
+   "team1Id": 170627,
+   "team2": "St James 9U Red",
+   "team2Id": 170600,
+   "t1": 1,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2467162,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-29T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Heathmont United 9U Hearts",
+   "team1Id": 170609,
+   "team2": "Our Ladys 9U Gold",
+   "team2Id": 170599,
+   "t1": 1,
+   "t2": 10,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 4
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 6
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 9
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 10
+    }
+   ]
+  },
+  {
+   "id": 2467163,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-08-29T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "Trinity 9U White",
+   "team1Id": 170608,
+   "team2": "Our Lady's 9U GREEN",
+   "team2Id": 170625,
+   "t1": 0,
+   "t2": 1,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 0,
+     "t2": 1
+    }
+   ]
+  },
+  {
+   "id": 2467164,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-09-05T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "HFNC Jets 9U Blue",
+   "team1Id": 170612,
+   "team2": "Holy Spirit 9U Hearts",
+   "team2Id": 170602,
+   "t1": 4,
+   "t2": 5,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 5
+    }
+   ]
+  },
+  {
+   "id": 2467165,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-09-05T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Heathmont United 9U Stars",
+   "team1Id": 170604,
+   "team2": "Holy Spirit 9U Diamonds",
+   "team2Id": 170601,
+   "t1": 16,
+   "t2": 5,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 4,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 7,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 10,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 16,
+     "t2": 5
+    }
+   ]
+  },
+  {
+   "id": 2467166,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-09-05T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "BLNC 9U Red",
+   "team1Id": 170606,
+   "team2": "Trinity 9U Lilac",
+   "team2Id": 170607,
+   "t1": 9,
+   "t2": 1,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 5,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 9,
+     "t2": 1
+    }
+   ]
+  },
+  {
+   "id": 2467167,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-09-05T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "East Ringwood 9U Blue",
+   "team1Id": 170611,
+   "team2": "Heathmont United 9U Rockets",
+   "team2Id": 170598,
+   "t1": 6,
+   "t2": 22,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 7
+    },
+    {
+     "q": 2,
+     "t1": 5,
+     "t2": 7
+    },
+    {
+     "q": 3,
+     "t1": 5,
+     "t2": 16
+    },
+    {
+     "q": 4,
+     "t1": 6,
+     "t2": 22
+    }
+   ]
+  },
+  {
+   "id": 2467168,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-09-05T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "East Ringwood 9U Black",
+   "team1Id": 170610,
+   "team2": "Park Orchards 9U Lightning",
+   "team2Id": 170615,
+   "t1": 1,
+   "t2": 10,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 6
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 10
+    }
+   ]
+  },
+  {
+   "id": 2467169,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-09-05T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Park Orchards 9U Thunder",
+   "team1Id": 170616,
+   "team2": "Southwood 9U Gold",
+   "team2Id": 170595,
+   "t1": 9,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 7,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 9,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 9,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2467170,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-09-05T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Ringwood North 9U White",
+   "team1Id": 170597,
+   "team2": "Nunawading 9U Pearls",
+   "team2Id": 170614,
+   "t1": 0,
+   "t2": 13,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 7
+    },
+    {
+     "q": 4,
+     "t1": 0,
+     "t2": 13
+    }
+   ]
+  },
+  {
+   "id": 2467171,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-09-05T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Nunawading U/9 Diamonds",
+   "team1Id": 170628,
+   "team2": "Heathmont United 9U Storm",
+   "team2Id": 170619,
+   "t1": 5,
+   "t2": 7,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 3
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 4
+    },
+    {
+     "q": 3,
+     "t1": 5,
+     "t2": 7
+    },
+    {
+     "q": 4,
+     "t1": 5,
+     "t2": 7
+    }
+   ]
+  },
+  {
+   "id": 2467172,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-09-05T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Heathmont United 9U Lightning",
+   "team1Id": 170618,
+   "team2": "Ringwood North 9U Pink",
+   "team2Id": 170624,
+   "t1": 6,
+   "t2": 1,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 6,
+     "t2": 1
+    }
+   ]
+  },
+  {
+   "id": 2467173,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-09-05T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Our Ladys 9U Gold",
+   "team1Id": 170599,
+   "team2": "Our Lady's 9U GREEN",
+   "team2Id": 170625,
+   "t1": 2,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 2,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2467174,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-09-05T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Park Orchards U9 Storm",
+   "team1Id": 170626,
+   "team2": "Ringwood North 9U Orange",
+   "team2Id": 170623,
+   "t1": 0,
+   "t2": 4,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 0,
+     "t2": 4
+    }
+   ]
+  },
+  {
+   "id": 2467175,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-09-05T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Holy Spirit 9U Stars",
+   "team1Id": 170621,
+   "team2": "Trinity 9U Black",
+   "team2Id": 170620,
+   "t1": 3,
+   "t2": 4,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 4
+    }
+   ]
+  },
+  {
+   "id": 2467176,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-09-05T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Holy Spirit 9U Comets",
+   "team1Id": 170622,
+   "team2": "St James 9U Purple",
+   "team2Id": 170617,
+   "t1": 16,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 5,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 8,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 9,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 16,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2467177,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-09-05T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 5",
+   "team1": "HFNC Jets 9U Yellow",
+   "team1Id": 170613,
+   "team2": "Bye",
+   "team2Id": 1,
+   "t1": 0,
+   "t2": 0,
+   "periods": []
+  },
+  {
+   "id": 2467178,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-09-05T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "Ringwood North 9U Blue",
+   "team1Id": 170596,
+   "team2": "Southwood 9U Purple",
+   "team2Id": 170594,
+   "t1": 10,
+   "t2": 11,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 4
+    },
+    {
+     "q": 3,
+     "t1": 8,
+     "t2": 9
+    },
+    {
+     "q": 4,
+     "t1": 10,
+     "t2": 11
+    }
+   ]
+  },
+  {
+   "id": 2467179,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-09-05T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "Holy Spirit 9U Suns",
+   "team1Id": 170603,
+   "team2": "Heathmont United 9U Hearts",
+   "team2Id": 170609,
+   "t1": 11,
+   "t2": 1,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 4,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 6,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 9,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 11,
+     "t2": 1
+    }
+   ]
+  },
+  {
+   "id": 2467180,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-09-05T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "St James 9U Red",
+   "team1Id": 170600,
+   "team2": "Trinity 9U White",
+   "team2Id": 170608,
+   "t1": 3,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2467181,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-09-05T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "HFNC Jets 9U White",
+   "team1Id": 170627,
+   "team2": "Heathmont United 9U Thunder",
+   "team2Id": 170605,
+   "t1": 11,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 7,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 11,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2467182,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-09-12T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Trinity 9U Lilac",
+   "team1Id": 170607,
+   "team2": "Holy Spirit 9U Hearts",
+   "team2Id": 170602,
+   "t1": 4,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2467183,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-09-12T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "East Ringwood 9U Blue",
+   "team1Id": 170611,
+   "team2": "Heathmont United 9U Stars",
+   "team2Id": 170604,
+   "t1": 13,
+   "t2": 12,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 4
+    },
+    {
+     "q": 2,
+     "t1": 6,
+     "t2": 7
+    },
+    {
+     "q": 3,
+     "t1": 8,
+     "t2": 10
+    },
+    {
+     "q": 4,
+     "t1": 13,
+     "t2": 12
+    }
+   ]
+  },
+  {
+   "id": 2467184,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-09-12T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "BLNC 9U Red",
+   "team1Id": 170606,
+   "team2": "East Ringwood 9U Black",
+   "team2Id": 170610,
+   "t1": 15,
+   "t2": 5,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 10,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 12,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 13,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 15,
+     "t2": 5
+    }
+   ]
+  },
+  {
+   "id": 2467185,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-09-12T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "Park Orchards 9U Lightning",
+   "team1Id": 170615,
+   "team2": "HFNC Jets 9U Blue",
+   "team2Id": 170612,
+   "t1": 4,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2467186,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-09-12T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "Holy Spirit 9U Diamonds",
+   "team1Id": 170601,
+   "team2": "Ringwood North 9U Blue",
+   "team2Id": 170596,
+   "t1": 3,
+   "t2": 8,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 6
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 8
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 8
+    }
+   ]
+  },
+  {
+   "id": 2467187,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-09-12T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "Ringwood North 9U White",
+   "team1Id": 170597,
+   "team2": "HFNC Jets 9U Yellow",
+   "team2Id": 170613,
+   "t1": 0,
+   "t2": 0,
+   "periods": []
+  },
+  {
+   "id": 2467188,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-09-12T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Heathmont United 9U Storm",
+   "team1Id": 170619,
+   "team2": "Southwood 9U Gold",
+   "team2Id": 170595,
+   "t1": 7,
+   "t2": 4,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 7,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 7,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 7,
+     "t2": 4
+    }
+   ]
+  },
+  {
+   "id": 2467189,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-09-12T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Nunawading 9U Pearls",
+   "team1Id": 170614,
+   "team2": "Park Orchards 9U Thunder",
+   "team2Id": 170616,
+   "t1": 14,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 6,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 6,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 11,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 14,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2467190,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-09-12T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "Ringwood North 9U Pink",
+   "team1Id": 170624,
+   "team2": "Ringwood North 9U Orange",
+   "team2Id": 170623,
+   "t1": 0,
+   "t2": 0,
+   "periods": []
+  },
+  {
+   "id": 2467191,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-09-12T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Trinity 9U Black",
+   "team1Id": 170620,
+   "team2": "Heathmont United 9U Lightning",
+   "team2Id": 170618,
+   "t1": 5,
+   "t2": 14,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 3
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 6
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 9
+    },
+    {
+     "q": 4,
+     "t1": 5,
+     "t2": 14
+    }
+   ]
+  },
+  {
+   "id": 2467192,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-09-12T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Holy Spirit 9U Comets",
+   "team1Id": 170622,
+   "team2": "Holy Spirit 9U Stars",
+   "team2Id": 170621,
+   "t1": 3,
+   "t2": 4,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 4
+    }
+   ]
+  },
+  {
+   "id": 2467193,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-09-12T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "St James 9U Purple",
+   "team1Id": 170617,
+   "team2": "Park Orchards U9 Storm",
+   "team2Id": 170626,
+   "t1": 4,
+   "t2": 14,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 5
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 8
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 14
+    }
+   ]
+  },
+  {
+   "id": 2467194,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-09-12T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Heathmont United 9U Hearts",
+   "team1Id": 170609,
+   "team2": "HFNC Jets 9U White",
+   "team2Id": 170627,
+   "t1": 1,
+   "t2": 6,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 6
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 6
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 6
+    }
+   ]
+  },
+  {
+   "id": 2467195,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-09-12T06:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 5",
+   "team1": "Bye",
+   "team1Id": 1,
+   "team2": "Nunawading U/9 Diamonds",
+   "team2Id": 170628,
+   "t1": 0,
+   "t2": 0,
+   "periods": []
+  },
+  {
+   "id": 2467196,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-09-12T07:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "Heathmont United 9U Rockets",
+   "team1Id": 170598,
+   "team2": "Southwood 9U Purple",
+   "team2Id": 170594,
+   "t1": 24,
+   "t2": 5,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 5,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 11,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 16,
+     "t2": 4
+    },
+    {
+     "q": 4,
+     "t1": 24,
+     "t2": 5
+    }
+   ]
+  },
+  {
+   "id": 2467197,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-09-12T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Our Lady's 9U GREEN",
+   "team1Id": 170625,
+   "team2": "St James 9U Red",
+   "team2Id": 170600,
+   "t1": 3,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2467198,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-09-12T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Trinity 9U White",
+   "team1Id": 170608,
+   "team2": "Heathmont United 9U Thunder",
+   "team2Id": 170605,
+   "t1": 9,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 7,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 9,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2467199,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-09-12T07:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Holy Spirit 9U Suns",
+   "team1Id": 170603,
+   "team2": "Our Ladys 9U Gold",
+   "team2Id": 170599,
+   "t1": 12,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 6,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 7,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 11,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 12,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2467200,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-10T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "East Ringwood 9U Black",
+   "team1Id": 170610,
+   "team2": "HFNC Jets 9U Blue",
+   "team2Id": 170612,
+   "t1": 3,
+   "t2": 7,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 7
+    }
+   ]
+  },
+  {
+   "id": 2467201,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-10T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "Heathmont United 9U Rockets",
+   "team1Id": 170598,
+   "team2": "Holy Spirit 9U Diamonds",
+   "team2Id": 170601,
+   "t1": 21,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 5,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 10,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 21,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2467202,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-10T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Holy Spirit 9U Hearts",
+   "team1Id": 170602,
+   "team2": "BLNC 9U Red",
+   "team2Id": 170606,
+   "t1": 0,
+   "t2": 7,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 5
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 0,
+     "t2": 7
+    }
+   ]
+  },
+  {
+   "id": 2467203,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-10T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Southwood 9U Purple",
+   "team1Id": 170594,
+   "team2": "East Ringwood 9U Blue",
+   "team2Id": 170611,
+   "t1": 5,
+   "t2": 19,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 4
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 8
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 16
+    },
+    {
+     "q": 4,
+     "t1": 5,
+     "t2": 19
+    }
+   ]
+  },
+  {
+   "id": 2467204,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-10T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Trinity 9U Lilac",
+   "team1Id": 170607,
+   "team2": "Park Orchards 9U Lightning",
+   "team2Id": 170615,
+   "t1": 9,
+   "t2": 5,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 5
+    },
+    {
+     "q": 3,
+     "t1": 6,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 9,
+     "t2": 5
+    }
+   ]
+  },
+  {
+   "id": 2467205,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-10T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Heathmont United 9U Storm",
+   "team1Id": 170619,
+   "team2": "Nunawading 9U Pearls",
+   "team2Id": 170614,
+   "t1": 3,
+   "t2": 10,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 3
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 4
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 6
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 10
+    }
+   ]
+  },
+  {
+   "id": 2467206,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-10T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "HFNC Jets 9U Yellow",
+   "team1Id": 170613,
+   "team2": "Nunawading U/9 Diamonds",
+   "team2Id": 170628,
+   "t1": 4,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2467207,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-10T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Park Orchards 9U Thunder",
+   "team1Id": 170616,
+   "team2": "Ringwood North 9U White",
+   "team2Id": 170597,
+   "t1": 5,
+   "t2": 4,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 5,
+     "t2": 4
+    }
+   ]
+  },
+  {
+   "id": 2467208,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-10T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Park Orchards U9 Storm",
+   "team1Id": 170626,
+   "team2": "Holy Spirit 9U Comets",
+   "team2Id": 170622,
+   "t1": 4,
+   "t2": 9,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 3
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 5
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 6
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 9
+    }
+   ]
+  },
+  {
+   "id": 2467209,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-10T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Our Ladys 9U Gold",
+   "team1Id": 170599,
+   "team2": "St James 9U Red",
+   "team2Id": 170600,
+   "t1": 4,
+   "t2": 4,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 4
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 4
+    }
+   ]
+  },
+  {
+   "id": 2467210,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-10T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Ringwood North 9U Pink",
+   "team1Id": 170624,
+   "team2": "St James 9U Purple",
+   "team2Id": 170617,
+   "t1": 6,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 6,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2467211,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-10T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Holy Spirit 9U Stars",
+   "team1Id": 170621,
+   "team2": "Heathmont United 9U Lightning",
+   "team2Id": 170618,
+   "t1": 0,
+   "t2": 8,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 5
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 8
+    },
+    {
+     "q": 4,
+     "t1": 0,
+     "t2": 8
+    }
+   ]
+  },
+  {
+   "id": 2467212,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-10T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Ringwood North 9U Orange",
+   "team1Id": 170623,
+   "team2": "Trinity 9U Black",
+   "team2Id": 170620,
+   "t1": 9,
+   "t2": 1,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 5,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 9,
+     "t2": 1
+    }
+   ]
+  },
+  {
+   "id": 2467213,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-10T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 5",
+   "team1": "Southwood 9U Gold",
+   "team1Id": 170595,
+   "team2": "Bye",
+   "team2Id": 1,
+   "t1": 0,
+   "t2": 0,
+   "periods": []
+  },
+  {
+   "id": 2467214,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-10T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "Heathmont United 9U Stars",
+   "team1Id": 170604,
+   "team2": "Ringwood North 9U Blue",
+   "team2Id": 170596,
+   "t1": 12,
+   "t2": 5,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 5,
+     "t2": 3
+    },
+    {
+     "q": 2,
+     "t1": 8,
+     "t2": 4
+    },
+    {
+     "q": 3,
+     "t1": 9,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 12,
+     "t2": 5
+    }
+   ]
+  },
+  {
+   "id": 2467215,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-10T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "Heathmont United 9U Thunder",
+   "team1Id": 170605,
+   "team2": "Our Lady's 9U GREEN",
+   "team2Id": 170625,
+   "t1": 1,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2467216,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-10T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "HFNC Jets 9U White",
+   "team1Id": 170627,
+   "team2": "Holy Spirit 9U Suns",
+   "team2Id": 170603,
+   "t1": 10,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 7,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 10,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2467217,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-10T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Trinity 9U White",
+   "team1Id": 170608,
+   "team2": "Heathmont United 9U Hearts",
+   "team2Id": 170609,
+   "t1": 5,
+   "t2": 5,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 4
+    },
+    {
+     "q": 3,
+     "t1": 5,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 5,
+     "t2": 5
+    }
+   ]
+  },
+  {
+   "id": 2467218,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-17T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "BLNC 9U Red",
+   "team1Id": 170606,
+   "team2": "Park Orchards 9U Lightning",
+   "team2Id": 170615,
+   "t1": 0,
+   "t2": 10,
+   "periods": []
+  },
+  {
+   "id": 2467219,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-17T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "Ringwood North 9U Blue",
+   "team1Id": 170596,
+   "team2": "Heathmont United 9U Rockets",
+   "team2Id": 170598,
+   "t1": 11,
+   "t2": 13,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 5
+    },
+    {
+     "q": 2,
+     "t1": 5,
+     "t2": 10
+    },
+    {
+     "q": 3,
+     "t1": 5,
+     "t2": 12
+    },
+    {
+     "q": 4,
+     "t1": 11,
+     "t2": 13
+    }
+   ]
+  },
+  {
+   "id": 2467220,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-17T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "HFNC Jets 9U Blue",
+   "team1Id": 170612,
+   "team2": "Trinity 9U Lilac",
+   "team2Id": 170607,
+   "t1": 3,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2467221,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-17T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Holy Spirit 9U Hearts",
+   "team1Id": 170602,
+   "team2": "East Ringwood 9U Black",
+   "team2Id": 170610,
+   "t1": 5,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 5,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2467222,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-17T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Southwood 9U Purple",
+   "team1Id": 170594,
+   "team2": "Heathmont United 9U Stars",
+   "team2Id": 170604,
+   "t1": 5,
+   "t2": 19,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 5
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 14
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 18
+    },
+    {
+     "q": 4,
+     "t1": 5,
+     "t2": 19
+    }
+   ]
+  },
+  {
+   "id": 2467223,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-17T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Nunawading U/9 Diamonds",
+   "team1Id": 170628,
+   "team2": "Southwood 9U Gold",
+   "team2Id": 170595,
+   "t1": 2,
+   "t2": 4,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 4
+    },
+    {
+     "q": 4,
+     "t1": 2,
+     "t2": 4
+    }
+   ]
+  },
+  {
+   "id": 2467224,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-17T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Ringwood North 9U White",
+   "team1Id": 170597,
+   "team2": "Heathmont United 9U Storm",
+   "team2Id": 170619,
+   "t1": 4,
+   "t2": 10,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 10
+    }
+   ]
+  },
+  {
+   "id": 2467225,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-17T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Park Orchards 9U Thunder",
+   "team1Id": 170616,
+   "team2": "HFNC Jets 9U Yellow",
+   "team2Id": 170613,
+   "t1": 6,
+   "t2": 5,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 4
+    },
+    {
+     "q": 4,
+     "t1": 6,
+     "t2": 5
+    }
+   ]
+  },
+  {
+   "id": 2467226,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-17T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Trinity 9U Black",
+   "team1Id": 170620,
+   "team2": "St James 9U Purple",
+   "team2Id": 170617,
+   "t1": 14,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 7,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 10,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 14,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2467227,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-17T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Holy Spirit 9U Comets",
+   "team1Id": 170622,
+   "team2": "Ringwood North 9U Pink",
+   "team2Id": 170624,
+   "t1": 12,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 4,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 9,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 11,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 12,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2467228,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-17T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Heathmont United 9U Lightning",
+   "team1Id": 170618,
+   "team2": "Ringwood North 9U Orange",
+   "team2Id": 170623,
+   "t1": 1,
+   "t2": 5,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 5
+    }
+   ]
+  },
+  {
+   "id": 2467229,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-17T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Park Orchards U9 Storm",
+   "team1Id": 170626,
+   "team2": "Holy Spirit 9U Stars",
+   "team2Id": 170621,
+   "t1": 3,
+   "t2": 7,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 5
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 5
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 6
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 7
+    }
+   ]
+  },
+  {
+   "id": 2467230,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-17T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "HFNC Jets 9U White",
+   "team1Id": 170627,
+   "team2": "Our Ladys 9U Gold",
+   "team2Id": 170599,
+   "t1": 6,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 5,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 6,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2467231,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-17T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 5",
+   "team1": "Bye",
+   "team1Id": 1,
+   "team2": "Nunawading 9U Pearls",
+   "team2Id": 170614,
+   "t1": 0,
+   "t2": 0,
+   "periods": []
+  },
+  {
+   "id": 2467232,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-17T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "East Ringwood 9U Blue",
+   "team1Id": 170611,
+   "team2": "Holy Spirit 9U Diamonds",
+   "team2Id": 170601,
+   "t1": 8,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 5,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 6,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 8,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2467233,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-17T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Holy Spirit 9U Suns",
+   "team1Id": 170603,
+   "team2": "Trinity 9U White",
+   "team2Id": 170608,
+   "t1": 8,
+   "t2": 1,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 8,
+     "t2": 1
+    }
+   ]
+  },
+  {
+   "id": 2467234,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-17T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "Our Lady's 9U GREEN",
+   "team1Id": 170625,
+   "team2": "Heathmont United 9U Hearts",
+   "team2Id": 170609,
+   "t1": 3,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2467235,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-17T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "St James 9U Red",
+   "team1Id": 170600,
+   "team2": "Heathmont United 9U Thunder",
+   "team2Id": 170605,
+   "t1": 4,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2509013,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-24T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "Nunawading 9U Pearls",
+   "team1Id": 170614,
+   "team2": "Park Orchards 9U Lightning",
+   "team2Id": 170615,
+   "t1": 4,
+   "t2": 5,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 5
+    }
+   ]
+  },
+  {
+   "id": 2509014,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-24T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "Holy Spirit 9U Diamonds",
+   "team1Id": 170601,
+   "team2": "BLNC 9U Red",
+   "team2Id": 170606,
+   "t1": 2,
+   "t2": 6,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 2,
+     "t2": 6
+    }
+   ]
+  },
+  {
+   "id": 2509015,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-24T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Our Lady's 9U GREEN",
+   "team1Id": 170625,
+   "team2": "Trinity 9U Lilac",
+   "team2Id": 170607,
+   "t1": 1,
+   "t2": 4,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 4
+    }
+   ]
+  },
+  {
+   "id": 2509016,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-24T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Heathmont United 9U Thunder",
+   "team1Id": 170605,
+   "team2": "Heathmont United 9U Lightning",
+   "team2Id": 170618,
+   "t1": 9,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 7,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 9,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2509017,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-24T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Holy Spirit 9U Comets",
+   "team1Id": 170622,
+   "team2": "Park Orchards 9U Thunder",
+   "team2Id": 170616,
+   "t1": 1,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2509018,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-24T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "HFNC Jets 9U Yellow",
+   "team1Id": 170613,
+   "team2": "Ringwood North 9U Orange",
+   "team2Id": 170623,
+   "t1": 0,
+   "t2": 0,
+   "periods": []
+  },
+  {
+   "id": 2509019,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-24T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "St James 9U Purple",
+   "team1Id": 170617,
+   "team2": "Nunawading U/9 Diamonds",
+   "team2Id": 170628,
+   "t1": 0,
+   "t2": 17,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 5
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 12
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 15
+    },
+    {
+     "q": 4,
+     "t1": 0,
+     "t2": 17
+    }
+   ]
+  },
+  {
+   "id": 2509020,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-24T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Heathmont United 9U Hearts",
+   "team1Id": 170609,
+   "team2": "Holy Spirit 9U Suns",
+   "team2Id": 170603,
+   "t1": 2,
+   "t2": 11,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 5
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 9
+    },
+    {
+     "q": 4,
+     "t1": 2,
+     "t2": 11
+    }
+   ]
+  },
+  {
+   "id": 2509021,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-24T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Trinity 9U Black",
+   "team1Id": 170620,
+   "team2": "Heathmont United 9U Storm",
+   "team2Id": 170619,
+   "t1": 2,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 2,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2509022,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-24T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Holy Spirit 9U Hearts",
+   "team1Id": 170602,
+   "team2": "Southwood 9U Purple",
+   "team2Id": 170594,
+   "t1": 0,
+   "t2": 18,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 5
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 8
+    },
+    {
+     "q": 4,
+     "t1": 0,
+     "t2": 18
+    }
+   ]
+  },
+  {
+   "id": 2509023,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-24T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Heathmont United 9U Stars",
+   "team1Id": 170604,
+   "team2": "Heathmont United 9U Rockets",
+   "team2Id": 170598,
+   "t1": 8,
+   "t2": 18,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 7
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 12
+    },
+    {
+     "q": 4,
+     "t1": 8,
+     "t2": 18
+    }
+   ]
+  },
+  {
+   "id": 2509024,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-24T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Ringwood North 9U Pink",
+   "team1Id": 170624,
+   "team2": "Park Orchards U9 Storm",
+   "team2Id": 170626,
+   "t1": 2,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 2,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2509025,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-24T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Holy Spirit 9U Stars",
+   "team1Id": 170621,
+   "team2": "Southwood 9U Gold",
+   "team2Id": 170595,
+   "t1": 5,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 5,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2509026,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-24T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 5",
+   "team1": "Bye",
+   "team1Id": 1,
+   "team2": "HFNC Jets 9U Blue",
+   "team2Id": 170612,
+   "t1": 0,
+   "t2": 0,
+   "periods": []
+  },
+  {
+   "id": 2509027,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-24T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 5",
+   "team1": "Bye",
+   "team1Id": 1,
+   "team2": "Ringwood North 9U White",
+   "team2Id": 170597,
+   "t1": 0,
+   "t2": 0,
+   "periods": []
+  },
+  {
+   "id": 2509028,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-24T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 5",
+   "team1": "Bye",
+   "team1Id": 1,
+   "team2": "HFNC Jets 9U White",
+   "team2Id": 170627,
+   "t1": 0,
+   "t2": 0,
+   "periods": []
+  },
+  {
+   "id": 2509029,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-24T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "East Ringwood 9U Blue",
+   "team1Id": 170611,
+   "team2": "Ringwood North 9U Blue",
+   "team2Id": 170596,
+   "t1": 7,
+   "t2": 6,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 5,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 7,
+     "t2": 6
+    }
+   ]
+  },
+  {
+   "id": 2509030,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-24T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "Our Ladys 9U Gold",
+   "team1Id": 170599,
+   "team2": "Trinity 9U White",
+   "team2Id": 170608,
+   "t1": 10,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 6,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 9,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 10,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2509031,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-24T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "East Ringwood 9U Black",
+   "team1Id": 170610,
+   "team2": "St James 9U Red",
+   "team2Id": 170600,
+   "t1": 4,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2509032,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-07T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Holy Spirit 9U Hearts",
+   "team1Id": 170602,
+   "team2": "Our Lady's 9U GREEN",
+   "team2Id": 170625,
+   "t1": 4,
+   "t2": 1,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 1
+    }
+   ]
+  },
+  {
+   "id": 2509033,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-07T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "BLNC 9U Red",
+   "team1Id": 170606,
+   "team2": "Ringwood North 9U Blue",
+   "team2Id": 170596,
+   "t1": 0,
+   "t2": 14,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 8
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 14
+    },
+    {
+     "q": 4,
+     "t1": 0,
+     "t2": 14
+    }
+   ]
+  },
+  {
+   "id": 2509034,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-07T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Park Orchards 9U Lightning",
+   "team1Id": 170615,
+   "team2": "HFNC Jets 9U Blue",
+   "team2Id": 170612,
+   "t1": 4,
+   "t2": 7,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 7
+    }
+   ]
+  },
+  {
+   "id": 2509035,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-07T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Holy Spirit 9U Comets",
+   "team1Id": 170622,
+   "team2": "HFNC Jets 9U Yellow",
+   "team2Id": 170613,
+   "t1": 3,
+   "t2": 4,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 4
+    }
+   ]
+  },
+  {
+   "id": 2509036,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-07T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Ringwood North 9U Orange",
+   "team1Id": 170623,
+   "team2": "Heathmont United 9U Thunder",
+   "team2Id": 170605,
+   "t1": 4,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2509037,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-07T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Heathmont United 9U Lightning",
+   "team1Id": 170618,
+   "team2": "Ringwood North 9U White",
+   "team2Id": 170597,
+   "t1": 8,
+   "t2": 5,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 4
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 8,
+     "t2": 5
+    }
+   ]
+  },
+  {
+   "id": 2509038,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-07T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Ringwood North 9U Pink",
+   "team1Id": 170624,
+   "team2": "Holy Spirit 9U Stars",
+   "team2Id": 170621,
+   "t1": 3,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2509039,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-07T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Park Orchards U9 Storm",
+   "team1Id": 170626,
+   "team2": "Trinity 9U Black",
+   "team2Id": 170620,
+   "t1": 5,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 5,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2509040,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-07T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Nunawading U/9 Diamonds",
+   "team1Id": 170628,
+   "team2": "Heathmont United 9U Storm",
+   "team2Id": 170619,
+   "t1": 4,
+   "t2": 10,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 6
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 10
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 10
+    }
+   ]
+  },
+  {
+   "id": 2509041,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-07T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "Trinity 9U Lilac",
+   "team1Id": 170607,
+   "team2": "Nunawading 9U Pearls",
+   "team2Id": 170614,
+   "t1": 7,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 3
+    },
+    {
+     "q": 2,
+     "t1": 5,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 6,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 7,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2509042,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-07T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "Heathmont United 9U Rockets",
+   "team1Id": 170598,
+   "team2": "East Ringwood 9U Blue",
+   "team2Id": 170611,
+   "t1": 22,
+   "t2": 10,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 10,
+     "t2": 4
+    },
+    {
+     "q": 3,
+     "t1": 18,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 22,
+     "t2": 10
+    }
+   ]
+  },
+  {
+   "id": 2509043,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-07T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Southwood 9U Gold",
+   "team1Id": 170595,
+   "team2": "St James 9U Purple",
+   "team2Id": 170617,
+   "t1": 1,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2509044,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-07T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Trinity 9U White",
+   "team1Id": 170608,
+   "team2": "East Ringwood 9U Black",
+   "team2Id": 170610,
+   "t1": 0,
+   "t2": 13,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 6
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 9
+    },
+    {
+     "q": 4,
+     "t1": 0,
+     "t2": 13
+    }
+   ]
+  },
+  {
+   "id": 2509045,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-31T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 5",
+   "team1": "Southwood 9U Purple",
+   "team1Id": 170594,
+   "team2": "Bye",
+   "team2Id": 1,
+   "t1": 0,
+   "t2": 0,
+   "periods": []
+  },
+  {
+   "id": 2509046,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-31T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 5",
+   "team1": "Park Orchards 9U Thunder",
+   "team1Id": 170616,
+   "team2": "Bye",
+   "team2Id": 1,
+   "t1": 0,
+   "t2": 0,
+   "periods": []
+  },
+  {
+   "id": 2509047,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-10-31T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 5",
+   "team1": "Holy Spirit 9U Suns",
+   "team1Id": 170603,
+   "team2": "Bye",
+   "team2Id": 1,
+   "t1": 0,
+   "t2": 0,
+   "periods": []
+  },
+  {
+   "id": 2509048,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-07T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "Holy Spirit 9U Diamonds",
+   "team1Id": 170601,
+   "team2": "Heathmont United 9U Stars",
+   "team2Id": 170604,
+   "t1": 2,
+   "t2": 12,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 6
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 9
+    },
+    {
+     "q": 4,
+     "t1": 2,
+     "t2": 12
+    }
+   ]
+  },
+  {
+   "id": 2509049,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-07T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "Heathmont United 9U Hearts",
+   "team1Id": 170609,
+   "team2": "Our Ladys 9U Gold",
+   "team2Id": 170599,
+   "t1": 4,
+   "t2": 5,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 5
+    }
+   ]
+  },
+  {
+   "id": 2509050,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-07T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "St James 9U Red",
+   "team1Id": 170600,
+   "team2": "HFNC Jets 9U White",
+   "team2Id": 170627,
+   "t1": 2,
+   "t2": 4,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 2,
+     "t2": 4
+    }
+   ]
+  },
+  {
+   "id": 2509051,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-14T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Park Orchards 9U Lightning",
+   "team1Id": 170615,
+   "team2": "Southwood 9U Purple",
+   "team2Id": 170594,
+   "t1": 7,
+   "t2": 13,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 8
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 12
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 13
+    },
+    {
+     "q": 4,
+     "t1": 7,
+     "t2": 13
+    }
+   ]
+  },
+  {
+   "id": 2509052,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-14T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Heathmont United 9U Stars",
+   "team1Id": 170604,
+   "team2": "East Ringwood 9U Blue",
+   "team2Id": 170611,
+   "t1": 14,
+   "t2": 10,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 8,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 14,
+     "t2": 10
+    }
+   ]
+  },
+  {
+   "id": 2509053,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-14T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Our Lady's 9U GREEN",
+   "team1Id": 170625,
+   "team2": "Nunawading 9U Pearls",
+   "team2Id": 170614,
+   "t1": 1,
+   "t2": 5,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 4
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 5
+    }
+   ]
+  },
+  {
+   "id": 2509054,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-14T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Heathmont United 9U Lightning",
+   "team1Id": 170618,
+   "team2": "Park Orchards 9U Thunder",
+   "team2Id": 170616,
+   "t1": 6,
+   "t2": 5,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 4
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 4
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 4
+    },
+    {
+     "q": 4,
+     "t1": 6,
+     "t2": 5
+    }
+   ]
+  },
+  {
+   "id": 2509055,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-14T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Ringwood North 9U White",
+   "team1Id": 170597,
+   "team2": "Ringwood North 9U Orange",
+   "team2Id": 170623,
+   "t1": 1,
+   "t2": 7,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 7
+    }
+   ]
+  },
+  {
+   "id": 2509056,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-14T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "HFNC Jets 9U Yellow",
+   "team1Id": 170613,
+   "team2": "Heathmont United 9U Thunder",
+   "team2Id": 170605,
+   "t1": 3,
+   "t2": 20,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 7
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 9
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 13
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 20
+    }
+   ]
+  },
+  {
+   "id": 2509057,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-14T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Trinity 9U Black",
+   "team1Id": 170620,
+   "team2": "Ringwood North 9U Pink",
+   "team2Id": 170624,
+   "t1": 2,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 2,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2509058,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-14T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "HFNC Jets 9U White",
+   "team1Id": 170627,
+   "team2": "Trinity 9U White",
+   "team2Id": 170608,
+   "t1": 7,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 6,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 6,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 7,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2509059,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-14T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Nunawading U/9 Diamonds",
+   "team1Id": 170628,
+   "team2": "Park Orchards U9 Storm",
+   "team2Id": 170626,
+   "t1": 7,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 5,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 7,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2509060,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-14T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "HFNC Jets 9U Blue",
+   "team1Id": 170612,
+   "team2": "Trinity 9U Lilac",
+   "team2Id": 170607,
+   "t1": 3,
+   "t2": 5,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 5
+    }
+   ]
+  },
+  {
+   "id": 2509061,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-14T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "Ringwood North 9U Blue",
+   "team1Id": 170596,
+   "team2": "Holy Spirit 9U Diamonds",
+   "team2Id": 170601,
+   "t1": 10,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 6,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 10,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2509062,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-14T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Heathmont United 9U Storm",
+   "team1Id": 170619,
+   "team2": "Southwood 9U Gold",
+   "team2Id": 170595,
+   "t1": 13,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 6,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 7,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 9,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 13,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2509063,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-14T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Holy Spirit 9U Stars",
+   "team1Id": 170621,
+   "team2": "St James 9U Purple",
+   "team2Id": 170617,
+   "t1": 12,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 7,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 12,
+     "t2": 0
+    }
+   ]
+  },
+  {
+   "id": 2509064,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-14T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 5",
+   "team1": "Bye",
+   "team1Id": 1,
+   "team2": "Holy Spirit 9U Hearts",
+   "team2Id": 170602,
+   "t1": 0,
+   "t2": 0,
+   "periods": []
+  },
+  {
+   "id": 2509065,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-14T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 5",
+   "team1": "Bye",
+   "team1Id": 1,
+   "team2": "Holy Spirit 9U Comets",
+   "team2Id": 170622,
+   "t1": 0,
+   "t2": 0,
+   "periods": []
+  },
+  {
+   "id": 2509066,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-14T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 5",
+   "team1": "Bye",
+   "team1Id": 1,
+   "team2": "Heathmont United 9U Hearts",
+   "team2Id": 170609,
+   "t1": 0,
+   "t2": 0,
+   "periods": []
+  },
+  {
+   "id": 2509067,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-14T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "BLNC 9U Red",
+   "team1Id": 170606,
+   "team2": "Heathmont United 9U Rockets",
+   "team2Id": 170598,
+   "t1": 5,
+   "t2": 29,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 10
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 18
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 21
+    },
+    {
+     "q": 4,
+     "t1": 5,
+     "t2": 29
+    }
+   ]
+  },
+  {
+   "id": 2509068,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-14T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "Our Ladys 9U Gold",
+   "team1Id": 170599,
+   "team2": "East Ringwood 9U Black",
+   "team2Id": 170610,
+   "t1": 1,
+   "t2": 8,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 5
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 7
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 8
+    }
+   ]
+  },
+  {
+   "id": 2509069,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-14T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "St James 9U Red",
+   "team1Id": 170600,
+   "team2": "Holy Spirit 9U Suns",
+   "team2Id": 170603,
+   "t1": 5,
+   "t2": 16,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 4
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 8
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 12
+    },
+    {
+     "q": 4,
+     "t1": 5,
+     "t2": 16
+    }
+   ]
+  },
+  {
+   "id": 2509070,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-21T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Nunawading 9U Pearls",
+   "team1Id": 170614,
+   "team2": "HFNC Jets 9U Blue",
+   "team2Id": 170612,
+   "t1": 5,
+   "t2": 6,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 4
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 4
+    },
+    {
+     "q": 4,
+     "t1": 5,
+     "t2": 6
+    }
+   ]
+  },
+  {
+   "id": 2509071,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-21T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "East Ringwood 9U Blue",
+   "team1Id": 170611,
+   "team2": "BLNC 9U Red",
+   "team2Id": 170606,
+   "t1": 8,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 8,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2509072,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-21T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "Holy Spirit 9U Hearts",
+   "team1Id": 170602,
+   "team2": "Park Orchards 9U Lightning",
+   "team2Id": 170615,
+   "t1": 1,
+   "t2": 5,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 5
+    }
+   ]
+  },
+  {
+   "id": 2509073,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-21T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Heathmont United 9U Thunder",
+   "team1Id": 170605,
+   "team2": "Ringwood North 9U White",
+   "team2Id": 170597,
+   "t1": 14,
+   "t2": 4,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 10,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 13,
+     "t2": 4
+    },
+    {
+     "q": 4,
+     "t1": 14,
+     "t2": 4
+    }
+   ]
+  },
+  {
+   "id": 2509074,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-21T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Ringwood North 9U Orange",
+   "team1Id": 170623,
+   "team2": "Park Orchards 9U Thunder",
+   "team2Id": 170616,
+   "t1": 6,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 5,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 6,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2509075,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-21T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Holy Spirit 9U Comets",
+   "team1Id": 170622,
+   "team2": "Heathmont United 9U Lightning",
+   "team2Id": 170618,
+   "t1": 5,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 4,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 5,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 5,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 5,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2509076,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-21T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Southwood 9U Gold",
+   "team1Id": 170595,
+   "team2": "Park Orchards U9 Storm",
+   "team2Id": 170626,
+   "t1": 2,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 2,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2509077,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-21T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Ringwood North 9U Pink",
+   "team1Id": 170624,
+   "team2": "Nunawading U/9 Diamonds",
+   "team2Id": 170628,
+   "t1": 7,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 7,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2509078,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-21T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "St James 9U Purple",
+   "team1Id": 170617,
+   "team2": "Heathmont United 9U Storm",
+   "team2Id": 170619,
+   "t1": 1,
+   "t2": 22,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 10
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 16
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 20
+    },
+    {
+     "q": 4,
+     "t1": 1,
+     "t2": 22
+    }
+   ]
+  },
+  {
+   "id": 2509079,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-21T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Trinity 9U Lilac",
+   "team1Id": 170607,
+   "team2": "Southwood 9U Purple",
+   "team2Id": 170594,
+   "t1": 13,
+   "t2": 18,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 4,
+     "t2": 4
+    },
+    {
+     "q": 2,
+     "t1": 6,
+     "t2": 11
+    },
+    {
+     "q": 3,
+     "t1": 7,
+     "t2": 16
+    },
+    {
+     "q": 4,
+     "t1": 13,
+     "t2": 18
+    }
+   ]
+  },
+  {
+   "id": 2509080,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-21T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Ringwood North 9U Blue",
+   "team1Id": 170596,
+   "team2": "Heathmont United 9U Stars",
+   "team2Id": 170604,
+   "t1": 8,
+   "t2": 9,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 6
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 7
+    },
+    {
+     "q": 4,
+     "t1": 8,
+     "t2": 9
+    }
+   ]
+  },
+  {
+   "id": 2509081,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-21T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Trinity 9U Black",
+   "team1Id": 170620,
+   "team2": "Holy Spirit 9U Stars",
+   "team2Id": 170621,
+   "t1": 6,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 6,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 6,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2509082,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-21T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Trinity 9U White",
+   "team1Id": 170608,
+   "team2": "Holy Spirit 9U Suns",
+   "team2Id": 170603,
+   "t1": 4,
+   "t2": 10,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 6
+    },
+    {
+     "q": 2,
+     "t1": 3,
+     "t2": 6
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 8
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 10
+    }
+   ]
+  },
+  {
+   "id": 2509083,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-21T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 5",
+   "team1": "Bye",
+   "team1Id": 1,
+   "team2": "Our Lady's 9U GREEN",
+   "team2Id": 170625,
+   "t1": 0,
+   "t2": 0,
+   "periods": []
+  },
+  {
+   "id": 2509084,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-21T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 5",
+   "team1": "Bye",
+   "team1Id": 1,
+   "team2": "HFNC Jets 9U Yellow",
+   "team2Id": 170613,
+   "t1": 0,
+   "t2": 0,
+   "periods": []
+  },
+  {
+   "id": 2509085,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-21T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 5",
+   "team1": "Bye",
+   "team1Id": 1,
+   "team2": "Our Ladys 9U Gold",
+   "team2Id": 170599,
+   "t1": 0,
+   "t2": 0,
+   "periods": []
+  },
+  {
+   "id": 2509086,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-21T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "Holy Spirit 9U Diamonds",
+   "team1Id": 170601,
+   "team2": "Heathmont United 9U Rockets",
+   "team2Id": 170598,
+   "t1": 3,
+   "t2": 28,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 7
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 13
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 24
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 28
+    }
+   ]
+  },
+  {
+   "id": 2509087,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-21T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "East Ringwood 9U Black",
+   "team1Id": 170610,
+   "team2": "HFNC Jets 9U White",
+   "team2Id": 170627,
+   "t1": 4,
+   "t2": 8,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 6
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 8
+    }
+   ]
+  },
+  {
+   "id": 2509088,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-21T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Heathmont United 9U Hearts",
+   "team1Id": 170609,
+   "team2": "St James 9U Red",
+   "team2Id": 170600,
+   "t1": 5,
+   "t2": 7,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 5
+    },
+    {
+     "q": 3,
+     "t1": 4,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 5,
+     "t2": 7
+    }
+   ]
+  },
+  {
+   "id": 2509089,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-28T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Trinity 9U Lilac",
+   "team1Id": 170607,
+   "team2": "Holy Spirit 9U Hearts",
+   "team2Id": 170602,
+   "t1": 8,
+   "t2": 1,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 5,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 7,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 8,
+     "t2": 1
+    }
+   ]
+  },
+  {
+   "id": 2509090,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-28T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "Heathmont United 9U Stars",
+   "team1Id": 170604,
+   "team2": "BLNC 9U Red",
+   "team2Id": 170606,
+   "t1": 16,
+   "t2": 4,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 9,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 10,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 12,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 16,
+     "t2": 4
+    }
+   ]
+  },
+  {
+   "id": 2509091,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-28T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 8",
+   "team1": "Southwood 9U Purple",
+   "team1Id": 170594,
+   "team2": "Nunawading 9U Pearls",
+   "team2Id": 170614,
+   "t1": 8,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 7,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 8,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2509092,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-28T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Ringwood North 9U Orange",
+   "team1Id": 170623,
+   "team2": "Holy Spirit 9U Comets",
+   "team2Id": 170622,
+   "t1": 6,
+   "t2": 4,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 3,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 5,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 6,
+     "t2": 4
+    }
+   ]
+  },
+  {
+   "id": 2509093,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-28T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "HFNC Jets 9U Yellow",
+   "team1Id": 170613,
+   "team2": "Ringwood North 9U White",
+   "team2Id": 170597,
+   "t1": 2,
+   "t2": 6,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 1,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 2,
+     "t2": 6
+    }
+   ]
+  },
+  {
+   "id": 2509094,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-28T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 1",
+   "team1": "Park Orchards 9U Thunder",
+   "team1Id": 170616,
+   "team2": "Heathmont United 9U Thunder",
+   "team2Id": 170605,
+   "t1": 2,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 2
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 2,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2509095,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-28T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Park Orchards U9 Storm",
+   "team1Id": 170626,
+   "team2": "St James 9U Purple",
+   "team2Id": 170617,
+   "t1": 7,
+   "t2": 1,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 4,
+     "t2": 1
+    },
+    {
+     "q": 3,
+     "t1": 6,
+     "t2": 1
+    },
+    {
+     "q": 4,
+     "t1": 7,
+     "t2": 1
+    }
+   ]
+  },
+  {
+   "id": 2509096,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-28T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Our Ladys 9U Gold",
+   "team1Id": 170599,
+   "team2": "HFNC Jets 9U White",
+   "team2Id": 170627,
+   "t1": 4,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 1,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 2,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 4,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2509097,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-28T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Holy Spirit 9U Stars",
+   "team1Id": 170621,
+   "team2": "Heathmont United 9U Storm",
+   "team2Id": 170619,
+   "t1": 3,
+   "t2": 13,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 2,
+     "t2": 6
+    },
+    {
+     "q": 2,
+     "t1": 2,
+     "t2": 11
+    },
+    {
+     "q": 3,
+     "t1": 3,
+     "t2": 12
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 13
+    }
+   ]
+  },
+  {
+   "id": 2509098,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-28T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Our Lady's 9U GREEN",
+   "team1Id": 170625,
+   "team2": "HFNC Jets 9U Blue",
+   "team2Id": 170612,
+   "t1": 6,
+   "t2": 11,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 4,
+     "t2": 2
+    },
+    {
+     "q": 2,
+     "t1": 6,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 6,
+     "t2": 5
+    },
+    {
+     "q": 4,
+     "t1": 6,
+     "t2": 11
+    }
+   ]
+  },
+  {
+   "id": 2509099,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-28T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 4",
+   "team1": "Heathmont United 9U Rockets",
+   "team1Id": 170598,
+   "team2": "Ringwood North 9U Blue",
+   "team2Id": 170596,
+   "t1": 19,
+   "t2": 12,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 5,
+     "t2": 5
+    },
+    {
+     "q": 2,
+     "t1": 7,
+     "t2": 8
+    },
+    {
+     "q": 3,
+     "t1": 14,
+     "t2": 11
+    },
+    {
+     "q": 4,
+     "t1": 19,
+     "t2": 12
+    }
+   ]
+  },
+  {
+   "id": 2509100,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-28T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Nunawading U/9 Diamonds",
+   "team1Id": 170628,
+   "team2": "Trinity 9U Black",
+   "team2Id": 170620,
+   "t1": 8,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 5,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 6,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 6,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 8,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2509101,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-28T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 2",
+   "team1": "Southwood 9U Gold",
+   "team1Id": 170595,
+   "team2": "Ringwood North 9U Pink",
+   "team2Id": 170624,
+   "t1": 2,
+   "t2": 2,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 1,
+     "t2": 2
+    },
+    {
+     "q": 4,
+     "t1": 2,
+     "t2": 2
+    }
+   ]
+  },
+  {
+   "id": 2509102,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-28T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 5",
+   "team1": "Park Orchards 9U Lightning",
+   "team1Id": 170615,
+   "team2": "Bye",
+   "team2Id": 1,
+   "t1": 0,
+   "t2": 0,
+   "periods": []
+  },
+  {
+   "id": 2509103,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-28T05:25:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 5",
+   "team1": "Heathmont United 9U Lightning",
+   "team1Id": 170618,
+   "team2": "Bye",
+   "team2Id": 1,
+   "t1": 0,
+   "t2": 0,
+   "periods": []
+  },
+  {
+   "id": 2509104,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-28T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 5",
+   "team1": "St James 9U Red",
+   "team1Id": 170600,
+   "team2": "Bye",
+   "team2Id": 1,
+   "t1": 0,
+   "t2": 0,
+   "periods": []
+  },
+  {
+   "id": 2509105,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-28T06:10:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "Holy Spirit 9U Diamonds",
+   "team1Id": 170601,
+   "team2": "East Ringwood 9U Blue",
+   "team2Id": 170611,
+   "t1": 0,
+   "t2": 19,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 3
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 7
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 14
+    },
+    {
+     "q": 4,
+     "t1": 0,
+     "t2": 19
+    }
+   ]
+  },
+  {
+   "id": 2509106,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-28T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 7",
+   "team1": "Holy Spirit 9U Suns",
+   "team1Id": 170603,
+   "team2": "East Ringwood 9U Black",
+   "team2Id": 170610,
+   "t1": 3,
+   "t2": 3,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 0,
+     "t2": 1
+    },
+    {
+     "q": 2,
+     "t1": 0,
+     "t2": 3
+    },
+    {
+     "q": 3,
+     "t1": 0,
+     "t2": 3
+    },
+    {
+     "q": 4,
+     "t1": 3,
+     "t2": 3
+    }
+   ]
+  },
+  {
+   "id": 2509107,
+   "compId": "",
+   "compName": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "divisionId": "",
+   "division": "",
+   "round": "",
+   "startTime": "2025-11-28T06:55:00.000Z",
+   "status": "ENDED",
+   "venue": "Maroondah Nets",
+   "court": "Court 3",
+   "team1": "Trinity 9U White",
+   "team1Id": 170608,
+   "team2": "Heathmont United 9U Hearts",
+   "team2Id": 170609,
+   "t1": 13,
+   "t2": 0,
+   "periods": [
+    {
+     "q": 1,
+     "t1": 5,
+     "t2": 0
+    },
+    {
+     "q": 2,
+     "t1": 11,
+     "t2": 0
+    },
+    {
+     "q": 3,
+     "t1": 13,
+     "t2": 0
+    },
+    {
+     "q": 4,
+     "t1": 13,
+     "t2": 0
+    }
+   ]
+  }
+ ]
+}

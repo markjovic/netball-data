@@ -1,0 +1,33 @@
+{
+ "fromMatchId": 2558160,
+ "matchDataKeys": [
+  "team1Score",
+  "team2Score",
+  "hasPenalty",
+  "team1PenaltyScore",
+  "team2PenaltyScore",
+  "startTime",
+  "competitionName",
+  "venueName",
+  "venueCourtName",
+  "matchStatus",
+  "substitutionEnabled"
+ ],
+ "teamDataKeys": [
+  "team1",
+  "team2"
+ ],
+ "sampleMatchData": {
+  "team1Score": 5,
+  "team2Score": 0,
+  "hasPenalty": false,
+  "team1PenaltyScore": null,
+  "team2PenaltyScore": null,
+  "startTime": "2026-02-06T06:10:00.000Z",
+  "competitionName": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+  "venueName": "Maroondah Nets",
+  "venueCourtName": "Court 1",
+  "matchStatus": "ENDED",
+  "substitutionEnabled": false
+ }
+}
