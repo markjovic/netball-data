@@ -127,22 +127,25 @@ jobs:
           npm install --no-audit --no-fund playwright@1.48.2
           npx playwright install --with-deps chromium
 
-      - name: Fetch userId list from an earlier run (user_ids = run:<id>)
-        if: startsWith(inputs.user_ids, 'run:')
+      - name: Fetch userId list from an earlier run (user_ids = run:<id> or a bare run id)
         env:
           GH_TOKEN: ${{ github.token }}
           SRC: ${{ inputs.user_ids }}
         run: |
           set -euo pipefail
-          RID="${SRC#run:}"
-          RID="$(printf '%s' "$RID" | tr -d '[:space:]')"
+          S="$(printf '%s' "$SRC" | tr -d '[:space:]')"
+          RID=""
+          case "$S" in [Rr][Uu][Nn]:*) RID="${S#*:}";; esac
+          if [ -z "$RID" ] && printf '%s' "$S" | grep -Eq '^[0-9]{10,}$'; then RID="$S"; fi
+          if [ -z "$S" ]; then echo "user_ids blank - nothing to fetch"; exit 0; fi
+          if [ -z "$RID" ] && ! printf '%s' "$S" | grep -qi '^run:'; then echo "user_ids is not a run reference - no download"; exit 0; fi
           case "$RID" in ''|*[!0-9]*) echo "::error::user_ids run id is not numeric: $SRC"; exit 1;; esac
           mkdir -p "$RUNNER_TEMP/ids-in"
           gh run download "$RID" -R "$GITHUB_REPOSITORY" -D "$RUNNER_TEMP/ids-in"
           F="$(find "$RUNNER_TEMP/ids-in" -name users-scan.json | head -n1)"
           if [ -z "$F" ]; then echo "::error::no users-scan.json in the artifacts of run $RID"; exit 1; fi
           echo "USER_IDS_FILE=$F" >> "$GITHUB_ENV"
-          echo "using $F ($(wc -c < "$F") bytes)"
+          echo "using $F from run $RID ($(wc -c < "$F") bytes)"
 
       - name: Harvest
         env:
