@@ -15,8 +15,12 @@ if S.get('failedIds'): sys.exit(f"scan has {len(S['failedIds'])} failed ids - re
 import os
 CFG = json.load(open(os.environ['MOVEMENT_CONFIG'], encoding='utf-8-sig')) if os.environ.get('MOVEMENT_CONFIG') else None
 if CFG:   # seasons from data/config.json: the last movementSeasons 9U seasons
-    SEASONS = [(x['compId'], x['label'], x['term']) for x in CFG['seasons']][-CFG.get('movementSeasons', 6):]
     M11_OF_TERM = dict(CFG['elevenComps'])
+    # only seasons that have been built (a new season with no fixtures yet is left out) and whose term has a
+    # Saturday 11U comp configured (a season whose 11U comp isn't published yet is left out, with a warning)
+    for x in CFG['seasons']:
+        if x['compId'] in ND and x['term'] not in M11_OF_TERM: print(f"::warning::movement: {x['label']} left out - no 11U (Saturday) comp configured for {x['term']} yet")
+    SEASONS = [(x['compId'], x['label'], x['term']) for x in CFG['seasons'] if x['compId'] in ND and x['term'] in M11_OF_TERM][-CFG.get('movementSeasons', 6):]
 else:
     SEASONS = [('2402', '2024 Autumn', '2024H1'), ('2939', '2024 Spring', '2024H2'), ('3465', '2025 Autumn', '2025H1'),
                ('4057', '2025 Spring', '2025H2'), ('4596', '2026 Autumn', '2026H1'), ('5232', '2026 Spring', '2026H2')]

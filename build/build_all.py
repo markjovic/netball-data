@@ -9,7 +9,7 @@
 #     replaces data/_divisions-<id>.json when it has rows. Games with 1-3 quarters are flagged halfGame.
 #  2. --careers FILE: a COMPLETE users-careers.json (USER_IDS refresh of data/players.json). Each player's
 #     history is replaced by the fresh one.
-#  3. --scan FILE: a COMPLETE users-history.json (full_history scan of new ids). Players with any MENA
+#  3. --scan FILE ...: COMPLETE users-history.json files (forward blocks / lookback; see build/plan.py). Players with any MENA
 #     competition are added to data/players.json; config scan.highWater moves to the highest netball id seen.
 #  4. Every configured season whose matches file changed, or that is still in progress, is rebuilt with the
 #     original builder (builddata2_core.build); 'static' seasons (2025 Autumn) are never rebuilt.
@@ -24,7 +24,8 @@ ap = argparse.ArgumentParser()
 ap.add_argument('--today', required=True)
 ap.add_argument('--harvest', nargs='*', default=[])
 ap.add_argument('--careers')
-ap.add_argument('--scan')
+ap.add_argument('--scan', nargs='*', default=[], help='COMPLETE users-history.json files (forward blocks and/or lookback)')
+ap.add_argument('--lookback-done', action='store_true', help='a COMPLETE lookback scan is among --scan: record today as scan.lastLookback')
 ap.add_argument('--rebuild-all', action='store_true', help='rebuild every non-static season, not just changed/in-progress ones')
 a = ap.parse_args()
 TODAY = a.today
@@ -81,15 +82,20 @@ if a.careers:
             byid[p['userId']] = slim(p); upd += 1
     say(f'players: careers refreshed for {len(C["players"])} ids, {upd} changed'); players_changed |= upd > 0
 if a.scan:
-    Sx = load(a.scan)
-    if Sx.get('failedIds'): sys.exit('new-id scan is not complete — refusing to use it')
     add = 0; hi = CFG['scan']['highWater']
-    for p in Sx['players']:
-        hi = max(hi, p['userId'])
-        if any('mena' in (c.get('competitionName') or '').lower() for c in p['comps']) and p['userId'] not in byid:
-            byid[p['userId']] = slim(p); add += 1
-    say(f'players: scanned {Sx.get("label")}, {len(Sx["players"])} netball players, {add} new MENA players added; high-water {CFG["scan"]["highWater"]} → {hi}')
-    if hi != CFG['scan']['highWater']: CFG['scan']['highWater'] = hi; save('data/config.json', CFG, compact=False)
+    for fp in a.scan:
+        Sx = load(fp)
+        if Sx.get('failedIds'): sys.exit(f'scan {fp} is not complete — refusing to use it')
+        n0 = add
+        for p in Sx['players']:
+            hi = max(hi, p['userId'])
+            if any('mena' in (c.get('competitionName') or '').lower() for c in p['comps']) and p['userId'] not in byid:
+                byid[p['userId']] = slim(p); add += 1
+        say(f'players: scanned {Sx.get("label")}: {len(Sx["players"])} netball players, {add - n0} new MENA players')
+    say(f'players: {add} new MENA players added; high-water {CFG["scan"]["highWater"]} → {hi}')
+    cfg_changed = hi != CFG['scan']['highWater']; CFG['scan']['highWater'] = hi
+    if a.lookback_done: CFG['scan']['lastLookback'] = TODAY; cfg_changed = True
+    if cfg_changed: save('data/config.json', CFG, compact=False)
     players_changed |= add > 0
 if players_changed:
     P['players'] = sorted(byid.values(), key=lambda p: p['userId']); P['updated'] = TODAY; save('data/players.json', P)
@@ -116,6 +122,8 @@ for s in CFG['seasons']:
         divs = {r['divisionId'] for r in load(dv)['roundDivisionTeams']}
         if divs and divs <= set(names) and all(names[x] for x in divs): colmap = {x: names[x] for x in divs}
     d = B.build(cid, s['label'], ongoing, path, colmap, dv if colmap else None)
+    if not d['teams']:   # a new season's draw is out but no game has been played: keep it off the site until one has
+        ND.pop(cid, None); say(f'{s["label"]}: fixtures published, no games played yet — not shown'); continue
     half = {m['id'] for m in M if m.get('halfGame') or (len(m.get('periods') or []) == 2 and not (m.get('t1') == 0 and m.get('t2') == 0))}
     for t in d['teams'].values():
         for g in t['games']:
