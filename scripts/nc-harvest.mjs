@@ -53,6 +53,7 @@ const PROBE_IDS = (process.env.PROBE_IDS || '').split(',').map((s) => s.trim()).
 const KEYS = (process.env.KEYS || '').split(',').map((s) => s.trim()).filter(Boolean);
 // RAW mode: dump raw bodies of arbitrary endpoints (;;-separated) for structure inspection.
 const RAW_URLS = (process.env.RAW_URLS || '').split(';;').map((s) => s.trim()).filter(Boolean);
+const RAW_MAX = parseInt(process.env.RAW_MAX || '80000', 10); // RAW: bytes of each body kept (length always records the full size)
 // USER_SCAN mode: scan a userId range on /stats/v2/summaryScoringByUser (public), keep netball
 // players, bucket by team. COMP_FILTER = optional comma comp-ids to keep (e.g. the 9U comps).
 const USER_LO = parseInt(process.env.USER_LO || '0', 10);
@@ -169,7 +170,7 @@ async function main() {
       for (const u of RAW_URLS) {
         const url = /^https?:\/\//i.test(u) ? u : `https://api-netball.squadi.com${u.startsWith('/') ? '' : '/'}${u}`;
         const r = (await batchGet([{ id: 0, url }]))[0];
-        out.push({ url, status: r.status, length: (r.body || '').length, body: (r.body || '').slice(0, 80000) });
+        out.push({ url, status: r.status, length: (r.body || '').length, body: (r.body || '').slice(0, RAW_MAX) });
         log(`[${r.status}] len ${(r.body || '').length} — ${url}`);
       }
       await fs.writeFile(path.join(OUT, 'raw.json'), JSON.stringify(out, null, 1));
