@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>MENA 9U Netball — Stats</title>
+<style>
+:root{--bg:#121212;--surface:#1e1e1e;--elevated:#2a2a2a;--border:#2e2e2e;--accent:#00f5d4;--accent-dim:rgba(0,245,212,0.12);--text:#fff;--text2:#9a9a9a;--text3:#5a5a5a;--win:#4caf50;--loss:#f44336;--draw:#ff9800}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.4}
+button{cursor:pointer;border:none;background:none;color:inherit;font:inherit}
+.wrap{max-width:860px;margin:0 auto;min-height:100dvh}
+header{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--border);padding:12px 16px calc(12px + env(safe-area-inset-top))}
+.htop{display:flex;align-items:center;gap:10px}
+.logo{font-weight:800;font-size:1.02rem}.logo .dot{color:var(--accent)}
+.sub{color:var(--text3);font-size:.68rem;margin-top:2px}
+select,.search{background:var(--elevated);border:1px solid var(--border);border-radius:8px;color:var(--text);padding:7px 11px;font-size:.84rem;outline:none}
+select{appearance:none;cursor:pointer;margin-left:auto}
+.search{width:100%;margin-top:10px}
+nav{display:flex;flex-wrap:wrap;gap:4px;margin-top:10px}
+.tab{flex:1;padding:8px 4px;border-radius:8px;font-size:.8rem;font-weight:600;color:var(--text2);background:var(--elevated)}
+.tab.on{background:var(--accent-dim);color:var(--accent)}
+main{padding:14px 16px calc(30px + env(safe-area-inset-bottom))}
+.muted{color:var(--text2)}.tiny{font-size:.68rem}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:14px}
+.card h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.04em;color:var(--text2);padding:11px 14px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}
+table{width:100%;border-collapse:collapse;font-size:.83rem}
+th:not(.al),td:not(.al){white-space:nowrap}
+th.al,td.al{width:100%}
+th{font-size:.62rem;text-transform:uppercase;letter-spacing:.03em;color:var(--text3);font-weight:600;text-align:right;padding:7px 6px}
+th.al,td.al{text-align:left}
+td.al{white-space:normal;line-height:1.2}
+td{padding:8px 5px;border-top:1px solid var(--border);text-align:right;white-space:nowrap}
+th{padding:0 5px}
+tr.clk{cursor:pointer}tr.clk:hover td{background:var(--elevated)}
+.rank{color:var(--text3);width:22px;font-variant-numeric:tabular-nums}
+.tn{font-weight:600}
+.chip{display:inline-block;font-size:.6rem;font-weight:700;padding:2px 7px;border-radius:6px;letter-spacing:.03em;vertical-align:middle}
+.net{font-size:.56rem;font-weight:700;padding:2px 6px;border-radius:6px;letter-spacing:.02em}
+.net.HIGH{background:rgba(0,245,212,.14);color:var(--accent)}
+.net.LOW{background:rgba(154,154,154,.16);color:var(--text2)}
+.rec{font-variant-numeric:tabular-nums}
+.cw{color:var(--win)}.cl{color:var(--loss)}
+.rating{font-variant-numeric:tabular-nums;color:var(--accent);font-weight:600}
+.marks{margin-left:6px;white-space:nowrap}.arr{font-size:.6rem;margin:0 1px;vertical-align:middle}.arr.up{color:var(--win)}.arr.dn{color:var(--loss)}.arr.da{color:var(--text3)}
+.gd.pos{color:var(--win)}.gd.neg{color:var(--loss)}
+.seg{display:flex;gap:4px;margin-bottom:12px;background:var(--elevated);padding:4px;border-radius:10px}
+.seg button{flex:1;padding:8px;border-radius:7px;font-size:.82rem;font-weight:600;color:var(--text2)}
+.seg button.on{background:var(--accent-dim);color:var(--accent)}
+.back{display:inline-flex;gap:6px;color:var(--text2);font-size:.82rem;margin-bottom:12px}
+.thdr{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.avi{width:46px;height:46px;border-radius:50%;background:var(--elevated);border:2px solid var(--accent-dim);display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--accent);flex-shrink:0}
+.tbig{font-size:1.1rem;font-weight:700}
+.statrow{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 4px}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:9px;padding:8px 12px;flex:1;min-width:70px}
+.stat .v{font-size:1.02rem;font-weight:700;font-variant-numeric:tabular-nums}
+.stat .k{font-size:.58rem;text-transform:uppercase;letter-spacing:.03em;color:var(--text3)}
+.jrow{display:flex;align-items:center;gap:8px;padding:9px 14px;border-top:1px solid var(--border);font-size:.8rem;flex-wrap:wrap}
+.jarrow{color:var(--text3)}
+.grade-sub{padding:6px 14px;font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--text3);background:var(--elevated);border-top:1px solid var(--border);display:flex;align-items:center;gap:8px}
+.g{display:flex;align-items:center;gap:10px;padding:9px 14px;cursor:pointer}
+.g:hover{background:var(--elevated)}
+.bdg{flex-shrink:0;object-fit:cover;vertical-align:middle}
+.bdgf{display:inline-flex;align-items:center;justify-content:center;font-weight:800}
+.tn{display:flex;align-items:center;gap:7px}
+.rbadge{width:22px;height:22px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.66rem;font-weight:800;flex-shrink:0}
+.rbadge.W{background:rgba(76,175,80,.18);color:var(--win)}.rbadge.L{background:rgba(244,67,54,.18);color:var(--loss)}.rbadge.D{background:rgba(255,152,0,.18);color:var(--draw)}
+.gdate{color:var(--text3);font-size:.66rem;width:40px;flex-shrink:0}
+.gopp{flex:1;font-size:.84rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gsc{font-variant-numeric:tabular-nums;font-weight:600}
+.qbreak{padding:2px 14px 10px 50px;display:none;gap:6px;flex-wrap:wrap}.qbreak.show{display:flex}
+.q{background:var(--elevated);border:1px solid var(--border);border-radius:6px;padding:3px 8px;font-size:.7rem;font-variant-numeric:tabular-nums}
+.flowcap{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:8px 0}
+.fc{background:var(--elevated);border:1px solid var(--border);border-radius:6px;padding:3px 9px;font-size:.73rem;cursor:pointer}
+.fc:hover{background:var(--accent-dim);color:var(--accent)}
+.fcx{font-size:.68rem;color:var(--text3);cursor:pointer;margin-left:4px}
+.note{font-size:.72rem;color:var(--text2);background:var(--accent-dim);border:1px solid var(--border);border-radius:10px;padding:10px 12px;margin-bottom:14px}
+.empty{color:var(--text3);text-align:center;padding:28px;font-size:.85rem}
+.gh{cursor:pointer;user-select:none}.gh .arw{margin-left:auto;color:var(--text3);transition:.15s}.gh.open .arw{transform:rotate(90deg)}
+.gb{display:none}.gb.open{display:block}
+.hg{flex:none;margin-left:8px;font-size:.68rem;font-weight:700;color:#90caf9;background:rgba(33,150,243,.14);border:1px solid rgba(33,150,243,.35);border-radius:999px;padding:1px 7px;white-space:nowrap}
+</style></head><body><div class="wrap">
+<header>
+ <div class="htop"><div><div class="logo">MENA 9U<span class="dot">.</span>Netball</div><div class="sub" id="sub"></div></div><select id="season"></select></div>
+ <input class="search" id="search" placeholder="Search a team…" autocomplete="off">
+ <nav id="nav"></nav>
+</header><main id="main"></main></div>
+<script>
+const DATA=__DATA__;
+const SEASON_ORDER=DATA._order||Object.keys(DATA).filter(id=>id[0]!=='_').reverse(); // newest first (numeric keys sort ascending in JS)
+const COLHEX={BLUE:'#2196f3',RED:'#f44336',YELLOW:'#ffc107',WHITE:'#e0e0e0',GREEN:'#4caf50',ORANGE:'#ff9800'};
+let state={season:SEASON_ORDER[0],view:'',net:'HIGH',team:null,q:'',flowHi:'',tg:'club'};
+const $=s=>document.querySelector(s),main=$('#main');
+const esc=s=>(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const dn=n=>esc((n||'').replace(/ 9U /g,' '));
+const CLUBKEYS=Object.keys(DATA._clubs||{}).sort((a,b)=>b.length-a.length);
+const club=n=>{ // 2024 names vary ('U9 Trinity Lilac', 'ST JAMES NSG 9U BLUE', 'Blackburn Lake U9 Red'): known club prefix first
+ const t=(n||'').replace(/['’]/g,'').trim().replace(/^(U\s*\/?\s*\d+|\d+\s*&?\s*U)\s+/i,''),lo=t.toLowerCase();
+ if(lo.startsWith('blackburn lake'))return 'BLNC';
+ const k=CLUBKEYS.find(k=>lo.startsWith(k.toLowerCase()));return k||t.replace(/ ?(9U|U9|U\/9) .*/i,'').trim();};
+const initials=n=>(n||'?').split(' ').filter(Boolean).slice(0,2).map(w=>w[0]).join('').toUpperCase();
+const clubInfo=n=>(DATA._clubs||{})[club(n)]||null;
+const accent=n=>{const c=clubInfo(n);return c&&c.colour?c.colour:'var(--accent)';};
+function bdg(n,sz){sz=sz||22;const c=clubInfo(n);const r=Math.round(sz*.28);
+ if(c&&c.badge)return `<img class="bdg" src="${c.badge}" width="${sz}" height="${sz}" style="border-radius:${r}px;box-shadow:0 0 0 1.5px ${c.colour||'var(--line)'}" alt="">`;
+ return `<span class="bdg bdgf" style="width:${sz}px;height:${sz}px;border-radius:${r}px;font-size:${Math.round(sz*.4)}px;background:${(c&&c.colour||'#888')}22;color:${c&&c.colour||'var(--text2)'}">${initials(n)}</span>`;}
+function gchip(g){const c=COLHEX[g];return `<span class="chip" style="background:${c?c+'22':'var(--elevated)'};color:${c||'var(--text2)'}">${esc(g)}</span>`;}
+const arrows=r=>{const m=r.marks||[];if(!m.some(x=>x!=='same'))return '';return '<span class="marks" title="net height by phase — ▲ up, ▼ down, – unchanged">'+m.map(x=>x==='up'?'<span class="arr up">▲</span>':x==='down'?'<span class="arr dn">▼</span>':'<span class="arr da">–</span>').join('')+'</span>';};
+const netchip=n=>n?`<span class="net ${n}">${n==='HIGH'?'full nets':'low nets'}</span>`:'';
+function seasonSel(){$('#season').innerHTML=SEASON_ORDER.map(id=>`<option value="${id}">${esc(DATA[id].label)} 9U</option>`).join('');$('#season').value=state.season;}
+function setSub(){const d=DATA[state.season];$('#sub').textContent=`${Object.keys(d.teams).length} teams · ${d.gradesView.length} grades · ${d.ongoing?'in progress':'complete'}`;}
+function viewExists(d,v){ if(v&&v.indexOf('phase:')===0){return (+v.split(':')[1])<d.periodsView.length;} return ['rank','flow','teams'].includes(v); }
+function buildNav(d){
+ const tabs=d.periodsView.map((p,i)=>({v:'phase:'+i,l:p.label})).concat([{v:'rank',l:'Rankings'},{v:'flow',l:'Flow'},{v:'teams',l:'Teams'}]);
+ $('#nav').innerHTML=tabs.map(t=>`<button class="tab ${state.view===t.v?'on':''}" data-v="${t.v}">${esc(t.l)}</button>`).join('');
+ document.querySelectorAll('#nav .tab').forEach(t=>t.onclick=()=>{state.q='';$('#search').value='';go({view:t.dataset.v,team:null});});
+}
+function render(){
+ const d=DATA[state.season];
+ if(!viewExists(d,state.view))state.view='phase:'+(d.periodsView.length-1);
+ buildNav(d);
+ if(state.team)return renderTeam(d,state.team);
+ if(state.q)return renderSearch(d);
+ if(state.view.indexOf('phase:')===0)return renderPhase(d,+state.view.split(':')[1]);
+ if(state.view==='rank')return renderLadder(d);
+ if(state.view==='flow')return renderFlow(d);
+ if(state.view==='teams')return renderTeams(d);
+}
+function renderPhase(d,pi){
+ const p=d.periodsView[pi];const last=pi===d.periodsView.length-1;
+ let h=`<div class="note"><b>${esc(p.label)}</b> standings · ${p.dateFrom.slice(5)} → ${p.dateTo.slice(5)}. Pools strongest-first; within a pool, teams by that phase's results.${last&&d.ongoing?' These are the current grades.':''} For the single season-long ranking across pools, see <b>Rankings</b>.${p.note?' <b>'+esc(p.note)+'</b>':''}</div>`;
+ p.pools.forEach(pool=>{h+=`<div class="card"><h3>${gchip(pool.label)} ${netchip(pool.net)}<span class="muted tiny" style="margin-left:auto">${pool.ladder.length} teams</span></h3>${ladderTable(pool.ladder)}</div>`;});
+ main.innerHTML=h;bindTeam();
+}
+function renderLadder(d){
+ if(d.netKnown===false)return renderLadderAll(d);
+ const L=d.ladders[state.net];
+ main.innerHTML=`
+ <div class="seg"><button data-net="HIGH" class="${state.net==='HIGH'?'on':''}">Full-height nets</button><button data-net="LOW" class="${state.net==='LOW'?'on':''}">Lowered nets</button></div>
+ <div class="note"><b>Strength ladder — ${state.net==='HIGH'?'full-height':'lowered'} nets only.</b> Teams are ranked by an opponent-adjusted rating from games played at this net height (so scores are like-for-like), beating strong teams counts more than padding weak ones, and close teams break on head-to-head then common opponents. A team that played at both heights appears on both ladders.</div>
+ <div class="card"><h3>${state.net==='HIGH'?'Full-height':'Lowered'} net ladder · ${esc(d.label)}</h3>
+ <table><thead><tr><th class="rank">#</th><th class="al">Team</th><th>Rtg</th><th>P</th><th>W</th><th>L</th><th>D</th><th>PF</th><th>PA</th><th>GD</th></tr></thead>
+ <tbody>${L.map(r=>`<tr class="clk" data-team="${esc(r.team)}"><td class="rank">${r.rank}</td><td class="al"><span class="tn">${bdg(r.team,20)}<span>${dn(r.team)}${arrows(r)}</span></span></td><td class="rating">${r.rating.toFixed(2)}</td><td>${r.P}</td><td class="cw">${r.W}</td><td class="cl">${r.L}</td><td>${r.D}</td><td>${r.PF}</td><td>${r.PA}</td><td class="gd ${r.GD>=0?'pos':'neg'}">${r.GD>0?'+':''}${r.GD}</td></tr>`).join('')}</tbody></table></div>`;
+ document.querySelectorAll('.seg button').forEach(b=>b.onclick=()=>{state.net=b.dataset.net;render();});
+ bindTeam();
+}
+function renderLadderAll(d){
+ const L=d.ladders.HIGH;
+ main.innerHTML=`<div class="note"><b>Strength ladder — all scored games.</b> Net heights weren't recorded for ${esc(d.label)}, so this is one ladder across every scored game, ranked by the same opponent-adjusted rating. Unscored games (recorded 0–0) are left out.</div>
+ <div class="card"><h3>Season ladder · ${esc(d.label)}</h3>
+ <table><thead><tr><th class="rank">#</th><th class="al">Team</th><th>Rtg</th><th>P</th><th>W</th><th>L</th><th>D</th><th>PF</th><th>PA</th><th>GD</th></tr></thead>
+ <tbody>${L.map(r=>`<tr class="clk" data-team="${esc(r.team)}"><td class="rank">${r.rank}</td><td class="al"><span class="tn">${bdg(r.team,20)}<span>${dn(r.team)}</span></span></td><td class="rating">${r.rating.toFixed(2)}</td><td>${r.P}</td><td class="cw">${r.W}</td><td class="cl">${r.L}</td><td>${r.D}</td><td>${r.PF}</td><td>${r.PA}</td><td class="gd ${r.GD>=0?'pos':'neg'}">${r.GD>0?'+':''}${r.GD}</td></tr>`).join('')}</tbody></table></div>`;
+ bindTeam();
+}
+function ladderTable(rows){return `<table><thead><tr><th class="rank">#</th><th class="al">Team</th><th>P</th><th>W</th><th>L</th><th>D</th><th>PF</th><th>PA</th><th>GD</th></tr></thead><tbody>${rows.map((r,i)=>{const gd=r.PF-r.PA;return `<tr class="clk" data-team="${esc(r.team)}"><td class="rank">${i+1}</td><td class="al"><span class="tn">${bdg(r.team,20)}${dn(r.team)}</span></td><td>${r.P}</td><td class="cw">${r.W}</td><td class="cl">${r.L}</td><td>${r.D}</td><td>${r.PF}</td><td>${r.PA}</td><td class="gd ${gd>=0?'pos':'neg'}">${gd>0?'+':''}${gd}</td></tr>`;}).join('')}</tbody></table>`;}
+function renderGrades(d){
+ let h=`<div class="note">${d.ongoing?'Current':'Final'} grades, strongest first. ${d.colourNamed?'Names are the competition colours.':'Finished season — grades labelled by strength.'} Each shows its net height. Tap to expand.</div>`;
+ d.gradesView.forEach((g,i)=>{h+=`<div class="card"><h3 class="gh${i===0?' open':''}">${gchip(g.label)} ${netchip(g.net)}<span class="arw">▸</span></h3><div class="gb${i===0?' open':''}">${ladderTable(g.ladder)}</div></div>`;});
+ main.innerHTML=h;
+ document.querySelectorAll('.gh').forEach(x=>x.onclick=()=>{x.classList.toggle('open');x.nextElementSibling.classList.toggle('open');});
+ bindTeam();
+}
+function renderPhases(d){
+ let h=`<div class="note">Each grading <b>period</b> in order, with every pool's ladder for games in that period. This is how teams were graded and re-graded. ${d.ongoing?'The last period is the current grading.':''}</div>`;
+ d.periodsView.forEach(p=>{
+  h+=`<div style="margin:6px 2px 8px;font-weight:700">${esc(p.label)} <span class="muted tiny" style="font-weight:400">· ${p.dateFrom.slice(5)} → ${p.dateTo.slice(5)}</span></div>`;
+  p.pools.forEach(pool=>{h+=`<div class="card"><h3>${gchip(pool.label)} ${netchip(pool.net)}</h3>${ladderTable(pool.ladder)}</div>`;});
+ });
+ main.innerHTML=h;bindTeam();
+}
+function renderTeams(d){
+ const byg={};
+ if(state.tg==='grade'){d.gradesView.forEach(g=>byg[g.label]=[]);Object.entries(d.teams).forEach(([n,t])=>{(byg[t.currentGrade]=byg[t.currentGrade]||[]).push(n);});}
+ else{Object.keys(d.teams).forEach(n=>{const c=club(n);(byg[c]=byg[c]||[]).push(n);});}
+ const keys=state.tg==='grade'?d.gradesView.map(g=>g.label):Object.keys(byg).sort();
+ let h=`<div class="seg"><button data-tg="club" class="${state.tg==='club'?'on':''}">By club</button><button data-tg="grade" class="${state.tg==='grade'?'on':''}">By grade</button></div>`;
+ keys.forEach(k=>{const ns=(byg[k]||[]).sort();if(!ns.length)return;
+  const head=state.tg==='grade'?gchip(k):`<span class="tn">${bdg(k,20)}${esc(k)}</span>`;
+  h+=`<div class="card"><h3>${head}<span class="muted tiny">${ns.length}</span></h3>${ns.map(n=>`<div class="g" data-team="${esc(n)}"><span class="tn">${bdg(n,20)}${dn(n)}</span> ${state.tg==='club'?gchip(d.teams[n].currentGrade)+' '+netchip(d.teams[n].currentNet):''}</div>`).join('')}</div>`;});
+ main.innerHTML=h;
+ document.querySelectorAll('.seg button[data-tg]').forEach(x=>x.onclick=()=>{state.tg=x.dataset.tg;renderTeams(d);});
+ bindTeam();
+}
+function renderSearch(d){
+ const q=state.q.toLowerCase(),hits=Object.keys(d.teams).filter(n=>n.toLowerCase().includes(q)).sort();
+ main.innerHTML=`<div class="card"><h3>Search · "${esc(state.q)}"</h3>${hits.length?hits.map(n=>`<div class="g" data-team="${esc(n)}"><span class="tn">${dn(n)}</span> ${gchip(d.teams[n].currentGrade)}</div>`).join(''):'<div class="empty">No teams match.</div>'}</div>`;
+ bindTeam();
+}
+function renderTeam(d,name){
+ const t=d.teams[name];if(!t){state.team=null;return render();}
+ const jr=t.journey.map(j=>`<span>${gchip(j.pool)} ${netchip(j.net)} <span class="muted tiny">${j.W}-${j.L}${j.D?'-'+j.D:''}</span></span>`).join(' <span class="jarrow">→</span> ');
+ const ranks=[];
+ if(t.highRank)ranks.push(`${d.netKnown===false?'Season':'Full-net'} #${t.highRank} (${t.highRating.toFixed(2)})`);
+ if(t.lowRank)ranks.push(`Low-net #${t.lowRank} (${t.lowRating.toFixed(2)})`);
+ const phs=[...new Set(t.games.map(g=>g.period))];
+ const gl=phs.map(ph=>{
+  const gs=t.games.filter(g=>g.period===ph);const w=gs.filter(g=>g.res==='W').length,l=gs.filter(g=>g.res==='L').length,dd=gs.filter(g=>g.res==='D').length;
+  const net=gs[0]?gs[0].net:null;
+  const rows=gs.map(g=>{const q=d.periods[g.mid];let qb='';const qid='qb'+g.mid;
+   if(q){const isT1=q.t1===name;qb=`<div class="qbreak" id="${qid}">`+q.delta.map((dl,qi)=>{const f=isT1?dl[0]:dl[1],a=isT1?dl[1]:dl[0];return `<span class="q">Q${qi+1} ${f}-${a}</span>`;}).join('')+`</div>`;}
+   return `<div class="g" data-qb="${qid}"><span class="gdate">${g.date.slice(5)}</span><span class="rbadge ${g.res||''}">${g.res||'–'}</span><span class="gopp">${dn(g.opp)}${g.half?'<span class="hg" title="Washout — only half the game was played">☔ half game</span>':''}</span><span class="gsc">${g.res?g.for+'–'+g.against:'not scored'}</span></div>${qb}`;}).join('');
+  return `<div class="grade-sub">${esc(ph)} ${netchip(net)} <span style="margin-left:auto;color:var(--text2)">${w}-${l}${dd?'-'+dd:''}</span></div>${rows}`;
+ }).join('');
+ main.innerHTML=`<button class="back" onclick="go({team:null})">← back</button>
+ <div class="thdr" style="border-left:3px solid ${accent(name)};padding-left:12px"><div class="avi" style="background:none;padding:0">${bdg(name,48)}</div><div><div class="tbig">${dn(name)}</div><div class="tiny muted">${d.ongoing?'Current':'Final'} grade ${gchip(t.currentGrade)} ${netchip(t.currentNet)}</div></div></div>
+ <div class="statrow"><div class="stat"><div class="v">${t.W}-${t.L}${t.D?'-'+t.D:''}</div><div class="k">Record</div></div><div class="stat"><div class="v">${t.PF}</div><div class="k">For</div></div><div class="stat"><div class="v">${t.PA}</div><div class="k">Against</div></div></div>
+ <div class="note" style="margin-top:12px">Strength ranking: ${ranks.join(' · ')||'—'}. ${d.netKnown===false?'Net heights weren\'t recorded for this season, so it has one season-long ladder.':'Ladders are separate for full-height and lowered nets because scores aren\'t comparable across them.'}</div>
+ <div class="card"><h3>Regrade journey</h3><div class="jrow">${jr||'<span class="muted">—</span>'}</div></div>
+ <div class="card"><h3>Season games <span class="muted tiny">· tap for per-quarter</span></h3>${gl||'<div class="empty">No games.</div>'}</div>`;
+ document.querySelectorAll('.card .g[data-qb]').forEach(el=>{const q=document.getElementById(el.dataset.qb);if(q)el.onclick=()=>q.classList.toggle('show');});
+}
+function tg(d,nm){return (d.teams[nm]||{}).currentGrade;}
+function flowHiSet(d){
+ if(!state.flowHi)return null;
+ const[k,v]=[state.flowHi.slice(0,state.flowHi.indexOf(':')),state.flowHi.slice(state.flowHi.indexOf(':')+1)];
+ if(k==='team')return new Set([v]);
+ if(k==='club')return new Set(Object.keys(d.teams).filter(n=>club(n)===v));
+ if(k==='node'){const nd=d.flow.columns.flatMap(c=>c.nodes).find(x=>x.id===v);return nd?new Set(nd.teams):null;}
+ return null;
+}
+function renderFlow(d){
+ const F=d.flow,cols=F.columns,nc=cols.length;
+ const ROWH=16,NW=52,NODEGAP=18,PADX=18,TOP=44;
+ const avail=Math.max(300,(main.clientWidth||620)-32),minGap=120;
+ const W=Math.max(avail,PADX*2+NW+(nc-1)*minGap),COLGAP=(W-PADX*2-NW)/(nc-1);
+ const gr={};d.gradesView.forEach((g,i)=>gr[g.label]=i);
+ const colX=ci=>PADX+ci*COLGAP;const teamY={},box={};let maxB=0;
+ cols.forEach((c,ci)=>{let y=TOP;teamY[ci]={};c.nodes.forEach(nd=>{
+   const ts=nd.teams; // ordered by that period's pool ladder (best at top)
+   const h=Math.max(ROWH,ts.length*ROWH);box[nd.id]={id:nd.id,x:colX(ci),y,h,label:nd.label,net:nd.net};
+   ts.forEach((t,k)=>teamY[ci][t]=y+k*ROWH+ROWH/2);y+=h+NODEGAP;});maxB=Math.max(maxB,y);});
+ const H=maxB+6;const hi=flowHiSet(d);
+ let base='',top='',hit='';
+ F.paths.forEach(p=>{const col=COLHEX[p.grade]||'#8a8a8a';const on=!hi||hi.has(p.team);
+  for(let ci=0;ci<nc-1;ci++){const a=p.nodes[ci],b=p.nodes[ci+1];if(!a||!b)continue;
+   const y1=teamY[ci][p.team],y2=teamY[ci+1][p.team];if(y1==null||y2==null)continue;
+   const x1=box[a].x+NW,x2=box[b].x,mx=(x1+x2)/2;const dd=`M${x1} ${y1} C ${mx} ${y1}, ${mx} ${y2}, ${x2} ${y2}`;
+   const seg=`<path d="${dd}" fill="none" stroke="${col}" stroke-width="${on&&hi?4:2.5}" stroke-opacity="${on?(hi?0.95:0.5):0.07}"><title>${esc(dn(p.team))} — ${esc(p.grade)}</title></path>`;
+   if(on&&hi)top+=seg;else base+=seg;
+   hit+=`<path d="${dd}" fill="none" stroke="#000" stroke-opacity="0" stroke-width="12" data-tm="${esc(p.team)}" style="cursor:pointer"/>`;
+  }});
+ let nds='';Object.values(box).forEach(b=>{const c=COLHEX[b.label];
+  const fill=c?c+'33':(b.net==='HIGH'?'rgba(0,245,212,.16)':'rgba(154,154,154,.16)');const st=c||(b.net==='HIGH'?'#00f5d4':'#888');
+  nds+=`<rect x="${b.x}" y="${b.y}" width="${NW}" height="${b.h}" rx="5" fill="${fill}" stroke="${st}" stroke-width="1.2" data-nd="${b.id}" style="cursor:pointer"/><text x="${b.x+NW/2}" y="${b.y+b.h/2+3.5}" text-anchor="middle" font-size="10" font-weight="700" fill="#fff" style="pointer-events:none">${esc(b.label)}</text>`;});
+ let hdr='';cols.forEach((c,ci)=>hdr+=`<text x="${colX(ci)+NW/2}" y="18" text-anchor="middle" font-size="11" font-weight="700" fill="#9a9a9a">${esc(c.period)}</text>`);
+ let labels='';
+ if(hi){hi.forEach(t=>{let ci=-1;for(let k=nc-1;k>=0;k--){if(teamY[k]&&teamY[k][t]!=null){ci=k;break;}}if(ci<0)return;
+   const y=teamY[ci][t],last=ci===nc-1,lx=last?colX(ci)-6:colX(ci)+NW+6,anc=last?'end':'start';
+   labels+=`<text x="${lx}" y="${y+3}" text-anchor="${anc}" font-size="10" fill="#fff" style="paint-order:stroke;stroke:#121212;stroke-width:3;pointer-events:none">${dn(t)}</text>`;});}
+ const clubs=[...new Set(Object.keys(d.teams).map(club))].sort();
+ let opts=`<option value="">Highlight…</option>`;
+ clubs.forEach(c=>{opts+=`<option value="club:${esc(c)}"${state.flowHi==='club:'+c?' selected':''}>${esc(c)}</option>`;
+   Object.keys(d.teams).filter(n=>club(n)===c).sort().forEach(n=>{opts+=`<option value="team:${esc(n)}"${state.flowHi==='team:'+n?' selected':''}>\u00a0\u00a0\u00a0${dn(n)}</option>`;});});
+ const picker=`<select id="flowhi">${opts}</select>`;
+ const hiArr=hi?[...hi].sort():[];
+ const cap=hiArr.length?`<div class="flowcap">${hiArr.length>1?`<span class="tiny muted">${hiArr.length} teams</span>`:''}${hiArr.map(n=>`<span class="fc" data-team="${esc(n)}">${dn(n)}</span>`).join('')}<button class="fcx" id="fcx">clear ✕</button></div>`:'';
+ main.innerHTML=`<div class="note">Where every team moved across the grading periods. Each line is a team, coloured by its ${d.ongoing?'current':'final'} grade; boxes are the pools each period (strongest pool at top; full-net above lowered), and within a box teams sit in that pool's ladder order — 1st at the top. <b>Tap a line to trace a team, or tap a box to highlight everyone in it;</b> names appear below (tap a name for its page).</div><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">${picker}</div>${cap}<div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:8px"><svg width="${W}" height="${H}" style="min-width:${W}px;display:block"></svg></div>`;
+ const svg=main.querySelector('svg');svg.innerHTML=base+top+hit+nds+hdr+labels;
+ svg.onclick=e=>{const t=e.target.closest('[data-tm]'),n=e.target.closest('[data-nd]');
+  if(t){state.flowHi='team:'+t.getAttribute('data-tm');renderFlow(d);}
+  else if(n){state.flowHi=(state.flowHi==='node:'+n.getAttribute('data-nd'))?'':'node:'+n.getAttribute('data-nd');renderFlow(d);}};
+ $('#flowhi').onchange=e=>{state.flowHi=e.target.value;renderFlow(d);};
+ document.querySelectorAll('.fc').forEach(el=>el.onclick=()=>go({team:el.dataset.team}));
+ const xb=$('#fcx');if(xb)xb.onclick=()=>{state.flowHi='';renderFlow(d);};
+}
+
+function bindTeam(){document.querySelectorAll('[data-team]').forEach(el=>el.onclick=()=>go({team:el.dataset.team}));}
+function go(p){Object.assign(state,p);if(p.view||p.season)state.team=null;if(p.team)state.q='';render();window.scrollTo(0,0);}
+$('#season').onchange=e=>{state.season=e.target.value;state.team=null;setSub();render();};
+$('#search').oninput=e=>{state.q=e.target.value.trim();state.team=null;render();};
+window.addEventListener('resize',()=>{if(state.view==='flow'&&!state.team&&!state.q)renderFlow(DATA[state.season]);});
+seasonSel();setSub();render();
+</script></body></html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MENA 9U &amp; 11U Player Movement</title>
+<style>
+:root{--bg:#0a0b0d;--card:#141619;--elevated:#1c1f24;--line:#262a30;--text:#f2f4f7;--text2:#9aa3ad;--text3:#5f6872;--accent:#00f5d4;--stay:#4caf50;--new:#2196f3;--left:#f44336}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:1480px;margin:0 auto;padding:18px 16px 60px}
+h1{font-size:1.5rem;margin:0 0 2px}
+.sub{color:var(--text2);font-size:.85rem;margin-bottom:14px}
+.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+select{background:var(--elevated);color:var(--text);border:1px solid var(--line);border-radius:9px;padding:9px 12px;font-size:.95rem;font-weight:600}
+.statrow{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:10px 14px;flex:1;min-width:120px}
+.stat .v{font-size:1.3rem;font-weight:800}
+.stat .k{color:var(--text3);font-size:.7rem;text-transform:uppercase;letter-spacing:.04em}
+.note{background:rgba(0,245,212,.06);border:1px solid rgba(0,245,212,.18);border-radius:11px;padding:11px 14px;font-size:.84rem;color:var(--text2);margin-bottom:16px}
+.note b{color:var(--text)}
+.chip{display:inline-flex;align-items:center;gap:4px;font-size:.72rem;font-weight:700;padding:2px 7px;border-radius:999px;margin-right:4px}
+.leg{display:flex;gap:14px;flex-wrap:wrap;font-size:.76rem;color:var(--text2);margin:4px 0 14px}
+.leg span{display:inline-flex;align-items:center;gap:5px}
+.sw{width:11px;height:11px;border-radius:3px;display:inline-block}
+.svgwrap{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:6px;overflow-x:auto}
+svg{display:block;width:100%}
+.colhdr{fill:var(--text2);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.tnode rect{rx:5}
+.tname{fill:var(--text);font-size:12.5px;font-weight:600}
+.tmeta{fill:var(--text3);font-size:10.5px}
+.ann{font-size:10px;font-weight:700}
+.link{fill:none;opacity:.34;transition:opacity .12s}
+.link.dim{opacity:.05}
+.tnode.dim{opacity:.22}
+.tnode{cursor:pointer}
+.badge{width:20px;height:20px;border-radius:5px;vertical-align:middle;margin-right:5px}
+.empty{color:var(--text3);padding:40px;text-align:center}
+.foot{color:var(--text3);font-size:.75rem;margin-top:18px}
+.sec{font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--text2);margin:6px 0 8px}
+.dsum{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:18px}
+.drow{display:grid;grid-template-columns:minmax(150px,210px) 1fr;gap:10px;align-items:center;margin:7px 0}
+.dlab{font-size:.82rem;font-weight:700}.dlab small{display:block;color:var(--text3);font-weight:500;font-size:.72rem}
+.dbar{display:flex;height:24px;border-radius:6px;overflow:hidden;background:var(--elevated)}
+.dbar i{display:flex;align-items:center;justify-content:center;font-style:normal;font-size:.72rem;font-weight:800;color:#0a0b0d;min-width:0;white-space:nowrap;overflow:hidden}
+.dnode rect{rx:5}.dnode{cursor:pointer}.dnode.dim{opacity:.22}
+.dname{font-size:12px;font-weight:700}
+.dsep{stroke:var(--line);stroke-dasharray:3 4}
+.dseplab{fill:var(--text3);font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.dlink{fill:none;opacity:.42;transition:opacity .12s}.dlink.dim{opacity:.05}
+.rlab{font-size:10.5px;font-weight:800;fill:#fff;paint-order:stroke;stroke:#0a0b0d;stroke-width:3px;stroke-linejoin:round;pointer-events:none}.rlab.dim{opacity:.08}
+.colsub{fill:var(--text3);font-size:10.5px}
+.bandlab{fill:var(--accent);font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.07em}
+.olink{fill:none;opacity:.95;pointer-events:none}
+.olab{font-size:11px;font-weight:800;fill:#0a0b0d;paint-order:stroke;stroke:#fff;stroke-width:3.5px;stroke-linejoin:round;pointer-events:none}
+.link,.dlink{cursor:pointer}
+.tnode.on rect,.dnode.on rect{stroke:#fff;stroke-width:2.4}
+.plist{margin-top:14px}
+.psum{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px 14px;font-size:.85rem;color:var(--text2);margin-bottom:10px}
+.psum b{color:var(--text)}.psum .ln{margin:3px 0}
+.ptab{width:100%;border-collapse:collapse;font-size:.82rem;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.ptab th{text-align:left;color:var(--text3);font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+.ptab td{padding:6px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+.ptab tr{cursor:pointer}.ptab tr:hover td{background:var(--elevated)}.ptab tr.on td{background:rgba(0,245,212,.10)}
+.ptab .code{font-family:ui-monospace,Consolas,monospace;color:var(--text2)}
+.hint{color:var(--text3);font-size:.82rem;padding:10px 2px}
+.ptwrap{overflow-x:auto}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>9U &amp; 11U Player Movement</h1>
+  <div class="sub">MENA 9&amp;U (Friday NetSetGo) and 11&amp;U (Saturday) · how rosters change from season to season, where players come from and where they go · pseudonymous player codes only (no names recorded)</div>
+
+  <div class="sec" id="dsumhdr">Where are they now?</div>
+  <div class="dsum" id="dsum"></div>
+
+  <div class="sec">By club</div>
+
+  <div class="controls">
+    <label><span style="color:var(--text3);font-size:.75rem;text-transform:uppercase;letter-spacing:.04em;margin-right:6px">Club</span>
+      <select id="club"></select>
+    </label>
+  </div>
+
+  <div class="statrow" id="stats"></div>
+  <div class="note" id="blurb"></div>
+
+  <div class="leg">
+    <span><i class="sw" style="background:var(--stay)"></i> back = played for this club last season</span>
+    <span><i class="sw" style="background:var(--new)"></i> new = joined this club this season</span>
+    <span><i class="sw" style="background:var(--left)"></i> left after = played this season, not on one of this club's 9U/11U teams the next</span>
+  </div>
+  <div class="leg" id="dleg"></div>
+
+  <div class="svgwrap"><svg id="sk"></svg></div>
+  <div class="plist" id="plist"></div>
+  <div class="foot">9&amp;U teams in each column are ordered by final grade, strongest at the top, then by finishing position within the grade (bottom-right, e.g. G1 · 2nd); 2026 Spring is still in progress, so it uses current grades. 2025 Autumn's last four rounds were recorded 0–0, so its order within each grade comes from a season-long rating; 2024 grades and order come from each season's results the same way as 2025–26. 11&amp;U teams (lower panel) have no grades harvested, so they are listed by name. A player is placed in one team per season: their 9U team, or their 11U team if they are no longer in 9U (players still in 9U who also play up in 11U are counted in 9U; the 11U box shows "+N also in 9U"). Ribbons are numbered where they arrive. "Ageing out" on a 2026 11U team = players in their second 11U year (11U in 2025, or last 9U season in 2024), so likely moving up to 13U after 2026; first-year players (9U in 2025) are staying; players with no 9U/11U history can't be placed. "No later record" = no netball found on Netball Connect afterwards. Source: each player's full Netball Connect competition history.</div>
+</div>
+<script>
+const DATA=__DATA__;
+const SEAS=DATA.seasons, NS=SEAS.length, SIX=SEAS.map((_,i)=>i);
+const nodeIx={}; DATA.nodes.forEach(n=>nodeIx[n.sid+'|'+n.team]=n);
+const clubOf=(sid,team)=>{const n=nodeIx[sid+'|'+team];return n?n.club:null;};
+const keyClub=k=>{const i=k.indexOf('|');return clubOf(+k.slice(0,i),k.slice(i+1));};
+function clubColour(c){const ci=DATA.clubInfo&&DATA.clubInfo[c];return (ci&&ci.colour)||'#7a8591';}
+function lighten(hex,amt){const m=/^#?([0-9a-f]{6})$/i.exec(hex||'');if(!m)return '#6ea8e0';let r=parseInt(m[1].slice(0,2),16),g=parseInt(m[1].slice(2,4),16),b=parseInt(m[1].slice(4,6),16);r=Math.round(r+(255-r)*amt);g=Math.round(g+(255-g)*amt);b=Math.round(b+(255-b)*amt);return '#'+[r,g,b].map(v=>v.toString(16).padStart(2,'0')).join('');}
+function ribbonColour(c){return lighten(clubColour(c),0.55);}
+function badge(c){const ci=DATA.clubInfo&&DATA.clubInfo[c];return ci&&ci.badge?`<img class="badge" src="${ci.badge}">`:'';}
+const esc=s=>(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const shortTeam=(c,t)=>{const x=(t||'').replace(/ ?(9U|U9|U\/9) ?/i,' ').replace(new RegExp('^'+c.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'i'),'').trim();return x||t;};
+
+const ORD=n=>n+(['th','st','nd','rd'][(n%100-20)%10]||['th','st','nd','rd'][n%100]||'th');
+const gradeShort=n=>n.g==null?'':`${/^Grade /i.test(n.g)?'G'+n.g.replace(/^Grade /i,''):n.g[0]+n.g.slice(1).toLowerCase()} · ${ORD(n.gp)}`;
+
+// destination (D) and source (S) boxes: kind = part before ':', name = part after
+const DCOL={club9:'#ce93d8',m11s:'#00f5d4',m11o:'#64b5f6',oth:'#ffb74d',gap:'#b0bec5',none:'#ef5350',
+  to:'#ce93d8',up13:'#00f5d4',assoc:'#ffb74d',new:'#2196f3',back:'#90caf9',from:'#ce93d8',fromassoc:'#ffb74d'};
+const kindOf=k=>k.split(':')[0], nameOf=k=>k.indexOf(':')>=0?k.slice(k.indexOf(':')+1):'';
+function boxLabel(k){const kd=kindOf(k),nm=nameOf(k);
+  return {to:'→ '+nm,up13:'13U+ · same club',assoc:'→ '+nm,gap:'Sat out, back later',none:'No later record',
+          new:'New players',back:'Returning after a break',from:'From '+nm,fromassoc:'From '+nm}[kd]||k;}
+function boxShort(k){const l=boxLabel(k);return l.length>17?l.slice(0,16)+'…':l;}
+const DK=[{k:'to',label:'Other club (named)'},{k:'up13',label:'13U+ · same club'},{k:'assoc',label:'Other association (named)'},{k:'gap',label:'Sat out, back later'},{k:'none',label:'No later record'},{k:'new',label:'New players'},{k:'back',label:'Returning after a break'},{k:'from',label:'From another club'}];
+const DLAB={};DK.forEach(d=>DLAB[d.k]=d.label);
+let state={club:null,sel:null};
+let GEOM={};
+function renderSummary(){
+  const S=DATA.summary||{};const g=k=>S[k]||0;
+  const rows=SIX.slice(0,NS-1).map(i=>[`Left after ${SEAS[i]}`,`last 9U season ${SEAS[i]}`,['m11s','m11o','oth','none'].map(k=>[k,g(`left|${i}|${k}`)])]);
+  document.getElementById('dsumhdr').textContent=`Where are they now? · ${SEAS[NS-1]}`;
+  const still=g('still|only9')+g('still|also11');
+  const lab={m11s:'MENA 11U+ · same club',m11o:'MENA 11U+ · other club',oth:'Other association',none:'Not playing (no record)'};
+  const bar=(parts)=>{const tot=parts.reduce((a,p)=>a+p[1],0)||1;return `<div class="dbar">${parts.filter(p=>p[1]>0).map(([k,n])=>`<i style="width:${n/tot*100}%;background:${DCOL[k]}" title="${esc(lab[k]||k)}: ${n} (${Math.round(n/tot*100)}%)">${n/tot>=.06?n:''}</i>`).join('')}</div>`;};
+  let h=rows.map(([t,sub,parts])=>{const tot=parts.reduce((a,p)=>a+p[1],0);return `<div class="drow"><div class="dlab">${t} · ${tot}<small>${sub}</small></div>${bar(parts)}</div>`;}).join('');
+  h+=`<div class="drow"><div class="dlab">Still in 9U · ${still}<small>playing ${esc(SEAS[NS-1])} 9U</small></div><div class="dbar"><i style="width:${still?g('still|only9')/still*100:0}%;background:var(--stay)" title="9U only: ${g('still|only9')}">${g('still|only9')}</i><i style="width:${still?g('still|also11')/still*100:0}%;background:${DCOL.m11s}" title="also plays MENA 11U+ (Saturday): ${g('still|also11')}">${g('still|also11')}</i></div></div>`;
+  h+=`<div class="leg" style="margin:10px 0 0">${Object.entries(lab).map(([k,v])=>`<span><i class="sw" style="background:${DCOL[k]}"></i>${esc(v)}</span>`).join('')}<span><i class="sw" style="background:var(--stay)"></i>9U only</span></div>`;
+  h+=`<div class="foot" style="margin-top:6px">Still-in-9U players who also play MENA 11U+ on Saturday: ${g('still|also11')}. Still-in-9U players who changed club during their 9U seasons: ${g('still|changedClub')}. Counts are players, by their last 9U season.</div>`;
+  document.getElementById('dsum').innerHTML=h;
+  document.getElementById('dleg').innerHTML='<span style="color:var(--text3)">left after →</span>'+DK.map(d=>`<span><i class="sw" style="background:${DCOL[d.k]}"></i>${esc(d.label)}</span>`).join('');
+}
+
+function clubs(){const cs=[...DATA.clubs].sort((a,b)=>a.localeCompare(b));if(cs.includes('Park Orchards')){cs.splice(cs.indexOf('Park Orchards'),1);cs.unshift('Park Orchards');}return cs;}
+function initControls(){const sel=document.getElementById('club');sel.innerHTML=clubs().map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join('');
+  sel.onchange=()=>{state.club=sel.value;state.sel=null;render();};state.club=sel.value;}
+const sumN=(arr,f)=>arr.filter(f).reduce((a,x)=>a+x.n,0);
+function render(){
+  const C=state.club;
+  const nine=SEAS.map(()=>[]),eleven=SEAS.map(()=>[]);
+  DATA.nodes.forEach(n=>{if(n.club===C)(n.band==='11'?eleven:nine)[n.sid].push(n);});
+  nine.forEach(a=>a.sort((x,y)=>(x.gi-y.gi)||(x.gp-y.gp)||x.team.localeCompare(y.team)));
+  eleven.forEach(a=>a.sort((x,y)=>x.team.localeCompare(y.team)));
+  const wl=DATA.links.filter(l=>clubOf(l.sa,l.ta)===C&&clubOf(l.sb,l.tb)===C);
+  const dsrc=DATA.dest.filter(d=>clubOf(d.sa,d.ta)===C), ssrc=DATA.src.filter(d=>clubOf(d.sb,d.tb)===C);
+  const K=(s,t)=>s+'|'+t, inW={},outW={};
+  wl.forEach(l=>{inW[K(l.sb,l.tb)]=(inW[K(l.sb,l.tb)]||0)+l.n;outW[K(l.sa,l.ta)]=(outW[K(l.sa,l.ta)]||0)+l.n;});
+  const band=(s,t)=>(nodeIx[K(s,t)]||{}).band;
+  const r=retention(C);
+  const lastE=eleven[NS-1], ageOut=lastE.reduce((a,n)=>a+((n.age||{}).out||0),0), ageUnk=lastE.reduce((a,n)=>a+((n.age||{}).unk||0),0);
+  const cards=[
+    ['Teams',`9U ${nine.reduce((a,b)=>a+b.length,0)} · 11U ${eleven.reduce((a,b)=>a+b.length,0)}`,nine.concat(eleven).reduce((a,b)=>a+b.length,0)],
+    ['Moved up 9U → 11U','same club',sumN(wl,l=>band(l.sa,l.ta)==='9'&&band(l.sb,l.tb)==='11')],
+    ['Moved up 11U → 13U+','same club',sumN(dsrc,d=>d.k==='up13')],
+    ['Left for another club','or association',sumN(dsrc,d=>/^(to|assoc):/.test(d.k))],
+    ['Joined from another club','or association',sumN(ssrc,d=>/^(from|fromassoc):/.test(d.k))],
+    ['No later record','left netball (Netball Connect)',sumN(dsrc,d=>d.k==='none')],
+    ...(r.of?[[`From ${SEAS[0]}`,`still at ${C} in ${SEAS[NS-1]}`,`${r.still}/${r.of}`]]:[]),
+    ...(lastE.length?[[`11U likely ageing out`,`after ${SEAS[NS-1].slice(0,4)}${ageUnk?' · '+ageUnk+' unknown':''}`,ageOut]]:[])
+  ];
+  document.getElementById('stats').innerHTML=cards.map(([v,k,val])=>`<div class="stat"><div class="v">${val}</div><div class="k">${v}${k?' · '+k:''}</div></div>`).join('');
+  document.getElementById('blurb').innerHTML=`${badge(C)}<b>${esc(C)}</b> — 9&amp;U teams (Friday) on top, 11&amp;U teams (Saturday) below, across ${NS} seasons. Ribbons carry players between this club's teams, numbered where they arrive. Boxes under <b>Left after …</b> show where leavers went the next season (other clubs and associations named); boxes under <b>Joined for …</b> show where new arrivals came from. 11U boxes in ${esc(SEAS[NS-1].slice(0,4))} show how many are likely in their second 11U year (ageing out to 13U after this year).`;
+  draw(nine,eleven,wl,{inW,outW,K,dsrc,ssrc});
+}
+function draw(nine,eleven,wl,ctx){
+  const svg=document.getElementById('sk');
+  const nodeW=132, MARGIN=nodeW/2+24, MINSPACE=250;
+  const W=Math.max(2*MARGIN+(NS-1)*MINSPACE,(document.querySelector('.svgwrap').clientWidth||900)-12);
+  const colX=SIX.map(i=>MARGIN+i*(W-2*MARGIN-50)/(NS-1));
+  const UNIT=7,GAP=30,MINH=46,DMINH=24,TOP=70,BANDGAP=64;
+  const bandOf=(s,t)=>(nodeIx[s+'|'+t]||{}).band||'9';
+  // boxes per column per band: destinations sit in the band of the team they left, sources in the band of the team they joined
+  const box={'9':SEAS.map(()=>({d:{},s:{}})),'11':SEAS.map(()=>({d:{},s:{}}))};
+  ctx.dsrc.forEach(d=>{const b=box[bandOf(d.sa,d.ta)][d.sa+1].d;b[d.k]=(b[d.k]||0)+d.n;});
+  ctx.ssrc.forEach(d=>{const b=box[bandOf(d.sb,d.tb)][d.sb-1].s;b[d.k]=(b[d.k]||0)+d.n;});
+  const kindOrder=['to','up13','assoc','gap','none','from','fromassoc','back','new'];
+  const sortBoxes=o=>Object.entries(o).sort((a,b)=>(kindOrder.indexOf(kindOf(a[0]))-kindOrder.indexOf(kindOf(b[0])))||b[1]-a[1]);
+  const laid={},seps=[],bands=[];
+  function layBand(bandKey,teams,y0){
+    let bottom=y0;
+    SIX.forEach(s=>{
+      let y=y0;const x=colX[s]-nodeW/2;
+      teams[s].forEach(n=>{const h=Math.max(MINH,n.n*UNIT);laid[s+'|'+n.team]={x,y,h,w:nodeW,cnt:n.n,n};y+=h+GAP;});
+      const db=sortBoxes(box[bandKey][s].d);
+      if(db.length){seps.push({s,y:y-GAP/2+4,t:`Left after ${SEAS[s-1]}`,sub:`where they played in ${SEAS[s]}`});y+=34;
+        db.forEach(([k,c])=>{const h=Math.max(DMINH,c*UNIT);laid['D'+s+'.'+bandKey+'|'+k]={x,y,h,w:nodeW,cnt:c,box:k};y+=h+GAP*0.5;});y+=GAP*0.5;}
+      const sb=sortBoxes(box[bandKey][s].s);
+      if(sb.length){seps.push({s,y:y-GAP/2+4,t:`Joined for ${SEAS[s+1]}`,sub:`where they came from`});y+=34;
+        sb.forEach(([k,c])=>{const h=Math.max(DMINH,c*UNIT);laid['S'+s+'.'+bandKey+'|'+k]={x,y,h,w:nodeW,cnt:c,box:k};y+=h+GAP*0.5;});}
+      bottom=Math.max(bottom,y);
+    });
+    return bottom;
+  }
+  const has11=eleven.some(a=>a.length);
+  const b9end=layBand('9',nine,TOP);
+  bands.push({y:TOP-26,h:b9end-TOP+26,label:'9&U · Friday NetSetGo',tint:'rgba(255,255,255,.015)'});
+  let H=b9end+20;
+  if(has11){const y11=b9end+BANDGAP;const b11end=layBand('11',eleven,y11);
+    bands.push({y:y11-30,h:b11end-y11+30,label:'11&U · Saturday competition',tint:'rgba(0,245,212,.035)'});H=b11end+20;}
+  H=Math.max(260,H);
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);svg.setAttribute('height',H);svg.style.minWidth=W+'px';
+  const rib=[];
+  wl.forEach(l=>rib.push([l.sa+'|'+l.ta,l.sb+'|'+l.tb,l.n,ribbonColour(state.club),`${shortTeam(state.club,l.ta)} (${SEAS[l.sa]}) → ${shortTeam(state.club,l.tb)} (${SEAS[l.sb]}): ${l.n}`]));
+  ctx.dsrc.forEach(d=>rib.push([d.sa+'|'+d.ta,'D'+(d.sa+1)+'.'+bandOf(d.sa,d.ta)+'|'+d.k,d.n,DCOL[kindOf(d.k)],`${shortTeam(state.club,d.ta)} (${SEAS[d.sa]}) → ${boxLabel(d.k)}: ${d.n}`]));
+  ctx.ssrc.forEach(d=>rib.push(['S'+(d.sb-1)+'.'+bandOf(d.sb,d.tb)+'|'+d.k,d.sb+'|'+d.tb,d.n,DCOL[kindOf(d.k)],`${boxLabel(d.k)} → ${shortTeam(state.club,d.tb)} (${SEAS[d.sb]}): ${d.n}`]));
+  rib.sort((a,b)=>(laid[a[1]]?laid[a[1]].y:0)-(laid[b[1]]?laid[b[1]].y:0));
+  const outOff={},inOff={},rl=[];let paths='';
+  rib.forEach(([ka,kb,n,col,title])=>{const a=laid[ka],b=laid[kb];if(!a||!b)return;
+    const wdt=Math.max(1.5,Math.min(n/(a.cnt||1)*a.h,n/(b.cnt||1)*b.h));
+    const ao=outOff[ka]||0,bo=inOff[kb]||0,y1=a.y+ao+wdt/2,y2=b.y+bo+wdt/2;outOff[ka]=ao+wdt;inOff[kb]=bo+wdt;
+    const x1=a.x+a.w,x2=b.x,mx=(x1+x2)/2,d=`M${x1},${y1} C${mx},${y1} ${mx},${y2} ${x2},${y2}`;
+    const cls=(a.box||b.box)?'dlink':'link';
+    const faint=(a.box&&/^(new|back)$/.test(a.box))?' style="opacity:.2"':'';
+    paths+=`<path class="${cls}"${faint} data-la="${esc(ka)}" data-lb="${esc(kb)}" d="${d}" stroke="${col}" stroke-width="${wdt}"><title>${esc(title)}</title></path>`;
+    rl.push({x:x2-5,y:y2,n,la:ka,lb:kb,d,w:wdt});});
+  const byT={};rl.forEach(r=>(byT[r.lb]=byT[r.lb]||[]).push(r));
+  Object.values(byT).forEach(a=>{a.sort((p,q)=>p.y-q.y);for(let i=1;i<a.length;i++)if(a[i].y<a[i-1].y+11)a[i].y=a[i-1].y+11;});
+  const labs=rl.map(r=>`<text class="rlab" data-la="${esc(r.la)}" data-lb="${esc(r.lb)}" x="${r.x}" y="${r.y+3.5}" text-anchor="end">${r.n}</text>`).join('');
+  let bg=bands.map(b=>`<rect x="4" y="${b.y}" width="${W-8}" height="${b.h}" rx="10" fill="${b.tint}" stroke="rgba(255,255,255,.06)"></rect><text class="bandlab" x="16" y="${b.y+17}">${esc(b.label)}</text>`).join('');
+  let hdr=SEAS.map((nm,s)=>`<text class="colhdr" x="${colX[s]}" y="24" text-anchor="middle">${esc(nm)}</text>`).join('');
+  seps.forEach(p=>{const x=colX[p.s]-nodeW/2;hdr+=`<line class="dsep" x1="${x-10}" x2="${x+nodeW+10}" y1="${p.y}" y2="${p.y}"></line><text class="dseplab" x="${x}" y="${p.y+15}">${esc(p.t)}</text><text class="colsub" x="${x}" y="${p.y+28}">${esc(p.sub)}</text>`;});
+  let nodes='';
+  Object.entries(laid).forEach(([k,p])=>{
+    if(p.box){const col=DCOL[kindOf(p.box)];const dash=kindOf(p.box)==='none'?' stroke-dasharray="4 3"':'';
+      nodes+=`<g class="dnode" data-k="${esc(k)}"><rect x="${p.x}" y="${p.y}" width="${p.w}" height="${p.h}" rx="5" fill="${col}22" stroke="${col}" stroke-width="1.4"${dash}></rect><text class="dname" fill="${col}" x="${p.x+8}" y="${p.y+15}">${esc(boxShort(p.box))}</text><text class="tmeta" x="${p.x+p.w-8}" y="${p.y+15}" text-anchor="end" style="fill:${col};font-weight:800">${p.cnt}</text><title>${esc(boxLabel(p.box))}: ${p.cnt}</title></g>`;return;}
+    const n=p.n,s=n.sid,col=lighten(clubColour(state.club),0.45);
+    const back=s>0?(ctx.inW[k]||0):0,nw=s>0?n.n-back:0,left=s<NS-1?n.n-(ctx.outW[k]||0):0;
+    const inT=[];if(back)inT.push(`<tspan fill="var(--stay)">${back} back</tspan>`);if(nw)inT.push(`<tspan fill="var(--new)">+${nw} new</tspan>`);
+    const age=n.age&&s===NS-1?`<tspan fill="#ffb74d">${n.age.out||0} ageing out</tspan>`:'';
+    const br=n.band==='9'?esc(gradeShort(n)):(n.alsoN?`+${n.alsoN} also in 9U`:'');
+    const tip=[n.band==='11'?'11&U team (Saturday competition)':'9&U team (Friday)'];
+    if(n.age&&s===NS-1)tip.push(`likely ageing out after ${SEAS[NS-1].slice(0,4)}: ${n.age.out||0} (second 11U year) · staying: ${n.age.stay||0} (first 11U year) · unknown: ${n.age.unk||0} (no 9U/11U history)`);
+    if(n.alsoN)tip.push(`${n.alsoN} more play on this team while still in 9U (shown in their 9U team)`);
+    nodes+=`<g class="tnode" data-k="${esc(k)}"><rect x="${p.x}" y="${p.y}" width="${p.w}" height="${p.h}" rx="5" fill="${col}22" stroke="${col}" stroke-width="1.4"></rect>
+      <text class="tname" x="${p.x+8}" y="${p.y+15}">${esc(shortTeam(state.club,n.team))}</text><text class="tmeta" x="${p.x+p.w-8}" y="${p.y+15}" text-anchor="end">${n.n}</text>
+      ${inT.length?`<text class="ann" x="${p.x+8}" y="${p.y+29}">${inT.join('<tspan>  </tspan>')}</text>`:''}
+      ${age?`<text class="ann" x="${p.x+8}" y="${p.y+(left?p.h-19:p.h-7)}">${age}</text>`:''}
+      ${left?`<text class="ann" x="${p.x+8}" y="${p.y+p.h-7}"><tspan fill="var(--left)">${left} left after</tspan></text>`:''}
+      ${br&&!(age&&!left)?`<text class="tmeta" x="${p.x+p.w-8}" y="${p.y+p.h-7}" text-anchor="end">${br}</text>`:''}<title>${esc(tip.join(' · '))}</title></g>`;});
+  svg.innerHTML=bg+hdr+paths+nodes+labs;
+  GEOM={};rl.forEach(r=>GEOM[r.la+'>'+r.lb]=r);
+  svg.querySelectorAll('.tnode,.dnode').forEach(g=>{g.onclick=()=>select({type:'node',k:g.dataset.k});});
+  svg.querySelectorAll('.link,.dlink').forEach(l=>{l.onclick=()=>select({type:'link',k:l.dataset.la+'>'+l.dataset.lb});});
+  applySelection();
+}
+// ---------- players: pseudonymous codes (P001…), never names or userIds ----------
+const PL=DATA.players||[];
+const cellClub=(s,c)=>c&&c.t?clubOf(s,c.t):null;
+function clubPlayers(C){return PL.filter(p=>p.s.some((c,s)=>cellClub(s,c)===C));}
+function retention(C){const L=NS-1;
+  const base=PL.filter(p=>cellClub(0,p.s[0])===C);
+  const still=base.filter(p=>{const c=p.s[L];if(!c)return false;if(c.t)return cellClub(L,c)===C;
+    if(c.k==='up13'){const i=SIX.slice(0,L).reverse().find(i=>p.s[i]&&p.s[i].t);return i!=null&&cellClub(i,p.s[i])===C;}return false;});
+  return {of:base.length,still:still.length};}
+function playersFor(sel,C){
+  const cp=clubPlayers(C);if(!sel)return [];
+  if(sel.type==='player')return cp.filter(p=>p.c===sel.k);
+  if(sel.type==='link'){const [a,b]=sel.k.split('>');return cp.filter(p=>p.h.some(h=>h[0]===a&&h[1]===b&&(keyClub(a[0]==='S'?b:a)===C)));}
+  const k=sel.k;
+  if(k[0]==='D')return cp.filter(p=>p.h.some(h=>h[1]===k&&keyClub(h[0])===C));
+  if(k[0]==='S')return cp.filter(p=>p.h.some(h=>h[0]===k&&keyClub(h[1])===C));
+  const i=k.indexOf('|'),s=+k.slice(0,i),t=k.slice(i+1);return cp.filter(p=>p.s[s]&&p.s[s].t===t);
+}
+function select(sel){const same=state.sel&&sel&&state.sel.type===sel.type&&state.sel.k===sel.k;state.sel=same?null:sel;applySelection();}
+const satOut=(p,s)=>p.s.slice(s+1).some(x=>x&&(x.t||x.k!=='off'));
+function cellHtml(C,s,c,p){
+  if(!c)return '<span style="color:var(--text3)">–</span>';
+  if(c.t){const cl=cellClub(s,c);const ag=c.age==='out'?' <span style="color:#ffb74d" title="second 11U year: likely ageing out">⇡</span>':'';
+    const lab=(c.b==='11'?'11U ':'')+(cl===C?shortTeam(C,c.t).replace(/ ?(11U|U11) ?/i,' ').trim():c.t);
+    return (cl===C?`<b>${esc(lab)}</b>`:`<span style="color:${DCOL.to}">${esc(c.t)}</span>`)+ag+(c.also?` <span class="tmeta">+ ${esc(c.also)}</span>`:'');}
+  if(c.k==='up13')return `<span style="color:${DCOL.up13}">${esc(c.l)}</span>`;
+  if(c.k==='to')return `<span style="color:${DCOL.to}">${esc(c.l)} (older team)</span>`;
+  if(c.k==='assoc')return `<span style="color:${DCOL.assoc}">${esc(c.l)}</span>`;
+  return satOut(p,s)?`<span style="color:${DCOL.gap}">sat out</span>`:`<span style="color:${DCOL.none}">not playing</span>`;
+}
+function tallyLine(C,list,s){
+  const t={};const add=(k,n=1)=>t[k]=(t[k]||0)+n;
+  list.forEach(p=>{const c=p.s[s];
+    if(!c)add('not yet playing');
+    else if(c.t){const cl=cellClub(s,c);add(cl===C?(c.b==='11'?'11U ':'')+shortTeam(C,c.t).replace(/ ?(11U|U11) ?/i,' ').trim():cl);}
+    else if(c.k==='up13')add('13U+ '+C);
+    else if(c.k==='to')add(c.l+' (older)');
+    else if(c.k==='assoc')add(c.l);
+    else add(satOut(p,s)?'sat out':'not playing');});
+  return Object.entries(t).sort((a,b)=>b[1]-a[1]).map(([k,n])=>`${esc(k)} <b>${n}</b>`).join(' · ');
+}
+function applySelection(){
+  const svg=document.getElementById('sk'),C=state.club,sel=state.sel;
+  svg.querySelectorAll('.olink,.olab').forEach(e=>e.remove());svg.querySelectorAll('.on').forEach(e=>e.classList.remove('on'));
+  const list=playersFor(sel,C),box=document.getElementById('plist');
+  if(!sel){svg.querySelectorAll('.link,.dlink,.rlab,.tnode,.dnode').forEach(e=>e.classList.remove('dim'));
+    box.innerHTML=`<div class="hint">Click a team, a ribbon or a box to trace those players across all the seasons and list them. Players are shown as codes (P001…): no names are recorded.</div>`;return;}
+  const agg={},touched=new Set();
+  list.forEach(p=>{p.s.forEach((c,s)=>{if(c&&c.t)touched.add(s+'|'+c.t);});p.h.forEach(h=>{const k=h[0]+'>'+h[1];if(GEOM[k]){agg[k]=(agg[k]||0)+1;touched.add(h[0]);touched.add(h[1]);}});});
+  svg.querySelectorAll('.link,.dlink,.rlab').forEach(e=>e.classList.add('dim'));
+  svg.querySelectorAll('.tnode,.dnode').forEach(n=>n.classList.toggle('dim',!touched.has(n.dataset.k)));
+  if(sel.type==='node'){const n=svg.querySelector(`[data-k="${CSS.escape(sel.k)}"]`);if(n)n.classList.add('on');}
+  const ns='http://www.w3.org/2000/svg';
+  Object.entries(agg).forEach(([k,n])=>{const g=GEOM[k];const ends=k.split('>');const bx=ends.find(e=>e[0]==='D'||e[0]==='S');
+    const col=bx?DCOL[kindOf(bx.slice(bx.indexOf('|')+1))]:'#ffffff';
+    const pth=document.createElementNS(ns,'path');pth.setAttribute('class','olink');pth.setAttribute('d',g.d);pth.setAttribute('stroke',col);pth.setAttribute('stroke-width',Math.max(2.5,n/g.n*g.w));svg.appendChild(pth);
+    const t=document.createElementNS(ns,'text');t.setAttribute('class','olab');t.setAttribute('x',g.x);t.setAttribute('y',g.y+3.5);t.setAttribute('text-anchor','end');t.textContent=n;svg.appendChild(t);});
+  let title='';
+  const keyLab=k=>{if(k[0]==='D'||k[0]==='S')return boxLabel(k.slice(k.indexOf('|')+1));const i=k.indexOf('|');return `${shortTeam(C,k.slice(i+1))} (${SEAS[+k.slice(0,i)]})`;};
+  if(sel.type==='player')title=`Player <b>${esc(sel.k)}</b>`;
+  else if(sel.type==='link'){const [a,b]=sel.k.split('>');title=`<b>${esc(keyLab(a))}</b> → <b>${esc(keyLab(b))}</b>`;}
+  else if(sel.k[0]==='D')title=`<b>Left after ${esc(SEAS[parseInt(sel.k.slice(1))-1])} · ${esc(keyLab(sel.k))}</b>`;
+  else if(sel.k[0]==='S')title=`<b>Joined for ${esc(SEAS[parseInt(sel.k.slice(1))+1])} · ${esc(keyLab(sel.k))}</b>`;
+  else title=`<b>${esc(keyLab(sel.k))}</b>`;
+  let h=`<div class="psum"><div class="ln">${title} — <b>${list.length}</b> player${list.length===1?'':'s'}</div>`;
+  if(list.length>1)SIX.forEach(s=>{h+=`<div class="ln"><span style="color:var(--text3)">${esc(SEAS[s])}:</span> ${tallyLine(C,list,s)}</div>`;});
+  h+=`</div>`;
+  const ord=[...list].sort((a,b)=>{for(const s of SIX){const x=JSON.stringify(a.s[s]||''),y=JSON.stringify(b.s[s]||'');if(x!==y)return x<y?-1:1;}return a.c<b.c?-1:1;});
+  h+=`<div class="ptwrap"><table class="ptab"><tr><th>Player</th>${SEAS.map(x=>`<th>${esc(x)}</th>`).join('')}</tr>${ord.map(p=>`<tr data-c="${p.c}"${sel.type==='player'?' class="on"':''}><td class="code">${p.c}</td>${p.s.map((c,s)=>`<td>${cellHtml(C,s,c,p)}</td>`).join('')}</tr>`).join('')}</table></div>`;
+  if(list.some(p=>p.s.some(c=>c&&c.age==='out')))h+=`<div class="hint">⇡ = in their second 11U year, so likely moving up to 13U after ${esc(SEAS[NS-1].slice(0,4))}.</div>`;
+  box.innerHTML=h;
+  box.querySelectorAll('tr[data-c]').forEach(tr=>{tr.onclick=()=>{if(state.sel&&state.sel.type==='player'&&state.sel.k===tr.dataset.c){state.sel=state._prev||null;state._prev=null;applySelection();}else{state._prev=state.sel&&state.sel.type!=='player'?state.sel:state._prev;state.sel={type:'player',k:tr.dataset.c};applySelection();}};});
+}
+initControls();renderSummary();
+document.getElementById('dleg').innerHTML='<span style="color:var(--text3)">boxes →</span>'+DK.map(d=>`<span><i class="sw" style="background:${DCOL[d.k]}"></i>${esc(d.label)}</span>`).join('');
+render();
+window.addEventListener('resize',()=>render());
+</script>
+</body>
+</html>

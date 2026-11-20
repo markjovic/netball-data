@@ -1,0 +1,1494 @@
+{
+ "compId": "3465",
+ "divisionsFromRounds": {},
+ "roundDivisionTeams": [
+  {
+   "round": "Round 1",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2166539,
+   "team1Id": 144663,
+   "team2Id": 144664
+  },
+  {
+   "round": "Round 1",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2166540,
+   "team1Id": 144665,
+   "team2Id": 144666
+  },
+  {
+   "round": "Round 1",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2166541,
+   "team1Id": 144667,
+   "team2Id": 144668
+  },
+  {
+   "round": "Round 1",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2166548,
+   "team1Id": 144681,
+   "team2Id": 144682
+  },
+  {
+   "round": "Round 1",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2166543,
+   "team1Id": 144671,
+   "team2Id": 144672
+  },
+  {
+   "round": "Round 1",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2166542,
+   "team1Id": 144669,
+   "team2Id": 144670
+  },
+  {
+   "round": "Round 1",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2166544,
+   "team1Id": 144673,
+   "team2Id": 144674
+  },
+  {
+   "round": "Round 1",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2166545,
+   "team1Id": 144675,
+   "team2Id": 144676
+  },
+  {
+   "round": "Round 1",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2166546,
+   "team1Id": 144677,
+   "team2Id": 144678
+  },
+  {
+   "round": "Round 1",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2166547,
+   "team1Id": 144679,
+   "team2Id": 144680
+  },
+  {
+   "round": "Round 1",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2166549,
+   "team1Id": 144683,
+   "team2Id": 144684
+  },
+  {
+   "round": "Round 1",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2166550,
+   "team1Id": 144685,
+   "team2Id": 144686
+  },
+  {
+   "round": "Round 1",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2166551,
+   "team1Id": 144687,
+   "team2Id": 144688
+  },
+  {
+   "round": "Round 2",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2166552,
+   "team1Id": 144666,
+   "team2Id": 144668
+  },
+  {
+   "round": "Round 2",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2166553,
+   "team1Id": 144664,
+   "team2Id": 144667
+  },
+  {
+   "round": "Round 2",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2166554,
+   "team1Id": 144665,
+   "team2Id": 144663
+  },
+  {
+   "round": "Round 2",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2166558,
+   "team1Id": 144670,
+   "team2Id": 144671
+  },
+  {
+   "round": "Round 2",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2166556,
+   "team1Id": 144681,
+   "team2Id": 144669
+  },
+  {
+   "round": "Round 2",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2166555,
+   "team1Id": 144682,
+   "team2Id": 144672
+  },
+  {
+   "round": "Round 2",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2166557,
+   "team1Id": 144674,
+   "team2Id": 144680
+  },
+  {
+   "round": "Round 2",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2166560,
+   "team1Id": 144678,
+   "team2Id": 144679
+  },
+  {
+   "round": "Round 2",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2166561,
+   "team1Id": 144676,
+   "team2Id": 144673
+  },
+  {
+   "round": "Round 2",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2166562,
+   "team1Id": 144677,
+   "team2Id": 144675
+  },
+  {
+   "round": "Round 2",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2166559,
+   "team1Id": 144686,
+   "team2Id": 144688
+  },
+  {
+   "round": "Round 2",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2166563,
+   "team1Id": 144684,
+   "team2Id": 144687
+  },
+  {
+   "round": "Round 2",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2166564,
+   "team1Id": 144685,
+   "team2Id": 144683
+  },
+  {
+   "round": "Round 3",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2166565,
+   "team1Id": 144663,
+   "team2Id": 144667
+  },
+  {
+   "round": "Round 3",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2166566,
+   "team1Id": 144668,
+   "team2Id": 144665
+  },
+  {
+   "round": "Round 3",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2166567,
+   "team1Id": 144666,
+   "team2Id": 144664
+  },
+  {
+   "round": "Round 3",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2196778,
+   "team1Id": 144672,
+   "team2Id": 144684
+  },
+  {
+   "round": "Round 3",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2166569,
+   "team1Id": 144682,
+   "team2Id": 144670
+  },
+  {
+   "round": "Round 3",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2166568,
+   "team1Id": 144669,
+   "team2Id": 144671
+  },
+  {
+   "round": "Round 3",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2166570,
+   "team1Id": 144675,
+   "team2Id": 144673
+  },
+  {
+   "round": "Round 3",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2166573,
+   "team1Id": 144674,
+   "team2Id": 144678
+  },
+  {
+   "round": "Round 3",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2166574,
+   "team1Id": 144679,
+   "team2Id": 144677
+  },
+  {
+   "round": "Round 3",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2166575,
+   "team1Id": 144680,
+   "team2Id": 144676
+  },
+  {
+   "round": "Round 3",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2166572,
+   "team1Id": 144683,
+   "team2Id": 144687
+  },
+  {
+   "round": "Round 3",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2166576,
+   "team1Id": 144688,
+   "team2Id": 144685
+  },
+  {
+   "round": "Round 3",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2196779,
+   "team1Id": 144686,
+   "team2Id": 144681
+  },
+  {
+   "round": "Round 4",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2166578,
+   "team1Id": 144665,
+   "team2Id": 144664
+  },
+  {
+   "round": "Round 4",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2166579,
+   "team1Id": 144668,
+   "team2Id": 144663
+  },
+  {
+   "round": "Round 4",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2166580,
+   "team1Id": 144667,
+   "team2Id": 144666
+  },
+  {
+   "round": "Round 4",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2166584,
+   "team1Id": 144672,
+   "team2Id": 144669
+  },
+  {
+   "round": "Round 4",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2166582,
+   "team1Id": 144671,
+   "team2Id": 144682
+  },
+  {
+   "round": "Round 4",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2196780,
+   "team1Id": 144684,
+   "team2Id": 144670
+  },
+  {
+   "round": "Round 4",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2166583,
+   "team1Id": 144676,
+   "team2Id": 144678
+  },
+  {
+   "round": "Round 4",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2166586,
+   "team1Id": 144673,
+   "team2Id": 144680
+  },
+  {
+   "round": "Round 4",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2166587,
+   "team1Id": 144677,
+   "team2Id": 144674
+  },
+  {
+   "round": "Round 4",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2166588,
+   "team1Id": 144679,
+   "team2Id": 144675
+  },
+  {
+   "round": "Round 4",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2166589,
+   "team1Id": 144688,
+   "team2Id": 144683
+  },
+  {
+   "round": "Round 4",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2196781,
+   "team1Id": 144685,
+   "team2Id": 144681
+  },
+  {
+   "round": "Round 4",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2166590,
+   "team1Id": 144687,
+   "team2Id": 144686
+  },
+  {
+   "round": "Round 5",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2166591,
+   "team1Id": 144665,
+   "team2Id": 144667
+  },
+  {
+   "round": "Round 5",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2166592,
+   "team1Id": 144663,
+   "team2Id": 144666
+  },
+  {
+   "round": "Round 5",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2166593,
+   "team1Id": 144664,
+   "team2Id": 144668
+  },
+  {
+   "round": "Round 5",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2166597,
+   "team1Id": 144669,
+   "team2Id": 144682
+  },
+  {
+   "round": "Round 5",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2166595,
+   "team1Id": 144670,
+   "team2Id": 144672
+  },
+  {
+   "round": "Round 5",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2196782,
+   "team1Id": 144684,
+   "team2Id": 144671
+  },
+  {
+   "round": "Round 5",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2166596,
+   "team1Id": 144674,
+   "team2Id": 144679
+  },
+  {
+   "round": "Round 5",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2166599,
+   "team1Id": 144676,
+   "team2Id": 144677
+  },
+  {
+   "round": "Round 5",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2166600,
+   "team1Id": 144675,
+   "team2Id": 144680
+  },
+  {
+   "round": "Round 5",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2166601,
+   "team1Id": 144678,
+   "team2Id": 144673
+  },
+  {
+   "round": "Round 5",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2166598,
+   "team1Id": 144685,
+   "team2Id": 144687
+  },
+  {
+   "round": "Round 5",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2166602,
+   "team1Id": 144683,
+   "team2Id": 144686
+  },
+  {
+   "round": "Round 5",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2196783,
+   "team1Id": 144681,
+   "team2Id": 144688
+  },
+  {
+   "round": "Round 6",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2263155,
+   "team1Id": 144687,
+   "team2Id": 144663
+  },
+  {
+   "round": "Round 6",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2263156,
+   "team1Id": 144668,
+   "team2Id": 144667
+  },
+  {
+   "round": "Round 6",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2263157,
+   "team1Id": 144666,
+   "team2Id": 144665
+  },
+  {
+   "round": "Round 6",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2263161,
+   "team1Id": 144680,
+   "team2Id": 144678
+  },
+  {
+   "round": "Round 6",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2263159,
+   "team1Id": 144682,
+   "team2Id": 144684
+  },
+  {
+   "round": "Round 6",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2263158,
+   "team1Id": 144688,
+   "team2Id": 144686
+  },
+  {
+   "round": "Round 6",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2263160,
+   "team1Id": 144672,
+   "team2Id": 144671
+  },
+  {
+   "round": "Round 6",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2263163,
+   "team1Id": 144674,
+   "team2Id": 144675
+  },
+  {
+   "round": "Round 6",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2263164,
+   "team1Id": 144679,
+   "team2Id": 144676
+  },
+  {
+   "round": "Round 6",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2263165,
+   "team1Id": 144673,
+   "team2Id": 144677
+  },
+  {
+   "round": "Round 6",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2263162,
+   "team1Id": 144681,
+   "team2Id": 144683
+  },
+  {
+   "round": "Round 6",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2263166,
+   "team1Id": 144670,
+   "team2Id": 144664
+  },
+  {
+   "round": "Round 6",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2263167,
+   "team1Id": 144669,
+   "team2Id": 144685
+  },
+  {
+   "round": "Round 7",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2263168,
+   "team1Id": 144668,
+   "team2Id": 144666
+  },
+  {
+   "round": "Round 7",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2263169,
+   "team1Id": 144667,
+   "team2Id": 144687
+  },
+  {
+   "round": "Round 7",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2263170,
+   "team1Id": 144663,
+   "team2Id": 144665
+  },
+  {
+   "round": "Round 7",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2263174,
+   "team1Id": 144678,
+   "team2Id": 144688
+  },
+  {
+   "round": "Round 7",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2263172,
+   "team1Id": 144686,
+   "team2Id": 144684
+  },
+  {
+   "round": "Round 7",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2263171,
+   "team1Id": 144680,
+   "team2Id": 144682
+  },
+  {
+   "round": "Round 7",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2263173,
+   "team1Id": 144673,
+   "team2Id": 144679
+  },
+  {
+   "round": "Round 7",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2263176,
+   "team1Id": 144677,
+   "team2Id": 144672
+  },
+  {
+   "round": "Round 7",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2263177,
+   "team1Id": 144675,
+   "team2Id": 144671
+  },
+  {
+   "round": "Round 7",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2263178,
+   "team1Id": 144676,
+   "team2Id": 144674
+  },
+  {
+   "round": "Round 7",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2263175,
+   "team1Id": 144670,
+   "team2Id": 144669
+  },
+  {
+   "round": "Round 7",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2263179,
+   "team1Id": 144664,
+   "team2Id": 144681
+  },
+  {
+   "round": "Round 7",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2263180,
+   "team1Id": 144683,
+   "team2Id": 144685
+  },
+  {
+   "round": "Round 8",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2263181,
+   "team1Id": 144687,
+   "team2Id": 144666
+  },
+  {
+   "round": "Round 8",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2263182,
+   "team1Id": 144665,
+   "team2Id": 144668
+  },
+  {
+   "round": "Round 8",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2263183,
+   "team1Id": 144667,
+   "team2Id": 144663
+  },
+  {
+   "round": "Round 8",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2263187,
+   "team1Id": 144684,
+   "team2Id": 144680
+  },
+  {
+   "round": "Round 8",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2263185,
+   "team1Id": 144678,
+   "team2Id": 144686
+  },
+  {
+   "round": "Round 8",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2263184,
+   "team1Id": 144688,
+   "team2Id": 144682
+  },
+  {
+   "round": "Round 8",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2263186,
+   "team1Id": 144676,
+   "team2Id": 144675
+  },
+  {
+   "round": "Round 8",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2263189,
+   "team1Id": 144672,
+   "team2Id": 144679
+  },
+  {
+   "round": "Round 8",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2263190,
+   "team1Id": 144674,
+   "team2Id": 144673
+  },
+  {
+   "round": "Round 8",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2263191,
+   "team1Id": 144671,
+   "team2Id": 144677
+  },
+  {
+   "round": "Round 8",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2263188,
+   "team1Id": 144681,
+   "team2Id": 144669
+  },
+  {
+   "round": "Round 8",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2263192,
+   "team1Id": 144685,
+   "team2Id": 144670
+  },
+  {
+   "round": "Round 8",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2263193,
+   "team1Id": 144664,
+   "team2Id": 144683
+  },
+  {
+   "round": "Pink Round Rd 9",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2263194,
+   "team1Id": 144663,
+   "team2Id": 144668
+  },
+  {
+   "round": "Pink Round Rd 9",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2263195,
+   "team1Id": 144666,
+   "team2Id": 144667
+  },
+  {
+   "round": "Pink Round Rd 9",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2263196,
+   "team1Id": 144687,
+   "team2Id": 144665
+  },
+  {
+   "round": "Pink Round Rd 9",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2263200,
+   "team1Id": 144682,
+   "team2Id": 144678
+  },
+  {
+   "round": "Pink Round Rd 9",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2263198,
+   "team1Id": 144688,
+   "team2Id": 144684
+  },
+  {
+   "round": "Pink Round Rd 9",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2263197,
+   "team1Id": 144686,
+   "team2Id": 144680
+  },
+  {
+   "round": "Pink Round Rd 9",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2263199,
+   "team1Id": 144672,
+   "team2Id": 144674
+  },
+  {
+   "round": "Pink Round Rd 9",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2263202,
+   "team1Id": 144673,
+   "team2Id": 144676
+  },
+  {
+   "round": "Pink Round Rd 9",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2263203,
+   "team1Id": 144675,
+   "team2Id": 144677
+  },
+  {
+   "round": "Pink Round Rd 9",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2263204,
+   "team1Id": 144679,
+   "team2Id": 144671
+  },
+  {
+   "round": "Pink Round Rd 9",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2263201,
+   "team1Id": 144683,
+   "team2Id": 144670
+  },
+  {
+   "round": "Pink Round Rd 9",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2263205,
+   "team1Id": 144669,
+   "team2Id": 144664
+  },
+  {
+   "round": "Pink Round Rd 9",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2263206,
+   "team1Id": 144681,
+   "team2Id": 144685
+  },
+  {
+   "round": "Round 10",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2263207,
+   "team1Id": 144667,
+   "team2Id": 144665
+  },
+  {
+   "round": "Round 10",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2263208,
+   "team1Id": 144666,
+   "team2Id": 144663
+  },
+  {
+   "round": "Round 10",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2263209,
+   "team1Id": 144668,
+   "team2Id": 144687
+  },
+  {
+   "round": "Round 10",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2263213,
+   "team1Id": 144682,
+   "team2Id": 144686
+  },
+  {
+   "round": "Round 10",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2263211,
+   "team1Id": 144680,
+   "team2Id": 144688
+  },
+  {
+   "round": "Round 10",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2263210,
+   "team1Id": 144678,
+   "team2Id": 144684
+  },
+  {
+   "round": "Round 10",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2263212,
+   "team1Id": 144677,
+   "team2Id": 144679
+  },
+  {
+   "round": "Round 10",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2263215,
+   "team1Id": 144671,
+   "team2Id": 144674
+  },
+  {
+   "round": "Round 10",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2263216,
+   "team1Id": 144673,
+   "team2Id": 144675
+  },
+  {
+   "round": "Round 10",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2263217,
+   "team1Id": 144676,
+   "team2Id": 144672
+  },
+  {
+   "round": "Round 10",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2263214,
+   "team1Id": 144664,
+   "team2Id": 144685
+  },
+  {
+   "round": "Round 10",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2263218,
+   "team1Id": 144669,
+   "team2Id": 144683
+  },
+  {
+   "round": "Round 10",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2263219,
+   "team1Id": 144670,
+   "team2Id": 144681
+  },
+  {
+   "round": "Inclusion Round Rd 11",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2354378,
+   "team1Id": 144667,
+   "team2Id": 144670
+  },
+  {
+   "round": "Inclusion Round Rd 11",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2354379,
+   "team1Id": 144683,
+   "team2Id": 144687
+  },
+  {
+   "round": "Inclusion Round Rd 11",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2354380,
+   "team1Id": 144665,
+   "team2Id": 144666
+  },
+  {
+   "round": "Inclusion Round Rd 11",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2354384,
+   "team1Id": 144686,
+   "team2Id": 144685
+  },
+  {
+   "round": "Inclusion Round Rd 11",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2354381,
+   "team1Id": 144675,
+   "team2Id": 144680
+  },
+  {
+   "round": "Inclusion Round Rd 11",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2354382,
+   "team1Id": 144684,
+   "team2Id": 144682
+  },
+  {
+   "round": "Inclusion Round Rd 11",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2354383,
+   "team1Id": 144672,
+   "team2Id": 144674
+  },
+  {
+   "round": "Inclusion Round Rd 11",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2354386,
+   "team1Id": 144678,
+   "team2Id": 165267
+  },
+  {
+   "round": "Inclusion Round Rd 11",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2354389,
+   "team1Id": 144673,
+   "team2Id": 1
+  },
+  {
+   "round": "Inclusion Round Rd 11",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2354387,
+   "team1Id": 144679,
+   "team2Id": 144671
+  },
+  {
+   "round": "Inclusion Round Rd 11",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2354388,
+   "team1Id": 144677,
+   "team2Id": 144676
+  },
+  {
+   "round": "Inclusion Round Rd 11",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2354385,
+   "team1Id": 144664,
+   "team2Id": 144668
+  },
+  {
+   "round": "Inclusion Round Rd 11",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2354390,
+   "team1Id": 144663,
+   "team2Id": 144681
+  },
+  {
+   "round": "Inclusion Round Rd 11",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2354391,
+   "team1Id": 144688,
+   "team2Id": 144669
+  },
+  {
+   "round": "Round 12",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2354392,
+   "team1Id": 144665,
+   "team2Id": 144683
+  },
+  {
+   "round": "Round 12",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2354393,
+   "team1Id": 144666,
+   "team2Id": 144670
+  },
+  {
+   "round": "Round 12",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2354394,
+   "team1Id": 144687,
+   "team2Id": 144667
+  },
+  {
+   "round": "Round 12",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2354398,
+   "team1Id": 144682,
+   "team2Id": 144680
+  },
+  {
+   "round": "Round 12",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2354396,
+   "team1Id": 144685,
+   "team2Id": 144675
+  },
+  {
+   "round": "Round 12",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2354395,
+   "team1Id": 144684,
+   "team2Id": 144686
+  },
+  {
+   "round": "Round 12",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2354397,
+   "team1Id": 144671,
+   "team2Id": 144674
+  },
+  {
+   "round": "Round 12",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2354400,
+   "team1Id": 144676,
+   "team2Id": 144679
+  },
+  {
+   "round": "Round 12",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2354403,
+   "team1Id": 1,
+   "team2Id": 144672
+  },
+  {
+   "round": "Round 12",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2354401,
+   "team1Id": 165267,
+   "team2Id": 144673
+  },
+  {
+   "round": "Round 12",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2354402,
+   "team1Id": 144677,
+   "team2Id": 144678
+  },
+  {
+   "round": "Round 12",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2354399,
+   "team1Id": 144688,
+   "team2Id": 144663
+  },
+  {
+   "round": "Round 12",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2354404,
+   "team1Id": 144669,
+   "team2Id": 144668
+  },
+  {
+   "round": "Round 12",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2354405,
+   "team1Id": 144681,
+   "team2Id": 144664
+  },
+  {
+   "round": "Round 13",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2354406,
+   "team1Id": 144666,
+   "team2Id": 144687
+  },
+  {
+   "round": "Round 13",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2354407,
+   "team1Id": 144670,
+   "team2Id": 144665
+  },
+  {
+   "round": "Round 13",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2354408,
+   "team1Id": 144683,
+   "team2Id": 144667
+  },
+  {
+   "round": "Round 13",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2354412,
+   "team1Id": 144680,
+   "team2Id": 144684
+  },
+  {
+   "round": "Round 13",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2354410,
+   "team1Id": 144686,
+   "team2Id": 144675
+  },
+  {
+   "round": "Round 13",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2354409,
+   "team1Id": 144682,
+   "team2Id": 144685
+  },
+  {
+   "round": "Round 13",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2354411,
+   "team1Id": 144678,
+   "team2Id": 144673
+  },
+  {
+   "round": "Round 13",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2354414,
+   "team1Id": 144674,
+   "team2Id": 144676
+  },
+  {
+   "round": "Round 13",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2354417,
+   "team1Id": 144671,
+   "team2Id": 1
+  },
+  {
+   "round": "Round 13",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2354415,
+   "team1Id": 144672,
+   "team2Id": 165267
+  },
+  {
+   "round": "Round 13",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2354416,
+   "team1Id": 144679,
+   "team2Id": 144677
+  },
+  {
+   "round": "Round 13",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2354413,
+   "team1Id": 144669,
+   "team2Id": 144681
+  },
+  {
+   "round": "Round 13",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2354418,
+   "team1Id": 144668,
+   "team2Id": 144688
+  },
+  {
+   "round": "Round 13",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2354419,
+   "team1Id": 144663,
+   "team2Id": 144664
+  },
+  {
+   "round": "Round 14",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2354420,
+   "team1Id": 144665,
+   "team2Id": 144687
+  },
+  {
+   "round": "Round 14",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2354421,
+   "team1Id": 144667,
+   "team2Id": 144666
+  },
+  {
+   "round": "Round 14",
+   "divisionId": "22313",
+   "division": "",
+   "matchId": 2354422,
+   "team1Id": 144670,
+   "team2Id": 144683
+  },
+  {
+   "round": "Round 14",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2354426,
+   "team1Id": 144675,
+   "team2Id": 144682
+  },
+  {
+   "round": "Round 14",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2354424,
+   "team1Id": 144680,
+   "team2Id": 144686
+  },
+  {
+   "round": "Round 14",
+   "divisionId": "22314",
+   "division": "",
+   "matchId": 2354423,
+   "team1Id": 144684,
+   "team2Id": 144685
+  },
+  {
+   "round": "Round 14",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2354425,
+   "team1Id": 144679,
+   "team2Id": 144678
+  },
+  {
+   "round": "Round 14",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2354428,
+   "team1Id": 144673,
+   "team2Id": 144672
+  },
+  {
+   "round": "Round 14",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2354434,
+   "team1Id": 144676,
+   "team2Id": 1
+  },
+  {
+   "round": "Round 14",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2354429,
+   "team1Id": 144677,
+   "team2Id": 144674
+  },
+  {
+   "round": "Round 14",
+   "divisionId": "22315",
+   "division": "",
+   "matchId": 2354430,
+   "team1Id": 165267,
+   "team2Id": 144671
+  },
+  {
+   "round": "Round 14",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2354427,
+   "team1Id": 144688,
+   "team2Id": 144681
+  },
+  {
+   "round": "Round 14",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2354432,
+   "team1Id": 144664,
+   "team2Id": 144669
+  },
+  {
+   "round": "Round 14",
+   "divisionId": "22316",
+   "division": "",
+   "matchId": 2354433,
+   "team1Id": 144668,
+   "team2Id": 144663
+  }
+ ]
+}

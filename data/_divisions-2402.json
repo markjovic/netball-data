@@ -1,0 +1,118 @@
+{
+ "compId": "2402",
+ "divisionsFromRounds": {},
+ "roundDivisionTeams": [
+  {
+   "round": "Round 15",
+   "divisionId": "15458",
+   "division": "",
+   "matchId": 1970974,
+   "team1Id": 99714,
+   "team2Id": 99696
+  },
+  {
+   "round": "Round 15",
+   "divisionId": "15458",
+   "division": "",
+   "matchId": 1970975,
+   "team1Id": 99719,
+   "team2Id": 99717
+  },
+  {
+   "round": "Round 15",
+   "divisionId": "15458",
+   "division": "",
+   "matchId": 1970973,
+   "team1Id": 99722,
+   "team2Id": 105063
+  },
+  {
+   "round": "Round 15",
+   "divisionId": "15461",
+   "division": "",
+   "matchId": 1970978,
+   "team1Id": 99720,
+   "team2Id": 99724
+  },
+  {
+   "round": "Round 15",
+   "divisionId": "15461",
+   "division": "",
+   "matchId": 1970980,
+   "team1Id": 99723,
+   "team2Id": 99704
+  },
+  {
+   "round": "Round 15",
+   "divisionId": "15461",
+   "division": "",
+   "matchId": 1970982,
+   "team1Id": 99721,
+   "team2Id": 99710
+  },
+  {
+   "round": "Round 15",
+   "divisionId": "15461",
+   "division": "",
+   "matchId": 1970984,
+   "team1Id": 99718,
+   "team2Id": 1
+  },
+  {
+   "round": "Round 15",
+   "divisionId": "15460",
+   "division": "",
+   "matchId": 1970976,
+   "team1Id": 99697,
+   "team2Id": 99707
+  },
+  {
+   "round": "Round 15",
+   "divisionId": "15460",
+   "division": "",
+   "matchId": 1970985,
+   "team1Id": 99705,
+   "team2Id": 99702
+  },
+  {
+   "round": "Round 15",
+   "divisionId": "15460",
+   "division": "",
+   "matchId": 1970986,
+   "team1Id": 99701,
+   "team2Id": 99698
+  },
+  {
+   "round": "Round 15",
+   "divisionId": "15460",
+   "division": "",
+   "matchId": 1970977,
+   "team1Id": 105064,
+   "team2Id": 99700
+  },
+  {
+   "round": "Round 15",
+   "divisionId": "15459",
+   "division": "",
+   "matchId": 1970979,
+   "team1Id": 99699,
+   "team2Id": 99709
+  },
+  {
+   "round": "Round 15",
+   "divisionId": "15459",
+   "division": "",
+   "matchId": 1970981,
+   "team1Id": 99703,
+   "team2Id": 99715
+  },
+  {
+   "round": "Round 15",
+   "divisionId": "15459",
+   "division": "",
+   "matchId": 1970983,
+   "team1Id": 99706,
+   "team2Id": 99716
+  }
+ ]
+}

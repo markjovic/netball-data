@@ -1,0 +1,142 @@
+{
+ "compId": "2939",
+ "divisionsFromRounds": {},
+ "roundDivisionTeams": [
+  {
+   "round": "Round 16",
+   "divisionId": "19365",
+   "division": "",
+   "matchId": 2126251,
+   "team1Id": 124260,
+   "team2Id": 124252
+  },
+  {
+   "round": "Round 16",
+   "divisionId": "19365",
+   "division": "",
+   "matchId": 2126258,
+   "team1Id": 124253,
+   "team2Id": 124273
+  },
+  {
+   "round": "Round 16",
+   "divisionId": "19365",
+   "division": "",
+   "matchId": 2126252,
+   "team1Id": 124255,
+   "team2Id": 124259
+  },
+  {
+   "round": "Round 16",
+   "divisionId": "19363",
+   "division": "",
+   "matchId": 2126253,
+   "team1Id": 124266,
+   "team2Id": 124254
+  },
+  {
+   "round": "Round 16",
+   "divisionId": "19363",
+   "division": "",
+   "matchId": 2126261,
+   "team1Id": 124268,
+   "team2Id": 124270
+  },
+  {
+   "round": "Round 16",
+   "divisionId": "19363",
+   "division": "",
+   "matchId": 2126262,
+   "team1Id": 124246,
+   "team2Id": 124265
+  },
+  {
+   "round": "Round 16",
+   "divisionId": "19366",
+   "division": "",
+   "matchId": 2126264,
+   "team1Id": 124267,
+   "team2Id": 124269
+  },
+  {
+   "round": "Round 16",
+   "divisionId": "19366",
+   "division": "",
+   "matchId": 2126265,
+   "team1Id": 124250,
+   "team2Id": 124274
+  },
+  {
+   "round": "Round 16",
+   "divisionId": "19366",
+   "division": "",
+   "matchId": 2126254,
+   "team1Id": 124245,
+   "team2Id": 124258
+  },
+  {
+   "round": "Round 16",
+   "divisionId": "19366",
+   "division": "",
+   "matchId": 2126255,
+   "team1Id": 124256,
+   "team2Id": 124257
+  },
+  {
+   "round": "Round 16",
+   "divisionId": "19367",
+   "division": "",
+   "matchId": 2126256,
+   "team1Id": 124277,
+   "team2Id": 124278
+  },
+  {
+   "round": "Round 16",
+   "divisionId": "19367",
+   "division": "",
+   "matchId": 2126263,
+   "team1Id": 124251,
+   "team2Id": 124275
+  },
+  {
+   "round": "Round 16",
+   "divisionId": "19367",
+   "division": "",
+   "matchId": 2126257,
+   "team1Id": 124249,
+   "team2Id": 124247
+  },
+  {
+   "round": "Round 16",
+   "divisionId": "19364",
+   "division": "",
+   "matchId": 2126259,
+   "team1Id": 124248,
+   "team2Id": 124261
+  },
+  {
+   "round": "Round 16",
+   "divisionId": "19364",
+   "division": "",
+   "matchId": 2126267,
+   "team1Id": 124272,
+   "team2Id": 124264
+  },
+  {
+   "round": "Round 16",
+   "divisionId": "19364",
+   "division": "",
+   "matchId": 2126260,
+   "team1Id": 124271,
+   "team2Id": 124262
+  },
+  {
+   "round": "Round 16",
+   "divisionId": "19364",
+   "division": "",
+   "matchId": 2126266,
+   "team1Id": 124276,
+   "team2Id": 124263
+  }
+ ]
+}

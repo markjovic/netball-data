@@ -1,0 +1,87 @@
+{
+ "note": "Edited by the weekly workflow (scan.highWater) and by hand/Claude (seasons). 9U seasons in date order.",
+ "organisationKey": "ab63c5b3-fd1a-41a6-a1a2-326989b20247",
+ "seasons": [
+  {
+   "compId": "2402",
+   "label": "2024 Autumn",
+   "term": "2024H1",
+   "key": "12c40a46-4a15-4969-83f6-5c6d5cd92468",
+   "name": "2024 MENA Autumn - Club Competition 9 & U NetSetGo",
+   "colmap": {
+    "15458": "BLUE",
+    "15459": "ORANGE",
+    "15460": "GREEN",
+    "15461": "RED"
+   }
+  },
+  {
+   "compId": "2939",
+   "label": "2024 Spring",
+   "term": "2024H2",
+   "key": "b4460e65-4bbd-48a3-962c-adf5300da15b",
+   "name": "Friday - MENA 2024 Spring - Club Competition 9U NetSetGo",
+   "colmap": {
+    "19363": "WHITE",
+    "19364": "BLUE",
+    "19365": "ORANGE",
+    "19366": "RED",
+    "19367": "GREEN"
+   }
+  },
+  {
+   "compId": "3465",
+   "label": "2025 Autumn",
+   "term": "2025H1",
+   "key": "3cb2d249-f58f-47ae-a757-34f23c2336d0",
+   "name": "MENA - Club Competition AUTUMN FRI 9 & U NetSetGo",
+   "builder": "static",
+   "note": "rounds 11-14 recorded 0-0; built once by build_3465.py, never rebuilt"
+  },
+  {
+   "compId": "4057",
+   "label": "2025 Spring",
+   "term": "2025H2",
+   "key": "fe64adda-ae9c-4bfe-b1a1-c62a498a77ab",
+   "name": "MENA - Club Competition SPRING FRI 9 & U NetSetGo",
+   "colmap": null
+  },
+  {
+   "compId": "4596",
+   "label": "2026 Autumn",
+   "term": "2026H1",
+   "key": "712ca7c5-83b6-4ad8-9bcc-7e06adaae2d9",
+   "name": "FRI - 2026 MENA - Club Competition AUTUMN 9 & U NetSetGo",
+   "colmap": null
+  },
+  {
+   "compId": "5232",
+   "label": "2026 Spring",
+   "term": "2026H2",
+   "key": "8819433a-2375-4c6a-9039-4658036b083d",
+   "name": "MENA - Club Competition SPRING FRI 9 & U NETSETGO",
+   "colmap": {
+    "33436": "BLUE",
+    "33437": "RED",
+    "33438": "YELLOW",
+    "33439": "WHITE",
+    "33440": "GREEN",
+    "33441": "ORANGE"
+   }
+  }
+ ],
+ "elevenComps": {
+  "2024H1": "2403",
+  "2024H2": "2937",
+  "2025H1": "3467",
+  "2025H2": "4144",
+  "2026H1": "4595",
+  "2026H2": "5224"
+ },
+ "movementSeasons": 6,
+ "scan": {
+  "highWater": 16028864,
+  "window": 40000,
+  "floor": 15090707
+ }
+}
