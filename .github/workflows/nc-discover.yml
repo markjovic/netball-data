@@ -1,0 +1,50 @@
+name: nc-discover
+
+# One-off: record what the public Netball Connect fixtures page loads (competition list, keys, divisions)
+# so the weekly job can pick up new seasons by itself. Read-only; commits nothing.
+
+on:
+  workflow_dispatch:
+    inputs:
+      year_ids:
+        description: 'Netball Connect yearIds to open (8 = 2026, 9 = 2027)'
+        required: false
+        default: '8,9'
+
+permissions:
+  contents: read
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Playwright and Chromium
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/pw"
+          cd "$RUNNER_TEMP/pw"
+          npm init -y > /dev/null
+          npm install --no-audit --no-fund playwright@1.48.2
+          npx playwright install --with-deps chromium
+
+      - name: Discover
+        env:
+          YEAR_IDS: ${{ inputs.year_ids }}
+          OUT_DIR: ${{ github.workspace }}/discover-out
+        run: |
+          set -euo pipefail
+          cp scripts/nc-discover.mjs "$RUNNER_TEMP/pw/"
+          node "$RUNNER_TEMP/pw/nc-discover.mjs"
+
+      - name: Upload
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nc-discover-${{ github.run_id }}
+          path: discover-out/
+          if-no-files-found: error
+          retention-days: 30

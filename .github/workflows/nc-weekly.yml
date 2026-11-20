@@ -1,0 +1,140 @@
+name: nc-weekly
+
+# Weekly update of the MENA 9U site, with no manual steps:
+#   1. harvest every configured season still in progress (data/config.json) and merge the new results
+#      into data/matches-<id>.json (a hidden 0-0 never overwrites a captured score)
+#   2. refresh every known player's history (data/players.json) and scan new player ids since the last run
+#   3. rebuild data/netball-data.json, index.html, data/movement.json, movement.html
+#   4. commit the changes to the repo
+# Runs Friday 20:00 and 22:00 Melbourne summer time (19:00 / 21:00 in winter). Scores are hidden after
+# game day, so the second run is a safety net; a run with nothing new commits nothing.
+# If the results harvest or the build fails, nothing is committed and the run is red.
+# If only the player refresh/scan fails, results are still published, players are left as they were,
+# and the run is marked red at the end so it is noticed.
+
+on:
+  schedule:
+    - cron: '0 9 * * 5'
+    - cron: '0 11 * * 5'
+  workflow_dispatch:
+    inputs:
+      full_rescan:
+        description: 'Scan the whole player-id range (about 100 minutes) instead of only new ids'
+        type: boolean
+        default: false
+      skip_players:
+        description: 'Results only: skip the player refresh and new-id scan'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nc-weekly
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 185
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Playwright, Chromium and numpy
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/pw"
+          cd "$RUNNER_TEMP/pw"
+          npm init -y > /dev/null
+          npm install --no-audit --no-fund playwright@1.48.2
+          npx playwright install --with-deps chromium
+          python3 -m pip install --quiet numpy
+          cp "$GITHUB_WORKSPACE/scripts/nc-harvest.mjs" "$RUNNER_TEMP/pw/"
+
+      - name: Plan
+        id: plan
+        run: |
+          set -euo pipefail
+          TODAY="$(TZ=Australia/Melbourne date +%F)"
+          echo "today=$TODAY" >> "$GITHUB_OUTPUT"
+          python3 -I build/plan.py "$TODAY" "${{ inputs.full_rescan || false }}" "$RUNNER_TEMP/comps.tsv"
+          python3 -I build/plan.py "$TODAY" "${{ inputs.full_rescan || false }}" >> "$GITHUB_OUTPUT"
+          echo "### Plan ($TODAY)" >> "$GITHUB_STEP_SUMMARY"
+          echo "- seasons to harvest: $(cut -f1 "$RUNNER_TEMP/comps.tsv" | tr '\n' ' ')" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Harvest results
+        run: |
+          set -euo pipefail
+          : > "$RUNNER_TEMP/harvest-dirs.txt"
+          while IFS=$'\t' read -r CID KEY NAME; do
+            [ -z "$CID" ] && continue
+            OUT="$RUNNER_TEMP/h-$CID"
+            echo "harvesting $CID ($NAME)"
+            COMP_ID="$CID" COMP_KEY="$KEY" COMP_NAME="$NAME" OUT_DIR="$OUT" \
+              node "$RUNNER_TEMP/pw/nc-harvest.mjs"
+            ls "$OUT"/matches-*.json > /dev/null
+            echo "$OUT" >> "$RUNNER_TEMP/harvest-dirs.txt"
+          done < "$RUNNER_TEMP/comps.tsv"
+
+      - name: Refresh known players
+        id: refresh
+        if: ${{ !inputs.skip_players }}
+        continue-on-error: true
+        run: |
+          set -euo pipefail
+          USER_IDS="data/players.json" BATCH_DELAY=120 MAX_CALLS=100000 OUT_DIR="$RUNNER_TEMP/careers" \
+            node "$RUNNER_TEMP/pw/nc-harvest.mjs"
+
+      - name: Scan new player ids
+        id: scan
+        if: ${{ !inputs.skip_players }}
+        continue-on-error: true
+        run: |
+          set -euo pipefail
+          USER_LO="${{ steps.plan.outputs.scan_lo }}" USER_HI="${{ steps.plan.outputs.scan_hi }}" FULL_HISTORY=true \
+            BACKOFF_MIN=10 RUN_BUDGET_MIN=150 MAX_CALLS=1200000 OUT_DIR="$RUNNER_TEMP/scan" \
+            node "$RUNNER_TEMP/pw/nc-harvest.mjs"
+
+      - name: Build
+        run: |
+          set -euo pipefail
+          ARGS=(--today "${{ steps.plan.outputs.today }}")
+          mapfile -t DIRS < "$RUNNER_TEMP/harvest-dirs.txt"
+          if [ "${#DIRS[@]}" -gt 0 ]; then ARGS+=(--harvest "${DIRS[@]}"); fi
+          if [ -f "$RUNNER_TEMP/careers/users-careers.json" ]; then ARGS+=(--careers "$RUNNER_TEMP/careers/users-careers.json"); fi
+          if [ -f "$RUNNER_TEMP/scan/users-history.json" ]; then ARGS+=(--scan "$RUNNER_TEMP/scan/users-history.json"); fi
+          python3 -I build/build_all.py "${ARGS[@]}"
+
+      - name: Commit
+        run: |
+          set -euo pipefail
+          git config user.name "nc-weekly"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html movement.html data/
+          if git diff --cached --quiet; then
+            echo "No changes to commit." | tee -a "$GITHUB_STEP_SUMMARY"
+          else
+            git commit -m "Weekly update ${{ steps.plan.outputs.today }}"
+            git push
+            echo "Committed: $(git diff --stat HEAD~1 | tail -1)" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Keep this run's raw downloads
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nc-weekly-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/h-*/
+            ${{ runner.temp }}/careers/
+            ${{ runner.temp }}/scan/SUMMARY.md
+          if-no-files-found: ignore
+          retention-days: 30
+
+      - name: Flag a failed player refresh or scan
+        if: ${{ steps.refresh.outcome == 'failure' || steps.scan.outcome == 'failure' }}
+        run: |
+          echo "::error::Results were published, but the player refresh (${{ steps.refresh.outcome }}) or new-id scan (${{ steps.scan.outcome }}) failed - players were not updated this run."
+          exit 1
