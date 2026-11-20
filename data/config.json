@@ -81,7 +81,11 @@
  "movementSeasons": 6,
  "scan": {
   "highWater": 16028864,
-  "window": 40000,
-  "floor": 15090707
+  "floor": 15090707,
+  "lookback": 400000,
+  "lookbackDays": 28,
+  "block": 5000,
+  "maxBlocks": 20,
+  "note": "forward scan: 5k blocks from highWater+1 until a block has no netball players; lookback: highWater-lookback..highWater once a day while a season is in its first lookbackDays (plan.py)"
  }
 }
