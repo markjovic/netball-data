@@ -1,6 +1,7 @@
 name: nc-weekly
 
 # Weekly update of the MENA 9U site, with no manual steps:
+#   0. read MENA's competition list for this year and next; add any new Friday 9&U season / Saturday 11U comp to data/config.json
 #   1. harvest every configured season still in progress (data/config.json) and merge the new results
 #      into data/matches-<id>.json (a hidden 0-0 never overwrites a captured score)
 #   2. refresh every known player's history (data/players.json) and scan new player ids since the last run
@@ -19,7 +20,7 @@ on:
   workflow_dispatch:
     inputs:
       full_rescan:
-        description: 'Scan the whole player-id range (about 100 minutes) instead of only new ids'
+        description: 'Rescan the whole player-id range for new players (about 100 minutes) instead of the usual lookback'
         type: boolean
         default: false
       skip_players:
@@ -50,8 +51,22 @@ jobs:
           npm init -y > /dev/null
           npm install --no-audit --no-fund playwright@1.48.2
           npx playwright install --with-deps chromium
-          python3 -m pip install --quiet numpy
+          # system-wide, so the isolated (-I) python used by the build sees it; -I ignores the user site-packages
+          sudo python3 -m pip install --quiet numpy 2>/dev/null || sudo python3 -m pip install --quiet --break-system-packages numpy
+          python3 -I -c "import numpy; print('numpy', numpy.__version__)"
           cp "$GITHUB_WORKSPACE/scripts/nc-harvest.mjs" "$RUNNER_TEMP/pw/"
+
+      - name: Find competitions (new seasons)
+        id: find
+        continue-on-error: true
+        run: |
+          set -euo pipefail
+          Y="$(TZ=Australia/Melbourne date +%Y)"
+          ORG="$(python3 -I -c "import json; print(json.load(open('data/config.json', encoding='utf-8-sig'))['organisationKey'])")"
+          # yearRefId = year - 2018 (2026 = 8, 2027 = 9); plan.py checks this against the year list
+          RAW_URLS="/common/common/reference/year;;/livescores/competitions/list?organisationUniqueKey=$ORG&yearRefId=$((Y-2018));;/livescores/competitions/list?organisationUniqueKey=$ORG&yearRefId=$((Y-2017))" \
+            RAW_MAX=5000000 OUT_DIR="$RUNNER_TEMP/find" node "$RUNNER_TEMP/pw/nc-harvest.mjs"
+          test -s "$RUNNER_TEMP/find/raw.json"
 
       - name: Plan
         id: plan
@@ -59,9 +74,8 @@ jobs:
           set -euo pipefail
           TODAY="$(TZ=Australia/Melbourne date +%F)"
           echo "today=$TODAY" >> "$GITHUB_OUTPUT"
-          python3 -I build/plan.py "$TODAY" "${{ inputs.full_rescan || false }}" "$RUNNER_TEMP/comps.tsv"
-          python3 -I build/plan.py "$TODAY" "${{ inputs.full_rescan || false }}" >> "$GITHUB_OUTPUT"
           echo "### Plan ($TODAY)" >> "$GITHUB_STEP_SUMMARY"
+          python3 -I build/plan.py "$TODAY" "${{ inputs.full_rescan || false }}" "$RUNNER_TEMP/comps.tsv" "$RUNNER_TEMP/find/raw.json"
           echo "- seasons to harvest: $(cut -f1 "$RUNNER_TEMP/comps.tsv" | tr '\n' ' ')" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Harvest results
@@ -74,8 +88,13 @@ jobs:
             echo "harvesting $CID ($NAME)"
             COMP_ID="$CID" COMP_KEY="$KEY" COMP_NAME="$NAME" OUT_DIR="$OUT" \
               node "$RUNNER_TEMP/pw/nc-harvest.mjs"
-            ls "$OUT"/matches-*.json > /dev/null
-            echo "$OUT" >> "$RUNNER_TEMP/harvest-dirs.txt"
+            if ls "$OUT"/matches-*.json > /dev/null 2>&1; then
+              echo "$OUT" >> "$RUNNER_TEMP/harvest-dirs.txt"
+            elif [ ! -f "data/matches-$CID.json" ]; then
+              echo "- $CID ($NAME): no fixtures published yet" | tee -a "$GITHUB_STEP_SUMMARY"
+            else
+              echo "::error::$CID ($NAME): harvest returned no matches"; exit 1
+            fi
           done < "$RUNNER_TEMP/comps.tsv"
 
       - name: Refresh known players
@@ -91,11 +110,39 @@ jobs:
         id: scan
         if: ${{ !inputs.skip_players }}
         continue-on-error: true
+        env:
+          FWD_LO: ${{ steps.plan.outputs.fwd_lo }}
+          BACK_LO: ${{ steps.plan.outputs.back_lo }}
+          BACK_HI: ${{ steps.plan.outputs.back_hi }}
         run: |
           set -euo pipefail
-          USER_LO="${{ steps.plan.outputs.scan_lo }}" USER_HI="${{ steps.plan.outputs.scan_hi }}" FULL_HISTORY=true \
-            BACKOFF_MIN=10 RUN_BUDGET_MIN=150 MAX_CALLS=1200000 OUT_DIR="$RUNNER_TEMP/scan" \
-            node "$RUNNER_TEMP/pw/nc-harvest.mjs"
+          : > "$RUNNER_TEMP/scan-files.txt"
+          BLOCK="$(python3 -I -c "import json; print(json.load(open('data/config.json', encoding='utf-8-sig'))['scan']['block'])")"
+          MAXB="$(python3 -I -c "import json; print(json.load(open('data/config.json', encoding='utf-8-sig'))['scan']['maxBlocks'])")"
+          scan_ids() {
+            OUT="$RUNNER_TEMP/scan/$1-$2"
+            USER_LO="$1" USER_HI="$2" FULL_HISTORY=true BACKOFF_MIN=10 RUN_BUDGET_MIN="$3" MAX_CALLS=1200000 OUT_DIR="$OUT" \
+              node "$RUNNER_TEMP/pw/nc-harvest.mjs"
+            test -f "$OUT/users-history.json"
+            echo "$OUT/users-history.json" >> "$RUNNER_TEMP/scan-files.txt"
+          }
+          # forward: 5k blocks from the high-water mark until a block has no netball players (ids ~25% netball)
+          LO="$FWD_LO"; B=0
+          while :; do
+            B=$((B+1)); HI=$((LO+BLOCK-1))
+            scan_ids "$LO" "$HI" 20
+            N="$(python3 -I -c "import json, sys; print(len(json.load(open(sys.argv[1]))['players']))" "$RUNNER_TEMP/scan/$LO-$HI/users-history.json")"
+            echo "- forward ids $LO..$HI: $N netball players" | tee -a "$GITHUB_STEP_SUMMARY"
+            if [ "$N" -eq 0 ]; then break; fi
+            if [ "$B" -ge "$MAXB" ]; then echo "::error::forward scan still finding players after $MAXB blocks - raise scan.maxBlocks"; exit 1; fi
+            LO=$((HI+1))
+          done
+          # lookback: older ids that have just started playing (plan.py decides when)
+          if [ -n "$BACK_LO" ]; then
+            scan_ids "$BACK_LO" "$BACK_HI" 140
+            echo "lookback=done" >> "$GITHUB_OUTPUT"
+            echo "- lookback ids $BACK_LO..$BACK_HI: complete" | tee -a "$GITHUB_STEP_SUMMARY"
+          fi
 
       - name: Build
         run: |
@@ -104,7 +151,9 @@ jobs:
           mapfile -t DIRS < "$RUNNER_TEMP/harvest-dirs.txt"
           if [ "${#DIRS[@]}" -gt 0 ]; then ARGS+=(--harvest "${DIRS[@]}"); fi
           if [ -f "$RUNNER_TEMP/careers/users-careers.json" ]; then ARGS+=(--careers "$RUNNER_TEMP/careers/users-careers.json"); fi
-          if [ -f "$RUNNER_TEMP/scan/users-history.json" ]; then ARGS+=(--scan "$RUNNER_TEMP/scan/users-history.json"); fi
+          mapfile -t SCANS < <(cat "$RUNNER_TEMP/scan-files.txt" 2>/dev/null || true)
+          if [ "${#SCANS[@]}" -gt 0 ]; then ARGS+=(--scan "${SCANS[@]}"); fi
+          if [ "${{ steps.scan.outputs.lookback }}" = "done" ]; then ARGS+=(--lookback-done); fi
           python3 -I build/build_all.py "${ARGS[@]}"
 
       - name: Commit
@@ -129,12 +178,13 @@ jobs:
           path: |
             ${{ runner.temp }}/h-*/
             ${{ runner.temp }}/careers/
-            ${{ runner.temp }}/scan/SUMMARY.md
+            ${{ runner.temp }}/scan/*/SUMMARY.md
+            ${{ runner.temp }}/find/raw.json
           if-no-files-found: ignore
           retention-days: 30
 
-      - name: Flag a failed player refresh or scan
-        if: ${{ steps.refresh.outcome == 'failure' || steps.scan.outcome == 'failure' }}
+      - name: Flag a failed competition check, player refresh or scan
+        if: ${{ steps.find.outcome == 'failure' || steps.plan.outputs.find_ok != 'true' || steps.refresh.outcome == 'failure' || steps.scan.outcome == 'failure' }}
         run: |
-          echo "::error::Results were published, but the player refresh (${{ steps.refresh.outcome }}) or new-id scan (${{ steps.scan.outcome }}) failed - players were not updated this run."
+          echo "::error::Results were published, but part of the run failed: competition check (${{ steps.find.outcome }}, list read ${{ steps.plan.outputs.find_ok }}), player refresh (${{ steps.refresh.outcome }}), new-id scan (${{ steps.scan.outcome }}). New seasons and/or players were not updated this run."
           exit 1
