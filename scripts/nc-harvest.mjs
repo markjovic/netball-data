@@ -274,7 +274,9 @@ async function main() {
       if (calls >= MAX_CALLS && !stopReason) stopReason = 'MAX_CALLS';
       await writeUsers();
       // explicit mode: zero players with rows is never a success (wrong ids / wrong list), so it stays PARTIAL and exits 1.
-      const complete = FULL ? (!failedIds.size && !stopReason && players.length > 0)
+      // range scan (FULL): a range with no netball players is a valid result (e.g. past the newest ids). Every
+      // non-200 / unparseable / never-fetched id is in failedIds, so no failures + no stop = every id answered.
+      const complete = FULL ? (!failedIds.size && !stopReason)
         : (!EXPLICIT || (!failedIds.size && !stopReason && players.length > 0 && players.length + emptyIds.size === order.length));
       if (EXPLICIT && complete) { outName = 'users-careers.json'; await writeUsers(); await fs.rm(path.join(OUT, 'users-careers_PARTIAL.json'), { force: true }); }
       if (FULL && complete) { outName = 'users-history.json'; await writeUsers(); await fs.rm(path.join(OUT, 'users-history_PARTIAL.json'), { force: true }); }
