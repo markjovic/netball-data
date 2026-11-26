@@ -102,6 +102,8 @@ tr.lrow.hi td{background:rgba(0,245,212,.06)}
 .path .row.idle{padding:2px 12px;font-size:.66rem;color:var(--text3);cursor:default;background:var(--bg)}
 .path .row.idle:hover{background:var(--bg)}
 .path .row.idle .tt{font-weight:600}
+.hg{display:inline-block;font-size:.62rem;font-weight:700;color:#90caf9;background:rgba(33,150,243,.14);border:1px solid rgba(33,150,243,.35);border-radius:999px;padding:0 6px;white-space:nowrap;vertical-align:middle;line-height:1.5}
+.hg.sm{font-size:.56rem;padding:0 4px}
 footer{color:var(--text3);font-size:.68rem;padding:4px 14px 30px;line-height:1.5}
 @media (max-width:560px){
  .grid{grid-template-columns:1fr 1fr;grid-template-areas:"c1 c2" "c3 c4" "c5 c6" "c7 c8"}
@@ -173,7 +175,7 @@ const save=()=>{try{localStorage.setItem('rrSpring26',JSON.stringify(state));}ca
 function h2h(m){let w=0,l=0,d=0;m.forEach(x=>x[1]>x[2]?w++:x[1]<x[2]?l++:d++);return [w,l,d];}
 function h2hLine(g){const m=g.m;if(!m.length)return '<span class="k">No meeting this season</span>';
  const [w,l,d]=h2h(m),last=m[m.length-1];
- return `<span class="k">Season H2H</span> ${rec(w,l,d)} · last ${last[1]}–${last[2]}${last[4]?'½':''}`;}
+ return `<span class="k">Season H2H</span> ${rec(w,l,d)} · last ${last[1]}–${last[2]}${last[4]?' '+HGS:''}`;}
 function matches(g){if(!state.fv)return false;
  if(state.ft==='team')return g.h===state.fv||g.a===state.fv;
  if(state.ft==='club')return club(g.h)===state.fv||club(g.a)===state.fv;
@@ -181,6 +183,7 @@ function matches(g){if(!state.fv)return false;
 function byeMatch(b){if(!state.fv||!b)return false;
  if(state.ft==='team')return b===state.fv; if(state.ft==='club')return club(b)===state.fv; return P.teams[b].pool===state.fv;}
 const gp=n=>{const t=P.teams[n];if(!t)return '';const c=GRADECOL[t.grade];return `<span class="gp" title="${esc(t.grade)} grade, ${ord(t.gpos)} of ${t.gsize}" style="background:${c}22;color:${c}">${ord(t.gpos)}</span>`;};
+const HG='<span class="hg" title="Washout — only half the game was played">☔ half game</span>',HGS='<span class="hg sm" title="Washout — only half the game was played">☔ half</span>';
 const gradeLine=n=>{const t=P.teams[n];return `${gchip(t.grade)} ${ord(t.gpos)} of ${t.gsize}`;};
 
 function cell(g){
@@ -221,8 +224,8 @@ function poolCard(pool){
  const mx=`<div class="mx"><table><thead><tr><th></th>${ts.map(n=>`<th title="${esc(short(n))}">${bdg(n,20)}<div style="font-size:.56rem;margin-top:2px">${esc(n.split(' ').pop())}</div></th>`).join('')}</tr></thead><tbody>${ts.map(r=>`<tr><td class="rh"><span style="display:flex;align-items:center;gap:5px">${bdg(r,20)}<span style="font-size:.64rem;color:var(--text2)">${esc(r.split(' ').pop())}</span></span></td>${ts.map(c=>{
    if(r===c)return '<td class="self"></td>';
    const gs=P.teams[r].gm.filter(g=>g[1]===c);
-   return `<td>${gs.length?gs.map(g=>`<span class="${g[4]}">${g[2]}–${g[3]}${g[5]?'½':''}</span>`).join('<br>'):'<span class="nm">–</span>'}</td>`;}).join('')}</tr>`).join('')}</tbody></table></div>
-   <div class="cap">Season scores between pool teams, read across from the left team (green win, red loss, orange draw, ½ shortened game). Tap a team above for its full season.</div>`;
+   return `<td>${gs.length?gs.map(g=>`<span class="${g[4]}">${g[2]}–${g[3]}</span>${g[5]?'<br>'+HGS:''}`).join('<br>'):'<span class="nm">–</span>'}</td>`;}).join('')}</tr>`).join('')}</tbody></table></div>
+   <div class="cap">Season scores between pool teams, read across from the left team (green win, red loss, orange draw; ☔ half = washout, only half the game played). Tap a team above for its full season.</div>`;
  return `<div class="card"><div class="ph" style="color:${POOLCOL[pool]}">${esc(pool)} pool<span class="x">${ts.length} teams · ${FIX.filter(g=>g.p===pool).length} games</span></div>
  <table><thead><tr><th class="al">Team</th><th>Season</th><th>GD</th><th>vs pool</th></tr></thead><tbody>${rows}</tbody></table>${mx}</div>`;}
 function renderPools(){
@@ -244,7 +247,7 @@ function render(){
  document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('on',b.dataset.v===state.view));
  renderFilters();state.view==='pools'?renderPools():state.view==='ladders'?renderLadders():renderDraw();
  $('#asof').textContent='Results to '+fmtD(P.asof);
- $('#foot').innerHTML=`Draw from the NetSetGo 9 &amp; Under Mixed Round Robin fixture. Grades, records and head-to-heads are 2026 Spring results from Netball Connect up to ${esc(fmtD(P.asof))} 2026 (½ = shortened game). The coloured tag after a team is its position in its current grade (colour = grade). Courts 1–4 indoor, 5–8 outdoor.`;}
+ $('#foot').innerHTML=`Draw from the NetSetGo 9 &amp; Under Mixed Round Robin fixture. Grades, records and head-to-heads are 2026 Spring results from Netball Connect up to ${esc(fmtD(P.asof))} 2026 (☔ half = washout, only half the game was played). The coloured tag after a team is its position in its current grade (colour = grade). Courts 1–4 indoor, 5–8 outdoor.`;}
 function renderFilters(){
  $('#ft').value=state.ft;
  const opts=state.ft==='team'?TEAMS.map(t=>[t,short(t)]):state.ft==='club'?CLUBS.map(c=>[c,short(c)]):POOLS.map(p=>[p,p+' pool']);
@@ -255,7 +258,7 @@ function renderFilters(){
 function seasonList(n){
  const t=P.teams[n];let h='',ph='';
  t.gm.forEach(g=>{if(g[6]!==ph){ph=g[6];h+=`<div class="phl">${esc(ph==='Current'?'Current grade':ph)}</div>`;}
-  h+=`<div class="mtg"><span class="d">${fmtD(g[0])}</span>${bdg(g[1],18)}<span class="p" style="color:var(--text)">${esc(short(g[1]))} ${gp(g[1])}${g[5]?' <span class="sd">· shortened</span>':''}</span><span class="s">${g[2]}–${g[3]}</span><span class="rb ${g[4]}">${g[4]}</span></div>`;});
+  h+=`<div class="mtg"><span class="d">${fmtD(g[0])}</span>${bdg(g[1],18)}<span class="p" style="color:var(--text)">${esc(short(g[1]))} ${gp(g[1])}${g[5]?' '+HG:''}</span><span class="s">${g[2]}–${g[3]}</span><span class="rb ${g[4]}">${g[4]}</span></div>`;});
  return h||'<div class="mtg"><span class="p">No scored games.</span></div>';}
 const sideInfo=n=>{const t=P.teams[n];return `<div class="ln">${gradeLine(n)}</div><div class="ln">Grade ${rec(t.g[1],t.g[2],t.g[3])} · Season ${rec(t.s[0],t.s[1],t.s[2])}</div><div class="ln">Goals ${t.s[3]}–${t.s[4]}</div>`;};
 function openSheet(html){$('#sbody').innerHTML=html;$('#scrim').classList.add('show');$('#sheet').classList.add('show');$('#sheet').scrollTop=0;}
@@ -264,7 +267,7 @@ function openGame(id){
  const g=BYID[id];if(!g)return;
  let h=`<div class="st">${esc(g.t)} pm · Court ${g.c}${g.c>=2&&g.c<=4?' (small poles)':''} · ${pchip(g.p,' pool')} Round ${g.r}</div>
   <div class="vs"><div class="side">${bdg(g.h,44)}<div class="nm">${esc(short(g.h))}</div>${sideInfo(g.h)}</div><div class="mid"><span class="v">v</span></div><div class="side">${bdg(g.a,44)}<div class="nm">${esc(short(g.a))}</div>${sideInfo(g.a)}</div></div>`;
- h+=`<div class="sec">Meetings this season</div>`+(g.m.length?g.m.map(x=>{const k=x[1]>x[2]?'W':x[1]<x[2]?'L':'D';return `<div class="mtg"><span class="d">${fmtD(x[0])}</span><span class="p">${esc(x[3]==='Current'?'Current grade':x[3])}${x[4]?' · shortened':''}</span><span class="s">${x[1]}–${x[2]}</span><span class="rb ${k}" title="for ${esc(short(g.h))}">${k}</span></div>`;}).join('')
+ h+=`<div class="sec">Meetings this season</div>`+(g.m.length?g.m.map(x=>{const k=x[1]>x[2]?'W':x[1]<x[2]?'L':'D';return `<div class="mtg"><span class="d">${fmtD(x[0])}</span><span class="p">${esc(x[3]==='Current'?'Current grade':x[3])}${x[4]?' '+HG:''}</span><span class="s">${x[1]}–${x[2]}</span><span class="rb ${k}" title="for ${esc(short(g.h))}">${k}</span></div>`;}).join('')
   :`<div class="mtg"><span class="p">These teams have not played each other this season.</span></div>`);
  h+=`<div class="sec">Season results</div><div class="seg"><button class="on" data-s="${esc(g.h)}">${bdg(g.h,16)}<span>${esc(short(g.h))}</span></button><button data-s="${esc(g.a)}">${bdg(g.a,16)}<span>${esc(short(g.a))}</span></button></div><div id="slist">${seasonList(g.h)}</div>`;
  openSheet(h);}
