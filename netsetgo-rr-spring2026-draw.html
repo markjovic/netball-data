@@ -99,6 +99,9 @@ tr.clk{cursor:pointer}tr.clk:hover td{background:var(--elevated)}
 tr.lrow td:first-child{box-shadow:inset 4px 0 0 var(--pc)}
 .filtering tr.lrow:not(.hi){opacity:.25}
 tr.lrow.hi td{background:rgba(0,245,212,.06)}
+.path .row.idle{padding:2px 12px;font-size:.66rem;color:var(--text3);cursor:default;background:var(--bg)}
+.path .row.idle:hover{background:var(--bg)}
+.path .row.idle .tt{font-weight:600}
 footer{color:var(--text3);font-size:.68rem;padding:4px 14px 30px;line-height:1.5}
 @media (max-width:560px){
  .grid{grid-template-columns:1fr 1fr;grid-template-areas:"c1 c2" "c3 c4" "c5 c6" "c7 c8"}
@@ -190,12 +193,16 @@ function cell(g){
 
 function pathCard(){
  if(state.ft!=='team'||!state.fv)return '';
- const n=state.fv,t=P.teams[n],gs=FIX.filter(g=>g.h===n||g.a===n),bye=P.slots.find(s=>s.b===n);
- const rows=gs.map(g=>{const home=g.h===n,opp=home?g.a:g.h;const m=g.m.map(x=>home?x:[x[0],x[2],x[1],x[3],x[4]]);
+ const n=state.fv,t=P.teams[n];
+ const gameRow=g=>{const home=g.h===n,opp=home?g.a:g.h;const m=g.m.map(x=>home?x:[x[0],x[2],x[1],x[3],x[4]]);
   const [w,l,d]=h2h(m);
-  return `<div class="row" data-id="${g.id}"><span class="tt">${esc(g.t)}</span><span class="cc">Ct ${g.c}</span>${bdg(opp)}<span class="op">${esc(short(opp))}</span>${gp(opp)}</div>`;}).join('');
- return `<div class="card path"><div class="ph">${bdg(n,22)}${esc(short(n))} ${pchip(t.pool)}<span class="x">${gradeLine(n)}</span></div>${rows}${bye?`<div class="row" style="cursor:default"><span class="tt">${esc(bye.t)}</span><span class="cc"></span><span class="op" style="color:var(--text2)">Bye</span></div>`:''}</div>`;}
-
+  return `<div class="row" data-id="${g.id}"><span class="tt">${esc(g.t)}</span><span class="cc">Ct ${g.c}</span>${bdg(opp)}<span class="op">${esc(short(opp))}</span>${gp(opp)}</div>`;};
+ 
+ const rows=P.slots.map(s=>{const g=s.g.find(x=>x.h===n||x.a===n);
+  if(g)return gameRow(g);
+  if(s.b===n)return `<div class="row idle"><span class="tt">${esc(s.t)}</span><span class="op">Bye</span></div>`;
+  return `<div class="row idle"><span class="tt">${esc(s.t)}</span><span class="op">—</span></div>`;}).join('');
+ return `<div class="card path"><div class="ph">${bdg(n,22)}${esc(short(n))} ${pchip(t.pool)}<span class="x">${gradeLine(n)}</span></div>${rows}</div>`;}
 function renderDraw(){
  let h=pathCard()+`<div class="${state.fv?'filtering':''}">`;
  P.slots.forEach(s=>{
