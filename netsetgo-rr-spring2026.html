@@ -96,6 +96,9 @@ tr.clk{cursor:pointer}tr.clk:hover td{background:var(--elevated)}
 @media (max-width:560px){.wide{display:none}}
 .sub2{display:block;font-size:.66rem;color:var(--text2);font-weight:500;margin-top:2px}
 .gp{flex-shrink:0;font-size:.58rem;font-weight:800;padding:1px 5px;border-radius:5px;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.lrow td:first-child{box-shadow:inset 4px 0 0 var(--pc)}
+.filtering tr.lrow:not(.hi){opacity:.25}
+tr.lrow.hi td{background:rgba(0,245,212,.06)}
 footer{color:var(--text3);font-size:.68rem;padding:4px 14px 30px;line-height:1.5}
 @media (max-width:560px){
  .grid{grid-template-columns:1fr 1fr;grid-template-areas:"c1 c2" "c3 c4" "c5 c6" "c7 c8"}
@@ -130,7 +133,7 @@ footer{color:var(--text3);font-size:.68rem;padding:4px 14px 30px;line-height:1.5
   <button class="clr" id="clr">Clear</button>
  </div>
  <div class="pools" id="pools"></div>
- <nav><button class="tab on" data-v="draw">Draw</button><button class="tab" data-v="pools">Pools</button></nav>
+ <nav><button class="tab on" data-v="draw">Draw</button><button class="tab" data-v="ladders">Ladders</button><button class="tab" data-v="pools">Pools</button></nav>
 </header>
 <main id="main"></main>
 <footer id="foot"></footer>
@@ -219,9 +222,20 @@ function renderPools(){
  const list=state.ft==='pool'&&state.fv?[state.fv]:state.fv?[...new Set(FIX.filter(matches).map(g=>g.p))]:POOLS;
  $('#main').innerHTML=list.map(poolCard).join('');}
 
+function teamMatch(n){if(!state.fv)return false;
+ if(state.ft==='team')return n===state.fv; if(state.ft==='club')return club(n)===state.fv; return P.teams[n].pool===state.fv;}
+function renderLadders(){
+ let h=`<div class="note">Current grade ladders for the 2026 Spring season, results to ${esc(fmtD(P.asof))}. The coloured bar and tag on each team show its round robin pool. Use the pool buttons or filter above to pick teams out.</div><div class="${state.fv?'filtering':''}">`;
+ GORD.forEach(gr=>{
+  const ts=TEAMS.filter(n=>P.teams[n].grade===gr).sort((a,b)=>P.teams[a].gpos-P.teams[b].gpos);if(!ts.length)return;
+  const net=P.teams[ts[0]].net;
+  h+=`<div class="card"><div class="ph">${gchip(gr)} grade<span class="x">${net==='HIGH'?'full nets':'low nets'} · ${ts.length} teams</span></div>
+  <table><thead><tr><th>#</th><th class="al">Team</th><th>P</th><th>W</th><th>L</th><th>D</th><th>GD</th></tr></thead><tbody>${ts.map(n=>{const t=P.teams[n],g=t.g,gd=g[4]-g[5];
+   return `<tr class="clk lrow ${teamMatch(n)?'hi':''}" data-team="${esc(n)}" style="--pc:${POOLCOL[t.pool]}"><td class="rk">${t.gpos}</td><td class="al"><span class="tn">${bdg(n,22)}<span>${esc(short(n))}<span class="sub2">${pchip(t.pool,' pool')}</span></span></span></td><td>${g[0]}</td><td>${g[1]}</td><td>${g[2]}</td><td>${g[3]}</td><td class="gd ${gd>0?'pos':gd<0?'neg':''}">${gd>0?'+':''}${gd}</td></tr>`;}).join('')}</tbody></table></div>`;});
+ $('#main').innerHTML=h+'</div>';}
 function render(){
  document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('on',b.dataset.v===state.view));
- renderFilters();state.view==='pools'?renderPools():renderDraw();
+ renderFilters();state.view==='pools'?renderPools():state.view==='ladders'?renderLadders():renderDraw();
  $('#asof').textContent='Results to '+fmtD(P.asof);
  $('#foot').innerHTML=`Draw from the NetSetGo 9 &amp; Under Mixed Round Robin fixture. Grades, records and head-to-heads are 2026 Spring results from Netball Connect up to ${esc(fmtD(P.asof))} 2026 (½ = shortened game). The coloured tag after a team is its position in its current grade (colour = grade). Courts 1–4 indoor, 5–8 outdoor.`;}
 function renderFilters(){
