@@ -429,6 +429,9 @@ async function main() {
     // map and per-round team->division from the visible rounds (fallback for grade/regrade analysis).
     const rm = (await batchGet([{ id: 0, url: `${LIVE}/round/matches?competitionId=${COMP_ID}&divisionId=&teamIds=&ignoreStatuses=[1]` }]))[0];
     const seedIds = [];
+    // SEED_IDS (comma list): known match ids of this comp (the weekly job passes the recent rounds from the
+    // committed data), so the harvest still finds this week's games if round/matches returns nothing.
+    const extraSeeds = (process.env.SEED_IDS || '').split(',').map((x) => parseInt(x, 10)).filter((n) => Number.isFinite(n) && n > 0);
     const divisionsFromRounds = {}; // divisionId -> name
     const roundDivisionTeams = [];  // {round, divisionId, division, matchId, team1Id, team2Id}
     try {
@@ -445,8 +448,10 @@ async function main() {
         }
       }
     } catch {}
-    notes.push(`round/matches seeds: ${seedIds.length}; divisions in visible rounds: ${Object.keys(divisionsFromRounds).length}`);
-    log(`phase 1a: ${seedIds.length} seed ids from round/matches`);
+    const rmInfo = `round/matches HTTP ${rm.status}, ${(rm.body || '').length} bytes`;
+    notes.push(`round/matches seeds: ${seedIds.length} (${rmInfo}); known-id seeds: ${extraSeeds.length}; divisions in visible rounds: ${Object.keys(divisionsFromRounds).length}`);
+    log(`phase 1a: ${seedIds.length} seed ids from round/matches (${rmInfo}) + ${extraSeeds.length} known ids`);
+    for (const id of extraSeeds) if (!seedIds.includes(id)) seedIds.push(id);
     if (seedIds.length) { await probeMany(seedIds); await expandAround(seedIds); await flush('ids'); log(`phase 1a done: ${found.size} matches so far`); }
 
     // Phase 1b: coarse scan
