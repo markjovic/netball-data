@@ -86,7 +86,9 @@ jobs:
             [ -z "$CID" ] && continue
             OUT="$RUNNER_TEMP/h-$CID"
             echo "harvesting $CID ($NAME)"
-            COMP_ID="$CID" COMP_KEY="$KEY" COMP_NAME="$NAME" OUT_DIR="$OUT" \
+            # known ids of games in the last 21 days and later, so this week's games are found even if round/matches is empty
+            SEED="$(python3 -I -c "import json, os, sys, datetime; p = 'data/matches-' + sys.argv[1] + '.json'; t = (datetime.date.fromisoformat(sys.argv[2]) - datetime.timedelta(days=21)).isoformat(); print(','.join(str(m['id']) for m in json.load(open(p, encoding='utf-8-sig'))['matches'] if (m.get('startTime') or '')[:10] >= t) if os.path.exists(p) else '')" "$CID" "${{ steps.plan.outputs.today }}")"
+            COMP_ID="$CID" COMP_KEY="$KEY" COMP_NAME="$NAME" SEED_IDS="$SEED" OUT_DIR="$OUT" \
               node "$RUNNER_TEMP/pw/nc-harvest.mjs"
             if ls "$OUT"/matches-*.json > /dev/null 2>&1; then
               echo "$OUT" >> "$RUNNER_TEMP/harvest-dirs.txt"
